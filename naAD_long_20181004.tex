@@ -398,12 +398,12 @@ estimate cortical thickness (Tustison \emph{et al.}, 2014). We used a
 joint label fusion approach (Wang \emph{et al.}, 2013) to align the
 Mindboggle-101 labels (based on the Desikan-Killainy-Tourville label
 scheme) (Klein and Tourville, 2012) with each image using
-pseudo-geodesic registration ({\textbf{???}}) and calculated the volume
-of GM voxels within each label, normalized by intracranial volume and
-converted to a z-score relative to controls' initial scans. To perform
-voxelwise group analyses, we warped cortical thickness images to the
-template using the previously-computed spatial transforms; these images
-were then spatially smoothed with a 2-sigma Gaussian kernel and
+pseudo-geodesic registration (Tustison and Avants, 2013) and calculated
+the volume of GM voxels within each label, normalized by intracranial
+volume and converted to a z-score relative to controls' initial scans.
+To perform voxelwise group analyses, we warped cortical thickness images
+to the template using the previously-computed spatial transforms; these
+images were then spatially smoothed with a 2-sigma Gaussian kernel and
 downsampled to 2 mm isotropic voxels.
 
 \subsection*{Statistical analysis}\label{statistical-analysis}
@@ -501,12 +501,12 @@ p\textless{}0.01, uncorrected for multiple comparisons.
 \addcontentsline{toc}{subsection}{Data and availability}
 
 Computer code for the current manuscript (including all text, analysis,
-and visualization of results) is available in the form of an Rmarkdown
-script in a public GitHub repository
-(\url{https://github.com/jeffrey-phillips/naAD-longitudinal.git}). This
-code requires \href{https://cran.r-project.org/}{R} version 3.4.4 or
-higher. Investigators who wish to access imaging and clinical data may
-submit a direct request to the corresponding author.
+and visualization of results) is available in the form of Rmarkdown and
+LaTeX scripts in a public GitHub repository
+(\url{https://github.com/jeffrey-phillips/naAD-longitudinal.git}).
+Rmarkdown code requires \href{https://cran.r-project.org/}{R} version
+3.4.4 or higher. Investigators who wish to access imaging and clinical
+data may submit a direct request to the corresponding author.
 
 \section*{Results}\label{results}
 \addcontentsline{toc}{section}{Results}
@@ -686,22 +686,22 @@ genotype}\label{effects-of-apoe-genotype}
 \addcontentsline{toc}{subsubsection}{Effects of APOE genotype}
 
 We additionally assessed the distribution of APOE genotypes among aAD
-and naAD patients. Genotyping data were unavailable for 1 lvPPA, 1 fvAD,
-and 2 aAD patients. One aAD and 2 PCA patients each carried one copy of
-the \(\epsilon2\) allele, which is associated with lower risk for
-Alzheimer's disease (Corder \emph{et al.}, 1994). The proportions of
-lvPPA, PCA, fvAD, and aAD patients carrying 1--2 copies of the APOE
-\(\epsilon4\) allele were 37.5\%, 38.4\%, 66.7\%, and 84.6\%,
-respectively. The frequency of individuals carrying 0, 1, or 2 copies of
-the \(\epsilon4\) allele significantly differed across patient groups
-{[}\(\chi^2\)(6)=38.7, p\textless{}0.001{]}. These frequencies
-significantly differed between all phenotype pairs in post-hoc
-comparisons (all \(\chi^2\)(2)\textgreater{}=7.1, p\textless{}0.03).
-Because APOE genotypes were unavailable for control participants, we
-recomputed LMEs for a priori ROIs using lvPPA (the largest group) as the
-reference group and number of \(\epsilon4\) alleles as a covariate. No
-ROIs exhibited an association with number of \(\epsilon4\) alleles
-independent of group.
+and naAD patients. Genotyping data were unavailable for one lvPPA, one
+fvAD, and two aAD patients. One aAD and two PCA patients each carried
+one copy of the \(\epsilon2\) allele, which is associated with lower
+risk for Alzheimer's disease (Corder \emph{et al.}, 1994). The
+proportions of lvPPA, PCA, fvAD, and aAD patients carrying 1--2 copies
+of the APOE \(\epsilon4\) allele were 37.5\%, 38.4\%, 66.7\%, and
+84.6\%, respectively. The frequency of individuals carrying zero, one,
+or two copies of the \(\epsilon4\) allele significantly differed across
+patient groups {[}\(\chi^2\)(6)=38.7, p\textless{}0.001{]}. These
+frequencies significantly differed between all phenotype pairs in
+post-hoc comparisons (all \(\chi^2\)(2)\textgreater{}=7.1,
+p\textless{}0.03). Because APOE genotypes were unavailable for control
+participants, we recomputed LMEs for a priori ROIs using lvPPA (the
+largest group) as the reference group and number of \(\epsilon4\)
+alleles as a covariate. No ROIs exhibited an association with number of
+\(\epsilon4\) alleles independent of group.
 
 \subsubsection*{Longitudinal associations between neuropsychological
 performance and grey matter
@@ -754,29 +754,30 @@ Recognition memory & \textbf{L entorhinal} & \textbf{t(62)=2.9} & \textbf{0.02} 
 Associations between longitudinal neuropsychological performance and
 atrophy were evaluated in patients that had two or more assessments,
 each within one year of a structural MRI scan. For recognition memory,
-this yielded 109 observations from 45 patients, including 21 lvPPA, 9
-PCA, 7 aAD, and 8 fvAD patients. For letter fluency, 99 observations
-were available from 18 lvPPA, 9 PCA, 6 aAD, and 8 fvAD patients. For
-forward and reverse digit span, 107 observations were available from 22
-lvPPA, 10 PCA, 6 aAD, and 7 fvAD patients. A total of 75 PBAC
-observations, from which all other test measures were obtained, were
-available for 17 lvPPA, 6 PCA, 5 aAD, and 6 fvAD patients. In all
-cognitive domains except for social behavior, longitudinal cognition was
-directly associated with GM volume change in one or more associated
-brain areas, independent of volume at the time of initial MRI (Table 3).
-In the memory domain, volume loss in bilateral hippocampi and entorhinal
-cortex as well as left parahippocampal gyrus predicted declines in
-recognition discrimination. In the language domain, volume loss in left
-middle temporal gyrus was associated with decreases in letter fluency;
-and volume loss in both left middle and superior temporal gyri predicted
-declines in forward digit span. In the visuospatial domain, Rey figure
-copy performance over time was associated with volume loss in right
-angular, middle temporal, and supramarginal gyrus as well as right
-precuneus. Judgment of line orientations was associated with right
-precuneus volume. No significant associations were found for social
-behavior; however, left middle frontal and right middle temporal gyri
-predicted reverse digit span, a measure of working memory and executive
-function (Kramer \emph{et al.}, 2003).
+this yielded 109 observations from 45 patients, including 21 lvPPA, nine
+PCA, seven aAD, and eight fvAD patients. For letter fluency, 99
+observations were available from 18 lvPPA, nine PCA, six aAD, and eight
+fvAD patients. For forward and reverse digit span, 107 observations were
+available from 22 lvPPA, 10 PCA, six aAD, and seven fvAD patients. A
+total of 75 PBAC observations, from which all other test measures were
+obtained, were available for 17 lvPPA, six PCA, five aAD, and six fvAD
+patients. In all cognitive domains except for social behavior,
+longitudinal cognition was directly associated with GM volume change in
+one or more associated brain areas, independent of volume at the time of
+initial MRI (Table 3). In the memory domain, volume loss in bilateral
+hippocampi and entorhinal cortex as well as left parahippocampal gyrus
+predicted declines in recognition discrimination. In the language
+domain, volume loss in left middle temporal gyrus was associated with
+decreases in letter fluency; and volume loss in both left middle and
+superior temporal gyri predicted declines in forward digit span. In the
+visuospatial domain, Rey figure copy performance over time was
+associated with volume loss in right angular, middle temporal, and
+supramarginal gyrus as well as right precuneus. Judgment of line
+orientations was associated with right precuneus volume. No significant
+associations were found for social behavior; however, left middle
+frontal and right middle temporal gyri predicted reverse digit span, a
+measure of working memory and executive function (Kramer \emph{et al.},
+2003).
 
 \subsection*{Exploratory analysis}\label{exploratory-analysis}
 \addcontentsline{toc}{subsection}{Exploratory analysis}
@@ -1694,6 +1695,12 @@ posterior cortical atrophy. Neurology 2004; 63: 1168--1174.
 Tustison NJ, Avants BB, Cook PA, Zheng Y, Egan A, Yushkevich PA, et al.
 N4ITK: Improved N3 bias correction. IEEE transactions on medical imaging
 2010; 29: 1310--1320.
+
+\hypertarget{ref-tustison_explicit_2013}{}
+Tustison NJ, Avants BB. Explicit B-spline regularization in
+diffeomorphic image registration {[}Internet{]}. Frontiers in
+Neuroinformatics 2013; 7{[}cited 2018 Oct 5{]} Available from:
+\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3870320/}
 
 \hypertarget{ref-tustison_large-scale_2014}{}
 Tustison NJ, Cook PA, Klein A, Song G, Das SR, Duda JT, et al.
