@@ -34,7 +34,7 @@ __Short title:__ Longitudinal Atrophy in Non-Amnestic AD
 
 __Affiliations:__
 
-^1^Penn Frontotemporal Degeneration Center, University of Pennsylvania, Philadelphia, PA, USA, ^2^PhD Program in Neuroscience, University of Milano-Bicocca, Milan, Italy, ^3^School of Medicine and Surgery, Milan Center for Neuroscience (NeuroMI), ^4^Department of Neurology, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA, University of Milano-Bicocca, Milan, Italy, ^5^Department of Biostatistics, Epidemiology, and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA, ^6^Center for Neurodegenerative Disease Research, University of Pennsylvania, Philadelphia, PA, USA, ^7^Penn Image Computing and Science Laboratory, Department of Radiology, University of Pennsylvania, Philadelphia, PA, USA, ^8^Penn Memory Center, University of Pennsylvania, Philadelphia, PA, USA
+^1^Penn Frontotemporal Degeneration Center, University of Pennsylvania, Philadelphia, PA, USA, ^2^PhD Program in Neuroscience, University of Milano-Bicocca, Milan, Italy, ^3^School of Medicine and Surgery, Milan Center for Neuroscience (NeuroMI), University of Milano-Bicocca, Milan, Italy, ^4^Department of Neurology, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA, ^5^Department of Biostatistics, Epidemiology, and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA, ^6^Center for Neurodegenerative Disease Research, University of Pennsylvania, Philadelphia, PA, USA, ^7^Penn Image Computing and Science Laboratory, Department of Radiology, University of Pennsylvania, Philadelphia, PA, USA, ^8^Penn Memory Center, University of Pennsylvania, Philadelphia, PA, USA
 
 __Corresponding author:__
 
@@ -235,6 +235,68 @@ df$AgeBin<-factor(df$AgeBin,levels=c('Young','Old'))
 df$Group3<-as.character(df$Group)
 df$Group3<-gsub('g3_aAD','g3a_EOAD',df$Group3)
 df$Group3[df$Group3=='g3a_EOAD' & df$AgeBin=='Old']<-'g3b_LOAD'
+
+```
+
+```{r selection_flow, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+
+pts<-read.csv('Brain/INQuery_Selection_Flow_20181008.csv',stringsAsFactors=F)
+selflow<-data.frame(Criterion='Has MRI data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,CSF=NA,stringsAsFactors=F)
+pts<-subset(pts,!(pts$Dx1=='' & pts$ADCCDx1=='' & pts$Diagnosis=='' &
+	pts$ClinicalPhenotype1==''))
+selflow<-rbind(selflow,data.frame(Criterion='ADC or FTDC participant',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,
+	CSF=NA,
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+selflow<-rbind(selflow,data.frame(Criterion='Has longitudinal MRI',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$Scanner=='SIEMENS HUP6 (3T)' | pts$INDDID %in% 116692)
+selflow<-rbind(selflow,data.frame(Criterion='Scanned on HUP6',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+w<-which(is.na(pts$AgeatMRI) | pts$AgeatMRI>2000)
+pts$AgeatMRI[w]<-df$base_ageatMRI[match(pts$INDDID[w],df$INDDID)]
+pts<-subset(pts,pts$AgeatMRI>50)
+selflow<-rbind(selflow,data.frame(Criterion='Age >= 50 at first MRI',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts$Evidence<-NA
+pts$Evidence[!(pts$CSFDate=='' & pts$CSFDate.1.=='')]<-'CSF'
+pts$Evidence[!pts$NPDx1=='']<-'Autopsy'
+pts<-subset(pts,!is.na(pts$Evidence))
+selflow<-rbind(selflow,data.frame(Criterion='Has autopsy or CSF data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[pts$NPDx1=="Alzheimer's disease" |
+	pts$LuminexTTauAbetaRatio>=0.34 |
+	pts$ElisaTTau_Transformed/pts$ElisaAbeta42>=0.34])
+df<-subset(df,!df$INDDID %in% c(110006,110295,111073,112013,111006))
+df<-subset(df,!df$INDDID %in% 116569)
+df<-subset(df,!df$INDDID %in% 107603)
+selflow<-rbind(selflow,data.frame(Criterion='Autopsy or CSF data indicates underlying AD pathology',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% df$INDDID)
+selflow<-rbind(selflow,data.frame(Criterion='Clinical phenotype of interest',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
 
 ```
 
