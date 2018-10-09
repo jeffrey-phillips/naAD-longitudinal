@@ -58,7 +58,7 @@ Non-amnestic Alzheimer's disease is associated with domain-specific cognitive de
 Non-amnestic Alzheimer's disease, logopenic-variant primary progressive aphasia, posterior cortical atrophy, frontal-variant Alzheimer's disease, longitudinal progression
 
 # Abbreviations {-}
-A$\beta$ = $\beta$-amyloid; aAD= amnestic Alzheimer's disease; naAD = non-amnestic Alzheimer's disease; CBS = corticobasal syndrome; fvAD = frontal-variant Alzheimer's disease; lvPPA = logopenic-variant primary progressive aphasia; PCA = posterior cortical atrophy; GM = grey matter; MTL = medial temporal lobes; ROI = region of interest; MMSE = Mini Mental Status Exam; LME = linear mixed effects; PVLT = Philadelphia Verbal Learning Test; PBAC = Philadelphia Brief Assessment of Cognition
+A$\beta$ = $\beta$-amyloid; aAD= amnestic Alzheimer's disease; naAD = non-amnestic Alzheimer's disease; CBS = corticobasal syndrome; fvAD = frontal-variant Alzheimer's disease; lvPPA = logopenic-variant primary progressive aphasia; PCA = posterior cortical atrophy; GM = grey matter; MTL = medial temporal lobes; ROI = region of interest; MMSE = Mini Mental Status Exam; CSF = cerebrospinal fluid; LME = linear mixed effects; PVLT = Philadelphia Verbal Learning Test; PBAC = Philadelphia Brief Assessment of Cognition
 
 \newpage
 
@@ -235,6 +235,68 @@ df$AgeBin<-factor(df$AgeBin,levels=c('Young','Old'))
 df$Group3<-as.character(df$Group)
 df$Group3<-gsub('g3_aAD','g3a_EOAD',df$Group3)
 df$Group3[df$Group3=='g3a_EOAD' & df$AgeBin=='Old']<-'g3b_LOAD'
+
+```
+
+```{r selection_flow, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+
+pts<-read.csv('Brain/INQuery_Selection_Flow_20181008.csv',stringsAsFactors=F)
+selflow<-data.frame(Criterion='Has MRI data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,CSF=NA,stringsAsFactors=F)
+pts<-subset(pts,!(pts$Dx1=='' & pts$ADCCDx1=='' & pts$Diagnosis=='' &
+	pts$ClinicalPhenotype1==''))
+selflow<-rbind(selflow,data.frame(Criterion='ADC or FTDC participant',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,
+	CSF=NA,
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+selflow<-rbind(selflow,data.frame(Criterion='Has longitudinal MRI',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$Scanner=='SIEMENS HUP6 (3T)' | pts$INDDID %in% 116692)
+selflow<-rbind(selflow,data.frame(Criterion='Scanned on HUP6',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+w<-which(is.na(pts$AgeatMRI) | pts$AgeatMRI>2000)
+pts$AgeatMRI[w]<-df$base_ageatMRI[match(pts$INDDID[w],df$INDDID)]
+pts<-subset(pts,pts$AgeatMRI>50)
+selflow<-rbind(selflow,data.frame(Criterion='Age >= 50 at first MRI',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts$Evidence<-NA
+pts$Evidence[!(pts$CSFDate=='' & pts$CSFDate.1.=='')]<-'CSF'
+pts$Evidence[!pts$NPDx1=='']<-'Autopsy'
+pts<-subset(pts,!is.na(pts$Evidence))
+selflow<-rbind(selflow,data.frame(Criterion='Has autopsy or CSF data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[pts$NPDx1=="Alzheimer's disease" |
+	pts$LuminexTTauAbetaRatio>=0.34 |
+	pts$ElisaTTau_Transformed/pts$ElisaAbeta42>=0.34])
+df<-subset(df,!df$INDDID %in% c(110006,110295,111073,112013,111006))
+df<-subset(df,!df$INDDID %in% 116569)
+df<-subset(df,!df$INDDID %in% 107603)
+selflow<-rbind(selflow,data.frame(Criterion='Autopsy or CSF data indicates underlying AD pathology',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% df$INDDID)
+selflow<-rbind(selflow,data.frame(Criterion='Clinical phenotype of interest',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
 
 ```
 
@@ -454,11 +516,11 @@ print(xtab1p,comment=FALSE,caption.placement='top',floating=T,include.rownames=T
 
 ```
 
-Participants were recruited through the Penn Frontotemporal Degeneration Center (FTDC) and the Penn Memory Center (PMC) at the University of Pennsylvania, including 37 elderly controls, 15 patients with aAD, and 50 patients with naAD (25 with lvPPA, 15 with PCA, and 10 with fvAD). All procedures were approved by the University of Pennsylvania's Institutional Review Board, and all patients and/or their caregivers gave written informed consent according to the principles established by the Declaration of Helsinki. All patients were clinically diagnosed by experienced neurologists (MG, DJI, DW, and SV), and diagnoses were confirmed by consensus after patients' initial visit by clinicians with expertise in dementia. All patients were at least 50 years of age and had no major cerebrovascular disease, stroke, head trauma, or comorbid psychiatric, neurodegenerative, medical, or developmental disorders. Clinical criteria for each phenotype were as follows: for aAD, primary memory impairment plus deficits in one or more additional cognitive domains [@mckhann_diagnosis_2011]; for lvPPA, primary language impairment including deficits in repetition and/or naming [@giannini_clinical_2017;@gorno-tempini_classification_2011]; for PCA, visuospatial deficits (e.g., in object/spatial perception, neglect, or oculomotor apraxia) [@crutch_consensus_2017]; and for fvAD, deficits in executive function or social behavior. NaAD patients had relatively preserved abilities in all cognitive domains except their domain of primary impairment at initial presentation. All patients had evidence of Alzheimer's disease pathology based on autopsy results (n=9) or a CSF total tau/beta-amyloid 1--42 ratio greater than 0.34 (n=57) according to methods previously described [@shaw_cerebrospinal_2009;@irwin_comparison_2012]. APOE genotyping was performed on 62 of 66 patients. One patient (white male, aAD, age 51 at onset) with an APOE $\epsilon3$/$\epsilon4$ genotype was found to have a mutation in the PSEN1 gene.
+The current study used a longitudinal case-control design based on data retrospectively selected from the Integrated Neurodegenerative Disease Database at the University of Pennslyvania. Participants were recruited through the Penn Frontotemporal Degeneration Center (FTDC) and the Penn Memory Center (PMC). All procedures were approved by the University of Pennsylvania's Institutional Review Board, and all patients and/or their caregivers gave written informed consent according to the principles established by the Declaration of Helsinki. An initial database query yielded 1406 patients with longitudinal MRI data; of these, 968 were scanned on the same 3-Tesla Siemens MRI scanner at the Hospital of the University of Pennsylvania. Participants were required to be at least 50 years of age at initial MRI; a total of 793 patients met this criterion. Of these, 545 patients had either autopsy or cerebrospinal fluid biomarker evidence of underlying Alzheimer's disease pathology. All participants were required to have no major cerebrovascular disease, stroke, head trauma, or comorbid psychiatric, neurodegenerative, medical, or developmental disorders apart from patients' primary diagnoses. A total of 65 of these patients met these criteria and exhibited clinical phenotypes of interest, as described below; the final sample included 50 patients with naAD (25 with lvPPA, 15 with PCA, 10 with fvAD), 15 patients with aAD, and 37 demographically-matched controls. Eight patients had primary neuropathologic diagnoses and 57 had CSF biomarkers (total tau/$A\beta_{1-42}$ ratio greater than 0.34) indicative of Alzheimer's disease pathology according to methods previously described [@shaw_cerebrospinal_2009;@irwin_comparison_2012]. All patients were clinically diagnosed by experienced neurologists (MG, DJI, DW, and SV), and diagnoses were confirmed by consensus after patients' initial visit by clinicians with expertise in dementia. Clinical criteria for each patient phenotype were as follows: for lvPPA, primary language impairment including deficits in repetition and/or naming [@giannini_clinical_2017;@gorno-tempini_classification_2011]; for PCA, visuospatial deficits (e.g., in object/spatial perception, neglect, or oculomotor apraxia) [@crutch_consensus_2017]; for fvAD, deficits in executive function or social behavior; and for aAD, primary memory impairment plus deficits in one or more additional cognitive domains [@mckhann_diagnosis_2011]. NaAD patients had relatively preserved abilities in all cognitive domains except their domain of primary impairment at initial presentation. APOE genotyping was performed on 61 of 65 patients. One patient (white male, aAD, age 51 at onset) with an APOE $\epsilon3$/$\epsilon4$ genotype was found to have a mutation in the PSEN1 gene.
 
 Shapiro-Wilks tests indicated non-normal distributions for education and disease duration, age, and MMSE score at initial MRI (all p<0.05). Kruskal-Wallis tests of group differences were non-significant, with the exception of MMSE [$\chi^2$(4)=56.1, p<0.001], reflecting patients' cognitive deficits relative to controls. Mann-Whitney tests confirmed that all patient groups exhibited significantly lower MMSE scores than controls (all U>=4.0, p<0.001); all other pairwise comparisons were non-significant. To corroborate naAD patients' domain-specific cognitive impairment, we analyzed neuropsychological performance on assessments independent of those used in clinical diagnosis, including performance on specific items of the Philadelphia Brief Assessment of Cognition (PBAC) [@libon_philadelphia_2011]. Language was assessed in terms of speech features (with lower scores indicating speech and language impairment), forward digit span as a measure of repetition [@giannini_clinical_2017], and letter fluency, which is sensitive to deficits in executive-mediated lexical retrieval [@ramanan_longitudinal_2017;@rascovsky_disparate_2007]. Visuospatial function was assessed by patients' ability to copy a modified version of the Rey complex figure as well as the judgment of line orientation. Social behavior was assessed on an 18-point scale evaluating social comportment, apathy, disinhibition, agitation, empathy, and ritualistic behaviors. Executive function was evaluated through an oral version of the trail-making test as well as backward digit span. Finally, episodic memory was assessed by recognition on the Philadelphia Verbal Learning Test (PVLT) [@libon_verbal_2011] or the PBAC verbal memory test, as available. All neuropsychological assessments were acquired within 1 year of the initial MRI scan (PVLT and letter fluency: mean=0.18 years, SD=0.25; PBAC: mean=0.27 years, SD=0.29; digit span: mean=0.16 years, SD=0.32). Results were consistent with each phenotype's primary impairment in all domains except for executive function (Table 1). Post-hoc comparisons between all patient groups are reported in Supplementary Table 1.
 
-Participants were required to have longitudinal T1-weighted structural MRI data. We retrospectively selected 163 T1-weighted anatomical MRI scans from patients and 85 scans from controls; all scans were collected on the same 3.0-Tesla Siemens TIM Trio scanner at the Hospital of the University of Pennsylvania. A majority of participants (39/66 patients and 29/37 controls) had only 2 available scans; the remaining participants contributed 3--4 scans each. We included scans acquired with a minimum inter-scan interval of 6 months up to 3.5 years from the initial MRI; beyond this window, there were insufficient observations for a valid analysis. Due to the limited number of observations, only linear associations between atrophy and time were assessed. MRI scans were screened for signs of cerebrovascular disease, hydrocephalus, or white matter lesions; those with a Fazekas scale score>1 were excluded. The current study included 54 patients from our previous, cross-sectional study [@phillips_neocortical_2018] (aAD, n=9; lvPPA, n=24; PCA, n=15; and fvAD, n=6).
+Participants were required to have longitudinal T1-weighted structural MRI data. We retrospectively selected 163 T1-weighted anatomical MRI scans from patients and 85 scans from controls. A majority of participants (39/65 patients and 29/37 controls) had only 2 available scans; the remaining participants contributed 3--4 scans each. We included scans acquired with a minimum inter-scan interval of 6 months up to 3.5 years from the initial MRI; beyond this window, there were insufficient observations for a valid analysis. Due to the limited number of observations, only linear associations between atrophy and time were assessed. MRI scans were screened for signs of cerebrovascular disease, hydrocephalus, or white matter lesions; those with a Fazekas scale score>1 were excluded. The current study included 54 patients from our previous, cross-sectional study [@phillips_neocortical_2018] (aAD, n=9; lvPPA, n=24; PCA, n=15; and fvAD, n=6).
 
 ## Neuroimaging methods {-}
 T1-weighted MR images were acquired axially with 0.98 mm x 0.98 mm x 1 mm voxels, a 256 x 192 matrix, a repetition time of 1620 ms, an inversion time of 950 ms, and a flip angle of 15$^\circ$. Scans were visually inspected for quality by two authors (JP and FDR). Advanced Normalization Tools (ANTs) [@avants_insight_2014;@tustison_large-scale_2014] was used to process each image using a prior-based approach. Images underwent intensity normalization [@tustison_n4itk:_2010] and were spatially normalized to a template based on healthy controls from the Open Access Series of Imaging Studies (OASIS) dataset [@marcus_open_2007] using a symmetric diffeomorphic algorithm [@avants_reproducible_2011;@klein_evaluation_2009]. Images were segmented into 6 tissue classes (cortical grey matter, subcortical grey matter, deep white matter, CSF, brainstem, and cerebellum) using template-based priors; this tissue segmentation was then used to estimate cortical thickness [@tustison_large-scale_2014]. We used a joint label fusion approach [@wang_multi-atlas_2013] to align the Mindboggle-101 labels (based on the Desikan-Killainy-Tourville label scheme) [@klein_101_2012] with each image using pseudo-geodesic registration [@tustison_explicit_2013] and calculated the volume of GM voxels within each label, normalized by intracranial volume and converted to a z-score relative to controls' initial scans. To perform voxelwise group analyses, we warped cortical thickness images to the template using the previously-computed spatial transforms; these images were then spatially smoothed with a 2-sigma Gaussian kernel and downsampled to 2 mm isotropic voxels.
