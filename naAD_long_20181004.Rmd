@@ -238,68 +238,6 @@ df$Group3[df$Group3=='g3a_EOAD' & df$AgeBin=='Old']<-'g3b_LOAD'
 
 ```
 
-```{r selection_flow, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
-
-pts<-read.csv('Brain/INQuery_Selection_Flow_20181008.csv',stringsAsFactors=F)
-selflow<-data.frame(Criterion='Has MRI data',
-	N=length(unique(pts$INDDID)),
-	Autopsy=NA,CSF=NA,stringsAsFactors=F)
-pts<-subset(pts,!(pts$Dx1=='' & pts$ADCCDx1=='' & pts$Diagnosis=='' &
-	pts$ClinicalPhenotype1==''))
-selflow<-rbind(selflow,data.frame(Criterion='ADC or FTDC participant',
-	N=length(unique(pts$INDDID)),
-	Autopsy=NA,
-	CSF=NA,
-	stringsAsFactors=F))
-pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
-selflow<-rbind(selflow,data.frame(Criterion='Has longitudinal MRI',
-	N=length(unique(pts$INDDID)),
-	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
-	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
-	stringsAsFactors=F))
-pts<-subset(pts,pts$Scanner=='SIEMENS HUP6 (3T)' | pts$INDDID %in% 116692)
-selflow<-rbind(selflow,data.frame(Criterion='Scanned on HUP6',
-	N=length(unique(pts$INDDID)),
-	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
-	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
-	stringsAsFactors=F))
-w<-which(is.na(pts$AgeatMRI) | pts$AgeatMRI>2000)
-pts$AgeatMRI[w]<-df$base_ageatMRI[match(pts$INDDID[w],df$INDDID)]
-pts<-subset(pts,pts$AgeatMRI>50)
-selflow<-rbind(selflow,data.frame(Criterion='Age >= 50 at first MRI',
-	N=length(unique(pts$INDDID)),
-	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
-	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
-	stringsAsFactors=F))
-pts$Evidence<-NA
-pts$Evidence[!(pts$CSFDate=='' & pts$CSFDate.1.=='')]<-'CSF'
-pts$Evidence[!pts$NPDx1=='']<-'Autopsy'
-pts<-subset(pts,!is.na(pts$Evidence))
-selflow<-rbind(selflow,data.frame(Criterion='Has autopsy or CSF data',
-	N=length(unique(pts$INDDID)),
-	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
-	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
-	stringsAsFactors=F))
-pts<-subset(pts,pts$INDDID %in% pts$INDDID[pts$NPDx1=="Alzheimer's disease" |
-	pts$LuminexTTauAbetaRatio>=0.34 |
-	pts$ElisaTTau_Transformed/pts$ElisaAbeta42>=0.34])
-df<-subset(df,!df$INDDID %in% c(110006,110295,111073,112013,111006))
-df<-subset(df,!df$INDDID %in% 116569)
-df<-subset(df,!df$INDDID %in% 107603)
-selflow<-rbind(selflow,data.frame(Criterion='Autopsy or CSF data indicates underlying AD pathology',
-	N=length(unique(pts$INDDID)),
-	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
-	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
-	stringsAsFactors=F))
-pts<-subset(pts,pts$INDDID %in% df$INDDID)
-selflow<-rbind(selflow,data.frame(Criterion='Clinical phenotype of interest',
-	N=length(unique(pts$INDDID)),
-	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
-	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
-	stringsAsFactors=F))
-
-```
-
 ## Patients {-}
 ```{r npsych, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
 
