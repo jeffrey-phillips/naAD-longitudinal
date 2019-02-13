@@ -1,0 +1,2652 @@
+---
+title: "Longitudinal progression of grey matter atrophy in non-amnestic Alzheimer's disease"
+author: "\\*Jeffrey S. Phillips, PhD^1,2^, \\*Fulvio Da Re, MD^1,3,4^, David J. Irwin, MD^1,2^, Corey T. McMillan, PhD^1,2^, Sanjeev N. Vaishnavi, MD, PhD^2,5^, Sharon X. Xie, PhD^6^, Edward B. Lee, MD, PhD^7^, Philip A. Cook, PhD^8^, James C. Gee, PhD^8^, Leslie M. Shaw, PhD^7^, John Q. Trojanowski, MD, PhD^7^, David A. Wolk, MD^2,5^ and Murray Grossman, MD, EdD^1,2^"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+header-includes:
+  \usepackage{graphicx}
+  \usepackage{morefloats}
+  \usepackage{caption}
+  \usepackage{lscape}
+  \usepackage{siunitx}
+  \usepackage{textcomp}
+  \usepackage{xcolor, colortbl}
+  \newcommand{\blandscape}{\begin{landscape}}
+  \newcommand{\elandscape}{\end{landscape}}
+output:
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+    number_sections: yes
+  html_document:
+    fig_caption: yes
+    force_captions: yes
+    highlight: pygments
+    number_sections: yes
+    theme: cerulean
+bibliography: naAD_long.bib
+csl: brain.csl
+---
+
+\pagenumbering{gobble}
+
+\* These authors contributed equally to this work.
+
+__Short title:__ Longitudinal Atrophy in Non-Amnestic AD
+
+__Affiliations:__
+
+^1^Penn Frontotemporal Degeneration Center, University of Pennsylvania, Philadelphia, PA, USA, ^2^Department of Neurology, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA, ^3^PhD Program in Neuroscience, University of Milano-Bicocca, Milan, Italy, ^4^School of Medicine and Surgery, Milan Center for Neuroscience (NeuroMI), University of Milano-Bicocca, Milan, Italy, ^5^Penn Memory Center, University of Pennsylvania, Philadelphia, PA, USA, ^6^Department of Biostatistics, Epidemiology, and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA, ^7^Center for Neurodegenerative Disease Research, University of Pennsylvania, Philadelphia, PA, USA, ^8^Penn Image Computing and Science Laboratory, Department of Radiology, University of Pennsylvania, Philadelphia, PA, USA
+
+__Corresponding author:__
+
+Jeffrey S. Phillips, PhD  
+jefphi@pennmedicine.upenn.edu  
+Penn Frontotemporal Degeneration Center  
+Department of Neurology  
+University of Pennsylvania  
+3400 Spruce St., 3 Gibson  
+Philadelphia, PA 19104
+
+\newpage
+
+\pagenumbering{arabic}
+
+# Abstract {-}
+
+Recent models of Alzheimer's disease progression propose that disease may be transmitted between brain areas either via local diffusion or long-distance transport via white-matter fiber pathways. However, it is unclear whether such models are applicable in non-amnestic Alzheimer's disease, which is associated with domain-specific cognitive deficits and relatively spared episodic memory. To date, the anatomical progression of disease in non-amnestic patients remains understudied. We used longitudinal imaging to differentiate earlier atrophy and later disease spread in three non-amnestic variants, including logopenic-variant primary progressive aphasia (n=25), posterior cortical atrophy (n=20), and frontal-variant Alzheimer's disease (n=12), as well as 17 amnestic Alzheimer's disease patients. Patients were compared to 37 matched controls. All patients had autopsy (n=7) or cerebrospinal fluid (n=67) evidence of Alzheimer's disease pathology. We first assessed atrophy in suspected sites of disease origin, adjusting for age, sex, and severity of cognitive impairment; we then performed exploratory whole-brain analysis to investigate longitudinal disease spread both within and outside these regions. Additionally, we asked whether each phenotype exhibited more rapid change in its associated disease foci than other phenotypes. Finally, we investigated whether atrophy was related to structural brain connectivity. Each non-amnestic phenotype displayed unique patterns of initial atrophy and subsequent neocortical change that correlated with cognitive decline. Longitudinal atrophy included areas both proximal to and distant from sites of initial atrophy, suggesting heterogeneous mechanisms of disease spread. Moreover, regional rates of neocortical change differed by phenotype. Logopenic-variant patients exhibited greater initial atrophy and more rapid longitudinal change in left lateral temporal areas than other groups. Frontal-variant patients had pronounced atrophy in left insula and middle frontal gyrus, combined with more rapid atrophy of left insula than other non-amnestic patients. In the medial temporal lobes, non-amnestic patients had less atrophy at their initial scan than amnestic patients, but longitudinal rate of change did not differ between patient groups. Medial temporal sparing in non-amnestic Alzheimer's disease may thus be due in part to later onset of medial temporal degeneration than in amnestic patients rather than different rates of atrophy over time. Finally, the magnitude of longitudinal atrophy was predicted by structural connectivity, measured in terms of node degree; this result provides indirect support for the role of long-distance fiber pathways in the spread of neurodegenerative disease.
+
+# Keywords {-}
+Non-amnestic Alzheimer's disease, logopenic-variant primary progressive aphasia, posterior cortical atrophy, frontal-variant Alzheimer's disease, longitudinal progression, neuroimaging
+
+# Abbreviations {-}
+A$\beta$ = $\beta$-amyloid; aAD= amnestic Alzheimer's disease; naAD = non-amnestic Alzheimer's disease; CBS = corticobasal syndrome; fvAD = frontal-variant Alzheimer's disease; lvPPA = logopenic-variant primary progressive aphasia; PCA = posterior cortical atrophy; GM = grey matter; MTL = medial temporal lobes; ROI = region of interest; MMSE = Mini Mental Status Exam; CSF = cerebrospinal fluid; LME = linear mixed effects; PVLT = Philadelphia Verbal Learning Test; PBAC = Philadelphia Brief Assessment of Cognition
+
+\newpage
+
+# Introduction {-}
+Recent theories of neurodegenerative disease progression have raised the possibility that pathogenic protein aggregates do not arise spontaneously throughout the brain; rather, they may be transmitted from areas of existing pathology through one or more mechanisms, including local diffusion of pathogenic proteins through the extracellular medium as well as long-distance transmission along white-matter pathways between brain areas [@guo_cell-to-cell_2014]. This transmission model of neurodegenerative disease is supported by a diverse body of research ranging from rodent models [@ahmed_novel_2014;@iba_synthetic_2013;@liu_trans-synaptic_2012;@mezias_connectivity_2017] to computational modeling of human neuroimaging data [@hu_localizing_2016;@iturria-medina_epidemic_2014;@raj_network_2012;@raj_network_2015]. This research particularly supports the relevance of the transmission model in typical, amnestic Alzheimer's disease (AD), which spreads from the transentorhinal cortex and hippocampus to the rest of the medial temporal lobes and ultimately to the neocortex [@braak_neuropathological_1991]. This stereotyped progression provides detailed expectations against which to test models of interregional transmission.
+
+However, it is unclear whether the transmission hypothesis has equal relevance in atypical presentations of AD, which demonstrate a number of pathological and clinical differences from amnestic AD (aAD), including relatively prominent neocortical disease and relative hippocampal sparing [@galton_atypical_2000;@mesulam_primary_2014;@murray_neuropathologically_2011;@whitwell_neuroimaging_2012]. Clinically, atypical AD includes at least four non-amnestic phenotypes: logopenic-variant primary progressive aphasia (lvPPA), characterized by primary language deficits [@gorno-tempini_classification_2011]; posterior cortical atrophy (PCA), characterized by visuospatial deficits [@crutch_consensus_2017]; a variant defined by deficits in executive function and/or social behavior [@dubois_advancing_2014], frequently referred to as frontal-variant Alzheimer's disease (fvAD); and corticobasal syndrome (CBS), which can present with a constellation of lateralized motor and cognitive deficits [@medaglia_brain_2017]. These syndromes are marked by different rates of clinical progression than in aAD [@byun_heterogeneity_2015;@duara_regional_2013;@poulakis_heterogeneous_2018]. Moreover, each phenotype is associated with distinct anatomical distributions of disease, particularly in early stages. LvPPA patients have strongly left-lateralized disease with pathological accumulations in left superior temporal and inferior parietal cortex [@giannini_clinical_2017;@mesulam_asymmetry_2014]; additional disease is commonly observed in left dorsolateral prefrontal cortex [@giannini_clinical_2017;@rogalski_aphasic_2016]. PCA is marked by involvement of the parietal and/or occipital lobes [@crutch_consensus_2017;@tang-wai_clinical_2004]; depending on the patient, disease in PCA may or may not have a right-hemisphere bias [@crutch_posterior_2012;@ossenkoppele_atrophy_2015]. In fvAD, elevated pathology has been most commonly reported in the frontal lobes [@blennerhassett_distribution_2014;@johnson_clinical_1999], although a recent report based on a larger sample of these patients also highlights disease in posterior cortical areas [@ossenkoppele_behavioural/dysexecutive_2015]. In CBS due to AD, disease is distributed widely and often asymmetrically throughout the temporal and parietal lobes, sometimes extending into the posterior portion of the frontal lobes [@lee_clinicopathological_2011;@mcmillan_multimodal_2016]. Each of these naAD phenotypes shares clinical similarities to presentations of frontotemporal lobar degeneration (FTLD) spectrum pathology, making it imperative to corroborate clinical diagnosis through AD biomarkers.
+
+Non-amnestic syndromes with underlying Alzheimer's disease pathology may be more prevalent than previously thought [@dickerson_approach_2017;@peter_subgroups_2014]. However, relatively little research has examined the anatomical spread of non-amnestic Alzheimer's disease (naAD). In a previous MRI analysis [@phillips_neocortical_2018], we inferred patterns of atrophy spread in naAD phenotypes from cross-sectional MRI data: following the logic of postmortem pathology studies, we explicitly assumed that the relative frequency of atrophy in different brain areas could be used to infer the anatomical progression of disease over time. These results corroborated the hypothesis that each naAD phenotype has a distinct neocortical origin with relative sparing of the medial temporal lobes (MTL). Moreover, this study suggested that each naAD phenotype has a distinct pattern of disease spread that differs from aAD.
+
+In the present study, we sought to validate and extend this previous work, using longitudinal MRI to differentiate patterns of earlier atrophy from subsequent disease spread in each phenotype. Additionally, we investigated whether aAD and naAD differ in the anatomic distribution and longitudinal rate of grey matter (GM) atrophy over time. We reasoned that such differences could explain phenotype-specific patterns of clinical progression across amnestic and non-amnestic Alzheimer's disease variants. In a hypothesis-driven analysis based on our previous cross-sectional study [@phillips_neocortical_2018], we investigated differences in GM volume at the time of initial MRI as well as volume change over time in regions-of-interest (ROIs) associated with lvPPA, PCA, fvAD, and aAD. Exploratory, whole-brain, voxelwise analysis of cortical thickness was performed to map patterns of disease spread beyond these initial ROIs. We sought to identify group differences in atrophy distribution and progression independent of age, which has been previously reported to differ between typical and atypical forms of Alzheimer's disease [@murray_neuropathologically_2011]. Based on the high neocortical disease burden and domain-specific cognitive deficits that we previously observed in naAD, we predicted that naAD patients would exhibit faster rates of atrophy in phenotype-specific neocortical ROIs relative to aAD. Additionally, we tested the hypothesis that naAD patients would exhibit slower atrophy than aAD patients in the hippocampus and surrounding MTL areas, as a possible explanation for the relative memory sparing associated with these structures in naAD. Finally, we compared longitudinal atrophy patterns to measures of inter-regional structural connectivity estimated from a large population of healthy controls; we predicted that connectivity would predict longitudinal atrophy, consistent with the transmission hypothesis.
+
+# Materials and methods {-}
+```{r setup, include=FALSE,echo=FALSE}
+knitr::opts_chunk$set(fig.path='fig/', warning=FALSE, message=FALSE)
+library(knitcitations); cleanbib()
+#cite_options(citation_format = "pandoc", cite.style='numeric', check.entries=FALSE)
+cite_options(citation_format = "pandoc", cite.style='numeric',
+	super=TRUE, style='text',check.entries=FALSE)
+library(ANTsR)
+library(nlme)
+library(ggplot2)
+library(doBy)
+library(multcomp)
+library(plyr)
+library(tableone)
+library(xtable)
+library(grid)
+library(ggsignif)
+library(gridExtra)
+library(igraph)
+
+source('~/R/rmdfunx.R')
+
+# Plot color scheme.
+gg_color_hue <- function(n) {
+  hues = seq(15, 375, length=n+1)
+  hcl(h=hues, l=65, c=100)[1:n]
+}
+
+ggtheme<-theme(axis.text.x=element_text(size=16,face='bold'),
+	axis.text.y=element_text(size=16,face='bold'),
+	axis.title.y=element_text(size=16,face='bold'),
+	axis.title.x=element_text(size=16,face='bold'),
+	legend.position='right',
+	legend.title=element_blank(),
+	legend.text=element_text(size=12,face='bold'),
+	legend.key=element_rect(fill='white',colour=NA),
+	legend.key.size=unit(0.67,'inches'),
+	panel.background=element_rect(fill='white',colour=NA),
+	panel.border=element_rect(fill=NA,colour='grey20'),
+	panel.grid=element_line(colour='grey92'),
+	panel.grid.minor=element_line(size=rel(0.5)),
+	plot.title=element_text(size=16,face='bold',hjust=0.5))
+
+#            strip.background = element_rect(fill = "grey85", colour = "grey20")
+
+# Set colorscheme
+# Colorblind-friendly palette based on 
+# http://jfly.iam.u-tokyo.ac.jp/color/#pallet.
+plotcols<-c('lvPPA'=rgb(0.9,0.6,0),'PCA'=rgb(0,0.45,0.7),
+	'aAD'=rgb(0.4,0.8,0.4),'fvAD'=rgb(0.9,0,0.6),'Control'='black')
+shapescale<-c('aAD'=0,'lvPPA'=1,'PCA'=2,'fvAD'=5)
+ltscale<-c('aAD'='dotted','lvPPA'='twodash','PCA'='dashed',
+	'fvAD'='longdash','Control'='solid')
+
+wd<-'/Users/jeffreyphillips/Longitudinal'
+if (!dir.exists(wd)) { wd<-'/home/jeff/Longitudinal' }
+setwd(wd)
+
+```
+
+```{r data_prep1, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+
+flist<-Sys.glob('pd2018ctx/*CorticalThickness_LabelStats.csv')
+lstat<-data.frame()
+for (f in flist) {
+	s<-unlist(strsplit(basename(f),'_'))
+	tmp<-read.csv(f,stringsAsFactors=F)
+	tmp$Subj<-s[1];tmp$MRISession<-s[2];tmp$ID<-paste(s[1:2],collapse='_')
+	lstat<-rbind.fill(lstat,tmp)
+}
+vols<-subset(lstat,lstat$Type %in% 'NormalizedVolume')
+vols$NormVol<-vols$Value
+df<-read.csv('longitudinal_df_20190108.csv',stringsAsFactors=F)
+df$Group2<-factor(df$Group2,levels=c('Control','aAD','lvPPA','PCA','fvAD'))
+
+# Correct an incorrect date.
+df$MRISession[df$Subj==119288 & df$MRISession==20160823]<-20160824
+df$ID[df$Subj==119288 & df$MRISession==20160824]<-'119288_20160824'
+
+# Exclude follow-up timepoints within 6 months of the previous.
+df$Interval<-NA
+df$Interval[-1]<-df$time_diff[-1]-df$time_diff[-nrow(df)]
+df$Interval[!duplicated(df$INDDID)]<-0
+df<-subset(df,!(duplicated(df$INDDID) & df$time_diff<0.5))
+
+# Exclude anyone who doesn't have longitudinal imaging.
+df<-subset(df,df$INDDID %in% df$INDDID[duplicated(df$INDDID)])
+
+# Exclude fvAD patient that doesn't meet Rascovsky et al. criteria.
+df<-subset(df,!df$INDDID==116692)
+
+# Update this APOE list with new participants.
+apoe<-read.csv('naAD_APOE_20190114.csv',stringsAsFactors=F)
+apoe$APOE[apoe$APOE=='']<-NA
+df$APOE<-apoe$APOE[match(df$INDDID,apoe$INDDID)]
+df$e4<-df$e3<-df$e2<-NA
+for (i in 1:nrow(df)) {
+	if (!is.na(df$APOE[i])) {
+		s<-unlist(strsplit(df$APOE[i],'/'))
+		df$e2[i]<-length(which(s=='E2'))
+		df$e3[i]<-length(which(s=='E3'))
+		df$e4[i]<-length(which(s=='E4'))
+	}
+}
+df$e4Carrier<-ifelse(df$e4>0,TRUE,FALSE)
+
+convol<-subset(vols,vols$Subj %in% df$INDDID[df$Group %in% 'g0_Control' &
+	df$time_diff==0])
+consumm<-summaryBy(NormVol~Label.Number,data=convol,FUN=c(mean,sd),na.rm=T)
+vols$ZVol<-(vols$NormVol-consumm$NormVol.mean[match(vols$Label.Number,
+	consumm$Label.Number)])/consumm$NormVol.sd[match(vols$Label.Number,
+	consumm$Label.Number)]
+
+# Identify possible sites of disease onset for each naAD phenotype, i.e.,
+# the "phase 1" ROIs from Phillips et al. (2018, Neurobiology of Aging)."
+# For aAD patients, we hypothesize early MTL disease (hippocampus, entorhinal
+# cortex, and parahippocampal gyrus).
+roi<-read.csv(file='nba_roi_phases.csv',stringsAsFactors=F)
+roi$Group<-gsub('bvAD','fvAD',roi$Group)
+p1<-subset(roi,roi$NPStage==1 & ! roi$Group %in% 'CBS')
+cxlabs<-sort(c(unique(p1$LabelID[p1$LabelID>60]),116:117,170:171,182:183))
+cxlabs<-setdiff(cxlabs,c(195,200))
+subcxlabs<-c(31:32,36:37,47:48,55:60)
+
+for (i in c(cxlabs,subcxlabs)) {
+	df[,ncol(df)+1]<-NA
+	labnum<-paste('lab',sprintf('%03d',i),sep='')
+	names(df)[ncol(df)]<-labnum
+	subvols<-subset(vols,vols$Label.Number==i)
+	df[,labnum]<-subvols$ZVol[match(df$ID,subvols$ID)]
+}
+
+cxgm<-subset(lstat,lstat$Label.AbbrevName=='Cortical GM' & lstat$Type==
+	'NormalizedVolume')
+df$CxVol<-cxgm$Value[match(df$ID,cxgm$ID)]
+
+save(file='long_20181210.RData',list=c('df','lstat','vols','labs',
+	'cxlabs','subcxlabs','roi','p1'))
+
+```
+
+```{r data_prep2, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+
+knitr::clean_cache(clean=T)
+load('long_20181210.RData')
+labs<-sort(c(cxlabs,subcxlabs))
+hyplabs<-c(47:48, cxlabs)
+
+# Subject-specific adjustments/corrections:
+## Exclude 3 control scans so that no invididual contributes more than 4 scans.
+df<-subset(df,!df$ID %in% c('101162_20100129','101162_20110309',
+	'108853_20090317','108853_20090429','108853_20110713','117964_20140212'))
+
+# Found some more control scans that are less than 6 months apart.
+df<-subset(df,!df$ID %in% c('100190_20080813','100620_20100707','105521_20100317',
+	'108853_20100303','112932_20100412','113385_20100413','116543_20141003',
+	'118053_20140603','118458_20140929','119108_20150709','119159_20150707'))
+
+# Participant 118740 has 1 unusable 3T scan, 1 usable 3T scan, and 1 7T scan.
+df<-subset(df,!df$INDDID %in% 118740)
+
+## Missing disease duration info.
+df$base_disdur[df$INDDID==116810]<-2.22
+
+## Exclude case with recent autopsy evidence of FTLD-TDP.
+df<-subset(df,!df$INDDID %in% 116569)
+
+# One fvAD case has both Luminex and Elisa CSF; the results are inconsistent but
+# lean toward non-AD.
+df<-subset(df,!df$INDDID %in% 107603)
+
+# Subjects 110006 (aAD), 110295 (lvPPA), 111073 (fvAD), and 112013 (fvAD)
+# are amyloid-positive but not tau-positive. Mostly they qualify on the ratio
+# score. Are there any other markers (PET, etc.) to support their
+# diagnosis?
+# Note that 111073 has borderline amyloid (206) and elevated p-tau (62).
+# Similarly, 112013 has p-tau=41 and amyloid=199.
+# To be conservative, we exclude them.
+df<-subset(df,!df$INDDID %in% c(110006,110295,111073,112013,111006))
+
+# Birth dates are in mixed format.
+tmp<-as.Date(df$DOB,format='%Y-%m-%d')
+w<-grep('/',df$DOB)
+tmp[w]<-as.Date(df$DOB[w],format='%m/%d/%Y')
+df$DOB<-tmp
+
+# MRI dates are also in mixed format.
+tmp<-as.Date(df$MRIDate,format='%Y-%m-%d')
+w<-grep('/',df$MRIDate)
+tmp[w]<-as.Date(df$MRIDate[w],format='%m/%d/%Y')
+df$MRIDate<-tmp
+
+# Stratify aAD group into early- and late-onset.
+df$AgeatOnset<-df$base_ageatMRI-df$base_disdur
+df$AgeatOnset<-df$base_ageatMRI-df$base_disdur
+df$AgeBin<-ifelse(df$AgeatOnset<65,'Young','Old')
+df$AgeBin<-factor(df$AgeBin,levels=c('Young','Old'))
+df$Group3<-as.character(df$Group)
+df$Group3<-gsub('g3_aAD','g3a_EOAD',df$Group3)
+df$Group3[df$Group3=='g3a_EOAD' & df$AgeBin=='Old']<-'g3b_LOAD'
+
+```
+
+```{r selection_flow, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+qc<-read.csv('FinalRatingOk_mean3.csv',stringsAsFactors=F)
+qc2<-read.csv('QC_May18_rated.csv',stringsAsFactors=F)
+qc3<-read.csv('MRI_NEW_LONG_finalRates.csv',stringsAsFactors=F)
+qc4<-read.table('qc_20190108_jeff.txt',header=T,stringsAsFactors=F)
+names(qc)<-gsub('mean','Mean',names(qc))
+names(qc2)[4:5]<-names(qc)[4:5]
+names(qc3)[4:5]<-names(qc)[4:5]
+qc$ID<-paste(qc$INDDID,qc$MRISession,sep='_')
+qc2$ID<-paste(qc2$INDDID,qc2$MRISession,sep='_')
+qc<-rbind.fill(qc,qc2,qc3,qc4)
+qc$MRISession[qc$Subj==119288 & qc$MRISession==20160823]<-20160824
+qc$ID[qc$Subj==119288 & qc$MRISession==20160824]<-'119288_20160824'
+
+pts<-read.csv('INQuery_Selection_Flow_20190107.csv',stringsAsFactors=F)
+selflow<-data.frame(Criterion='Has MRI data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,CSF=NA,stringsAsFactors=F)
+pts<-subset(pts,!(pts$Dx1=='' & pts$ADCCDx1=='' & pts$Diagnosis=='' &
+	pts$ClinicalPhenotype1==''))
+selflow<-rbind(selflow,data.frame(Criterion='PMC or FTDC participant',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,
+	CSF=NA,
+	stringsAsFactors=F))
+pts<-subset(pts,pts$Scanner=='SIEMENS HUP6 (3T)' | pts$INDDID %in% 116692)
+#pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+selflow<-rbind(selflow,data.frame(Criterion='Scanned on HUP6',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,
+	CSF=NA,
+	stringsAsFactors=F))
+w<-which(is.na(pts$AgeatMRI) | pts$AgeatMRI>2000)
+pts$AgeatMRI[w]<-df$base_ageatMRI[match(pts$INDDID[w],df$INDDID)]
+pts$Evidence<-NA
+pts$Evidence[!(pts$CSFDate=='' & pts$CSFDate.1.=='')]<-'CSF'
+pts$Evidence[!pts$NPDx1=='']<-'Autopsy'
+pts<-subset(pts,!is.na(pts$Evidence))
+selflow<-rbind(selflow,data.frame(Criterion='Has autopsy or CSF data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[pts$NPDx1=="Alzheimer's disease" |
+	pts$NPDx2=="Alzheimer's disease" |
+	pts$LuminexTTauAbetaRatio>=0.34 |
+	pts$ElisaTTau_Transformed/pts$ElisaAbeta42>=0.34])
+pts<-subset(pts,!pts$INDDID %in% c(110006,110295,111073,112013,111006))
+pts<-subset(pts,!pts$INDDID %in% 116569)
+pts<-subset(pts,!pts$INDDID %in% 107603)
+pts<-subset(pts,!pts$INDDID %in% 121277)
+pts<-subset(pts,!pts$INDDID %in% 123420)
+pts<-subset(pts,!pts$INDDID %in% 122485)
+selflow<-rbind(selflow,data.frame(Criterion='Autopsy or CSF data indicates underlying AD pathology',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$NPDx1 %in% c(NA,'',"Alzheimer's disease"))
+pts<-subset(pts,!pts$NPDx2 %in% c("Frontotemporal lobar degeneration with TDP inclusions (Also known as FTLD-TDP)",
+	"Lewy body disease, dementia with Lewy bodies", "Other",
+	"Cerebral amyloid angiopathy", 
+	"Lewy body disease, Parkinson's disease dementia",
+	"Cerebrovascular disease"))
+# Exclude one AD patient for ADHD.
+pts<-subset(pts,!pts$INDDID %in% 116702)
+selflow<-rbind(selflow,data.frame(Criterion='No co-morbid pathologies or exclusionary conditions',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+# This fvAD patient has a mean AV1451 SUVR of 1.0 and borderline CSF (p-tau negative, 
+# A-beta positive, t-tau/A-beta ratio of 0.34 exactly.
+pts<-subset(pts,!pts$INDDID %in% 119417)
+selflow<-rbind(selflow,data.frame(Criterion='PET data (if available) consistent with AD',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+# Exclude one Biogen participant due to clinical trial rules.
+pts<-subset(pts,!pts$INDDID %in% c(122283))
+# Exclude patients whose scans are too closely spaced.
+pts<-subset(pts,!pts$INDDID %in% c(109885,117758))
+# Some scans we don't have on the cluster.
+pts<-subset(pts,!pts$ID %in% c('104005_20140204','109707_20121116',
+	'109707_20130409', '122821_20180529'))
+pts<-subset(pts,!pts$INDDID %in% c(123514))
+# Follow-up scan is 4 years later.
+pts<-subset(pts,!pts$INDDID %in% c(106221))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+selflow<-rbind(selflow,data.frame(Criterion='Has longitudinal MRI at intervals between 0.5 and 3.5 years',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,!pts$ClinicalPhenotype1 %in% c('CBS','DLB','MCI','naPPA','Other','PD','PDD','PSP','svPPA'))
+pts<-subset(pts,!pts$Dx1 %in% c('MCI Amnestic Plus Other (Petersen Criteria)',
+'MCI Amnestic Single Domain (Petersen Criteria)','MCI NOS','Normal Cognition'))
+# Exclude fvAD patient (116692) that doesn't meet Rascovsky et al. criteria.
+# Similarly exclude several others for ambiguous clinical history (e.g.,
+# alternating amnestic and non-amnestic presentations at different visits).
+pts<-subset(pts,!pts$INDDID %in% c(116692,116797,117894,118819,119688,122534))
+selflow<-rbind(selflow,data.frame(Criterion='Clinical phenotype of interest',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,!pts$MRIProtocol %in% c('Pfizer ASL','PLAZA'))
+pts<-subset(pts,!pts$ID %in% qc$ID[qc$Mean<3])
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+# Exclude more recent lvPPA patients due to mixed/non-standard MRI protocols.
+# 122579, lvPPA, FTDC-ARTFL MRI
+# 122733, lvPPA, FTDC-ARTFL MRI & EISAI MRI
+# 122905, lvPPA, FTDC-ARTFL MRI & EISAI MRI
+# 123056, lvPPA, FTDC-ARTFL MRI & FTDC-Core MRI
+# 122331, lvPPA, FTDC-Core MRI
+pts<-subset(pts,!pts$INDDID %in% c(122485,122579,122733,122905,123056,123420,
+	122331))
+pts<-subset(pts, !pts$ID %in% qc$ID[qc$Mean<3])
+selflow<-rbind(selflow,data.frame(Criterion='Passed MRI QC',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+ex<-subset(pts,!pts$INDDID %in% df$INDDID)
+df<-subset(df,df$Group %in% 'g0_Control' | df$INDDID %in% intersect(pts$INDDID,
+	df$INDDID))
+
+# New inclusions, 01/08/2019
+# 119666, lvPPA, FTDC-ARTFL MRI
+# 120486, lvPPA, FTDC-ARTFL MRI
+# 111642, fvAD converted to AD, will need review per Rascovsky criteria.
+# 122821, fvAD, will need review per Rascovsky criteria, long MRI previously unavailable
+# 122324, AD, FTDC-ARTFL and FTDC-Core MRIs
+# New exclusions, 01/08/2019
+# 100888, lvPPA, secondary CVD at autopsy
+# 105644, lvPPA, secondary cerebral amyloid angiopathy at autopsy
+# 107457, PCA, secondary CVD at autopsy
+
+```
+
+## Patients {-}
+```{r npsych, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+
+nps<-read.csv('INQuery_Closest_Neuropsych_20190108.csv',stringsAsFactors=F)
+dd<-names(nps)[grep('Date',names(nps))]
+vv<-setdiff(names(nps),c('INDDID','ID','MRIDate','Group',dd))
+nps$Group<-df$Group[match(nps$INDDID,df$INDDID)]
+#nps<-subset(nps,!(nps$Group %in% 'g0_Control' | duplicated(nps$INDDID)))
+#nps<-subset(nps,!duplicated(nps$INDDID))
+nps<-subset(nps,nps$ID %in% df$ID)
+nps$Evidence<-NA
+nps$Evidence[nps$ElisaTTauAbetaRatio_Transformed>=0.34]<-'ELISA'
+nps$Evidence[nps$LuminexTTauAbetaRatio>=0.34]<-'Luminex'
+nps$Evidence[grepl('Alzheimer',nps$NPDx1)]<-'Autopsy'
+
+df$Evidence<-nps$Evidence[match(df$INDDID,nps$INDDID)]
+
+for (d in dd) {
+	nps[,d]<-as.Date(nps[,d],format='%m/%d/%Y')
+	nps[,gsub('Date','Diff',d)]<-as.numeric(nps$MRIDate-nps[,d])/365.25
+}
+
+for (v in vv) {
+	w<-which(nps[,v]==996)
+	if (length(w)>0 & !grepl('Time',v)) { nps[w,v]<-0 }
+	nps[,v]<-cleaner(nps[,v])
+}
+avail<-data.frame(V=vv,stringsAsFactors=F)
+avail$good<-NA
+for (i in 1:nrow(avail)) {
+	avail$good[i]<-cleaner(nps[,avail$V[i]],prop=T)
+}
+
+# Correct pre-2010 PBAC scores due to differences in scoring.
+# Speech: pre-2010 range is 0--3, current is 0--4.
+# Behavior: pre-2010 scale is 4=not observed to 1=severe. Post-2010 scale is
+# 3=not observed to 0=severe.
+nps$PBACDate<-nps$MRIDate-365.25*nps$PBACDiff
+nps$pre2010<-nps$PBACDate<as.Date('2010-01-01',format='%Y-%m-%d')
+w<-which(nps$pre2010)
+nps$BehavioralScale[w]<-nps$BehavioralScale[w]-1
+nps$Speech[w]<-round(1.333*nps$Speech[w],1)
+
+# Where PBAC recognition data are missing, use PVLT recognition.
+nps$Recall<-nps$PHLCorrectTrial9/9
+nps$Recognition<-nps$PHLRecognitionDiscrimin
+nps$MemoryDiff<-nps$PHLDiff
+nps$MemoryDate<-nps$PHLDate
+w<-which(abs(nps$MemoryDiff)>1)
+nps$Recall[w]<-NA
+nps$Recognition[w]<-NA
+nps$MemoryDate[w]<-NA
+w<-which(is.na(nps$Recognition) & !is.na(nps$VerbalMemoryRecognition))
+nps$Recognition[w]<-nps$VerbalMemoryRecognition[w]/3
+nps$Recall[w]<-nps$VerbalMemoryRecall[w]/6
+nps$MemoryDiff[w]<-nps$PBACDiff[w]
+nps$MemoryDate[w]<-nps$PBACDate[w]
+
+cogvar<-c('MMSETotal','Recognition','Speech','FLetterFluency','ForwardSpan',
+	'ReyCopy','JOLO','BehavioralScale','OralTrails',
+	'ReverseSpan')
+for (v in cogvar) { nps[,v]<-cleaner(nps[,v]) }
+
+# Race/ethnicity
+df$WhiteNonLatino<-NA
+df$WhiteNonLatino[df$Race=='White' & df$Ethnicity=='Non-Latino']<-TRUE
+df$WhiteNonLatino[!(df$Race=='White' & df$Ethnicity=='Non-Latino')]<-FALSE
+
+# Calculate inter-scan interval.
+w<-which(duplicated(df$INDDID))
+df$TimeDiff2<-0
+df$TimeDiff2[w]<-df$time_diff[w]-df$time_diff[w-1]
+
+tab1Vars<-c('Sex','Education','base_ageatMRI','TimeDiff2','base_disdur',cogvar)
+catVars<-c('Group2','Sex')
+qVars<-setdiff(tab1Vars,catVars)
+
+# Align neuropsych data with Table 1 data frame.
+# Combined memory scores.
+tmp<-subset(nps,abs(nps$MMSEDiff)<=1)
+for (v in c('MMSEDiff','MMSETotal')) {
+	df[,v]<-tmp[match(df$ID,tmp$ID),v]
+}
+
+tmp<-subset(nps,abs(nps$MemoryDiff)<=1)
+for (v in c('MemoryDiff','Recognition')) {
+	df[,v]<-tmp[match(df$ID,tmp$ID),v]
+}
+
+# Digit span.
+tmp<-subset(nps,abs(nps$DigitSpanDiff)<=1)
+for (v in c('DigitSpanDiff','ForwardSpan','ReverseSpan')) {
+	df[,v]<-tmp[match(df$ID,tmp$ID),v]
+}
+
+# PBAC scores.
+tmp<-subset(nps,abs(nps$PBACDiff)<=1)
+for (v in c('PBACDiff','Speech','ReyCopy','JOLO','BehavioralScale',
+	'OralTrails','DigitsBackward')) {
+	df[,v]<-tmp[match(df$ID,tmp$ID),v]
+}
+
+# F-letter fluency.
+tmp<-subset(nps,abs(nps$FletDiff)<=1)
+for (v in c('FletDiff','FLetterFluency')) {
+	df[,v]<-tmp[match(df$ID,tmp$ID),v]
+}
+
+# Just baseline values for Table 1.
+tab1df<-subset(df,!duplicated(df$Subj))
+
+# Tests of normality.
+for (v in setdiff(qVars,'TimeDiff2')) {
+	x<-tab1df[,v]
+	shapiro.test(x)
+}
+
+tab1 <- CreateTableOne(vars = tab1Vars, strata = "Group2" , data = tab1df,
+	factorVars = catVars, testExact=T)
+tab1p<-print(tab1,nonnormal=qVars,contDigits=1)
+cogrows<-paste(cogvar,'(median [IQR])')
+tab1p['base_disdur (median [IQR])','Control']<-'---'
+tab1p[2,]<-gsub(')','\\\\%)',tab1p[2,])
+tab1p[4,]<-gsub(')','\\\\%)',tab1p[4,])
+
+# Report mean and standard deviation of inter-scan interval.
+rind<-which(rownames(tab1p)=='TimeDiff2 (median [IQR])')
+for (g in c('Control','aAD','lvPPA','PCA','fvAD')) {
+	s<-summary(df$TimeDiff2[duplicated(df$INDDID) & df$Group2 %in% g],na.rm=T)
+	tab1p[rind,g]<-paste(sprintf('%.1f',s[3]),' [',sprintf('%.1f',s[2]),', ',
+		sprintf('%.1f',s[5]),']',sep='')
+}
+k<-kruskal.test(TimeDiff2~Group2,data=df[duplicated(df$INDDID),])
+tab1p[rind,'p']<-round(k$p.value,3)
+
+# Find number of observations for each cognitive test.
+for (g in c('Control','aAD','lvPPA','PCA','fvAD')) {
+	for (i in 1:length(cogrows)) {
+		v<-cogvar[i]
+		ngood<-length(tab1df[tab1df$Group2 %in% g & !is.na(tab1df[,v]),v])
+		tab1p[cogrows[i],g]<-paste(tab1p[cogrows[i],g],' (',ngood,')',sep='')
+	}
+}
+
+rownames(tab1p)<-c('N','Male','Education',
+	'Age at MRI (years)','Inter-scan interval (years)',
+	'Disease duration (years)','MMSE (0--30)',
+	'Recognition memory (discrimination, 0--1)','Speech (0--4)',
+	'Letter fluency (\\# words/60 s)','Forward digit span (length correct)',
+	'Rey figure copy (0--12)','Judgment of line orientation (0--6)',
+	'Social behavior (0--18)','Oral trail-making test (0--6)',
+	'Reverse digit span (length correct)')
+
+# Perform post-hoc comparisons
+glist<-sort(unique(tab1df$Group))
+npsy_base_phoc<-data.frame()
+
+for (v in c('base_ageatMRI','base_MMSETotal')) {
+	tasktmp<-data.frame()
+	for (i in 1:(length(glist)-1)) {
+		g1<-glist[i]
+		for (j in (i+1):length(glist)) {
+			g2<-glist[j]
+			tmpdf<-subset(tab1df,tab1df$Group %in% c(g1,g2))
+			m1<-median(tmpdf[tmpdf$Group==g1,v],na.rm=T)
+			m2<-median(tmpdf[tmpdf$Group==g2,v],na.rm=T)
+			wt<-wilcox.test(as.formula(paste(v,'~Group')),data=tmpdf,conf.int=T)
+			tmp<-data.frame(V=v,G1=g1,G2=g2,Median1=m1,Median2=m2,
+				U=wt$statistic,LB=wt$conf.int[1],Estimate=wt$estimate,
+				UB=wt$conf.int[2],P=wt$p.value,stringsAsFactors=F)
+			tasktmp<-rbind(tasktmp,tmp)
+		}
+	}
+	tasktmp$Padj<-p.adjust(tasktmp$P,'fdr')
+	npsy_base_phoc<-rbind(npsy_base_phoc,tasktmp)
+}
+
+for (v in setdiff(cogvar,'MMSETotal')) {
+	tasktmp<-data.frame()
+	for (i in 2:(length(glist)-1)) {
+		g1<-glist[i]
+		for (j in (i+1):length(glist)) {
+			g2<-glist[j]
+			tmpdf<-subset(tab1df,tab1df$Group %in% c(g1,g2))
+			m1<-median(tmpdf[tmpdf$Group==g1,v],na.rm=T)
+			m2<-median(tmpdf[tmpdf$Group==g2,v],na.rm=T)
+			wt<-wilcox.test(as.formula(paste(v,'~Group')),data=tmpdf,conf.int=T)
+			tmp<-data.frame(V=v,G1=g1,G2=g2,Median1=m1,Median2=m2,
+				U=wt$statistic,LB=wt$conf.int[1],Estimate=wt$estimate,
+				UB=wt$conf.int[2],P=wt$p.value,stringsAsFactors=F)
+			tasktmp<-rbind(tasktmp,tmp)
+		}
+	}
+	tasktmp$Padj<-p.adjust(tasktmp$P,'fdr')
+	npsy_base_phoc<-rbind(npsy_base_phoc,tasktmp)
+}
+
+```
+
+```{r print_table1, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+xtab1p<-xtable(tab1p[,-ncol(tab1p)],
+	caption='Participant characteristics at time of first scan. Median values and interquartile ranges (square brackets) are given for all continuous variables. Education, age at MRI, inter-scan interval, and disease duration are expressed in years. For each cognitive score, numbers in parentheses indicate the number of observations per group. P-values reflect the results of a chi-squared test for sex and Kruskal-Wallis tests for all other variables.',
+	align=c('l',rep('r',ncol(tab1p)-1)),digits=rep(0,ncol(tab1p)))
+xtab1p[,1]<-as.character(xtab1p[,1])
+names(xtab1p)[ncol(xtab1p)]<-'P'
+print(xtab1p,comment=FALSE,caption.placement='top',floating=T,include.rownames=T,
+	sanitize.text.function=identity,scalebox=0.67)
+
+```
+
+The current study used a longitudinal case-control design based on data retrospectively selected from the Integrated Neurodegenerative Disease Database at the University of Pennsylvania. Participants were recruited through the Penn Frontotemporal Degeneration Center (FTDC) and the Penn Memory Center (PMC). All procedures were approved by the University of Pennsylvania's Institutional Review Board, and all patients and/or their caregivers gave written informed consent according to the principles established by the Declaration of Helsinki. An initial database query yielded 1897 patients scanned on the same 3-Tesla Siemens MRI scanner at the Hospital of the University of Pennsylvania. Of these, 360 patients had either autopsy or cerebrospinal fluid biomarker evidence of underlying Alzheimer's disease pathology. An additional 58 patients were excluded due to major cerebrovascular disease, stroke, head trauma, or comorbid psychiatric, neurodegenerative, medical, or developmental disorders apart from their primary diagnoses. Of the remainder, a total of 90 patients had longitudinal data available and exhibited clinical phenotypes of interest, as described below. At time of recruitment, MRI scans for all patients were screened for signs of cerebrovascular disease, hydrocephalus, or white matter lesions; those with a Fazekas scale score>1 were excluded. Additionally, MRI scans were visually inspected by two raters (JSP and FDR), and 16 patients were excluded for poor quality data. The final sample included 181 T1-weighted MRI scans from 74 patients (25 with lvPPA, 20 PCA, 12 with fvAD, and 17 with aAD) and 85 scans from 37 demographically-matched controls. A majority of participants (48/74 patients and 29/37 controls) had only 2 available scans; the remaining participants contributed 3--4 scans each. We included scans acquired with a minimum inter-scan interval of 6 months up to 3.5 years from the initial MRI; beyond this window, there were insufficient observations for a valid analysis. Seven patients had primary neuropathologic diagnoses and 67 had CSF biomarkers (total tau/beta-amyloid ratio greater than 0.34) indicative of Alzheimer's disease pathology according to methods previously described [@shaw_cerebrospinal_2009;@irwin_comparison_2012;@toledo_csf_2012]. APOE genotyping was performed on 66 of 74 patients. One patient (white male, aAD, age 51 at onset) with an APOE $\epsilon3$/$\epsilon4$ genotype was found to have a mutation in the PSEN1 gene; supplementary analyses indicated that excluding this patient did not have substantive effects on the outcome of key analyses. All patients were clinically diagnosed by experienced neurologists (MG, DJI, DW, and SV), and diagnoses were confirmed by consensus after patients' initial visit by clinicians with expertise in dementia. Clinical criteria for each patient phenotype were as follows: for lvPPA, primary language impairment including deficits in repetition and/or naming [@giannini_clinical_2017;@gorno-tempini_classification_2011]; for PCA, visuospatial deficits (e.g., in object/spatial perception, neglect, or oculomotor apraxia) [@crutch_consensus_2017]; for fvAD, clinical evidence of a behavioral/dysexecutive syndrome per Rascovsky et al.'s [-@rascovsky_sensitivity_2011] criteria for behavioral-variant frontotemporal dementia; and for aAD, primary memory impairment plus deficits in one or more additional cognitive domains [@mckhann_diagnosis_2011]. NaAD patients had relatively preserved episodic memory, as assessed through clinical interviews and detailed mental status examinations; however, we note that the label "non-amnestic" is used throughout this manuscript to denote patients' initial presentation and does not preclude the development of memory deficits in more advanced disease. NaAD patients also had relatively spared abilities in other cognitive domains except their domain of primary impairment at initial presentation. Due to the challenges of clinically differentiating behavioral/dysexecutive syndromes due to AD vs. FTLD, we performed additional screening on the fvAD group, as detailed in the Supplementary Material ("Patient selection details"). The current study included 54 patients from our previous, cross-sectional study [@phillips_neocortical_2018] (aAD, n=8; lvPPA, n=24; PCA, n=16; and fvAD, n=6).
+
+Shapiro-Wilks tests indicated non-normal distributions for education and disease duration, age, and MMSE score at initial MRI (all p<0.001). Kruskal-Wallis tests of group differences were non-significant, with the exception of MMSE [$\chi^2$(4)=38.5, p<0.001], reflecting patients' cognitive deficits relative to controls. Mann-Whitney tests confirmed that all patient groups exhibited significantly lower MMSE scores than controls (all U>=428, p<0.001); all other pairwise comparisons were non-significant. To corroborate naAD patients' domain-specific cognitive impairment, we analyzed neuropsychological performance on assessments independent of those used in clinical diagnosis, including performance on specific items of the Philadelphia Brief Assessment of Cognition (PBAC) [@libon_philadelphia_2011]. Only neuropsychological observations acquired within 1 year of an MRI scan were included. Language was assessed in terms of speech features (with lower scores indicating speech and language impairment), forward digit span as a measure of repetition [@giannini_clinical_2017], and letter fluency, which is sensitive to deficits in executive-mediated lexical retrieval [@ramanan_longitudinal_2017;@rascovsky_disparate_2007]. Visuospatial function was assessed by patients' ability to copy a modified version of the Rey complex figure as well as the judgment of line orientation. Social behavior was assessed on an 18-point scale evaluating social comportment, apathy, disinhibition, agitation, empathy, and ritualistic behaviors. Executive function was evaluated through an oral version of the trail-making test as well as backward digit span. Finally, episodic memory was assessed by recognition on the Philadelphia Verbal Learning Test (PVLT) [@libon_verbal_2011] or the PBAC verbal memory test, as available. All neuropsychological assessments were acquired within 1 year of the initial MRI scan (PVLT: mean=0.19 years, SD=0.25; letter fluency: mean=0.14 years, SD=0.25; PBAC: mean=0.21 years, SD=0.27; digit span: mean=0.11 years, SD=0.21). Results were consistent with each phenotype's primary impairment in all domains except for executive function (Table 1). Post-hoc comparisons between patient groups for neuropsychological performance at initial MRI are reported in Supplementary Table 11. The median and maximum follow-up intervals for the MMSE were 1.4 and 3.8 years, respectively; for verbal recognition memory, 1.7 and 4.2 years; for letter fluency, 1.6 and 4.6 years; for forward and reverse digit span, 1.5 and 4.0 years; and for additional measures, which were derived from the PBAC, 1.6 and 4.6 years.
+
+## Neuroimaging methods {-}
+T1-weighted MR images were acquired axially with 0.98 mm x 0.98 mm x 1 mm voxels, a 256 x 192 matrix, a repetition time of 1620 ms, an inversion time of 950 ms, and a flip angle of 15$^\circ$. Scans were visually inspected for quality by two authors (JP and FDR). Advanced Normalization Tools (ANTs) [@avants_insight_2014;@tustison_large-scale_2014] was used to process each image using a prior-based approach. Images underwent intensity normalization [@tustison_n4itk:_2010] and were spatially normalized to a template based on healthy controls from the Open Access Series of Imaging Studies (OASIS) dataset [@marcus_open_2007] using a symmetric diffeomorphic algorithm [@avants_reproducible_2011;@klein_evaluation_2009]. Images were segmented into 6 tissue classes (cortical grey matter, subcortical grey matter, deep white matter, CSF, brainstem, and cerebellum) using template-based priors; this tissue segmentation was then used to estimate cortical thickness; ANTs cortical thickness measurements have been extensively validated relative to surface-based methods such as FreeSurfer [@klein_mindboggling_2017; @tustison_large-scale_2014]. We used a joint label fusion approach [@wang_multi-atlas_2013] to align the Mindboggle-101 labels (based on the Desikan-Killainy-Tourville label scheme) [@klein_101_2012] with each image using pseudo-geodesic registration [@tustison_explicit_2013] and calculated the volume of GM voxels within each label, normalized by intracranial volume and converted to a z-score relative to controls' initial scans. To perform voxelwise group analyses, we warped cortical thickness images to the template using the previously-computed spatial transforms; these images were then spatially smoothed with a 2-sigma Gaussian kernel and downsampled to 2 mm isotropic voxels.
+
+## Statistical analysis {-}
+In a hypothesis-driven analysis, we analyzed GM volumes in phenotype-specific ROIs motivated by our previous study of disease progression in naAD [@phillips_neocortical_2018]. This study identified the regions most commonly atrophied in each naAD phenotype, reflecting the likely anatomical origin of disease. These ROIs included left middle and superior temporal gyri in lvPPA; right precuneus, superior parietal lobule, and angular, supramarginal, and middle temporal gyri in PCA; and left anterior insula and middle frontal gyrus as well as right middle temporal gyrus in fvAD (Table 2). Each ROI was expected to exhibit lower volume at the time of participants' initial MRI scan as well as more rapid volume loss over time in its associated patient group(s) relative to other groups. We additionally hypothesized that the aAD group would demonstrate selective atrophy in the MTL, including bilateral hippocampi, parahippocampal gyri, and entorhinal cortex. Atrophy at the time of initial MRI was analyzed using multiple linear regression models with a factor of group and covariates for age, sex, and MMSE score at the time of initial MRI; controls formed the reference group in these models. Longitudinal atrophy was assessed using linear mixed effects (LME) models with fixed factors of group, time since first scan, and the interaction of group x time. As in the baseline model, covariates included age, sex, and MMSE score at initial MRI. A subject-specific random intercept was included to account for intra-individual correlations in imaging measures. Post-hoc comparisons were performed for the effect of group at initial MRI as well as the group x time interaction in longitudinal models; values of p<0.05, corrected using the false discovery rate method, were considered significant.
+
+We used LME models to relate GM volume change to neuropsychological performance within 1 year of each imaging session. Due to the limited number of observations, only linear associations between atrophy and time were assessed. The mean interval between test and MRI was 0.30 years (SD=0.30) for recognition memory; 0.22 years (SD=0.29) for letter fluency; 0.18 years (SD=0.29) for digit span; and 0.25 years (SD=0.33) for all other longitudinal neuropsychological measures. Separate LME models were computed for each measure and change in associated ROIs. Thus, recognition performance was related to GM volume in each of the 6 MTL ROIs; language measures were compared to volume change in left middle and superior temporal gyrus; visuospatial measures were related to change in the right superior parietal lobule, precuneus, and angular, supramarginal, and middle temporal gyri; and behavioral and executive measures were related to left anterior insula and middle frontal gyrus as well as right middle temporal gyrus. Neuropsychological performance formed the outcome in each model; predictors treated as fixed effects included regional GM volume at initial MRI and subsequent volume change, as well as covariates of sex and education. Additionally, a subject-specific random intercept was included in the LME model. Due to limited neuropsychological data, controls were omitted from these models. The association with regional volume change in each model was assessed at a significance level of p<0.05, corrected for false discovery rate. 
+
+Additionally, we performed exploratory, whole-brain, voxelwise analysis to investigate differences in cortical thickness that were not assessed by _a priori_ ROIs. ROI-based and voxelwise analyses both present distinct advantages and weaknesses. Voxelwise analysis is not constrained by the borders of anatomically-defined ROIs, and it allows more precise anatomical localization of effects. However, ROI volume is regarded as a more reliable measure of GM atrophy than cortical thickness [@schwarz_large-scale_2016]. Moreover, voxelwise parametric tests depend on patients' displaying neurodegeneration at the same precise point within a brain area. Thus, ROI-based volumetric analysis may be more sensitive to atrophy if the precise focus of atrophy within a region differs across individuals. Voxelwise analysis did not include hippocampus, where cortical thickness is not well estimated [@gronenschild_effects_2012;@han_reliability_2006;@schwarz_large-scale_2016], but did include entorhinal cortex and parahippocampal gyri. As in ROI-based analysis, we used multiple regression to assess group differences at initial MRI and an LME model to investigate longitudinal atrophy. These voxelwise models used the same regression formulae as ROI-based models, and the LME was implemented in the 3dLME [@chen_linear_2013] function from the Analysis of Functional NeuroImaging (AFNI) software suite. Multiple comparisons correction was performed by first thresholding voxelwise results at p<0.001 (uncorrected), then applying a cluster extent threshold corresponding to a cluster-wise alpha value of 0.05. To calculate cluster extent thresholds, we first estimated spatial auto-correlation from the model residuals using AFNI's 3dFWHMx. We then used the 3dClustSim function, which is based on a Monte Carlo approach [@cox_fmri_2017;@forman_improved_1995], to determine the cluster size corresponding to a false-positive rate of 0.05 at a voxelwise threshold of p<0.001 (uncorrected). These simulations indicated a cluster threshold of 73 voxels (i.e., \SI{584}{\micro\litre}) for the baseline MRI model and a threshold of 75 voxels (\SI{600}{\micro\litre}) for the longitudinal LME model. For both the baseline effect of group and the group x time interaction, we performed post-hoc contrasts between all groups, which were corrected to cluster-wise p<0.05 using the same method. In the Supplementary Material, we additionally display voxelwise contrasts vs. controls at a lenient threshold of p<0.01, uncorrected for multiple comparisons (Supplementary Figure 3).
+
+## Structural connectivity {-}
+To investigate associations between atrophy progression and brain connectivity, we related longitudinal atrophy to structural population-average structural connectivity measures computed by Yeh et al. [-@yeh_population-averaged_2018]. The decision to use population-average connectivity measures rather than estimating connectivity from patients was based on both practical and conceptual considerations. First, constraining participant selection by the availability of white-matter imaging data would have further reduced sample sizes. Second, white-matter degeneration in patients' brains might adversely affect fiber tractography, leading to false negatives in estimating region-to-region brain connectivity.
+
+Yeh and colleagues reported a whole-brain connectivity matrix (available at http://brain.labsolver.org/) based on diffusion MRI data from 842 healthy participants in the Human Connectome Project; connectivity values represent average anisotropy values for white-matter fiber tracts connecting 65 regions in a modified version of the Automated Anatomical Labeling (AAL) brain parcellation [@tzourio-mazoyer_automated_2002]. Because label boundaries for major cortical structures vary between the AAL and Mindboggle parcellations, we warped the modified AAL atlas into the native acquisition space for each of the T1-weighted scans in the current study and re-computed GM volumes based on this parcellation.  An example of the anisotropy-based structural connectivity values reported by Yeh et al. [-@yeh_population-averaged_2018] is shown in Supplementary Table 6 for the areas of greatest overlap with Mindboggle ROIs in the hypothesis-driven analysis described above.
+
+Using the igraph package for R (https://igraph.org/r/), we created an unweighted, undirected graph of structural connectivity from Yeh et al.'s [-@yeh_population-averaged_2018] connectivity matrix, omitting the cerebellum and brainstem to yield a total of 62 nodes (i.e., brain areas). The degree of each node was computed as the number of non-zero white-matter connections with other regions. Self-connections were excluded; thus, the maximum possible degree of a node was 61. As with Mindboggle labels, volumes were normalized by each participants' intracranial volume and converted to a z-score relative to the region-wise mean and standard deviation of the control sample. We calculated annualized change in GM volume over time for each region by subtracting these z-score volume measures from the first and last available scans for each participant and dividing by the time interval. We then computed a linear mixed effects model with annualized change as the outcome and fixed effects of group, node degree, and the group x degree interaction, covarying for the baseline volume of each region, patients' age at initial MRI, and sex. The average volume of each region (i.e., raw volume divided by intracranial volume) among control participants was also included as a covariate to ensure that variation in node degree did not simply reflect differences in region size. A random intercept was estimated for each participant, and a significance threshold of p<0.05 was used.
+
+## Data and availability {-}
+Computer code for the current manuscript (including all text, analysis, and visualization of results) is available in the form of Rmarkdown and LaTeX scripts in a public GitHub repository (https://github.com/jeffrey-phillips/naAD-longitudinal.git). Rmarkdown code requires [R](https://cran.r-project.org/) version 3.4.4 or higher. Investigators who wish to access imaging and clinical data may submit a direct request to the corresponding author.
+
+# Results {-}
+
+```{r roi_lme, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+# Prepare contrast matrix for additional linear contrasts.
+i<-47
+fm<-as.formula(paste('lab',sprintf('%03d',i),
+	'~Group*time_diff+base_MMSETotal+Sex+base_ageatMRI',sep=''))
+m<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+nc<-length(fixef(m))
+gnames<-sort(unique(df$Group))
+kmat<-matrix(0,nrow=length(gnames)*(length(gnames)-1),ncol=nc)
+kmat[5:7,2]<-kmat[8:9,3]<-kmat[10,4]<-kmat[15:17,10]<-kmat[18:19,11]<-kmat[20,12]<-(-1)
+kmat[1,2]<-kmat[2,3]<-kmat[3,4]<-kmat[4,5]<-kmat[5,3]<-kmat[6,4]<-kmat[7,5]<-
+	kmat[8,4]<-kmat[9:10,5]<-kmat[11,10]<-kmat[12,11]<-kmat[13,12]<-kmat[14,13]<-
+	kmat[15,11]<-kmat[16,12]<-kmat[17,13]<-kmat[18,12]<-kmat[19:20,13]<-1
+kmat<-data.matrix(kmat)
+rownames(kmat)<-paste(rep(c('mean','time'),each=10),'_',rep(gnames[c(2:5,3:5,4:5,5)],2),
+	'-',rep(gnames[c(rep(1,4),rep(2,3),rep(3,2),4)],2),sep='')
+
+# Also contrast aAD vs. all naAD.
+df$Group4<-as.character(df$Group)
+df$Group4<-gsub('g3_aAD','g2_aAD',df$Group4)
+df$Group4[df$Group4 %in% c('g1_lvPPA','g2_PCA','g4_fvAD')]<-'g3_naAD'
+
+kmat4<-kmat
+kmat4<-kmat4[c(1:2,5,11:12,15),c(1:3,6:11)]
+rownames(kmat4)<-gsub('g1_lvPPA','g1_aAD',rownames(kmat4))
+rownames(kmat4)<-gsub('g2_PCA','g2_naAD',rownames(kmat4))
+
+# Prepare matrix of p-values for later multiple comparisons adjustment.
+pmat1<-matrix(NA,ncol=length(hyplabs),nrow=7)
+anovatab<-data.frame()
+ttab<-data.frame()
+ttab4<-data.frame()
+gmeans<-data.frame()
+gtimes<-data.frame()
+posthoc<-data.frame()
+phoc4<-data.frame()
+
+# Run linear mixed effects models and contrasts on GMP or volume data.
+for (ind in 1:length(hyplabs)) {
+	# Set the ROI label number.
+	i<-hyplabs[ind]
+
+	# LME model for contrasting slopes of change for 4 patient groups.
+	fm<-as.formula(paste('lab',sprintf('%03d',i),
+		'~Group*time_diff+base_MMSETotal+Sex+base_ageatMRI',sep=''))
+	m<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+	am<-anova(m)
+	pmat1[,ind]<-anova(m)$"p-value"
+	labName<-roi$Label.Name[match(i,roi$LabelID)]
+	comp <- glht(m, linfct=kmat)
+	scomp<-summary(comp,test=adjusted('none'))
+	tmp<-data.frame(LabelID=i,Comp=names(scomp$test$pvalues),Z=scomp$test$tstat,
+		P=scomp$test$pvalues,stringsAsFactors=F)
+	posthoc<-rbind(posthoc,tmp)
+
+	# Alternative model collapsing naAD phenotypes into a single group.
+	fm4<-as.formula(paste('lab',sprintf('%03d',i),
+		'~Group4*time_diff+base_MMSETotal+Sex+base_ageatMRI',sep=''))
+	m4<-lme(fixed=fm4, random=~1|Subj,data=df,na.action=na.exclude)
+	comp4 <- glht(m4, linfct=kmat4)
+	scomp4<-summary(comp4,test=adjusted('none'))
+	tmp<-data.frame(LabelID=i,Comp=names(scomp4$test$pvalues),
+		Estimate=scomp4$test$coefficients,Z=scomp4$test$tstat,
+		P=scomp4$test$pvalues,stringsAsFactors=F)
+	phoc4<-rbind(phoc4,tmp)
+	
+	# Format ANOVA results for easier reporting.
+	fg<-round(am[2,3],1)
+	ft<-round(am[3,3],1)
+	fgt<-round(am[7,3],1)
+	tmp<-data.frame(LabelID=i,Region=labName,Group=fg,Time=ft,GroupTime=fgt,
+		stringsAsFactors=F)
+	anovatab<-rbind(anovatab,tmp)
+	tt<-summary(m)$tTable
+	tmp2<-as.data.frame(tt)
+	tmp2$Effect<-rownames(tmp2)
+	tmp2$LabelID=i; tmp2$Label.Name=labName
+	ttab<-rbind(ttab,tmp2)
+	tmp3<-data.frame(LabelID=i,Group=c('lvPPA','PCA','aAD','fvAD'),
+		Beta=tt[2:5,1],SE=tt[2:5,2])
+	gmeans<-rbind(gmeans,tmp3)
+	tmp4<-data.frame(LabelID=i,Group=c('lvPPA','PCA','aAD','fvAD'),
+		Beta=tt[10:13,1],SE=tt[10:13,2])
+	gtimes<-rbind(gtimes,tmp4)
+
+	# Adjust ROI volume values for age, sex, and global cognition; use adjusted
+	# values for Figure 2 box-and-whisker plot. 
+	df[,paste('adj',sprintf('%03d',i),sep='')]<-
+		df[,paste('lab',sprintf('%03d',i),sep='')]-
+		((df$base_ageatMRI-mean(df$base_ageatMRI))*fixef(m)['base_ageatMRI'])-
+		((df$base_MMSETotal-mean(df$base_MMSETotal))*fixef(m)['base_MMSETotal'])-
+		ifelse(df$Sex %in% 'Male',fixef(m)['SexMale'],0)
+}
+
+# Get ANOVA degrees of freedom for table 2.
+gtdf1<-am[7,1]
+gtdf2<-am[7,2]
+
+pmat1<-t(pmat1);
+padj1<-apply(pmat1,2,function(x) { p.adjust(x,method='fdr') })
+
+# P-value correction for posthoc tests on models contrasting aAD vs. 
+# each naAD phenotype.
+posthoc$Comp<-as.character(posthoc$Comp)
+w<-grep('mean',posthoc$Comp)
+posthoc$P[w]<-p.adjust(posthoc$P[w],'fdr')
+w<-grep('time',posthoc$Comp)
+posthoc$P[w]<-p.adjust(posthoc$P[w],'fdr')
+posthoc$G1<-NA;posthoc$G2<-NA
+for (i in 1:nrow(posthoc)) {
+	s<-unlist(strsplit(posthoc$Comp[i],'-'))
+	posthoc$G1[i]<-unlist(strsplit(s[1],'_'))[3]
+	posthoc$G2[i]<-unlist(strsplit(s[2],'_'))[2]
+}
+posthoc$Label.Name<-roi$Label.Name[match(posthoc$LabelID,roi$LabelID)]
+rownames(posthoc)<-1:nrow(posthoc)
+
+# P-value correction for posthoc tests on models contrasting aAD vs. a single naAD group.
+phoc4$Comp<-as.character(phoc4$Comp)
+w<-grep('mean',phoc4$Comp)
+phoc4$P[w]<-p.adjust(phoc4$P[w],'fdr')
+w<-grep('time',phoc4$Comp)
+phoc4$P[w]<-p.adjust(phoc4$P[w],'fdr')
+phoc4$G1<-NA;phoc4$G2<-NA
+for (i in 1:nrow(phoc4)) {
+	s<-unlist(strsplit(phoc4$Comp[i],'-'))
+	phoc4$G1[i]<-unlist(strsplit(s[1],'_'))[3]
+	phoc4$G2[i]<-unlist(strsplit(s[2],'_'))[2]
+}
+phoc4$Label.Name<-roi$Label.Name[match(phoc4$LabelID,roi$LabelID)]
+rownames(phoc4)<-1:nrow(phoc4)
+
+gmeans$Group<-factor(gmeans$Group,levels=c('aAD','lvPPA','PCA','fvAD'))
+gmeans$Label.Name<-roi$Label.Name[match(gmeans$LabelID,roi$LabelID)]
+gmeans$Association<-NA
+for (i in 1:nrow(gmeans)) {
+	gmeans$Association[i]<-paste(unique(setdiff(p1$Group[p1$Label.Name==gmeans$Label.Name[i]],
+		'aAD')),collapse=', ')
+}
+gmeans$Association[grepl('precentral',gmeans$Label.Name)]<-'Reference ROI'
+gmeans$Association[grepl('entorhinal',gmeans$Label.Name) | grepl('hippocamp',
+	gmeans$Label.Name,ignore.case=TRUE)]<-'aAD'
+multigroup<-setdiff(sort(gmeans$Association),c('Reference ROI',as.character(levels(df$Group2))))
+gmeans$Association<-factor(gmeans$Association,levels=c(levels(df$Group2),
+	multigroup,'Reference ROI'))
+gmeans$ObsLab<-gmeans$Label.Name
+gmeans$ObsLab<-tolower(gmeans$ObsLab)
+gmeans$ObsLab<-gsub('left','L',gmeans$ObsLab)
+gmeans$ObsLab<-gsub('right','R',gmeans$ObsLab)
+gmeans$ObsLab<-gsub(' gyrus','',gmeans$ObsLab)
+gmeans$ObsLab<-gsub(' area','',gmeans$ObsLab)
+for (i in 1:nrow(gmeans)) {
+	s<-unlist(strsplit(gmeans$ObsLab[i],'\\s+'))
+	if (length(s)>2) {
+		gmeans$ObsLab[i]<-paste(s[-2],collapse=' ')
+	}
+}
+gmeans$BaseObsLab<-gsub('L ','',gsub('R ','',gmeans$ObsLab))
+gmeans<-gmeans[order(gmeans$Association,gmeans$BaseObsLab,gmeans$ObsLab,
+	gmeans$Group),]
+gmeans$ObsLab<-factor(gmeans$ObsLab,levels=rev(unique(gmeans$ObsLab)))
+#gmeans<-gmeans[order(gmeans$Association,ordervec),]
+
+gtimes$Group<-factor(gtimes$Group,levels=c('aAD','lvPPA','PCA','fvAD'))
+gtimes$Label.Name<-roi$Label.Name[match(gtimes$LabelID,roi$LabelID)]
+gtimes$Association<-NA
+for (i in 1:nrow(gtimes)) {
+	gtimes$Association[i]<-paste(unique(setdiff(p1$Group[p1$Label.Name==gtimes$Label.Name[i]],
+		'aAD')),collapse=', ')
+}
+gtimes$Association[grepl('precentral',gtimes$Label.Name)]<-'Reference ROI'
+gtimes$Association[grepl('entorhinal',gtimes$Label.Name) | grepl('hippocamp',
+	gtimes$Label.Name,ignore.case=TRUE)]<-'aAD'
+multigroup<-setdiff(sort(gtimes$Association),c('Reference ROI',as.character(levels(df$Group2))))
+gtimes$Association<-factor(gtimes$Association,levels=c(levels(df$Group2),
+	multigroup,'Reference ROI'))
+gtimes$ObsLab<-gtimes$Label.Name
+gtimes$ObsLab<-tolower(gtimes$ObsLab)
+gtimes$ObsLab<-gsub('left','L',gtimes$ObsLab)
+gtimes$ObsLab<-gsub('right','R',gtimes$ObsLab)
+gtimes$ObsLab<-gsub(' gyrus','',gtimes$ObsLab)
+gtimes$ObsLab<-gsub(' area','',gtimes$ObsLab)
+for (i in 1:nrow(gtimes)) {
+	s<-unlist(strsplit(gtimes$ObsLab[i],'\\s+'))
+	if (length(s)>2) {
+		gtimes$ObsLab[i]<-paste(s[-2],collapse=' ')
+	}
+}
+gtimes$BaseObsLab<-gsub('L ','',gsub('R ','',gtimes$ObsLab))
+gtimes<-gtimes[order(gtimes$Association,gtimes$BaseObsLab, gtimes$ObsLab,
+	gtimes$Group),]
+gtimes$ObsLab<-factor(gtimes$ObsLab,levels=rev(unique(gtimes$ObsLab)))
+
+```
+
+```{r base_roi, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+kbase<-kmat[1:10,1:8]
+kbase[,6:8]<-0
+rownames(kbase)<-gsub('mean','base',rownames(kbase))
+
+baseroi<-subset(df,!duplicated(df$INDDID))
+
+# Prepare matrix of p-values for later multiple comparisons adjustment.
+pmatbase<-matrix(NA,ncol=length(hyplabs),nrow=5)
+baseanova<-data.frame()
+basettab<-data.frame()
+basemeans<-data.frame()
+phocbase<-data.frame()
+
+# Run linear regression models and contrasts on ROI volume data.
+for (ind in 1:length(hyplabs)) {
+	i<-hyplabs[ind]
+	lab<-paste('lab',sprintf('%03d',i),sep='')
+	fm<-as.formula(paste(lab,'~Group+base_MMSETotal+Sex+base_ageatMRI',sep=''))
+	m<-lm(fm,data=baseroi)
+	comp <- glht(m, linfct=kbase)
+	scomp<-summary(comp,test=adjusted('none'))
+
+	# Store anova results.
+	labName<-roi$Label.Name[match(i,roi$LabelID)]
+	am<-anova(m)
+	pmatbase[,ind]<-anova(m)$"Pr(>F)"
+	fg<-round(am[1,4],1)
+	tmp<-data.frame(LabelID=i,Region=labName,Group=fg,stringsAsFactors=F)
+	baseanova<-rbind(baseanova,tmp)
+
+	tmp<-data.frame(LabelID=i,Comp=names(scomp$test$pvalues),Z=scomp$test$tstat,
+		P=scomp$test$pvalues)
+	phocbase<-rbind(phocbase,tmp)
+	tt<-summary(m)$coefficients
+	tmp2<-as.data.frame(tt)
+	tmp2$Effect<-rownames(tmp2)
+	tmp2$LabelID=i; tmp2$Label.Name=labName
+	basettab<-rbind(basettab,tmp2)
+	tmp3<-data.frame(LabelID=i,Group=c('lvPPA','PCA','aAD','fvAD'),
+		Beta=tt[2:5,1],SE=tt[2:5,2])
+	basemeans<-rbind(basemeans,tmp3)
+}
+
+basedf1<-am[1,1]
+basedf2<-am[5,1]
+
+pmatbase<-t(pmatbase);
+padjbase<-apply(pmatbase,2,function(x) { p.adjust(x,method='fdr') })
+phocbase$P<-p.adjust(phocbase$P,'fdr')
+phocbase$Comp<-as.character(phocbase$Comp)
+phocbase$G1<-NA;phocbase$G2<-NA
+for (i in 1:nrow(phocbase)) {
+	s<-unlist(strsplit(phocbase$Comp[i],'-'))
+	phocbase$G1[i]<-unlist(strsplit(s[1],'_'))[3]
+	phocbase$G2[i]<-unlist(strsplit(s[2],'_'))[2]
+}
+phocbase$Label.Name<-roi$Label.Name[match(phocbase$LabelID,roi$LabelID)]
+rownames(phocbase)<-1:nrow(phocbase)
+
+basemeans$Group<-factor(basemeans$Group,levels=c('aAD','lvPPA','PCA','fvAD'))
+basemeans$Label.Name<-roi$Label.Name[match(basemeans$LabelID,roi$LabelID)]
+basemeans$Association<-NA
+for (i in 1:nrow(basemeans)) {
+	basemeans$Association[i]<-paste(unique(setdiff(p1$Group[p1$Label.Name==basemeans$Label.Name[i]],
+		'aAD')),collapse=', ')
+}
+basemeans$Association[grepl('precentral',basemeans$Label.Name)]<-'Reference ROI'
+basemeans$Association[grepl('entorhinal',basemeans$Label.Name) | grepl('hippocamp',
+	basemeans$Label.Name,ignore.case=TRUE)]<-'aAD'
+multigroup<-setdiff(sort(basemeans$Association),c('Reference ROI',as.character(levels(df$Group2))))
+basemeans$Association<-factor(basemeans$Association,levels=c(levels(df$Group2),
+	multigroup,'Reference ROI'))
+basemeans$ObsLab<-basemeans$Label.Name
+basemeans$ObsLab<-tolower(basemeans$ObsLab)
+basemeans$ObsLab<-gsub('left','L',basemeans$ObsLab)
+basemeans$ObsLab<-gsub('right','R',basemeans$ObsLab)
+basemeans$ObsLab<-gsub(' gyrus','',basemeans$ObsLab)
+basemeans$ObsLab<-gsub(' area','',basemeans$ObsLab)
+for (i in 1:nrow(basemeans)) {
+	s<-unlist(strsplit(basemeans$ObsLab[i],'\\s+'))
+	if (length(s)>2) {
+		basemeans$ObsLab[i]<-paste(s[-2],collapse=' ')
+	}
+}
+basemeans$BaseObsLab<-gsub('L ','',gsub('R ','',basemeans$ObsLab))
+basemeans<-basemeans[order(basemeans$Association,basemeans$BaseObsLab,basemeans$ObsLab,
+	basemeans$Group),]
+basemeans$ObsLab<-factor(basemeans$ObsLab,levels=rev(unique(basemeans$ObsLab)))
+
+```
+
+```{r table2,eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+posthoc$I1<-toupper(substr(posthoc$G1,1,1))
+posthoc$I1<-factor(posthoc$I1,levels=c('A','L','P','F'))
+posthoc$I2<-toupper(substr(posthoc$G2,1,1))
+posthoc$I2<-factor(posthoc$I2,levels=c('C','A','L','P'))
+posthoc$Code<-ifelse(posthoc$Z>0, paste(posthoc$I1,posthoc$I2,sep='>'),
+	paste(posthoc$I1,posthoc$I2,sep='<'))
+posthoc<-posthoc[order(posthoc$LabelID,posthoc$I1,posthoc$I2),]
+
+phocbase$I1<-toupper(substr(phocbase$G1,1,1))
+phocbase$I1<-factor(phocbase$I1,levels=c('A','L','P','F'))
+phocbase$I2<-toupper(substr(phocbase$G2,1,1))
+phocbase$I2<-factor(phocbase$I2,levels=c('C','A','L','P'))
+phocbase$Code<-ifelse(phocbase$Z>0, paste(phocbase$I1,phocbase$I2,sep='>'),
+	paste(phocbase$I1,phocbase$I2,sep='<'))
+phocbase<-phocbase[order(phocbase$LabelID,phocbase$I1,phocbase$I2),]
+
+basetmp<-subset(phocbase, phocbase$P<0.05)
+meantmp<-subset(posthoc,grepl('mean',posthoc$Comp) & posthoc$P<0.05)
+timetmp<-subset(posthoc,grepl('time',posthoc$Comp) & posthoc$P<0.05)
+anovatab$BasePhoc<-'---'
+anovatab$TimePhoc<-'---'
+glist2<-as.character(levels(df$Group2)[-1])
+
+colorcell<-function(x,col,textcol) { paste("\\cellcolor{",col,"}\\textcolor{",
+	textcol,"}{",x,"}",sep='') }
+
+for (g in glist2) {
+	basetmp<-subset(phocbase,phocbase$G1 %in% g & phocbase$G2 %in% 'Control')
+	basetmp<-basetmp[match(anovatab$LabelID,basetmp$LabelID),]
+	basecname<-paste('base',g,sep='_')
+	anovatab[,basecname]<-sprintf('%.1f',basetmp$Z)
+
+	longtmp<-subset(posthoc,posthoc$G1 %in% g & posthoc$G2 %in% 'Control' &
+		grepl('time_',posthoc$Comp))
+	longtmp<-longtmp[match(anovatab$LabelID,longtmp$LabelID),]
+	longcname<-paste('time',g,sep='_')
+	anovatab[,longcname]<-sprintf('%.1f',longtmp$Z)
+
+	w<-which(basetmp$P<=0.05 & longtmp$P>0.05)
+	anovatab[w,basecname]<-colorcell(anovatab[w,basecname],'blue','white')
+		
+	w<-which(longtmp$P<=0.05 & basetmp$P>0.05)
+	anovatab[w,longcname]<-colorcell(anovatab[w,longcname],'red','white')
+
+	w<-which(longtmp$P<=0.05 & basetmp$P<=0.05)
+	anovatab[w,basecname]<-colorcell(anovatab[w,basecname],'green','black')
+	anovatab[w,longcname]<-colorcell(anovatab[w,longcname],'green','black')
+}
+	
+for (i in 1:nrow(anovatab)) {
+	x<-basetmp$Code[basetmp$LabelID==anovatab$LabelID[i]]
+	if (length(x)>0) {
+		anovatab$BasePhoc[i]<-paste(x,collapse=', ')
+	}
+	x<-timetmp$Code[timetmp$LabelID==anovatab$LabelID[i]]
+	if (length(x)>0) {
+		anovatab$TimePhoc[i]<-paste(x,collapse=', ')
+	}
+}
+anovatab2<-anovatab
+anovatab2$Region<-tolower(anovatab2$Region)
+anovatab2$Region<-gsub('left','L',anovatab2$Region)
+anovatab2$Region<-gsub('right','R',anovatab2$Region)
+anovatab2$Region<-gsub(' gyrus','',anovatab2$Region)
+anovatab2$Region<-gsub(' area','',anovatab2$Region)
+for (i in 1:nrow(anovatab2)) {
+	s<-unlist(strsplit(anovatab2$Region[i],'\\s+'))
+	if (length(s)>2) {
+		anovatab2$Region[i]<-paste(s[-2],collapse=' ')
+	}
+}
+anovatab<-anovatab[,c('Region','Group','base_aAD','base_lvPPA','base_PCA',
+	'base_fvAD','GroupTime','time_aAD','time_lvPPA','time_PCA','time_fvAD')]
+anovatab$Group<-sprintf('%.1f',baseanova$Group)
+anovatab$GroupTime<-sprintf('%.1f',anovatab$GroupTime)
+wns<-which(padj1[,2]>0.05)
+anovatab$Group[wns]<-paste(anovatab$Group[wns],', n.s.',sep='')
+w05<-which(padj1[,2]<0.05)
+anovatab$Group[w05]<-paste(anovatab$Group[w05],'*',sep='')
+w01<-which(padj1[,2]<0.01)
+anovatab$Group[w01]<-paste(anovatab$Group[w01],'*',sep='')
+w001<-which(padj1[,2]<0.001)
+anovatab$Group[w001]<-paste(anovatab$Group[w001],'*',sep='')
+w05<-which(padj1[,7]<0.05)
+anovatab$GroupTime[w05]<-paste(anovatab$GroupTime[w05],'*',sep='')
+w01<-which(padj1[,7]<0.01)
+anovatab$GroupTime[w01]<-paste(anovatab$GroupTime[w01],'*',sep='')
+w001<-which(padj1[,7]<0.001)
+anovatab$GroupTime[w001]<-paste(anovatab$GroupTime[w001],'*',sep='')
+
+wsig<-which(padjbase[,2]<0.05 | padj1[,7]<0.05)
+gefftab<-anovatab[wsig,]
+gefftab<-gefftab[order(gefftab$Region),]
+gefftab$Association<-NA
+for (i in 1:nrow(gefftab)) {
+	gefftab$Association[i]<-paste(unique(setdiff(p1$Group[p1$Label.Name==gefftab$Region[i]],'aAD')),collapse=', ')
+}
+gefftab$Association[grepl('precentral',gefftab$Region)]<-'Reference ROI'
+gefftab$Association[grepl('entorhinal',gefftab$Region) | grepl('hippocamp',
+	gefftab$Region,ignore.case=TRUE)]<-'aAD'
+gefftab<-gefftab[,c(ncol(gefftab),1:(ncol(gefftab)-1))]
+gefftab$Region<-tolower(gefftab$Region)
+gefftab$Region<-gsub('left','L',gefftab$Region)
+gefftab$Region<-gsub('right','R',gefftab$Region)
+gefftab$Region<-gsub(' gyrus','',gefftab$Region)
+gefftab$Region<-gsub(' area','',gefftab$Region)
+for (i in 1:nrow(gefftab)) {
+	s<-unlist(strsplit(gefftab$Region[i],'\\s+'))
+	if (length(s)>2) {
+		gefftab$Region[i]<-paste(s[-2],collapse=' ')
+	}
+}
+multigroup<-setdiff(sort(gefftab$Association),c('Reference ROI',as.character(levels(df$Group2))))
+gefftab$Association<-factor(gefftab$Association,levels=c(levels(df$Group2),
+	multigroup,'Reference ROI'))
+reg2<-gsub('L ','',gsub('R ','',gefftab$Region))
+gefftab<-gefftab[order(gefftab$Association,reg2),]
+gefftab$Association<-as.character(gefftab$Association)
+gefftab$Association[duplicated(gefftab$Association)]<-''
+
+xgefftab<-xtable(gefftab,
+	caption="Differences in grey matter volume at initial MRI and longitudinal atrophy in hypothesis-driven analysis of regional brain volumes, relative to matched controls. Hypotheses included selective atrophy of neocortical areas associated with early disease in naAD\\textsuperscript{10} and of the MTL (hippocampus, entorhinal cortex, and parahippocampal gyrus) in aAD patients. The left and right precentral gyri are included to demonstrate the regional specificity of atrophy. F-statistics indicate the main effect of group at initial MRI scan and the group x time interaction across all scans. Additional columns report z-statistics for pairwise contrasts of each patient group vs. controls. Blue cells indicate significant differences in volume only at initial MRI; red cells indicate significant differences in longitudinal atrophy rates; and green cells indicate differences in both initial volume and longitudinal atrophy, based on a threshold of p<0.05, corrected using the false discovery rate method. n.s.=non-significant; *p<0.05; **p<0.01; ***p<0.001.",
+	align='rrlrrrrrrrrrr',digits=rep(0,13))
+names(xgefftab)<-c('A priori association','Region',
+	paste('$F_{First~MRI}$(',basedf1,',',basedf2,')',sep=''),
+	'aAD','lvPPA','PCA','fvAD',
+	paste('$F_{Group~x~Time}$(',gtdf1,',',gtdf2,')',sep=''),
+	'aAD','lvPPA','PCA','fvAD')
+	
+print(xgefftab,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.67)
+
+```
+
+```{r base_diff_fig, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE,fig.align='center',fig.width=7.5,fig.height=9,fig.path='./fig/',fig.cap='Patient group differences at time of initial MRI in normalized volumes for a priori regions of interest. Box-and-whisker plots represent the distribution of regional grey matter volumes, expressed in z-score units relative to the healthy control reference group and adjusted for age, sex, and global cognition. More negative values on the x-axis indicate greater atrophy. The vertical bar in each box indicates the median volume; the edges of the box represent the interquartile range (IQR), i.e., the difference between the first and third quartiles. The whiskers extend to the most extreme point within $1.5\\times IQR$ from the left or right edge of the box; observations falling outside this range are plotted individually. The notches in each box extend $1.58\\times IQR\\div{\\sqrt{n}}$, displaying an approximate 95\\% confidence interval for the median. Black brackets indicate significant pairwise group differences (p<0.05 after false discovery rate correction). Group is indicated by color as well as by the shape centered over the median line in each box.'}
+
+plotdf<-reshape(df,direction='long',idvar=c('Group','INDDID','time_diff'),
+	v.names='AdjVol',varying=list(paste('adj',sprintf('%03d',hyplabs),sep='')),
+	timevar='LabelID',times=paste('adj',sprintf('%03d',hyplabs),sep=''),
+	new.row.names=1:(nrow(df)*length(hyplabs)),
+	drop=setdiff(names(df),c('Group','INDDID','time_diff','LabelID',paste('adj',
+	sprintf('%03d',hyplabs),sep=''))))
+plotdf$LabelID=as.numeric(gsub('adj','',plotdf$LabelID))
+
+plotdf<-merge(plotdf,basemeans[,c('LabelID','Label.Name','Association','ObsLab',
+	'BaseObsLab')],by='LabelID',all.x=TRUE,all.y=FALSE)
+plotdf<-plotdf[order(plotdf$INDDID,plotdf$time_diff,plotdf$LabelID),]
+#plotdf$BaseVol<-plotdf$ZVol[match(paste(plotdf$INDDID,plotdf$LabelID,sep='_'),
+plotdf$BaseVol<-plotdf$AdjVol[match(paste(plotdf$INDDID,plotdf$LabelID,sep='_'),
+	paste(plotdf$INDDID,plotdf$LabelID,sep='_'))]
+plotdf$Group2<-df$Group2[match(plotdf$Group,df$Group)]
+plotdf<-subset(plotdf,!plotdf$Group %in% 'g0_Control')
+
+basedf<-subset(plotdf,plotdf$time_diff==0)
+longdf<-subset(plotdf,plotdf$time_diff>0)
+longdf$AnnChange<-(longdf$AdjVol-longdf$BaseVol)/longdf$time_diff
+
+basemed<-aggregate(AdjVol~Group2+Label.Name+Association+ObsLab+BaseObsLab,
+	data=basedf,FUN=median)
+dodge<-position_dodge(width=0.64)
+pbase<-ggplot(data=basedf,aes(x=ObsLab,y=AdjVol,fill=Group2))+
+	geom_boxplot(position=dodge,notch=TRUE,outlier.size=0.67)+
+	coord_flip()+
+	scale_fill_manual(values=plotcols[1:4])+
+	scale_colour_manual(values=plotcols[1:4])+
+	geom_point(position=dodge,data=basemed,aes(x=ObsLab,y=AdjVol,shape=Group2),
+		size=2)+
+	scale_shape_manual(values=shapescale)+
+	guides(size='none')+
+	theme(axis.text.y=element_text(size=10),axis.text.x=element_text(size=10,
+		face='bold'),axis.title.y=element_blank(),axis.title.x=
+		element_text(size=10,face='bold'),axis.ticks.y=element_blank(),
+		axis.ticks.x=element_blank(),legend.position='top',
+		legend.text=element_text(size=12,face='bold'),
+		legend.key.size=unit(0.36,'inches'),
+		legend.title=element_blank(),
+		plot.title=element_text(size=10,face='bold'))+
+	labs(y='Normalized volume at initial MRI')
+
+gbbase<-ggplot_build(pbase)
+gbbase$layout$coord$clip <- "off"
+basetix<-gbbase$layout$panel_params[[1]]$y.major_source
+basetix<-data.frame(Mid=rep(basetix,each=6),Inc1=rep(c(0.08,-0.08,-0.08,-0.24,-0.24,-0.24),
+	length(basetix)),Inc2=rep(c(0.24,0.08,0.24,-0.08,0.08,0.24),length(basetix)))
+basetix$X=basetix$Mid+basetix$Inc1
+basetix$XEnd<-basetix$Mid+basetix$Inc2
+basetix$tip_length<-(-0.01)
+basetix$LabelID<-unique(basemeans$LabelID)[rev(basetix$Mid)]
+basetix$G1<-rep(c('fvAD','PCA','fvAD','aAD','aAD','fvAD'),length.out=nrow(basetix))
+basetix$G2<-rep(c('PCA','lvPPA','lvPPA','lvPPA','PCA','aAD'),length.out=nrow(basetix))
+tmp<-subset(phocbase,grepl('base',phocbase$Comp) & !grepl('Control',phocbase$Comp))
+basetix$P<-tmp$P[match(paste(basetix$G1,basetix$G2,basetix$LabelID,sep='_'),paste(tmp$G1,
+	tmp$G2,tmp$LabelID,sep='_'))]
+basetix<-subset(basetix,basetix$P<0.05)
+basetix$YEnd<-basetix$Y<-0
+for (i in unique(basetix$LabelID)) {
+	w<-which(basetix$LabelID==i)
+	basetix$YEnd[w]<-basetix$Y[w]<-seq(-5,-5-length(w)*0.1,length.out=length(w))
+}
+basetix$Annotation<-''
+basetix$Association<-basemeans$Association[match(basetix$LabelID,basemeans$LabelID)]
+pbase+
+geom_signif(data=basetix,mapping=aes(annotations=basetix$Annotation),
+	xmin=basetix$X,xmax=basetix$XEnd,
+	y_position=basetix$Y,tip_length=
+	basetix$tip_length,manual=TRUE,inherit.aes=F)
+
+```
+
+## Hypothesis-driven analysis of ROI volumes {-}
+
+### Areas of earlier atrophy in each phenotype {-}
+We first assessed both regional volume at initial MRI and longitudinal volume change in each group relative to matched controls in ROIs associated _a priori_ with each phenotype. The purpose of this hypothesis-driven analysis was two-fold: first, to dissociate effects of earlier vs. later degeneration that are confounded in cross-sectional studies; and second, to test hypotheses regarding differential rates of atrophy between phenotypes. This analysis identified multiple regions displaying initial atrophy in each phenotype (Table 2), which reflect atrophy prior to patients' initial scans. While a subset of these regions continued to degenerate over the follow-up period (Table 2, green cells), others exhibited no further change (blue cells). Additionally, we detected a number of regions that were not atrophied relative to controls at the initial scan but demonstrated progression over the follow-up period (red cells); these areas are interpreted as areas of later disease spread in each phenotype. In cross-sectional analysis of participants' initial MRI scans, all ROIs exhibited a main effect of group, independent of age and MMSE.
+
+Patterns of atrophy at initial MRI corroborated prior cross-sectional studies of naAD, supporting the accuracy of clinical diagnoses. LvPPA patients exhibited strong lateralization of disease, with early atrophy relative to controls and other patient groups in left superior and middle temporal gyri (Table 2, Figure 1). Additionally, they had significant atrophy relative to controls in left anterior insula, hippocampus, and middle frontal gyrus as well right middle temporal gyrus. PCA patients, in turn, had significant atrophy at first MRI in right angular gyrus, precuneus, superior parietal lobule, and hippocampus as well as bilateral middle temporal gyri. FvAD patients had significant atrophy in left anterior insula and middle frontal gyrus; right angular gyrus; and bilateral middle temporal gyri. The precentral gyrus, which comprises primary motor areas, exhibited early atrophy only in the PCA group and was restricted to the right hemisphere, consistent with the general right-lateralization of these patients' atrophy pattern; the relative sparing of these structures is consistent with patients' preserved motor function and demonstrates the regional specificity of atrophy patterns. The aAD patients exhibited initial atrophy relative to controls in bilateral hippocampi and entorhinal cortex, left middle frontal gyrus, bilateral temporal cortex, and right angular gyrus. These temporoparietal areas have been previously characterized as nodes of the posterior default mode network in which different AD phenotypes demonstrate convergence of atrophy patterns [@ossenkoppele_atrophy_2015]. Additionally, aAD patients demonstrated more severe atrophy than naAD groups in bilateral hippocampi and entorhinal cortex (Figure 1). Non-amnestic patients exhibited characteristic sparing of MTL structures, with initial atrophy limited to left hippocampus in lvPPA and right hippocampus in PCA. In longitudinal models, areas of significant early atrophy tended to demonstrate further progression over the follow-up period relative to controls (Table 2, green cells; see also Supplementary Figure 2). However, a subset of brain areas had a non-significant slope of change over time (Table 2, blue cells), suggesting a slowing of atrophy. These areas included left entorhinal and right angular gyrus in aAD; left anterior insula in lvPPA; right superior parietal lobule in PCA; and left middle frontal gyrus in fvAD. Importantly, variation in sample sizes should be taken into consideration when interpreting results for different patient groups. For example, the fvAD group (the smallest sample) may be more susceptible to false negatives than larger groups. We caution against drawing conclusions about group differences by visual comparisons of each group's results vs. controls (Table 2, Figure 3). Rather, group differences in atrophy are directly assessed in Figures 1--2 and 4--5.
+
+### Longitudinal analysis identifies areas of later change in each phenotype {-}
+Additionally, multiple brain areas in each phenotype demonstrated significant change over time despite an absence of atrophy at initial MRI; these areas appear to represent disease spread in later stages. In the neocortex, lvPPA patients exhibited longitudinal atrophy in right temporoparietal areas, while PCA patients exhibited new left-hemisphere atrophy in superior temporal and middle frontal gyrus. FvAD patients exhibited new atrophy in left superior temporal gyrus, marking lateral temporal cortex as one of the most consistent areas of longitudinal change across patient groups. In the MTL, aAD, lvPPA, and PCA patients all exhibited later atrophy in bilateral parahippocampal gyri; and all three naAD groups demonstrated later atrophy in bilateral entorhinal cortex. Additionally, PCA patients exhibited later-stage atrophy in right hippocampus. Because a subset of PCA patients have a disease focus in the ventral visual processing stream [@crutch_consensus_2017], we additionally evaluated longitudinal atrophy in bilateral inferior occipital gyri (Supplementary Tables 7--10); while we observed significant atrophy across patient groups, there were no between-group differences in either mean atrophy or its rate of change. Finally, in precentral gyrus reference regions, all patient groups except fvAD exhibited longitudinal change relative to controls, consistent with their more advanced disease status; however, in the PCA group this change remained restricted to the right hemisphere.
+
+### Group differences in regional rates of change {-}
+The longitudinal design allowed us to test the hypothesis that each naAD phenotype would exhibit faster atrophy in its associated neocortical ROIs than other patient groups, consistent with phenotype-specific disease patterns. Additionally, we predicted that naAD patients would exhibit more gradual rates of change in MTL structures than aAD patients, providing a dynamic correlate of MTL sparing in naAD. These hypotheses were tested through pairwise contrasts of group x time interaction terms from linear mixed effects models of GM volume change. Consistent with hypotheses, lvPPA patients had more rapid atrophy than PCA patients in left superior temporal gyrus (z=2.8, p<0.02) as well as marginally more rapid change than aAD patients (z=2.1, p<0.09). Similarly, the fvAD group exhibited significantly greater atrophy rates in left anterior insula than lvPPA (z=2.5, p<0.04) and PCA patients (z=2.9, p<0.02). Contrary to hypotheses, PCA patients did not exhibit faster neurodegeneration during the follow-up period than other phenotypes. Because PCA is associated with heterogeneous disease distributions including both dorsal and ventral occipito-temporal variants [@crutch_consensus_2017], we performed supplementary analyses of longitudinal atrophy in ventrolateral occipital cortex (i.e., bilateral inferior occipital gyri). While PCA patients exhibited significantly lower GM volumes than controls in both left and right inferior occipital gyri, there were no significant differences in either mean volumes or rates of longitudinal change with other patient groups (Supplementary Tables 7--10).
+
+In addition, aAD patients had more rapid atrophy in right middle temporal gyrus than lvPPA (z=3.5, p<0.01) and PCA patients (z=3.2, p<0.01); in left middle temporal gyrus relative to lvPPA (z=2.7, p<0.03); in right precuneus relative to lvPPA (z=2.5, p<0.04) and fvAD (z=3.0, p<0.02); and in right supramarginal gyrus relative to all three naAD groups (all z>3.3, p<0.01). We had predicted that naAD patients would exhibit more gradual atrophy than aAD patients in MTL structures. However, all patient groups demonstrated significant atrophy relative to controls in one or more MTL structures (Table 2), and we found no significant differences between patient groups in atrophy rates for bilateral hippocampi, entorhinal cortex, or parahippocampal gyri. To address limitations in statistical power, we performed a supplementary analysis on MTL ROIs in which all naAD phenotypes were combined into a single group; while both the naAD and aAD groups had significantly faster atrophy than controls in all 6 MTL regions, we again observed no difference in atrophy rates between naAD and aAD (Supplementary Table 3).
+
+```{r roi_time_diffs, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE,fig.align='center',fig.width=7.5,fig.height=9,fig.path='./fig/',fig.cap='Patient group differences in the effect of time for a priori regions of interest. The plot displays annualized change in regional grey matter volume in each group, expressed in z-score units relative to the healthy control reference group and adjusted for sex as well as age and global cognition at initial MRI. More negative values on the x-axis indicate more rapid atrophy over time. The vertical bar in each box indicates the median volume; the edges of the box represent the interquartile range (IQR), i.e., the difference between the first and third quartiles. The whiskers extend to the most extreme point within $1.5\\times IQR$ from the left or right edge of the box; observations falling outside this range are plotted individually. The notches in each box extend $1.58\\times IQR\\div{\\sqrt{n}}$, displaying an approximate 95\\% confidence interval for the median. Black brackets indicate significant pairwise group differences (p<0.05 after false discovery rate correction). Group is indicated by color as well as by the shape centered over the median line in each box.'}
+
+dodge<-position_dodge(width=0.64)
+
+longmed<-aggregate(AnnChange~Group2+Label.Name+Association+ObsLab+BaseObsLab,
+	data=longdf,FUN=median)
+
+p2<-ggplot(data=longdf,aes(x=ObsLab,y=AnnChange,fill=Group2))+
+	geom_boxplot(position=dodge,notch=TRUE,outlier.size=0.67)+
+	coord_flip()+
+	scale_fill_manual(values=plotcols[1:4])+
+	scale_colour_manual(values=plotcols[1:4])+
+	geom_point(position=dodge,data=longmed,aes(x=ObsLab,y=AnnChange,
+		shape=Group2),size=2)+
+	scale_shape_manual(values=shapescale)+
+	guides(size='none')+
+	theme(axis.text.y=element_text(size=10),axis.text.x=element_text(size=10,
+		face='bold'),axis.title.y=element_blank(),axis.title.x=
+		element_text(size=10,face='bold'),axis.ticks.y=element_blank(),
+		axis.ticks.x=element_blank(),legend.position='top',
+		legend.text=element_text(size=12,face='bold'),
+		legend.key.size=unit(0.36,'inches'),
+		legend.title=element_blank(),
+		plot.title=element_text(size=10,face='bold'))+
+	labs(y='Annualized change in grey matter volume')
+
+gb2<-ggplot_build(p2)
+tix2<-gb2$layout$panel_params[[1]]$y.major_source
+tix2<-data.frame(Mid=rep(tix2,each=6),Inc1=rep(c(0.08,-0.08,-0.08,-0.24,-0.24,-0.24),
+	length(tix2)),Inc2=rep(c(0.24,0.08,0.24,-0.08,0.08,0.24),length(tix2)))
+tix2$X=tix2$Mid+tix2$Inc1
+tix2$XEnd<-tix2$Mid+tix2$Inc2
+tix2$tip_length<-(-0.01)
+tix2$LabelID<-unique(gtimes$LabelID)[rev(tix2$Mid)]
+tix2$G1<-rep(c('fvAD','PCA','fvAD','aAD','aAD','fvAD'),length.out=nrow(tix2))
+tix2$G2<-rep(c('PCA','lvPPA','lvPPA','lvPPA','PCA','aAD'),length.out=nrow(tix2))
+tmp<-subset(posthoc,grepl('time',posthoc$Comp) & !grepl('Control',posthoc$Comp))
+tix2$P<-tmp$P[match(paste(tix2$G1,tix2$G2,tix2$LabelID,sep='_'),paste(tmp$G1,
+	tmp$G2,tmp$LabelID,sep='_'))]
+tix2<-subset(tix2,tix2$P<0.05)
+tix2$YEnd<-tix2$Y<-0
+for (i in unique(tix2$LabelID)) {
+	w<-which(tix2$LabelID==i)
+	tix2$YEnd[w]<-tix2$Y[w]<-seq(-2,-2-length(w)*0.05,length.out=length(w))
+}
+tix2$Annotation<-''
+tix2$Association<-gtimes$Association[match(tix2$LabelID,gtimes$LabelID)]
+p2+geom_signif(data=tix2,mapping=aes(annotations=tix2$Annotation),
+	xmin=tix2$X,xmax=tix2$XEnd,
+	y_position=tix2$Y,tip_length=tix2$tip_length,
+	manual=T,inherit.aes=F)
+
+```
+
+```{r age_effects, eval=TRUE, echo=FALSE, include=FALSE, results='asis'}
+
+mtllabs<-c(47:48,116:117,170:171)
+i<-mtllabs[1]
+labid<-paste('lab',sprintf('%03d',i),sep='')
+fm<-as.formula(paste(labid,'~Group*base_ageatMRI+base_MMSETotal+Sex',sep=''))
+m<-lm(fm,data=subset(df,!duplicated(df$INDDID)))
+nc<-length(coef(m))
+
+gnames<-unique(df$Group)
+tmp<-expand.grid(1:5,1:5)
+tmp<-subset(tmp,!(tmp$Var1==tmp$Var2 | tmp$Var1>tmp$Var2))
+gind<-tmp[rep(1:nrow(tmp),2),]
+gind$G1<-gnames[tmp$Var1+1]
+gind$G2<-gnames[tmp$Var2+1]
+tmp$Var1[tmp$Var1==1]<-0
+tmp<-tmp[order(tmp$Var1,tmp$Var2),]
+tmp2<-tmp+7
+tmp2$Var1[tmp2$Var1==7]<-0
+tmp2<-tmp2[order(tmp2$Var1,tmp2$Var2),]
+tmp<-rbind(tmp,tmp2)
+
+kba<-matrix(0,nrow=length(gnames)*(length(gnames)-1),ncol=nc)
+for (i in 1:nrow(kba)) { 
+	kba[i,tmp$Var1[i]]<-(-1)
+	kba[i,tmp$Var2[i]]<-1
+}
+kba<-data.matrix(kba)
+rownames(kba)<-paste(rep(c('mean','age'),each=10),'_',gind$G2,'-',
+	gind$G1,sep='')
+
+pba<-matrix(NA,ncol=length(mtllabs),nrow=5)
+phocba<-data.frame()
+tba<-data.frame()
+for (ind in 1:length(mtllabs)) {
+	i<-mtllabs[ind]
+	labid<-paste('lab',sprintf('%03d',i),sep='')
+	labName<-roi$Label.Name[match(i,roi$LabelID)]
+
+	# Linear regression testing group x age interaction at baseline.
+	fm<-as.formula(paste(labid,'~Group*base_ageatMRI+base_MMSETotal+Sex',sep=''))
+	m<-lm(fm,data=subset(df,!duplicated(df$INDDID)))
+	am<-anova(m)
+	tt<-summary(m)$coefficients
+	tmp2<-as.data.frame(tt)
+	tmp2$Effect<-rownames(tmp2)
+	tmp2$LabelID=i; tmp2$Label.Name=labName
+	tba<-rbind(tba,tmp2)
+
+	# Post-hoc contrasts.
+	pba[,ind]<-am$"Pr(>F)"[1:nrow(pba)]
+	comp <- glht(m, linfct=kba)
+	scomp<-summary(comp,test=adjusted('none'))
+	scomp$test$pvalues[1:10]<-p.adjust(scomp$test$pvalues[1:10],'fdr')
+	scomp$test$pvalues[11:20]<-p.adjust(scomp$test$pvalues[11:20],'fdr')
+	tmp<-data.frame(LabelID=i,Comp=names(scomp$test$pvalues),Z=scomp$test$tstat,
+		P=scomp$test$pvalues)
+	phocba<-rbind(phocba,tmp)
+
+	# Create a scatterplot for each ROI, with separate regression lines for each group.
+	ageplot<-ggplot(data=subset(df,!duplicated(df$INDDID)),
+		aes(x=base_ageatMRI,y=df[!duplicated(df$INDDID),labid],color=Group2,
+		shape=Group2))+
+		guides(color='none',shape='none')+
+		geom_point()+
+		geom_smooth(method='lm')+
+		labs(x='Age at initial MRI',y='Normalized volume',
+			title=unique(roi$Label.Name[roi$LabelID==i]))
+	ggsave(filename=paste('fig/base_age_',labid,'.png',sep=''),plot=ageplot)
+}
+
+pba<-t(pba)
+pbaadj<-apply(pba,2,function(x) { p.adjust(x,method='fdr') })
+
+```
+ 
+```{r young_old, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+
+i<-hyplabs[1]
+fm3<-as.formula(paste('lab',sprintf('%03d',i),
+	'~Group3*time_diff+base_MMSETotal+Sex+base_ageatMRI',sep=''))
+m3<-lme(fixed=fm3, random=~1|Subj,data=df,na.action=na.exclude)
+nc<-length(fixef(m3))
+gnames<-sort(unique(df$Group3))
+kmat3<-matrix(0,nrow=length(gnames)*(length(gnames)-1),ncol=nc)
+kmat3[6:9,2]<-
+	kmat3[10:12,3]<-
+	kmat3[13:14,4]<-
+	kmat3[15,5]<-
+	kmat3[21:24,11]<-
+	kmat3[25:27,12]<-
+	kmat3[28:29,13]<-
+	kmat3[30,14]<-(-1)
+kmat3[1,2]<-kmat3[2,3]<-kmat3[3,4]<-kmat3[4,5]<-kmat3[5,6]<-
+	kmat3[6,3]<-kmat3[7,4]<-kmat3[8,5]<-kmat3[9,6]<-
+	kmat3[10,4]<-kmat3[11,5]<-kmat3[12,6]<-
+	kmat3[13,5]<-kmat3[14:15,6]<-
+	kmat3[16,11]<-kmat3[17,12]<-kmat3[18,13]<-kmat3[19,14]<-kmat3[20,15]<-
+	kmat3[21,12]<-kmat3[22,13]<-kmat3[23,14]<-kmat3[24,15]<-
+	kmat3[25,13]<-kmat3[26,14]<-kmat3[27,15]<-
+	kmat3[28,14]<-kmat3[29:30,15]<-1
+kmat3<-data.matrix(kmat3)
+rownames(kmat3)<-paste(rep(c('mean','time'),each=15),'_',rep(gnames[c(2:6,3:6,4:6,5:6,6)],2),
+	'-',rep(gnames[c(rep(1,5),rep(2,4),rep(3,3),rep(4,2),5)],2),sep='')
+
+pyo<-data.frame()
+tyo<-data.frame()
+page3<-page<-matrix(NA,ncol=length(hyplabs),nrow=7)
+
+for (ind in 1:length(hyplabs)) {
+	i<-hyplabs[ind]
+	fm<-as.formula(paste('lab',sprintf('%03d',i),
+		'~Group+AgeBin*time_diff+base_MMSETotal+Sex',sep=''))
+	fm3<-as.formula(paste('lab',sprintf('%03d',i),
+		'~Group3*time_diff+base_MMSETotal+Sex+base_ageatMRI',sep=''))
+	m1<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+	m3<-lme(fixed=fm3, random=~1|Subj,data=df,na.action=na.exclude)
+	am1<-anova(m1)
+	am3<-anova(m3)
+	page[,ind]<-am1$"p-value"
+	page3[,ind]<-am3$"p-value"
+	comp <- glht(m3, linfct=kmat3)
+	scomp<-summary(comp,test=adjusted('none'))
+	scomp$test$pvalues[1:15]<-p.adjust(scomp$test$pvalues[1:15],'fdr')
+	scomp$test$pvalues[16:30]<-p.adjust(scomp$test$pvalues[16:30],'fdr')
+	tmp<-data.frame(LabelID=i,Comp=names(scomp$test$pvalues),Z=scomp$test$tstat,
+		P=scomp$test$pvalues)
+	pyo<-rbind(pyo,tmp)
+
+	labName<-roi$Label.Name[match(i,roi$LabelID)]
+
+	tt<-summary(m3)$tTable
+	tmp2<-as.data.frame(tt)
+	tmp2$Effect<-rownames(tmp2)
+	tmp2$LabelID=i; tmp2$Label.Name=labName
+	tyo<-rbind(tyo,tmp2)
+
+	cat(labName,'\n')
+	print(am1)
+	print(summary(m1))
+	cat(labName,'\n')
+	print(am3)
+	print(summary(m3))
+	print(scomp)
+}
+
+page<-t(page)
+page3<-t(page3)
+pageadj<-apply(page,2,function(x) { p.adjust(x,method='fdr') })
+pageadj3<-apply(page3,2,function(x) { p.adjust(x,method='fdr') })
+
+pyo$Comp<-as.character(pyo$Comp)
+pyo$G1<-NA;pyo$G2<-NA
+for (i in 1:nrow(pyo)) {
+	s<-unlist(strsplit(pyo$Comp[i],'-'))
+	pyo$G1[i]<-unlist(strsplit(s[1],'_'))[3]
+	pyo$G2[i]<-unlist(strsplit(s[2],'_'))[2]
+}
+
+pyo$Label.Name<-roi$Label.Name[match(pyo$LabelID,roi$LabelID)]
+rownames(pyo)<-1:nrow(pyo)
+
+posthoc$tag<-paste(posthoc$LabelID,posthoc$Comp,sep='_')
+pyo$tag<-paste(pyo$LabelID,pyo$Comp,sep='_')
+
+sig1<-setdiff(posthoc$tag[posthoc$P<0.05],pyo$tag[pyo$P<0.05])
+sig2<-setdiff(pyo$tag[pyo$P<0.05],posthoc$tag[posthoc$P<0.05])
+
+meanload<-pyo[pyo$P<0.05 & grepl('mean',pyo$Comp) & grepl('LOAD',pyo$Comp),c('Label.Name','Comp','Z','P')]
+timeload<-pyo[pyo$P<0.05 & grepl('time',pyo$Comp) & grepl('LOAD',pyo$Comp),c('Label.Name','Comp','Z','P')]
+meaneoad<-pyo[pyo$P<0.05 & grepl('mean',pyo$Comp) & grepl('EOAD',pyo$Comp),c('Label.Name','Comp','Z','P')]
+timeeoad<-pyo[pyo$P<0.05 & grepl('time',pyo$Comp) & grepl('EOAD',pyo$Comp),c('Label.Name','Comp','Z','P')]
+
+tmpsig1<-gsub('g3_aAD','g3a_EOAD',sig1)
+tmpsig1<-c(tmpsig1,gsub('g3_aAD','g3b_LOAD',sig1))
+
+notad<-setdiff(tmpsig1,sig2)
+notad<-notad[!(grepl('LOAD',notad) | grepl('EOAD',notad))]
+adrel<-setdiff(setdiff(tmpsig1,sig2),notad)
+eoadrel<-adrel[grep('EOAD',adrel)]
+loadrel<-adrel[grep('LOAD',adrel)]
+
+```
+
+```{r lme_apoe, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tabapoe<-table(tab1df$Group3[!tab1df$Group3 %in% 'g0_Control'],
+	tab1df$APOE[!tab1df$Group3 %in% 'g0_Control'],useNA='ifany')
+for (i in 1:nrow(tabapoe)) {
+	s<-unlist(strsplit(rownames(tabapoe)[i],'_'))
+	rownames(tabapoe)[i]<-s[2]
+}
+
+tabapoe2<-table(tab1df$Group[!tab1df$Group %in% 'g0_Control'],
+	tab1df$APOE[!tab1df$Group %in% 'g0_Control'])
+for (i in 1:nrow(tabapoe2)) {
+	s<-unlist(strsplit(rownames(tabapoe2)[i],'_'))
+	rownames(tabapoe2)[i]<-s[2]
+}
+
+te4<-table(df$Group[!(df$Group %in% 'g0_Control' | duplicated(df$INDDID))],
+	df$e4[!(df$Group %in% 'g0_Control' | duplicated(df$INDDID))])
+te2<-table(df$Group[!(df$Group %in% 'g0_Control' | duplicated(df$INDDID))],
+	df$e2[!(df$Group %in% 'g0_Control' | duplicated(df$INDDID))])
+x2e4<-chisq.test(te4,simulate.p.value=T,B=10000)
+x2e2<-chisq.test(te2,simulate.p.value=T,B=10000)
+
+m_apoe_onset<-lm(AgeatOnset~Group+factor(e4),data=tab1df)
+
+i<-hyplabs[1]
+fm<-as.formula(paste('lab',sprintf('%03d',i),
+	'~Group*time_diff+base_MMSETotal+Sex+base_ageatMRI+e4',sep=''))
+m<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+nc<-length(fixef(m))
+gnames<-sort(unique(df$Group))
+
+tmp<-expand.grid(1:4,1:4)
+tmp<-subset(tmp,!(tmp$Var1==tmp$Var2 | tmp$Var1>tmp$Var2))
+gind<-tmp[rep(1:nrow(tmp),2),]
+gind$G1<-gnames[tmp$Var1+1]
+gind$G2<-gnames[tmp$Var2+1]
+tmp$Var1[tmp$Var1==1]<-0
+tmp<-tmp[order(tmp$Var1,tmp$Var2),]
+tmp2<-tmp+8
+tmp2$Var1[tmp2$Var1==8]<-0
+tmp2$Var2[tmp2$Var1==8]<-0
+tmp2<-tmp2[order(tmp2$Var1,tmp2$Var2),]
+tmp<-rbind(tmp,tmp2)
+
+ke4<-matrix(0,nrow=length(gnames[-1])*(length(gnames[-1])-1),ncol=nc)
+for (i in 1:nrow(ke4)) { 
+	ke4[i,tmp$Var1[i]]<-(-1)
+	ke4[i,tmp$Var2[i]]<-1
+}
+ke4<-data.matrix(ke4)
+rownames(ke4)<-paste(rep(c('mean','time'),each=6),'_',gind$G2,'-',
+	gind$G1,sep='')
+
+phoce4<-data.frame()
+pmate4<-matrix(NA,ncol=length(hyplabs),nrow=nrow(anova(m)))
+ttabe4<-data.frame()
+
+for (ind in 1:length(hyplabs)) {
+	i<-hyplabs[ind]
+	fm<-as.formula(paste('lab',sprintf('%03d',i),
+		'~Group*time_diff+base_MMSETotal+Sex+base_ageatMRI+e4',sep=''))
+	m<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+	am<-anova(m)
+	pmate4[,ind]<-am$"p-value"
+	comp <- glht(m, linfct=ke4)
+	scomp<-summary(comp,test=adjusted('none'))
+	scomp$test$pvalues[1:6]<-p.adjust(scomp$test$pvalues[1:6],'fdr')
+	scomp$test$pvalues[7:12]<-p.adjust(scomp$test$pvalues[7:12],'fdr')
+	tmp<-data.frame(LabelID=i,Comp=names(scomp$test$pvalues),Z=scomp$test$tstat,
+		P=scomp$test$pvalues)
+	phoce4<-rbind(phoce4,tmp)
+
+	labName<-roi$Label.Name[match(i,roi$LabelID)]
+	tt<-summary(m)$tTable
+	tmp2<-as.data.frame(tt)
+	tmp2$Effect<-rownames(tmp2)
+	tmp2$LabelID=i; tmp2$Label.Name=labName
+	ttabe4<-rbind(ttabe4,tmp2)
+}
+
+pmate4<-t(pmate4)
+padje4<-apply(pmate4,2,function(x) { p.adjust(x,method='fdr') })
+
+phoce4$Comp<-as.character(phoce4$Comp)
+phoce4$G1<-NA;phoce4$G2<-NA
+for (i in 1:nrow(phoce4)) {
+	s<-unlist(strsplit(phoce4$Comp[i],'-'))
+	phoce4$G1[i]<-unlist(strsplit(s[1],'_'))[3]
+	phoce4$G2[i]<-unlist(strsplit(s[2],'_'))[2]
+}
+
+phoce4$Label.Name<-roi$Label.Name[match(phoce4$LabelID,roi$LabelID)]
+rownames(phoce4)<-1:nrow(phoce4)
+
+```
+
+```{r long_npsych, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+pvlt<-read.csv('INQuery_Longitudinal_PVLT_20190108.csv',stringsAsFactors=F)
+pvlt$TestDate<-as.Date(pvlt$TestDate,format='%m/%d/%Y')
+pvlt<-subset(pvlt,pvlt$INDDID %in% pvlt$INDDID[!is.na(pvlt$TestDate)])
+pvlt<-pvlt[order(pvlt$INDDID,pvlt$TestDate),]
+pvlt$Recognition<-pvlt$PHLRecognitionDiscrimin
+pvlt$Recognition<-cleaner(pvlt$Recognition)
+pvlt$Source<-'PVLT'
+pvlt$Group<-df$Group[match(pvlt$INDDID,df$INDDID)]
+pvlt<-subset(pvlt,pvlt$INDDID %in% df$INDDID)
+
+pbac<-read.csv('INQuery_Longitudinal_PBAC_20190108.csv',stringsAsFactors=F)
+pbac$TestDate<-as.Date(pbac$TestDate,format='%m/%d/%Y')
+pbac<-subset(pbac,pbac$INDDID %in% pbac$INDDID[!is.na(pbac$TestDate)])
+pbac<-pbac[order(pbac$INDDID,pbac$TestDate),]
+pbac$Recognition<-cleaner(pbac$VerbalMemoryRecognition)/3
+pbac$Source<-'PBAC'
+pbac$Group<-df$Group[match(pbac$INDDID,df$INDDID)]
+pbac<-subset(pbac,pbac$INDDID %in% df$INDDID)
+
+xn<-intersect(names(pbac),names(pvlt))
+recog<-rbind(pvlt[,xn],pbac[,xn])
+recog$Group<-df$Group[match(recog$INDDID,df$INDDID)]
+recog<-recog[order(recog$INDDID,recog$TestDate),]
+recog$DOB<-df$DOB[match(recog$INDDID,df$INDDID)]
+recog$AgeatTest<-as.numeric(recog$TestDate-recog$DOB)/365.25
+recog$BaseDate<-recog$TestDate[match(recog$INDDID,recog$INDDID)]
+recog$BaseAge<-recog$AgeatTest[match(recog$INDDID,recog$INDDID)]
+recog$BaseRecognition<-recog$Recognition[match(recog$INDDID,recog$INDDID)]
+recog$Group<-factor(as.character(recog$Group),levels=c('g1_lvPPA','g2_PCA',
+	'g3_aAD','g4_fvAD','g0_Control'))
+recog$Time<-as.numeric(recog$TestDate-recog$BaseDate)/365.25
+out<-cleaner(recog$Time,outCheck=T,outThresh=3)
+wout<-which(out)
+if (length(wout)>0) { recog<-recog[-wout,] }
+recog<-subset(recog,recog$INDDID %in% recog$INDDID[duplicated(recog$INDDID)])
+	
+pbac$Group<-df$Group[match(pbac$INDDID,df$INDDID)]
+pbac$DOB<-df$DOB[match(pbac$INDDID,df$INDDID)]
+pbac$AgeatTest<-as.numeric(pbac$TestDate-pbac$DOB)/365.25
+pbac$BaseAge<-pbac$AgeatTest[match(pbac$INDDID,pbac$INDDID)]
+pbac$BaseDate<-pbac$TestDate[match(pbac$INDDID,pbac$INDDID)]
+pbac$Group<-factor(as.character(pbac$Group),levels=c('g1_lvPPA','g2_PCA',
+	'g3_aAD','g4_fvAD','g0_Control'))
+pbac$Time<-as.numeric(pbac$TestDate-pbac$BaseDate)/365.25
+out<-cleaner(pbac$Time,outCheck=T,outThresh=3)
+wout<-which(out)
+if (length(wout)>0) { pbac<-pbac[-wout,] }
+pbac<-subset(pbac,pbac$INDDID %in% pbac$INDDID[duplicated(pbac$INDDID)])
+pbac$Speech<-cleaner(pbac$Speech)
+pbac$JOLO<-cleaner(pbac$JOLO)
+pbac$ReyCopy<-cleaner(pbac$ReyCopy)
+pbac$OralTrails<-cleaner(pbac$OralTrails)
+pbac$BehavioralScale<-cleaner(pbac$BehavioralScale)
+
+flet<-read.csv('INQuery_Longitudinal_FLetters_20190108.csv',stringsAsFactors=F)
+flet$TestDate<-as.Date(flet$TestDate,format='%m/%d/%Y')
+flet<-subset(flet,flet$INDDID %in% flet$INDDID[!is.na(flet$TestDate)])
+flet<-subset(flet,!duplicated(flet[,c('INDDID','TestDate')]))
+flet<-flet[order(flet$INDDID,flet$TestDate),]
+flet$DOB<-df$DOB[match(flet$INDDID,df$INDDID)]
+flet$AgeatTest<-as.numeric(flet$TestDate-flet$DOB)/365.25
+flet$BaseAge<-flet$AgeatTest[match(flet$INDDID,flet$INDDID)]
+flet$BaseDate<-flet$TestDate[match(flet$INDDID,flet$INDDID)]
+flet$FLetterFluency<-cleaner(flet$FWordsCorrect)
+flet$Group<-df$Group[match(flet$INDDID,df$INDDID)]
+flet$Group<-factor(as.character(flet$Group),levels=c('g1_lvPPA','g2_PCA',
+	'g3_aAD','g4_fvAD','g0_Control'))
+flet$Time<-as.numeric(flet$TestDate-flet$BaseDate)/365.25
+out<-cleaner(flet$Time,outCheck=T,outThresh=3)
+wout<-which(out)
+if (length(wout)>0) { flet<-flet[-wout,] }
+flet<-subset(flet,flet$INDDID %in% flet$INDDID[duplicated(flet$INDDID)])
+flet<-subset(flet,flet$INDDID %in% df$INDDID)
+
+digsp<-read.csv('INQuery_Longitudinal_DigitSpan_20190108.csv',stringsAsFactors=F)
+digsp$Group<-df$Group[match(digsp$INDDID,df$INDDID)]
+digsp$TestDate<-as.Date(digsp$TestDate,format='%m/%d/%Y')
+digsp<-subset(digsp,digsp$INDDID %in% digsp$INDDID[!is.na(digsp$TestDate)])
+digsp<-subset(digsp,!duplicated(digsp[,c('INDDID','TestDate')]))
+digsp<-digsp[order(digsp$INDDID,digsp$TestDate),]
+digsp$ForwardSpan<-cleaner(digsp$ForwardSpan)
+digsp$ReverseSpan<-cleaner(digsp$ReverseSpan)
+digsp$DOB<-df$DOB[match(digsp$INDDID,df$INDDID)]
+digsp$AgeatTest<-as.numeric(digsp$TestDate-digsp$DOB)/365.25
+digsp$BaseAge<-digsp$AgeatTest[match(digsp$INDDID,digsp$INDDID)]
+digsp$BaseDate<-digsp$TestDate[match(digsp$INDDID,digsp$INDDID)]
+digsp$Group<-df$Group[match(digsp$INDDID,df$INDDID)]
+digsp$Group<-factor(as.character(digsp$Group),levels=c('g1_lvPPA','g2_PCA',
+	'g3_aAD','g4_fvAD','g0_Control'))
+digsp$Sex<-df$Sex[match(digsp$INDDID,df$INDDID)]
+digsp$Education<-df$Education[match(digsp$INDDID,df$INDDID)]
+digsp$Time<-as.numeric(digsp$TestDate-digsp$BaseDate)/365.25
+out<-cleaner(digsp$Time,outCheck=T,outThresh=3)
+wout<-which(out)
+if (length(wout)>0) { digsp<-digsp[-wout,] }
+digsp<-subset(digsp,digsp$INDDID %in% digsp$INDDID[duplicated(digsp$INDDID)])
+digsp<-subset(digsp,digsp$INDDID %in% df$INDDID)
+
+```
+
+```{r npsych_mri, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+# Find closest MRI observation for each neuropsych observation.
+# Omit duplicate MRI sessions, so that there's a one-to-one mapping.
+
+labnum<-paste('lab',sprintf('%03d',hyplabs),sep='')
+addcols<-c(labnum,'MRIDate','Interval','base_ageatMRI','base_MMSETotal',
+	'Sex','Education','MMSETotal','CxVol')
+recog[,addcols]<-NA; recog$MRIDate<-as.Date(recog$MRIDate,format='%Y-%m-%d')
+pbac[,addcols]<-NA; pbac$MRIDate<-as.Date(pbac$MRIDate,format='%Y-%m-%d')
+flet[,addcols]<-NA; flet$MRIDate<-as.Date(flet$MRIDate,format='%Y-%m-%d')
+fsp<-rsp<-digsp
+fsp[,addcols]<-NA; fsp$MRIDate<-as.Date(fsp$MRIDate,format='%Y-%m-%d')
+rsp[,addcols]<-NA; rsp$MRIDate<-as.Date(rsp$MRIDate,format='%Y-%m-%d')
+
+for (i in 1:nrow(recog)) {
+	tmp<-subset(df,df$INDDID==recog$INDDID[i])
+	tmp$Interval<-as.numeric(tmp$MRIDate-recog$TestDate[i])/365.25
+	tmp<-subset(tmp,abs(tmp$Interval)<=1)
+	if (nrow(tmp)>0) {
+		wmin<-which.min(abs(tmp$Interval))
+		recog[i,addcols]<-tmp[wmin,addcols]
+	}
+}
+recog_mri<-recog[!duplicated(recog[,c('INDDID','MRIDate')]),]
+recog_mri<-subset(recog_mri,!(is.na(recog_mri$MRIDate) | 
+	is.na(recog_mri$Recognition)))
+recog_mri<-subset(recog_mri,!recog_mri$Group %in% 'g0_Control')
+recog_mri<-subset(recog_mri,recog_mri$INDDID %in% 
+	recog_mri$INDDID[duplicated(recog_mri$INDDID)])
+
+for (i in 1:nrow(pbac)) {
+	tmp<-subset(df,df$INDDID==pbac$INDDID[i])
+	tmp$Interval<-as.numeric(tmp$MRIDate-pbac$TestDate[i])/365.25
+	tmp<-subset(tmp,abs(tmp$Interval)<=1)
+	if (nrow(tmp)>0) {
+		wmin<-which.min(abs(tmp$Interval))
+		pbac[i,addcols]<-tmp[wmin,addcols]
+	}	
+}
+pbac_mri<-pbac[!duplicated(pbac[,c('INDDID','MRIDate')]),]
+pbac_mri<-subset(pbac_mri,!is.na(pbac_mri$MRIDate))
+pbac_mri<-subset(pbac_mri,!pbac_mri$Group %in% 'g0_Control')
+pbac_mri<-subset(pbac_mri,pbac_mri$INDDID %in% 
+	pbac_mri$INDDID[duplicated(pbac_mri$INDDID)])
+
+for (i in 1:nrow(flet)) {
+	tmp<-subset(df,df$INDDID==flet$INDDID[i])
+	tmp$Interval<-as.numeric(tmp$MRIDate-flet$TestDate[i])/365.25
+	tmp<-subset(tmp,abs(tmp$Interval)<=1)
+	if (nrow(tmp)>0) {
+		wmin<-which.min(abs(tmp$Interval))
+		flet[i,addcols]<-tmp[wmin,addcols]
+	}	
+}
+flet_mri<-flet[!duplicated(flet[,c('INDDID','MRIDate')]),]
+flet_mri<-subset(flet_mri,!(is.na(flet_mri$MRIDate) |
+	is.na(flet_mri$FLetterFluency)))
+flet_mri<-subset(flet_mri,!flet_mri$Group %in% 'g0_Control')
+flet_mri<-subset(flet_mri,flet_mri$INDDID %in% 
+	flet_mri$INDDID[duplicated(flet_mri$INDDID)])
+
+for (i in 1:nrow(fsp)) {
+	tmp<-subset(df,df$INDDID==fsp$INDDID[i])
+	tmp$Interval<-as.numeric(tmp$MRIDate-fsp$TestDate[i])/365.25
+	tmp<-subset(tmp,abs(tmp$Interval)<=1)
+	if (nrow(tmp)>0) {
+		wmin<-which.min(abs(tmp$Interval))
+		fsp[i,addcols]<-tmp[wmin,addcols]
+	}	
+}
+fsp_mri<-fsp[!duplicated(fsp[,c('INDDID','MRIDate')]),]
+fsp_mri<-subset(fsp_mri,!(is.na(fsp_mri$MRIDate) |
+	is.na(fsp_mri$ForwardSpan)))
+fsp_mri<-subset(fsp_mri,!fsp_mri$Group %in% 'g0_Control')
+fsp_mri<-subset(fsp_mri,fsp_mri$INDDID %in% 
+	fsp_mri$INDDID[duplicated(fsp_mri$INDDID)])
+
+for (i in 1:nrow(rsp)) {
+	tmp<-subset(df,df$INDDID==rsp$INDDID[i])
+	tmp$Interval<-as.numeric(tmp$MRIDate-rsp$TestDate[i])/365.25
+	tmp<-subset(tmp,abs(tmp$Interval)<=1)
+	if (nrow(tmp)>0) {
+		wmin<-which.min(abs(tmp$Interval))
+		rsp[i,addcols]<-tmp[wmin,addcols]
+	}	
+}
+rsp_mri<-rsp[!duplicated(rsp[,c('INDDID','MRIDate')]),]
+rsp_mri<-subset(rsp_mri,!(is.na(rsp_mri$MRIDate) |
+	is.na(rsp_mri$ForwardSpan)))
+rsp_mri<-subset(rsp_mri,!rsp_mri$Group %in% 'g0_Control')
+rsp_mri<-subset(rsp_mri,rsp_mri$INDDID %in% 
+	rsp_mri$INDDID[duplicated(rsp_mri$INDDID)])
+
+# Create baseline volume and volume change variables for each label.
+recog_mri$BaseLab047<-recog_mri$lab047[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffLab047<-recog_mri$lab047-recog_mri$BaseLab047
+recog_mri$BaseLab048<-recog_mri$lab048[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffLab048<-recog_mri$lab048-recog_mri$BaseLab048
+recog_mri$BaseLab116<-recog_mri$lab116[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffLab116<-recog_mri$lab116-recog_mri$BaseLab116
+recog_mri$BaseLab117<-recog_mri$lab117[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffLab117<-recog_mri$lab117-recog_mri$BaseLab117
+recog_mri$BaseLab170<-recog_mri$lab170[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffLab170<-recog_mri$lab170-recog_mri$BaseLab170
+recog_mri$BaseLab171<-recog_mri$lab171[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffLab171<-recog_mri$lab171-recog_mri$BaseLab171
+recog_mri$BaseCxVol<-recog_mri$CxVol[match(recog_mri$INDDID,recog_mri$INDDID)]
+recog_mri$DiffCxVol<-recog_mri$CxVol-recog_mri$BaseCxVol
+
+flet_mri$BaseLab155<-flet_mri$lab155[match(flet_mri$INDDID,flet_mri$INDDID)]
+flet_mri$DiffLab155<-flet_mri$lab155-flet_mri$BaseLab155
+flet_mri$BaseLab201<-flet_mri$lab201[match(flet_mri$INDDID,flet_mri$INDDID)]
+flet_mri$DiffLab201<-flet_mri$lab201-flet_mri$BaseLab201
+flet_mri$BaseCxVol<-flet_mri$CxVol[match(flet_mri$INDDID,flet_mri$INDDID)]
+flet_mri$DiffCxVol<-flet_mri$CxVol-flet_mri$BaseCxVol
+
+fsp_mri$BaseLab155<-fsp_mri$lab155[match(fsp_mri$INDDID,fsp_mri$INDDID)]
+fsp_mri$DiffLab155<-fsp_mri$lab155-fsp_mri$BaseLab155
+fsp_mri$BaseLab201<-fsp_mri$lab201[match(fsp_mri$INDDID,fsp_mri$INDDID)]
+fsp_mri$DiffLab201<-fsp_mri$lab201-fsp_mri$BaseLab201
+fsp_mri$BaseCxVol<-fsp_mri$CxVol[match(fsp_mri$INDDID,fsp_mri$INDDID)]
+fsp_mri$DiffCxVol<-fsp_mri$CxVol-fsp_mri$BaseCxVol
+
+rsp_mri$BaseLab103<-rsp_mri$lab103[match(rsp_mri$INDDID,rsp_mri$INDDID)]
+rsp_mri$DiffLab103<-rsp_mri$lab103-rsp_mri$BaseLab103
+rsp_mri$BaseLab143<-rsp_mri$lab143[match(rsp_mri$INDDID,rsp_mri$INDDID)]
+rsp_mri$DiffLab143<-rsp_mri$lab143-rsp_mri$BaseLab143
+rsp_mri$BaseLab154<-rsp_mri$lab154[match(rsp_mri$INDDID,rsp_mri$INDDID)]
+rsp_mri$DiffLab154<-rsp_mri$lab154-rsp_mri$BaseLab154
+rsp_mri$BaseCxVol<-rsp_mri$CxVol[match(rsp_mri$INDDID,rsp_mri$INDDID)]
+rsp_mri$DiffCxVol<-rsp_mri$CxVol-rsp_mri$BaseCxVol
+
+pbac_mri$BaseLab103<-pbac_mri$lab103[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab103<-pbac_mri$lab103-pbac_mri$BaseLab103
+pbac_mri$BaseLab106<-pbac_mri$lab106[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab106<-pbac_mri$lab106-pbac_mri$BaseLab106
+pbac_mri$BaseLab154<-pbac_mri$lab154[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$BaseLab143<-pbac_mri$lab143[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab143<-pbac_mri$lab143-pbac_mri$BaseLab143
+pbac_mri$DiffLab154<-pbac_mri$lab154-pbac_mri$BaseLab154
+pbac_mri$BaseLab155<-pbac_mri$lab155[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab155<-pbac_mri$lab155-pbac_mri$BaseLab155
+pbac_mri$BaseLab168<-pbac_mri$lab168[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab168<-pbac_mri$lab168-pbac_mri$BaseLab168
+pbac_mri$BaseLab194<-pbac_mri$lab194[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab194<-pbac_mri$lab194-pbac_mri$BaseLab194
+pbac_mri$BaseLab198<-pbac_mri$lab198[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab198<-pbac_mri$lab198-pbac_mri$BaseLab198
+pbac_mri$BaseLab201<-pbac_mri$lab201[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffLab201<-pbac_mri$lab201-pbac_mri$BaseLab201
+pbac_mri$BaseCxVol<-pbac_mri$CxVol[match(pbac_mri$INDDID,pbac_mri$INDDID)]
+pbac_mri$DiffCxVol<-pbac_mri$CxVol-pbac_mri$BaseCxVol
+
+# Models testing association of longitudinal recognition scores with 
+# MTL ROI volumes.
+fitsumm<-data.frame()
+recog_lab047<-lme(Recognition~BaseLab047+DiffLab047+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+recog_lab048<-lme(Recognition~BaseLab048+DiffLab048+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+recog_lab116<-lme(Recognition~BaseLab116+DiffLab116+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+recog_lab117<-lme(Recognition~BaseLab117+DiffLab117+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+recog_lab170<-lme(Recognition~BaseLab170+DiffLab170+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+recog_lab171<-lme(Recognition~BaseLab171+DiffLab171+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+recog_cxvol<-lme(Recognition~BaseCxVol+DiffCxVol+Sex+Education,random=~1|INDDID,
+	data=recog_mri,na.action=na.exclude)
+
+# Add fixed effects tables to aggregate data frame of results.
+tmp<-as.data.frame(summary(recog_lab047)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-47
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(recog_lab048)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-48
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(recog_lab116)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-116
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(recog_lab117)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-117
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(recog_lab170)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-170
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(recog_lab171)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-171
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(recog_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Memory';tmp$Task<-'Recognition';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+# Models testing association of longitudinal language scores with 
+# left temporal ROI volumes.
+
+tmp<-subset(pbac_mri,!is.na(pbac_mri$Speech))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+speech_lab155<-lme(Speech~BaseLab155+DiffLab155+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+speech_lab201<-lme(Speech~BaseLab201+DiffLab201+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+speech_cxvol<-lme(Speech~BaseCxVol+DiffCxVol+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+
+tmp<-subset(fsp_mri,!is.na(fsp_mri$ForwardSpan))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+fspan_lab155<-lme(ForwardSpan~BaseLab155+DiffLab155+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+fspan_lab201<-lme(ForwardSpan~BaseLab201+DiffLab201+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+fspan_cxvol<-lme(ForwardSpan~BaseCxVol+DiffCxVol+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+
+flet_lab155<-lme(FLetterFluency~BaseLab155+DiffLab155+Sex+Education,random=~1|INDDID,
+	data=flet_mri,na.action=na.exclude)
+flet_lab201<-lme(FLetterFluency~BaseLab201+DiffLab201+Sex+Education,random=~1|INDDID,
+	data=flet_mri,na.action=na.exclude)
+flet_cxvol<-lme(FLetterFluency~BaseCxVol+DiffCxVol+Sex+Education,random=~1|INDDID,
+	data=flet_mri,na.action=na.exclude)
+
+tmp<-as.data.frame(summary(speech_lab155)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'Speech';tmp$Label<-155
+fitsumm<-rbind(fitsumm,tmp)
+	
+tmp<-as.data.frame(summary(speech_lab201)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'Speech';tmp$Label<-201
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(speech_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'Speech';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(flet_lab155)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'FLetterFluency';tmp$Label<-155
+fitsumm<-rbind(fitsumm,tmp)
+	
+tmp<-as.data.frame(summary(flet_lab201)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'FLetterFluency';tmp$Label<-201
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(flet_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'FLetterFluency';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(fspan_lab155)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'ForwardSpan';tmp$Label<-155
+fitsumm<-rbind(fitsumm,tmp)
+	
+tmp<-as.data.frame(summary(fspan_lab201)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'ForwardSpan';tmp$Label<-201
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(fspan_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Language';tmp$Task<-'ForwardSpan';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+# Associations between longitudinal visuospatial performance and PCA ROIs.
+tmp<-subset(pbac_mri,!is.na(pbac_mri$ReyCopy))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+rey_lab106<-lme(ReyCopy~BaseLab106+DiffLab106+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+rey_lab154<-lme(ReyCopy~BaseLab154+DiffLab154+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+rey_lab168<-lme(ReyCopy~BaseLab168+DiffLab168+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+rey_lab194<-lme(ReyCopy~BaseLab194+DiffLab194+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+rey_lab198<-lme(ReyCopy~BaseLab198+DiffLab198+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+rey_cxvol<-lme(ReyCopy~BaseCxVol+DiffCxVol+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+
+tmp<-subset(pbac_mri,!is.na(pbac_mri$JOLO))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+jolo_lab106<-lme(JOLO~BaseLab106+DiffLab106+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+jolo_lab154<-lme(JOLO~BaseLab154+DiffLab154+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+jolo_lab168<-lme(JOLO~BaseLab168+DiffLab168+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+jolo_lab194<-lme(JOLO~BaseLab194+DiffLab194+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+jolo_lab198<-lme(JOLO~BaseLab198+DiffLab198+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+jolo_cxvol<-lme(JOLO~BaseCxVol+DiffCxVol+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+
+tmp<-as.data.frame(summary(rey_lab106)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'ReyCopy';tmp$Label<-106
+fitsumm<-rbind(fitsumm,tmp)
+	
+tmp<-as.data.frame(summary(rey_lab154)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'ReyCopy';tmp$Label<-154
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(rey_lab168)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'ReyCopy';tmp$Label<-168
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(rey_lab194)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'ReyCopy';tmp$Label<-194
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(rey_lab198)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'ReyCopy';tmp$Label<-198
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(rey_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'ReyCopy';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(jolo_lab106)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'JOLO';tmp$Label<-106
+fitsumm<-rbind(fitsumm,tmp)
+	
+tmp<-as.data.frame(summary(jolo_lab154)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'JOLO';tmp$Label<-154
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(jolo_lab168)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'JOLO';tmp$Label<-168
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(jolo_lab194)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'JOLO';tmp$Label<-194
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(jolo_lab198)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'JOLO';tmp$Label<-198
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(jolo_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Visuospatial';tmp$Task<-'JOLO';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+# Associations between longitudinal behavioral/executive performance and 
+# fvAD ROIs.
+tmp<-subset(pbac_mri,!is.na(pbac_mri$BehavioralScale))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+bhav_lab103<-lme(BehavioralScale~BaseLab103+DiffLab103+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+bhav_lab143<-lme(BehavioralScale~BaseLab143+DiffLab143+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+bhav_lab154<-lme(BehavioralScale~BaseLab154+DiffLab154+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+bhav_cxvol<-lme(BehavioralScale~BaseCxVol+DiffCxVol+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+
+tmp<-subset(pbac_mri,!is.na(pbac_mri$OralTrails))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+otrails_lab103<-lme(OralTrails~BaseLab103+DiffLab103+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+otrails_lab143<-lme(OralTrails~BaseLab143+DiffLab143+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+otrails_lab154<-lme(OralTrails~BaseLab154+DiffLab154+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+otrails_cxvol<-lme(OralTrails~BaseCxVol+DiffCxVol+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+
+#tmp<-subset(pbac_mri,!is.na(pbac_mri$DigitsBackward))
+tmp<-subset(rsp_mri,!is.na(rsp_mri$ReverseSpan))
+tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+bspan_lab103<-lme(ReverseSpan~BaseLab103+DiffLab103+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+bspan_lab143<-lme(ReverseSpan~BaseLab143+DiffLab143+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+bspan_lab154<-lme(ReverseSpan~BaseLab154+DiffLab154+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+bspan_cxvol<-lme(ReverseSpan~BaseCxVol+DiffCxVol+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+
+tmp<-as.data.frame(summary(bhav_lab103)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Behavioral';tmp$Task<-'BehavioralScale';tmp$Label<-103
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bhav_lab143)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Behavioral';tmp$Task<-'BehavioralScale';tmp$Label<-143
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bhav_lab154)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Behavioral';tmp$Task<-'BehavioralScale';tmp$Label<-154
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bhav_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Behavioral';tmp$Task<-'BehavioralScale';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(otrails_lab103)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'OralTrails';tmp$Label<-103
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(otrails_lab143)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'OralTrails';tmp$Label<-143
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(otrails_lab154)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'OralTrails';tmp$Label<-154
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(otrails_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'OralTrails';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bspan_lab103)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'ReverseSpan';tmp$Label<-103
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bspan_lab143)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'ReverseSpan';tmp$Label<-143
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bspan_lab154)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'ReverseSpan';tmp$Label<-154
+fitsumm<-rbind(fitsumm,tmp)
+
+tmp<-as.data.frame(summary(bspan_cxvol)$tTable,stringsAsFactors=F)
+tmp$Domain<-'Executive';tmp$Task<-'ReverseSpan';tmp$Label<-'CxVol'
+fitsumm<-rbind(fitsumm,tmp)
+
+names(fitsumm)[4]<-'Tstat'
+fitsumm$Task<-gsub('Recognition','Recognition memory',fitsumm$Task)
+fitsumm$Task<-gsub('FLetterFluency','Letter fluency',fitsumm$Task)
+fitsumm$Task<-gsub('ForwardSpan','Forward digit span',fitsumm$Task)
+fitsumm$Task<-gsub('ReyCopy','Rey copy',fitsumm$Task)
+fitsumm$Task<-gsub('JOLO','Judgment of line orientation',fitsumm$Task)
+fitsumm$Task<-gsub('BehavioralScale','Social behavior',fitsumm$Task)
+fitsumm$Task<-gsub('OralTrails','Oral Trails',fitsumm$Task)
+#fitsumm$Task<-gsub('DigitsBackward','Digits backward',fitsumm$Task)
+fitsumm$Task<-gsub('ReverseSpan','Reverse digit span',fitsumm$Task)
+fitsumm$Task<-factor(fitsumm$Task,levels=c('Recognition memory','Speech',
+	'Letter fluency','Forward digit span','Rey copy','Judgment of line orientation','Social behavior','Oral Trails',
+	'Reverse digit span'))
+fitsumm$Domain<-factor(fitsumm$Domain,levels=c('Memory','Language',
+	'Visuospatial','Behavioral','Executive'))
+fitsumm<-fitsumm[order(fitsumm$Task,fitsumm$Label),]
+fitsumm$Control<-ifelse(fitsumm$Label=='CxVol',TRUE,FALSE)
+
+# Which ROIs do better than the cortical average in predicting task performance?
+sigeff<-data.frame()
+for (task in unique(fitsumm$Task)) {
+	cxtstat<-fitsumm$Tstat[fitsumm$Task %in% task & grepl('DiffCxVol',
+		rownames(fitsumm))]
+	siglab<-unique(fitsumm$Label[fitsumm$Task %in% task &
+		grepl('DiffLab',rownames(fitsumm)) &
+		abs(fitsumm$Tstat)>=abs(cxtstat) &
+		fitsumm$"p-value"<0.05])
+	tmp<-subset(fitsumm,fitsumm$Task %in% task & fitsumm$Label %in% siglab)
+	sigeff<-rbind(sigeff,tmp)
+}
+
+fitsumm$Region<-anovatab2$Region[match(fitsumm$Label,anovatab2$LabelID)]
+fitsumm$Region[fitsumm$Label=='CxVol']<-'Whole cortex'
+fitsumm$P<-fitsumm$"p-value"
+
+fitsumm$T<-paste('t(',fitsumm$DF,')=',sprintf('%.1f',fitsumm$Tstat),sep='')
+npsytab<-fitsumm[grepl('Diff',rownames(fitsumm)),c('Domain','Task','Region',
+	'T','P')]
+npsytab$P<-p.adjust(npsytab$P,'fdr')
+w1<-which(npsytab$P>=0.1)
+npsytab$P[w1]<-ceiling(10*npsytab$P[w1])/10
+w2<-which(npsytab$P<0.1 & npsytab$P>=0.01)
+npsytab$P[w2]<-ceiling(100*npsytab$P[w2])/100
+w3<-which(npsytab$P<0.01 & npsytab$P>=0.001)
+npsytab$P[w3]<-ceiling(1000*npsytab$P[w3])/1000
+w4<-which(npsytab$P<0.001)
+npsytab$P[w4]<-sprintf('%.4f',ceiling(10000*npsytab$P[w4])/10000)
+npsytab$P<-as.character(npsytab$P)
+npsytab<-npsytab[order(npsytab$Domain,npsytab$Task,npsytab$Region),]
+npsytab$Task<-as.character(npsytab$Task)
+npsytab$Task[duplicated(npsytab$Task)]<-''
+npsytab<-subset(npsytab,!npsytab$Region %in% 'Whole cortex')
+
+```
+## Exploratory whole-brain analysis {-}
+\begin{figure}[]
+% Voxelwise cortical thickness versus controls.
+
+{\centering \includegraphics[width=7in]{./fig/me_time.pdf} 
+
+}
+
+\caption[GM time effects]{Voxelwise differences in cortical thickness relative to matched controls. Image overlays are binarized t-statistic maps for simple contrasts of controls minus each patient group. Blue: simple effect of group (patients<controls) from cross-sectional analysis of participants' initial MRI scans; red: group x time interaction from longitudinal mixed effects models, indicating where patients have more rapid cortical thinning than controls; green: overlap between group and group x time effects. All results were thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{584}{\micro\litre} for baseline results and \SI{600}{\micro\litre} longitudinal results, corresponding to a corrected cluster-wise threshold of p<0.05. \label{gm_me_time}}
+
+\end{figure}
+
+```{r run_vox_base, eval=FALSE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+# Run voxelwise linear models on cortical thickness maps from initial scans.
+basevox<-read.table('~/bin/long_lme_cxthick_20190109.sh',skip=34,header=T,
+	stringsAsFactors=F,comment.char='\\')
+basevox<-subset(basevox,basevox$Time==0)
+mask<-antsImageRead(paste(wd,'oasis_mask_cx_2mm_crop.nii.gz',sep='/'),3)
+if (!file.exists(basevox$InputFile[1])) { basevox$InputFile<-gsub('/home/jeff','/Users/jeffreyphillips',basevox$InputFile) }
+basemat<-imagesToMatrix(basevox$InputFile,mask)
+m1<-lm(basemat[,1]~basevox$Group+basevox$base_MMSETotal+basevox$Sex+basevox$base_ageatMRI)
+m<-lm(basemat~basevox$Group+basevox$base_MMSETotal+basevox$Sex+basevox$base_ageatMRI)
+mstat<-bigLMStats(m)
+
+# Save out model residuals.
+rlist<-matrixToImages(m$residuals,mask)
+for (i in 1:length(rlist)) {
+	fname<-paste('resid',sprintf('%03d',i),'.nii.gz',sep='')
+	antsImageWrite(rlist[[i]],fname)
+}
+system('fslmerge -t base_resid.nii.gz resid???.nii.gz')
+system('rm resid???.nii.gz')
+
+# Estimate spatial auto-correlation in data from residuals using 3dFWHMx.
+# system('3dFWHMx -mask oasis_mask_cx_2mm_crop.nii.gz -input base_resid.nii.gz -ACF -overwrite -out base_resid')
+# ACF model parameters for a*exp(-r*r/(2*b*b))+(1-a)*exp(-r/c) plus effective FWHM
+# 0.63928  5.35828  23.2461    15.0357
+
+# 3dClustSim -mask oasis_mask_cx_2mm_crop.nii.gz -acf 0.63928 5.35828 23.2461 -pthr 0.01 0.001 -athr 0.05 0.01 -prefix base_resid_clustsim_acf
+# bi-sided thresholding
+# Grid: 70x66x90 2.00x2.00x2.00 mm^3 (80256 voxels in mask)
+#
+# CLUSTER SIZE THRESHOLD(pthr,alpha) in Voxels
+# -NN 3  | alpha = Prob(Cluster >= given size)
+#  pthr  | .05000 .01000
+# ------ | ------ ------
+# 0.010000   282.5  430.0
+# 0.001000    74.4  117.2
+kthresh<-75
+
+# Save out results at clusterwise p<0.05.
+for (i in 1:4) {
+
+	# Threshold at voxelwise p<0.001.
+	wzero<-which(mstat$beta.pval[i,]>0.001)
+	tthresh<-matrix(mstat$beta.t[i,],nrow=1)
+	tthresh[wzero]<-0
+	lothresh<-sprintf('%.1f',min(abs(tthresh[abs(tthresh)>0])))
+	tthresh<-matrixToImages(tthresh,mask)
+	g<-sort(unique(basevox$Group))[i+1]
+	g<-unlist(strsplit(g,'_'))[2]
+	outfile<-paste('base_',g,'_Control_tstat_p001.nii.gz',sep='')
+	antsImageWrite(image=tthresh[[1]],file=outfile)
+	cmd<-paste('3dmerge -overwrite -dxyz=1 -1clust 1.75 ',kthresh,' -1dindex 0 -1tindex 0 -2thresh -',
+		lothresh,' ',lothresh,' -prefix ',gsub('tstat_p001.nii','clust.nii',outfile),' ',
+		outfile,sep='')
+	system(cmd)
+
+	# Threshold at voxelwise p<0.01.
+	wzero<-which(mstat$beta.pval[i,]>0.01)
+	tthresh<-matrix(mstat$beta.t[i,],nrow=1)
+	tthresh[wzero]<-0
+	lothresh<-sprintf('%.1f',min(abs(tthresh[abs(tthresh)>0])))
+	tthresh<-matrixToImages(tthresh,mask)
+	g<-sort(unique(basevox$Group))[i+1]
+	g<-unlist(strsplit(g,'_'))[2]
+	outfile<-paste('base_',g,'_Control_tstat_p01.nii.gz',sep='')
+	antsImageWrite(image=tthresh[[1]],file=outfile)
+	cmd<-paste('3dmerge -overwrite -dxyz=1 -1clust 1.75 ',kthresh,' -1dindex 0 -1tindex 0 -2thresh -',
+		lothresh,' ',lothresh,' -prefix ',gsub('tstat_p01.nii','p01_clust.nii',outfile),' ',
+		outfile,sep='')
+	system(cmd)
+
+}
+
+baseflist<-c('base_aAD_Control_clust.nii.gz','base_fvAD_Control_clust.nii.gz',
+	'base_lvPPA_Control_clust.nii.gz','base_PCA_Control_clust.nii.gz',
+	'base_aAD_Control_p01_clust.nii.gz','base_fvAD_Control_p01_clust.nii.gz',
+	'base_lvPPA_Control_p01_clust.nii.gz','base_PCA_Control_p01_clust.nii.gz')
+
+for (i in 1:length(baseflist)) {
+	f<-baseflist[i]
+	cmd<-paste('3dresample -master T_template0_BrainCerebellum_crop.nii.gz -prefix ',
+		f,' -inset ',f,' -overwrite',sep='')
+	system(cmd)
+	cmd<-paste('fslswapdim ',f,' x z -y ',gsub('.nii','_RPI.nii',f))
+	system(cmd)
+}
+
+nvox<-ncol(mstat$beta.t)
+
+doThis<-FALSE; if (doThis) {
+	# Calculate and save out posthoc contrast files.
+	vox_base_z<-matrix(0,nrow=nrow(kbase),ncol=nvox)
+	vox_base_p<-matrix(Inf,nrow=nrow(kbase),ncol=nvox)
+	cat('Starting voxelwise posthoc tests:',base::date(),'\n')
+	for (i in 1:nvox) {
+	#	cat(i,'/',nvox,'\n')
+		m<-lm(basemat[,i]~basevox$Group+basevox$base_MMSETotal+
+			basevox$Sex+basevox$base_ageatMRI)
+		comp <- glht(m, linfct=kbase)
+		scomp<-summary(comp,test=adjusted('none'))
+		vox_base_z[,i]<-scomp$test$tstat
+		vox_base_p[,i]<-scomp$test$pvalues
+	}
+	connames<-names(scomp$test$tstat)
+	connames<-gsub('mean','base',connames)
+	connames<-gsub('g0_','',gsub('g1_','',gsub('g2_','',gsub('g3_','',gsub('g4_',
+		'',connames)))))
+
+	for (i in 1:length(connames)) {
+		cat(i,'/',length(connames),connames[i],'\n')
+		cn<-connames[i]
+		wzero<-which(vox_base_p[i,]>0.001)
+		tthresh<-matrix(vox_base_z[i,],nrow=1)
+		tthresh[wzero]<-0
+		lothresh<-sprintf('%.1f',min(abs(tthresh[abs(tthresh)>0])))
+		tthresh<-matrixToImages(tthresh,mask)
+		outfile<-paste(cn,'.nii.gz',sep='')
+		f<-gsub('.nii','_clust.nii',outfile)
+		antsImageWrite(image=tthresh[[1]],file=outfile)
+		cmd<-paste('3dmerge -overwrite -dxyz=1 -1clust 1.75 ',kthresh,' -1dindex 0 -1tindex 0 -2thresh -',
+			lothresh,' ',lothresh,' -prefix ',f,' ',
+			outfile,sep='')
+		system(cmd)
+		cmd<-paste('3dresample -master T_template0_BrainCerebellum_crop.nii.gz -prefix ',
+			f,' -inset ',f,' -overwrite',sep='')
+		system(cmd)
+		cmd<-paste('fslswapdim ',f,' x z -y ',gsub('.nii','_RPI.nii',f))
+		system(cmd)
+	}
+	cat('Finished voxelwise posthoc tests:',base::date(),'\n')
+}
+
+```
+
+```{r run_vox_lme, eval=FALSE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+# Run voxelwise LME on cortical thickness maps.
+#system('~/bin/long_lme_ctx_20190109.sh')
+
+# Estimate spatial auto-correlation in data from LME residuals using 3dFWHMx.
+#system('3dFWHMx -mask oasis_mask_cx_2mm_crop.nii.gz -input long_lme_ctx_resid_20190110.nii.gz -ACF -overwrite -out long_lme_ctx_resid_20190110')
+
+# ACF model parameters for a*exp(-r*r/(2*b*b))+(1-a)*exp(-r/c) plus effective FWHM
+# 0.58846  5.59633  15.7451    14.8721
+
+# Determine appropriate cluster threshold for cluster-wise alpha=0.05.
+# system('3dClustSim -mask oasis_mask_cx_2mm_crop.nii.gz -acf 0.58846 5.59633 15.7451 -pthr 0.01 0.001 -athr 0.05 0.01 -prefix resid_clustsim_acf_20190110')
+# 3dClustSim -mask oasis_mask_cx_2mm_crop.nii.gz -acf 0.58846 5.59633 15.7451 -pthr 0.01 0.001 -athr 0.05 0.01 -prefix resid_clustsim_acf_20190110
+# bi-sided thresholding
+# Grid: 70x66x90 2.00x2.00x2.00 mm^3 (80256 voxels in mask)
+#
+# CLUSTER SIZE THRESHOLD(pthr,alpha) in Voxels
+# -NN 3  | alpha = Prob(Cluster >= given size)
+#  pthr  | .05000 .01000
+# ------ | ------ ------
+# 0.010000   251.5  369.0
+# 0.001000    72.3  113.0
+th<-3.277
+k<-73
+
+subbriks<-data.frame(SB=seq(8,54,by=2),Label=c("mean_Control_lvPPA","mean_Control_PCA",
+	"mean_Control_aAD","mean_Control_fvAD","mean_PCA_lvPPA","mean_aAD_lvPPA",
+	"mean_aAD_PCA","mean_aAD_fvAD","mean_PCA_fvAD","mean_lvPPA_fvAD",
+	"time_Control_lvPPA","time_Control_PCA","time_Control_aAD","time_Control_fvAD",
+	"time_PCA_lvPPA","time_aAD_lvPPA","time_aAD_PCA","time_aAD_fvAD","time_PCA_fvAD",
+	"time_lvPPA_fvAD","base_MMSE","base_age","sex","time_Control"),stringsAsFactors=F)
+
+for (i in 1:nrow(subbriks)) {
+	ind<-subbriks$SB[i]
+	outf<-paste(subbriks$Label[i],'_clust.nii.gz',sep='')
+	cmd<-paste('3dmerge -dxyz=1 -1clust 1.75 ',k,' -1dindex ',ind,' -1tindex ',ind,
+		' -2thresh -',th,' ',th,' -prefix ',outf,' long_lme_ctx_20190110+orig -overwrite',sep='')
+	system(cmd)
+	cmd<-paste('3dresample -master T_template0_BrainCerebellum_crop.nii.gz -prefix ',
+		outf,' -inset ',outf,' -overwrite',sep='')
+	system(cmd)
+	cmd<-paste('fslswapdim ',outf,' x z -y ',gsub('.nii','_RPI.nii',outf))
+	system(cmd)
+}
+
+th<-2.575
+k<-70
+
+for (i in 1:nrow(subbriks)) {
+	ind<-subbriks$SB[i]
+	outf<-paste(subbriks$Label[i],'_p01_clust.nii.gz',sep='')
+	cmd<-paste('3dmerge -dxyz=1 -1clust 1.75 ',k,' -1dindex ',ind,' -1tindex ',ind,
+		' -2thresh -',th,' ',th,' -prefix ',outf,' long_lme_ctx_20190110+orig -overwrite',sep='')
+	system(cmd)
+	cmd<-paste('3dresample -master T_template0_BrainCerebellum_crop.nii.gz -prefix ',
+		outf,' -inset ',outf,' -overwrite',sep='')
+	system(cmd)
+	cmd<-paste('fslswapdim ',outf,' x z -y ',gsub('.nii','_RPI.nii',outf))
+	system(cmd)
+}
+
+doThis<-FALSE; if (doThis) {
+	b<-peaktab[!peaktab$lvPPA.base=='---',c(1:2,7:8)]
+	d<-peaktab[!peaktab$lvPPA.time=='---',c(1:2,9:10)]
+	o<-peaktab[peaktab$lvPPA.olap %in% 1,c(1:2,11:12)]
+	wrs<-d[d$LabelID %in% setdiff(intersect(b$LabelID,d$LabelID),o$LabelID),]
+	n<-d[d$LabelID %in% setdiff(d$LabelID,b$LabelID),]
+
+	b<-peaktab[!peaktab$PCA.base=='---',c(1:2,13:14)]
+	d<-peaktab[!peaktab$PCA.time=='---',c(1:2,15:16)]
+	o<-peaktab[peaktab$PCA.olap %in% 1,c(1:2,17:18)]
+	wrs<-d[d$LabelID %in% setdiff(intersect(b$LabelID,d$LabelID),o$LabelID),]
+	n<-d[d$LabelID %in% setdiff(d$LabelID,b$LabelID),]
+
+	b<-peaktab[!peaktab$fvAD.base=='---',c(1:2,19:20)]
+	d<-peaktab[!peaktab$fvAD.time=='---',c(1:2,21:22)]
+	o<-peaktab[peaktab$fvAD.olap %in% 1,c(1:2,23:24)]
+	wrs<-d[d$LabelID %in% setdiff(intersect(b$LabelID,d$LabelID),o$LabelID),]
+	n<-d[d$LabelID %in% setdiff(d$LabelID,b$LabelID),]
+
+	b<-peaktab[!peaktab$aAD.base=='---',c(1:4)]
+	d<-peaktab[!peaktab$aAD.time=='---',c(1:2,5:6)]
+	wrs<-d[d$LabelID %in% intersect(b$LabelID,d$LabelID),]
+	n<-d[d$LabelID %in% setdiff(d$LabelID,b$LabelID),]
+}
+
+# Create overlap files between baseline and longitudinal change contrasts vs. controls.
+for (g in c('aAD','lvPPA','PCA','fvAD')) {
+	f1<-paste('base',g,'Control_clust.nii.gz',sep='_')
+	f2<-paste('time_Control',g,'clust.nii.gz',sep='_')
+	outf<-paste('olap_Control',g,'clust.nii.gz',sep='_')
+	cmd<-paste("3dcalc -a",f1,"-b",f2,"-expr 'step(-1*a)*step(b)' -overwrite -prefix",outf)
+	system(cmd)
+	cmd<-paste('fslswapdim ',outf,' x z -y ',gsub('.nii','_RPI.nii',outf))
+	system(cmd)
+
+	f1<-paste('base',g,'Control_p01_clust.nii.gz',sep='_')
+	f2<-paste('time_Control',g,'p01_clust.nii.gz',sep='_')
+	outf<-paste('olap_Control',g,'p01_clust.nii.gz',sep='_')
+	cmd<-paste("3dcalc -a",f1,"-b",f2,"-expr 'step(-1*a)*step(b)' -overwrite -prefix",outf)
+	system(cmd)
+	cmd<-paste('fslswapdim ',outf,' x z -y ',gsub('.nii','_RPI.nii',outf))
+	system(cmd)
+}
+
+```
+Exploratory, whole-brain analysis of cortical thickness was performed to identify areas of early atrophy and later spread that were not captured by _a priori_ ROIs. As in ROI analysis (Table 2), areas were categorized by whether they exhibited significant atrophy at patients' first MRI and whether they exhibited significant longitudinal change during the follow-up period relative to controls. As mentioned above, the hippocampi were excluded from voxelwise analysis due to the difficulty of reliably segmenting and estimating cortical thickness for this structure [@gronenschild_effects_2012;@han_reliability_2006;@schwarz_large-scale_2016].
+
+### Voxelwise cortical thickness differences at initial MRI {-}
+Whole-brain atrophy patterns at initial MRI corroborated ROI-based analyses and indicated areas of earlier neurodegeneration that fell outside of _a priori_ ROIs. At initial MRI, the lvPPA group exhibited lower cortical thickness vs. controls in left middle and superior temporal gyri, our hypothesized disease focus for lvPPA, corroborating ROI volume analysis (Figure 3A). In addition to these regions, lvPPA patients exhibited early atrophy in multiple left-hemisphere temporal, parietal, and frontal areas including central and parietal opercula; planum temporale; planum polare; and inferior temporal, fusiform, supramarginal, angular, inferior occipital, and middle occipital gyri (Figure 3). In prefrontal cortex, lvPPA patients had cortical thinning in left anterior insula and frontal operculum as well as bilateral middle and superior frontal gyri. Moreover, nearly all of these areas continued to exhibit longitudinal change during the follow-up period (Figure 3, green areas). Peak t-statistics and cluster volumes for these regions are reported in Supplementary Table 4. Voxelwise analysis of the PCA group not only demonstrated expected atrophy in right parietal, occipital, and posterior temporal areas, but also in their left-hemisphere homologues (Figure 3B). Additionally, PCA patients' baseline atrophy extended into right precentral, middle frontal, and superior frontal gyri. Among these areas, the bilateral precuneus/posterior cingulate gyrus and middle temporal gyrus continued to demonstrate change during the follow-up period. Overall, baseline results thus indicated that despite some right lateralization of disease, PCA patients in the current sample had bilateral cortical involvement consistent with recent consensus criteria for PCA [@crutch_consensus_2017]. As in ROI-based analysis, fvAD patients exhibited initial atrophy relative to controls in left anterior insula and middle frontal gyrus, right angular gyrus, and bilateral middle temporal gyri. However, areas of early atrophy extended far beyond these regions to include right insula and middle frontal gyrus as well as bilateral medial and ventral prefrontal cortex, inferior and superior frontal gyri, temporal poles, and opercular cortex (Figure 3C). The fvAD group also had initial atrophy relative to controls in the anterior and dorsal portion of right entorhinal cortex, a finding that was not captured by ROI-based analysis. In apparent contrast to the findings of Ossenkoppele and colleagues [@ossenkoppele_behavioural/dysexecutive_2015], posterior atrophy was limited, most notably including the right precuneus. Among areas of initial atrophy in fvAD, only right anterior insula and bilateral central opercula displayed significant cortical thinning over the follow-up period. The aAD group exhibited expected atrophy in right entorhinal cortex as well as bilateral middle and superior temporal gyri, partially replicating ROI-based findings (Figure 3D). Outside _a priori_ ROIs, aAD patients also exhibited early atrophy in bilateral parietal areas including the precunei and middle cingulate, posterior cingulate, angular, and supramarginal gyri; right insula; and right frontal lobe areas including anterior orbital, middle frontal, superior frontal, and medial precentral gyri (Supplementary Table 4). Of these areas, only the right insula demonstrated continued atrophy throughout the follow-up period. Figure 4 presents contrasts between patient groups of initial cortical thickness. Consistent with expectations from previous cross-sectional studies, these results indicate left lateralized atrophy in lvPPA (Figure 4A); parietal and occipitotemporal disease in PCA that exhibits some right-hemisphere bias (Figures 4A, C, and F), and greater frontal lobe involvement in fvAD than in other phenotypes (Figures 4C, E, and F). Collectively, these results replicate initial volume differences from ROI-based analysis and highlight additional phenotype-specific areas of atrophy reported in prior studies of lvPPA [@rogalski_aphasic_2016], PCA [@lehmann_global_2012], and fvAD [@whitwell_temporoparietal_2011].
+
+\begin{figure}[]
+% Voxelwise group differences in cortical thickness.
+
+{\centering \includegraphics[width=7in]{./fig/vox_base_diff.pdf} 
+
+}
+
+\caption[GM mean differences]{Voxelwise differences between patient groups in cortical thickness at time of initial MRI scan. Results are thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{584}{\micro\litre}, corresponding to a corrected cluster-wise threshold of p<0.05. Warm colors indicate thinner cortical grey matter in the second group than the first; cool colors indicate thinner cortical grey matter in the first group than the second. \label{gm_mean_diff}}
+
+\end{figure}
+
+\begin{figure}[]
+% Voxelwise group differences in rates of longitudinal GM change.
+
+{\centering \includegraphics[width=7in]{./fig/vox_group_time.pdf} 
+
+}
+
+\caption[GM group x time differences]{Voxelwise differences between patient groups in rates of cortical thinning over time. Image overlays are t-statistic maps for the interaction of each group with time, calculated from linear mixed effects (LME) models and thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{600}{\micro\litre}, corresponding to a corrected cluster-wise threshold of p<0.05. Warm colors indicate that cortical thinning over time is more rapid in the second group than the first; cool colors indicate that cortical thinning is more rapid in the first group than the second. \label{gm_group_time}}
+
+\end{figure}
+
+### Voxelwise whole-brain analysis of longitudinal disease spread {-}
+Longitudinal whole-brain analysis also allowed us to identify brain areas that were not significantly atrophied at baseline but demonstrated progressive atrophy over the follow-up period. As in ROI-based analysis, we interpret these effects to indicate the spread of disease to brain areas that were relatively spared in early disease stages. The lvPPA group showed extensive new atrophy in right temporoparietal areas and throughout bilateral prefrontal, medial parietal, and anterior temporal cortex (Figure 3A, red regions), suggesting spread of disease to these areas following patients' initial scans. In PCA, progressive atrophy was observed in several areas unaffected at initial MRI, including the temporal poles, bilateral superior frontal gyri, and bilateral perisylvian cortex (Figure 3B, Supplementary Table 5). In contrast to lvPPA and PCA patients, areas of newer atrophy progression were sparse among fvAD patients, limited to portions of right anterior insula as well as left opercular and perisylvian cortex (Figure 3C). Because the small sample size of this group might have limited statistical sensitivity, we also present voxelwise contrasts vs. controls at a liberal statistical threshold of p<0.01, without cluster-wise correction for multiple comparisons (Supplementary Figure 3). While these results must be interpreted with caution due to the potential for false positive results, they suggest more extensive disease spread to left posterior insula, left dorsolateral prefrontal cortex, and bilateral anterior prefrontal areas. Finally, aAD patients showed new longitudinal change during the follow-up period in bilateral parietal cortex as well as right posterior temporal, anterior temporal, opercular, and prefrontal areas (Figure 3D, Supplementary Table 5).
+
+### Voxelwise whole-brain differences in regional rates of change {-}
+As in ROI-based analysis, we assessed group differences in the regional pace of cortical thinning over time. Consistent with ROI-based analysis (Figure 2), lvPPA patients had significantly more rapid atrophy than aAD patients in left anterior and posterior superior/middle temporal gyri (Figure 5A). Additionally, aAD patients exhibited faster atrophy progression than fvAD patients in right middle occipital gyrus and superior parietal lobule (Figure 5B), consistent with parietal differences observed between these groups in ROI-based analysis. Similarly, lvPPA patients exhibited more rapid atrophy than fvAD patients in left precuneus and bilateral middle occipital gyri (Figure 5C). These results corroborate ROI-based findings that suggest neocortical rates of atrophy may vary by region according to patient phenotype.
+
+### Degree of structural connectivity predicts longitudinal atrophy {-}
+Nodes in the AAL region graph had a median degree of 19.5 (interquartile range=17--25.75). Nodes in the top quartile corresponded to several _a priori_ ROIs, including bilateral superior parietal lobules; bilateral inferior, middle, and superior temporal gyri; and right angular gyrus. Both left and right hippocampus labels (which encompassed proximal MTL structures) had degrees of 17; left insula, 23; left middle frontal gyrus, 21; right supramarginal gyrus, 21; right precuneus, 22; and left and right precentral gyri, 21 and 18, respectively. Node degree was positively associated with regions' average volume among controls (Pearson's R=0.46, p<0.001); to account for this potential confound, average control volume for each region was included as a covariate. Linear mixed effects modeling showed that higher node degree predicted greater annualized GM volume loss in each patient group relative to controls (Figure 6), as evidenced by group x degree interaction terms: for lvPPA, $\beta$=-0.011, t(6703)=-6.4, p<0.001; for PCA, $\beta$=-0.0059, t(6703)=-3.1, p<0.001; for fvAD, $\beta$=-0.0049, t(6703)=-2.2, p<0.03; and for aAD, $\beta$=-0.010, t(6703)=-5.3, p<0.001. The main effect of degree was marginally significant [$\beta$=-0.0020, t(6703)=1.7, p<0.09], reflecting the lack of substantial GM volume loss in the control group (Figure 6). Among covariates, volume at participants' first MRI was significantly associated with annualized change [$\beta$=-0.024, t(6703)=-6.2, p<0.001], as was average region size among controls [$\beta$=-13.2, t(6703)=-8.3, p<0.001]. Simple effects of group were not significant, although the fvAD group had marginally lower volumes relative to controls [$\beta$=-0.15, t(103)=-1.9, p<0.06]. Effects of age and sex were also non-significant (both p>0.12). In pairwise post-hoc contrasts, the aAD group had significantly greater overall volume loss than the lvPPA group (z=2.3, p<0.02). Additionally, the aAD group had a more negative slope of association between degree and longitudinal change than the PCA group (z=2.0, p<0.05) and the fvAD group (z=2.1, p<0.04), suggesting that brain connectivity predicted greater atrophy in aAD than these other phenotypes. Other contrasts of group and group x degree interaction terms were non-significant (all z<0.6, p>0.5). Importantly, these associations were based on GM volumes estimated for AAL labels and are thus unaffected by differences in the AAL and Mindboggle parcellation schemes. Furthermore, because the present analysis relies on population-averaged connectivity values for all groups, it does not address potential connectivity differences between naAD and aAD in networks associated with language, visuospatial function, social behavior, executive control, and memory.
+
+```{r aal_transmission, eval=TRUE, include=TRUE, echo=FALSE, autodep=TRUE,results='asis',fig.align='center',fig.width=7,fig.height=5,fig.path='./fig/',fig.cap='Node degree predicts annualized grey matter volume decline among study participants in regions defined by the Automated Anatomical Labeling (AAL) atlas. Node degree is based on structural connectivity measures computed by Yeh et al. (2018) and reflects the number of white matter connections that each AAL region has with other regions. Shaded areas show the pointwise 95\\% confidence interval for each regression line.'}
+
+### Center-of-mass coordinates for clusters, 
+### obtained by running 3dmerge on MNI-space label file.
+system('3dclust -isomerge 1.75 10 AAL65-ch2_nudge.nii.gz > AAL65_clust.txt')
+mergetab<-read.table('AAL65_clust.txt',skip=12,stringsAsFactors=F)
+names(mergetab)<-c('Volume','CM_RL', 'CM_AP', 'CM_IS', 'minRL', 'maxRL', 'minAP', 'maxAP', 
+                   'minIS', 'maxIS', 'Mean', 'SEM', 'Max_Int', 'MI_RL', 'MI_AP', 'MI_IS')
+mergetab$CM_RL<-(-1)*mergetab$CM_RL
+mergetab$CM_AP<-(-1)*mergetab$CM_AP
+devpix<-c(10,620)
+mergetab$RLpix<-round(devpix[1]+((devpix[2]-20)/(max(mergetab$CM_RL)-
+                min(mergetab$CM_RL)))*(mergetab$CM_RL-min(mergetab$CM_RL)),0)
+mergetab$APpix<-round(devpix[1]+((devpix[2]-20)/(max(mergetab$CM_AP)-
+                min(mergetab$CM_AP)))*(mergetab$CM_AP-min(mergetab$CM_AP)),0)
+mergetab<-mergetab[order(mergetab$Mean),]
+coords<-matrix(c(mergetab$RLpix,mergetab$APpix),nc=2)
+
+# Custom graphing function. Edges with weight=0 are rendered invisible 
+# but are still present.
+plotme <- function(g,title=NA) {
+   plot(g, asp=FALSE, vertex.label.color="forestgreen", vertex.label.cex=1.5,
+        vertex.label.font=2, vertex.size=5, vertex.color="grey80",
+        vertex.frame.color="grey50", edge.width=ifelse(E(g)$weight>0,E(g)$weight,
+        0.001),edge.color=ifelse(E(g)$weight>0,'gold3',rgb(0,0,0,0)),main=title)
+}
+
+
+# Create graph from nodes and links files.
+# Calculate weighted and unweighted degree.
+# Save out a plot of weighted degree for each patient.
+nodes<-read.table('AAL65.txt',stringsAsFactors=F,header=T)
+nodes<-subset(nodes,!nodes$id %in% c('BS','CB_L','CB_R'))
+
+aal<-read.csv('aal_connectogram.csv',stringsAsFactors=F)
+aalmat<-as.matrix(aal)
+rownames(aalmat)<-colnames(aalmat)
+# Exclude cerebellum and brainstem.
+w<-which(rownames(aalmat) %in% c('BS','CB_L','CB_R'))
+#w<-which(rownames(aalmat) %in% c('BS','CB_L','CB_R','Pu_L','Pu_R','Th_L','Th_R'))
+aalmat<-aalmat[-w,]
+aalmat<-aalmat[,-w]
+aal<-data.frame(from=rownames(aalmat)[row(aalmat)],to=colnames(aalmat)[col(aalmat)],weight=c(aalmat))
+aal<-aal[which(upper.tri(aalmat)),]
+nedge<-nrow(nodes)*(nrow(nodes)-1)/2
+
+### Calculate degree and assortativity_degree after dropping all connections
+# where the weight measure == 0.
+gbin<-graph_from_data_frame(d=aal[aal$weight>0,c('from','to','weight')],
+					   vertices=nodes[,c('id','index')], directed=F)
+V(gbin)$degree<-degree(gbin)
+gbin$assort_deg<-assortativity_degree(gbin)
+dmat<-distances(graph=gbin,v=V(gbin),to=V(gbin),weights=NA)
+d<-data.frame(from=rownames(dmat)[row(dmat)],to=colnames(dmat)[col(dmat)],weight=c(dmat))
+d<-d[which(upper.tri(dmat)),]
+E(gbin)$shortest_path<-d$weight[aal$weight>0]
+dwmat<-distances(graph=gbin,v=V(gbin),to=V(gbin),weights=E(gbin)$weight)
+dw<-data.frame(from=rownames(dwmat)[row(dwmat)],to=colnames(dwmat)[col(dwmat)],
+	weight=c(dwmat))
+dw<-dw[which(upper.tri(dwmat)),]
+E(gbin)$weighted_path<-dw$weight[aal$weight>0]
+gbin$layout<-coords
+#plotme(gbin,title='Structural connectivity')
+
+### Calculate strength (i.e., weighted degree) and eigenvector centrality from
+# the full network.
+g<-graph_from_data_frame(d=aal[,c('from','to','weight')],
+					   vertices=nodes[,c('id','index')], directed=F)
+V(g)$strength<-strength(g)
+V(g)$eigen_centrality<-eigen_centrality(g)$vector
+
+### Visualizations:
+# Use the strength function to add weighted degree to the labels.
+V(g)$label <- paste(sep="\n", V(g)$name, round(strength(g),2))
+
+g$layout <- coords
+
+#plotme(g,title='Weighted degree')
+
+# Read in AAL label statistics.
+aal_lstat<-data.frame()
+ff<-Sys.glob('AAL/*AAL*LabelStats.csv')
+for (f in ff) {
+	fp<-unlist(strsplit(f,'_'))
+	tmp<-read.csv(f,stringsAsFactors=F)
+	tmp$INDDID<-gsub('AAL/','',fp[1])
+	tmp$MRISession<-fp[2]
+	tmp$ID<-paste(tmp$INDDID,tmp$MRISession,sep='_')
+	aal_lstat<-rbind(aal_lstat,tmp)
+}
+aal_lstat$Group<-df$Group[match(aal_lstat$INDDID,df$INDDID)]
+aalvols<-subset(aal_lstat,aal_lstat$Type=='NormalizedVolume')
+aalconvols<-summaryBy(Value~Label.Number,data=subset(aalvols,
+	aalvols$Group %in% 'g0_Control'),FUN=c(mean,sd),na.rm=T)
+aalvols$ConMean<-aalconvols$Value.mean[match(aalvols$Label.Number,
+	aalconvols$Label.Number)]
+aalvols$ConSD<-aalconvols$Value.sd[match(aalvols$Label.Number,
+	aalconvols$Label.Number)]
+aalvols$ZVol<-(aalvols$Value-aalvols$ConMean)/aalvols$ConSD
+aalvols$Time<-df$time_diff[match(aalvols$ID,df$ID)]
+
+hypnodes<-nodes[nodes$index %in% c(43,23,7,50,2,46,20,51,52,49,21),]
+hypgraph<-subset(aal,aal$from %in% hypnodes$id & aal$to %in% hypnodes$id)
+
+# Is degree associated with regional volume (normalized by ICV) in controls?
+nodes$deg<-V(gbin)$degree[match(nodes$id,names(V(gbin)))]
+nodes$meanvol<-aalvols$ConMean[match(nodes$index,aalvols$Label.Number)]
+r_vol_deg<-cor.test(nodes$meanvol,nodes$deg)
+
+# Try also correlating node degree with baseline atrophy or change over time
+# (independent of group).
+firstaal<-subset(aalvols,!duplicated(aalvols[,c('INDDID','Label.Number')]))
+lastaal<-aalvols[order(aalvols$ID,decreasing=T),]
+lastaal<-subset(lastaal,!duplicated(lastaal[,c('INDDID','Label.Number')]))
+lastaal<-lastaal[order(lastaal$ID,lastaal$Label.Number),]
+lastaal$BaseZVol<-firstaal$ZVol[match(paste(lastaal$INDDID,lastaal$Label.Number,
+	sep='_'),paste(firstaal$INDDID,firstaal$Label.Number,sep='_'))]
+lastaal$Time<-df$time_diff[match(lastaal$ID,df$ID)]
+lastaal$base_ageatMRI<-df$base_ageatMRI[match(lastaal$ID,df$ID)]
+lastaal$Sex<-df$Sex[match(lastaal$ID,df$ID)]
+lastaal$ConVol<-nodes$meanvol[match(lastaal$Label.Number,nodes$index)]
+lastaal$AnnChange<-(lastaal$ZVol-lastaal$BaseZVol)/lastaal$Time
+lastaal$Label.AbbrevName<-nodes$id[match(lastaal$Label.FullName,nodes$fullname)]
+lastaal$Degree<-V(gbin)$degree[match(lastaal$Label.AbbrevName,names(V(gbin)))]
+lastaal<-subset(lastaal,!lastaal$Label.AbbrevName %in% c('BS','CB_L','CB_R'))
+
+mchange<-lme(AnnChange~Group*Degree+ConVol+BaseZVol+base_ageatMRI+Sex,random=~1|INDDID,data=lastaal,
+	na.action=na.exclude)
+lastaal$Group4<-df$Group4[match(lastaal$INDDID,df$INDDID)]
+mchange2<-lme(AnnChange~Group4*Degree+ConVol+BaseZVol+base_ageatMRI+Sex,random=~1|INDDID,data=lastaal,
+	na.action=na.exclude)
+
+kchange<-matrix(0,nrow=6,ncol=length(fixef(mchange)))
+colnames(kchange)<-names(fixef(mchange))
+kchange[1:3,c('Groupg3_aAD')]<-(-1)
+kchange[4:6,c('Groupg3_aAD:Degree')]<-(-1)
+kchange[1,'Groupg1_lvPPA']<-1
+kchange[2,'Groupg2_PCA']<-1
+kchange[3,'Groupg4_fvAD']<-1
+kchange[4,'Groupg1_lvPPA:Degree']<-1
+kchange[5,'Groupg2_PCA:Degree']<-1
+kchange[6,'Groupg4_fvAD:Degree']<-1
+phocchange<-glht(mchange,linfct=kchange)
+
+# Instead of covarying for regional control volume, 
+# first regress it out of degree values.
+tmp<-lm(deg~meanvol,data=nodes)
+nodes$ResDeg<-residuals(tmp)+coefficients(tmp)[1]
+lastaal$ResDeg<-nodes$ResDeg[match(lastaal$Label.AbbrevName,nodes$id)]
+mchangenorm<-lme(AnnChange ~ Group *ResDeg+ConVol+BaseZVol+base_ageatMRI + Sex, 
+	data = lastaal, random = ~1 | INDDID,na.action=na.exclude)
+phocchangenorm<-glht(mchangenorm,linfct=kchange)
+
+kchange2<-matrix(0,nrow=2,ncol=length(fixef(mchange2)))
+colnames(kchange2)<-names(fixef(mchange2))
+kchange2[1,c('Group4g2_aAD')]<-(-1)
+kchange2[2,c('Group4g2_aAD:Degree')]<-(-1)
+kchange2[1,c('Group4g3_naAD')]<-1
+kchange2[2,c('Group4g3_naAD:Degree')]<-1
+phocchange2<-glht(mchange2,linfct=kchange2)
+
+doThis<-FALSE; if (doThis) {
+	tmp<-summary(mchange)$tTable
+	rownames(tmp)<-gsub('Groupg1_','',rownames(tmp))
+	rownames(tmp)<-gsub('Groupg2_','',rownames(tmp))
+	rownames(tmp)<-gsub('Groupg3_','',rownames(tmp))
+	rownames(tmp)<-gsub('Groupg4_','',rownames(tmp))
+	broom::tidy(tmp) %>%
+	mutate(Effect=rownames(tmp)) %>%
+	dplyr::select('Effect','Value','Std.Error','DF','t.value','p.value') %>%
+	kable(booktabs=T,escape=F,longtable=F,digits=c(0,3,3,0,2,3),col.names=c('Effect','Coefficient',
+		'Std. error','DF','T','P'),caption='Supplementary Table 14. Mixed effects model of annualized grey matter volume change in AAL regions as a function of group, degree, and baseline volume.') %>%
+	kableExtra::kable_styling(latex_options='striped', full_width=F)
+}
+
+lastaal$Group2<-df$Group2[match(lastaal$Group,df$Group)]
+
+degplot<-ggplot(aes(x=Degree,y=AnnChange,group=Group2),data=lastaal)+
+	geom_smooth(aes(fill=Group2,colour=Group2,linetype=Group2),
+		method='lm')+
+	guides(group='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_fill_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Node degree',y='Annualized GM volume change',
+		title='Atrophy vs. structural connectivity')+
+	ggtheme
+	
+degplot
+
+```
+
+### Effects of global cognition and age {-}
+Initial MMSE score (which was included as a measure of global cognitive impairment) was positively associated with GM volume in the majority of ROIs [all t(103)>=2.3, p<0.03], with the exception of bilateral hippocampi and parahippocampal gyri [all t(103)<1.0, p>0.3]. In contrast, age at initial MRI was inversely associated with volume in all 6 MTL regions investigated, including left and right hippocampus [t(103)=-2.5, p<0.02 and t(103)=-3.2, p<0.02, respectively, after false discovery rate correction], left and right parahippocampal gyri [t(103)=-3.7, p<0.001 and t(103)=-4.9, p<0.001], and left and right entorhinal cortex [t(103)=-3.2, p<0.002 and t(103)=-3.8, p<0.001]. In addition, age effects were observed in bilateral precentral gyri [both t(103)<-2.9, p<0.01], suggesting age-related atrophy in motor cortex. No other ROIs displayed an effect of age. To determine whether this age effect differed by group, we performed secondary analyses on MTL volumes at the time of first scan using multiple regression models with predictors of group, age, and their interaction, covarying for MMSE score and the interval between MMSE and MRI. After false discovery rate correction, no MTL regions showed a significant group x age interaction [all F(4,99)<2.3, p>0.2], suggesting that the association of increased age with MTL atrophy was similar across groups. Age and MMSE effects for the exploratory voxelwise analysis are shown in Supplementary Figure 1. Consistent with ROI-based results, voxelwise associations with baseline MMSE score were distributed throughout all lobes of the brain (Supplementary Figure 1, bottom). Voxelwise analysis further showed robust age effects in the MTL as well as the precentral gyri, anterior temporal lobes, and ventral prefrontal cortex. Conversely, age was positively associated with cortical thickness in the precuneus, which exhibits greater atrophy in earlier-onset than later-onset Alzheimer's disease [@moller_different_2013]. No significant effects of sex were observed in either ROI-based or voxelwise analysis.
+
+### Effects of APOE genotype {-}
+We additionally assessed the distribution of APOE genotypes among aAD and naAD patients. Genotyping data were unavailable for one lvPPA, one PCA, one fvAD, and two aAD patients. One aAD, three PCA, and three fvAD patients each carried one copy of the $\epsilon2$ allele, which is associated with lower risk for Alzheimer's disease [@corder_protective_1994]. The proportions of lvPPA, PCA, fvAD, and aAD patients carrying 1--2 copies of the APOE $\epsilon4$ allele were 29.2%, 36.8%, 63.6%, and 73.3%, respectively. The frequency of individuals carrying zero, one, or two copies of the $\epsilon4$ allele significantly differed across patient groups [$\chi^2$(6)=14.9, p<0.02]. In post-hoc comparisons, these frequencies differed between the lvPPA and PCA groups [$\chi^2$(1)=8.3, p<0.02] and between the PCA and fvAD groups [$\chi^2$(1)=6.1, p<0.05]. Because APOE genotypes were unavailable for control participants, we recomputed LMEs for _a priori_ ROIs using lvPPA (the largest group) as the reference group and number of $\epsilon4$ alleles as a covariate. No ROIs exhibited an association with number of $\epsilon4$ alleles independent of group (all p>0.2).
+
+### Longitudinal associations between neuropsychological performance and grey matter volume {-}
+Associations between longitudinal neuropsychological performance and concurrent GM volume loss were evaluated in patients that had two or more assessments, each within one year of a structural MRI scan. This longitudinal analysis contrasts with previous studies that have inferred associations by correlating brain imaging data from a single timepoint with cognitive change. For recognition memory, this yielded 121 observations from 51 patients, including 21 lvPPA, 13 PCA, eight aAD, and nine fvAD patients. For letter fluency, 129 observations were available from 20 lvPPA, 14 PCA, 12 aAD, and nine fvAD patients. For forward and reverse digit span, 117 observations were available from 21 lvPPA, 13 PCA, eight aAD, and eight fvAD patients. A total of 90 PBAC observations, from which all other test measures were obtained, were available for 17 lvPPA, 11 PCA, seven aAD, and seven fvAD patients. In all cognitive domains except for social behavior, longitudinal cognition was directly associated with GM volume change in one or more associated brain areas, independent of volume at the time of initial MRI (Supplementary Table 12). In the memory domain, volume loss in bilateral hippocampi and left entorhinal predicted declines in recognition discrimination. In the language domain, volume loss in left middle and superior temporal gyri was associated with decreases in letter fluency and forward digit span. In the visuospatial domain, Rey figure copy performance over time was associated with volume loss in right angular, middle temporal, and supramarginal gyrus as well as right precuneus. Judgment of line orientations was likewise associated with right precuneus volume change. No significant associations were found for social behavior; however, left middle frontal gyrus, left anterior insula, and right middle temporal gyrus predicted reverse digit span, a measure of working memory and executive function [@kramer_distinctive_2003].
+
+# Discussion {-}
+Our previous work [@phillips_neocortical_2018] used cross-sectional analyses to identify areas of frequent atrophy in several AD phenotypes, which we hypothesized to be likely regions of disease onset. This approach was inspired by pathological staging studies that have inferred disease progression over time in AD [@braak_neuropathological_1991], Parkinson's disease [@braak_staging_2003], and amyotrophic lateral sclerosis [@brettschneider_stages_2013] based on postmortem pathology. However, this cross-sectional design did not allow us to directly observe within-patient effects of earlier vs. later disease progression in each phenotype. The current study compared longitudinal disease progression in multiple clinically-defined naAD phenotypes with autopsy or CSF evidence of Alzheimer's disease pathology. We differentiated earlier and later disease stages through a two-part approach. ROI-based analysis allowed us to focus on GM volume change in the most likely sites of disease onset for each phenotype [@phillips_neocortical_2018]. A second, exploratory analysis of whole-brain cortical thickness values allowed us to examine disease spread outside this cluster of _a priori_ ROIs. In each phenotype, we observed a combination of local spread surrounding areas of early atrophy and distal spread to brain areas that were not significantly atrophied at the beginning of the follow-up period. Both patterns of initial atrophy and subsequent progression differed between phenotypes. We further found that longitudinal rates of neurodegeneration differed across patient groups in phenotype-specific neocortical disease foci, a result which could at least partially account for each phenotype's characteristic disease distribution. In contrast, we observed no evidence of phenotype-dependent differences in atrophy rates within the MTL, although MTL atrophy appeared to begin later in naAD than in aAD. Finally, we found that structural connectivity, assessed by node degree, was a significant predictor of GM volume loss over time in both aAD and naAD; this result supports brain connectivity as a general factor mediating atrophy progression in AD.
+
+## Atrophy at initial MRI indicates possible sites of early disease {-}
+We hypothesized that each naAD phenotype would be characterized by a distinct pattern of early atrophy, observed through cross-sectional contrasts of patients' first MRI scans. We consider significant baseline atrophy an expected and necessary marker for identifying potential sites of disease onset, although early atrophy alone is not sufficient to determine these onset sites. _A priori_ ROIs for each phenotype (including left temporal cortex in lvPPA, posterior temporoparietal cortex in PCA, prefrontal cortex in fvAD, and the MTL in aAD) demonstrated significant initial atrophy, consistent with hypotheses. However, the lvPPA and PCA groups also exhibited lateralized hippocampal atrophy vs. controls at initial MRI; although this atrophy was mild relative to the aAD group (Figure 1), we cannot rule out early, lateralized hippocampal disease in these phenotypes. Longitudinal imaging of patients from earlier disease stages, when atrophy will presumably be more focal than in the current sample, is thus necessary to conclusively determine whether focal neocortical disease precedes, follows, or arises concurrently with MTL disease in these phenotypes. Nevertheless, the current study narrows the field of brain areas where disease is likely to originate in each naAD phenotype, providing a valuable prior constraint on future hypothesis testing. Overall, we propose that the current results are more consistent with the prevailing hypothesis that naAD patients have disease originating in the neocortex, as inferred by cross-sectional or single-group longitudinal imaging studies [@ossenkoppele_atrophy_2015;@xia_association_2017;@phillips_neocortical_2018;@rogalski_progression_2011;@rohrer_patterns_2013;@lehmann_global_2012] as well as autopsy studies of hippocampal-sparing AD [@giannakopoulos_alzheimers_1994;@murray_neuropathologically_2011;@ferreira_distinct_2017]. Phenotypic variability in initial atrophy patterns (Table 2), including sparing of primary motor cortex at the time of initial MRI, supports the regional specificity of atrophy in naAD patients.
+
+Interestingly, some areas of initial atrophy continued to change over time, while others did not. From the data at our disposal, we cannot say with certainty what differentiates these regions. One statistical explanation is simply that variability prevented reliable detection of longitudinal atrophy in some regions and phenotypes. An alternative, biological explanation is that areas that failed to exhibit further change over the follow-up period (blue areas, Table 2 and Figure 3) had already undergone massive atrophy by the time of patients' first MRI, reaching a plateau determined by the limited amount of remaining GM tissue [@sabuncu_dynamics_2011;@schuff_nonlinear_2012]. The right superior parietal lobule in PCA and left middle frontal gyrus in fvAD may exemplify such slowing: in ROI-based analysis, both regions were severely atrophied at initial MRI and did not significantly progress over time in their respective phenotypes. Further research is needed to determine why the pace of atrophy changes in some areas of early degeneration but not others.
+
+## Differences between phenotypic groups in the neocortical spread of atrophy {-}
+Areas that exhibited longitudinal atrophy in the absence of initial cross-sectional differences provide a window onto disease spread in each phenotype. In ROI-based analysis, the lvPPA group showed strong left lateralization of atrophy at baseline, consistent with prior studies [@rogalski_aphasic_2016;@phillips_neocortical_2018]. This pattern included left lateral temporal cortex, an area specifically associated with language deficits in lvPPA [@gorno-tempini_classification_2011]. ROI-based analysis also indicated early atrophy in left prefrontal cortex, anterior insula, and hippocampus; and right lateral temporal areas. Voxelwise analysis indicated atrophy in left precuneus and right prefrontal cortex as well. Over the follow-up period, we observed new progressive atrophy in brain areas both adjacent to and distal from these areas of initial atrophy. Proximal disease spread was observed throughout the left temporal and parietal lobes as well as bilateral frontal lobes. This proximal atrophy may indicate diffusive spread of pathology through the extracellular medium or along short-distance axonal connections between neighboring cells in cortex [@guo_cell-to-cell_2014]. However, we also observed progression through parts of bilateral frontal lobes and right temporoparietal cortex distal from foci of initial atrophy (Figure 3); diffusive spread from adjacent disease areas appears insufficient to account for this progression. Two possible explanations may account for new, distal atrophy progression. First, pathology may have arisen independently in these areas; second, pathogenic proteins may have been transmitted to these areas via long-distance white matter projections, according to the transmission hypothesis of neurodegenerative disease [@guo_cell-to-cell_2014]. It is particularly interesting to consider these two possibilities with respect to cross-sectional reports of right temporal atrophy in lvPPA, which---if observed---tends to be much milder than left temporal atrophy. In such cases, it is tempting to infer that right temporal atrophy results from the spread of disease from left to right hemispheres via callosal projections. However, this apparent "progression" may result from a subset of patients having bilateral disease. The current study cannot rule out this possibility, as ROI-based analysis indicated right temporal atrophy that pre-dated lvPPA patients' first MRI (Table 2). Earlier recruitment and longitudinal imaging of patients with language disturbances is thus necessary to conclusively demonstrate interhemispheric disease spread in lvPPA.
+   
+The PCA group also exhibited a combination of proximal and distal disease spread. Initial atrophy was observed in bilateral precunei and temporoparietal regions (Figure 3) as well as right hippocampus (Table 2). These parietal areas, in particular, are important to visuospatial processing [@astafiev_functional_2003;@gmeindl_tracking_2016;@greenberg_control_2010] and are consistent with early disease patterns observed in prior studies of PCA [@tang-wai_clinical_2004;@lehmann_global_2012]. In voxelwise analysis, PCA patients had newer atrophy extending from areas of early disease into inferior parietal, posterior temporal, and insular/opercular cortex; they also exhibited spread proximal to areas of prefrontal atrophy observed at baseline. In addition, however, the PCA group exhibited atrophy progression in the anterior temporal lobes distal from any cluster of existing atrophy (Figure 3). This finding suggests testable hypotheses regarding the diffusion of disease-causing agents along fiber pathways that terminate in anterior temporal cortex. These pathways include projections from MTL areas as well as more distal connections via the inferior longitudinal fasciculus to striate and prestriate cortex, which may in turn connect with parietal cortex [@nieuwenhuys_human_2008].
+
+In the fvAD group, ROI-based and voxelwise analysis collectively indicated GM volume loss at initial MRI in bilateral prefrontal, temporal, and anterior insular cortex as well as right middle cingulate and angular gyri. The involvement of the insula is particularly interesting given this group's behavioral dysfunction, as anterior insula is crucially implicated in primates' emotion [@phan_functional_2002] as well as in empathy and social life [@singer_neuronal_2006]. The anterior insula is also implicated in behavioral-variant frontotemporal dementia (bvFTD) [@seeley_anterior_2010], and Ossenkoppele et al. [-@ossenkoppele_atrophy_2015] found that insula was one of the few regions of atrophy specific to behavioral-variant AD (bvAD) patients who were initially misdiagnosed as bvFTD. While our findings suggest early involvement of frontal, temporal, and limbic regions, previous studies of behavioral/dysexecutive AD have shown either predominantly frontal [@blennerhassett_distribution_2014] or predominantly temporal [@ossenkoppele_atrophy_2015] disease. In ROI-based analysis, the fvAD group demonstrated new atrophy progression only in left perisylvian cortex; voxelwise analysis indicated additional disease progression in bilateral insular/opercular cortex. These findings are located proximally to atrophy clusters observed at first MRI and thus may reflect local, diffusive spread of disease. Although more distal atrophy progression was not observed, we emphasize that null results in this group should be interpreted with extreme caution due to the small sample size; while the reported foci may represent the areas of most robust atrophy in the current sample, true disease progression may be missed due to type II statistical error and may be more anatomically widespread than reported here.
+
+In the aAD group, ROI-based analysis showed new neocortical atrophy in bilateral precentral gyri as well as right temporoparietal cortex (Table 2). Voxelwise analysis similarly indicated neocortical atrophy progression throughout the right temporal lobe as well as in bilateral parietal cortex and right prefrontal cortex. The slight lateralization of disease progression (right hemisphere > left) may be incidental to the current sample, and we do not propose that it is characteristic of amnestic AD generally. However, the results are broadly consistent with spreading neocortical disease in later Braak stages [@braak_neuropathological_1991]. Clusters of newer atrophy in right temporal cortex may indicate local, diffusive spread from right angular gyrus, which was atrophied at initial MRI in the aAD group. However, other areas of new progression observed in the voxelwise analysis (Figure 3) are distal from sites of early atrophy and may result from either white-matter-mediated disease spread or _de novo_ accumulation of pathology. Notably, structural connectivity data from healthy adults indicates that the superior parietal lobule is connected to the hippocampus and angular gyrus (Supplementary Table 6), both of which exhibited baseline atrophy in the aAD group; newer areas of superior parietal atrophy in aAD may thus result from disease transmission along white-matter pathways connecting these areas.
+	
+## MTL atrophy in amnestic and non-amnestic phenotypes {-}
+At initial MRI, aAD patients demonstrated significant atrophy in bilateral entorhinal cortex and hippocampi, as expected from Braak staging [@braak_neuropathological_1991]. Bilateral parahippocampal gyri were not atrophied, but they demonstrated significant change over the follow-up period; this pattern of results is consistent with progression from approximate Braak stages IV to V [@whitwell_mri_2008] among our aAD sample. Based on well-characterized patterns of disease spread in aAD, these MTL foci may be the source of disease spread to the neocortex. The hippocampus has well-characterized white-matter connections to posterior cortical areas via the posterior cingulate [@nieuwenhuys_human_2008;@teipel_white_2010]; these pathways thus represent tracts of interest for investigating the spread of pathogenic proteins to the neocortex.
+
+NaAD patients, in turn, demonstrated relative sparing of MTL structures at baseline. In ROI-based analysis, atrophy was limited to left hippocampus in lvPPA and right hippocampus in PCA; these patterns of lateralization were consistent with the general hemispheric bias observed in both phenotypes. Over the follow-up period, naAD patients demonstrated significant atrophy progression in the MTL (Table 2); in the fvAD group, these changes were limited to bilateral entorhinal cortex, although null findings in other MTL structures may reflect the small size of this group. MTL progression in naAD patients suggests that sparing of the hippocampus and surrounding MTL (a set of clinically-defined syndromes) is a graded rather than an absolute phenomenon, and that naAD patients may become increasingly susceptible to hippocampal degeneration at older ages and in more advanced disease. Indeed, age was a strong predictor of MTL atrophy, as evidenced by both ROI-based results (see above, "Effects of global cognition and age") and voxelwise results (Supplementary Figure 1). We note that while naAD patients tend to be younger than typical aAD patients, the current study controlled for this potential confound both by demographic balancing of groups and by covarying for age in statistical models. Thus, baseline differences between aAD and naAD patients in GM volume within the MTL (Figure 1) were not attributable to age differences between these patient groups. Seminal studies of hippocampal sparing in AD [@giannakopoulos_alzheimers_1994;@murray_neuropathologically_2011;@whitwell_neuroimaging_2012] grouped patients based on postmortem pathology findings; these studies may not have included patients who initially presented with non-amnestic syndromes but developed hippocampal pathology in later disease.
+
+## Differences between phenotypic groups in rates of atrophy progression {-}
+The design of the current study not only allowed us to investigate differences between phenotypic groups in the topographical distribution of atrophy but also differences in the rate of atrophy within each region. We reasoned that each phenotype might exhibit more rapid degeneration within its associated disease foci, reflecting phenotype-specific susceptibility to disease [@bergeron_untangling_2016;@mattsson_selective_2016] in that area. Among neocortical areas associated with naAD phenotypes, we found evidence to support this reasoning. LvPPA patients demonstrated more rapid atrophy in the left temporal cortex than the PCA group (ROI-based analysis, Figure 2) and the aAD group (voxelwise analysis, Figure 5). FvAD patients, in turn, had more rapid atrophy in left anterior insula than both PCA and lvPPA patients in ROI-based analysis (Figure 2); and voxelwise analysis indicated additional prefrontal, temporal, and insular differences between fvAD and lvPPA (Figure 5C). Contrary to our initial hypotheses, we saw no difference in MTL atrophy rates between aAD and naAD patients, even when all three naAD variants were combined to enhance statistical power. Considered together with aAD patients' significant MTL atrophy at initial MRI, this result suggests that relative MTL sparing in naAD may result from a delayed onset of degeneration in these structures; but that once neurodegeneration has begun, it proceeds at a similar rate as in aAD. However, we caution that these findings warrant replication in longitudinal studies involving larger sample sizes.
+
+## Associations between longitudinal atrophy and brain connectivity {-}
+To investigate the possible role of brain connectivity in mediating disease spread, we related patients' atrophy patterns to population-average structural connectivity, as estimated from Human Connectome Project white-matter imaging data [@yeh_population-averaged_2018]. Several _a priori_ ROIs in the current study corresponded to hubs in Yeh et al.'s structural connectivity matrix, as evidenced by their high node degree. These findings replicate established functional connectivity results that have related the neuroanatomy of AD to brain network hubs including bilateral middle temporal, inferior parietal, and superior parietal cortex [@buckner_cortical_2009;@crossley_hubs_2014]. Moreover, we found that node degree was a significant predictor of regional GM volume loss over time in each of the patient groups. We caution that this result is correlative in nature and does not demonstrate long-distance disease spread along white-matter pathways. Indeed, network influences on neurodegeneration need not be limited to physical transport of pathogenic proteins along white-matter tracts; rather, they may reflect effects such as diaschisis [@chetelat_multimodal_2018], with disease in one area leading to metabolic and functional disruptions in its network neighbors. Computational analysis of atrophy patterns using network models such as those of Raj and colleagues [-@raj_network_2012;-@raj_network_2015], Iturria-Medina et al. [-@iturria-medina_epidemic_2014], and Hu et al. [-@hu_localizing_2016] offers a more rigorous approach for testing hypotheses regarding disease spread in brain networks. Nevertheless, associations between atrophy and node degree provide supporting evidence for the hypothesis that atrophy progression is mediated by structural connectivity. Importantly, the structural connectivity analysis reported here does not address potential hypotheses regarding connectivity differences in naAD and aAD. Indeed, initial research on this question suggests that the connectivity of specific brain networks may differ between typical and atypical presentations of AD [@lehmann_loss_2015;@whitwell_working_2015]. Because the current study relied on population-averaged structural connectivity values, it was limited to showing a general relationship between degree of connectivity and magnitude of longitudinal change; future analysis of patients' specific connectivity patterns remains a high priority.
+
+## Convergence of atrophy in advanced disease {-}
+The spread of disease along white-matter pathways may help explain the reported convergence of atrophy patterns across AD phenotypes. For example, Ossenkoppele et al. [-@ossenkoppele_atrophy_2015] proposed that the common temporoparietal atrophy observed among lvPPA, PCA, early-onset AD, and late-onset AD patients could result from convergent disease in nodes of the posterior default mode network. In support of the convergence hypothesis, we note that aAD and naAD variants alike had common early atrophy and subsequent progression in bilateral temporal cortex (Table 2). These results replicate findings from our previous study [@phillips_neocortical_2018] of substantial overlap in temporoparietal areas among typical and atypical AD patients. Indeed, this study reported that spatial distributions of atrophy become more similar across phenotypes in later disease phases. At the same time, however, we found that simple logistic regression models could effectively discriminate naAD and AD phenotypes from one another based on atrophy patterns, even in advanced disease [@phillips_neocortical_2018]. Moreover, postmortem studies of AD variants show that regional differences in pathology burden persist among AD variants even until the end of life. One proposal for resolving these apparently conflicting results is the proposal of Warren and colleagues [@warren_paradox_2012] that different clinical presentations of AD involve a common temporal, parietal, and frontal network, but that genetic variation or other factors cause the nodes of these networks to be differentially engaged across syndromes.
+
+## Conclusions and limitations {-}
+Strengths of the current study include a novel comparison of longitudinal anatomical changes in multiple clinically-defined naAD phenotypes using both _a priori_ ROI-based and whole-brain voxelwise analyses. The longitudinal study design allowed us to differentiate areas of earlier and later atrophy and to compare these patterns of disease progression across phenotypes. Moreover, we sought to ensure the comparability of the heterogeneous patient groups included here by controlling for demographic and clinical characteristics both during sample selection and in statistical analysis. The relevance of _a priori_ ROIs is supported by analyses showing that longitudinal anatomical change is associated with concurrent domain-specific cognitive decline.
+
+However, one major limitation was the inability to evaluate non-linear atrophy progression in Alzheimer's disease: prior evidence suggests that an initial acceleration due to spreading cumulative damage is followed by a deceleration due to the reduction of intact tissue [@sabuncu_dynamics_2011;@schuff_nonlinear_2012]. Such nonlinearities complicate study design and interpretation in ways that may not be fully addressed by equating patient groups for chronological age and estimated disease duration: for example, in the current study, it is possible that areas of early atrophy in each phenotype (i.e., those exhibiting atrophy at initial MRI) have entered the deceleration phase, while for other phenotypes the same regions may have been imaged during the acceleration phase. Investigating longitudinal change in earlier-stage patients may allow us to observe a more complete trajectory of neurodegeneration, and including a minimum of 3--4 imaging timepoints may allow us to discriminate between linear, quadratic, and sigmoid models of neurodegeneration. Another possible limitation in our findings is statistical power, which is likely to have affected voxelwise analysis more severely than ROI-based analysis due to the much stricter multiple-comparisons correction of the former. Power limitations may thus have resulted in underestimation of disease spread in the relatively small fvAD and aAD groups; we thus emphasize the importance of further longitudinal study, particularly of patients for whom postmortem pathological diagnoses are available to rule out the possibility of co-morbid FTLD or other pathologies. Relatedly, the PBAC behavioral scale did not demonstrate expected worsening of behavioral symptoms over time in the fvAD group; while it is possible that this null result stems from successful treatment of behavioral symptoms through psychiatric medications, future research should strive to include more sensitive measures of behavioral dysfunction. An additional limitation is that patients in the current sample were not selected based on availability of white-matter imaging data, preventing us from performing a structured white matter analysis to support interpretations of disease spread along white matter pathways. The current study was also not designed to investigate associations with the APOE genotype or other genetic risk modifiers for Alzheimer's disease. We found that APOE $\epsilon4$ allele counts added little predictive power to our imaging models after accounting for group effects; however, continued study of the APOE genotype and other genetic risk modifiers in naAD remains an important research aim. Finally, future studies should include patients with corticobasal syndrome due to underlying Alzheimer's disease pathology; insufficient longitudinal data prevented us from including this uncommon naAD phenotype in the current study.
+
+Understanding the neuropathological and clinical heterogeneity of Alzheimer's disease is crucial to understanding the mechanisms of its progression. The current study not only corroborated probable areas of early disease for lvPPA, PCA, and fvAD but also showed that each phenotype has a different pattern of atrophy progression across the cortex. Moreover, we report novel evidence that the longitudinal rate of neocortical atrophy varies by region and phenotype in naAD, reflecting phenotype-specific cognitive decline. In contrast, the rate of MTL atrophy in naAD was similar to that found in aAD, suggesting that early sparing of these structures results from a later onset of MTL atrophy in naAD. Finally, we observed associations between longitudinal atrophy and structural brain connectivity, providing indirect support for models of interregional disease spread in association with white-matter fiber pathways in naAD.
+
+```{r author_table, eval=TRUE, results='asis',include=FALSE}
+# Author contributions {-}
+
+#\captionsetup{labelformat=empty}
+# Add in a table of authors and their roles here.
+
+roles<-data.frame(Name=c('Jeffrey S. Phillips\\*','Fulvio Da Re\\*','David J. Irwin',
+	'Corey T. McMillan','Sanjeev N. Vaishnavi','Sharon X. Xie','Edward B. Lee',
+	'Leslie M. Shaw','John Q. Trojanowski','David A. Wolk','Murray Grossman'),
+	Location=c('University of Pennsylvania, Philadelphia',
+	'University of Milano-Bicocca, Milan',
+	rep('University of Pennsylvania, Philadelphia',9)),Role=rep('Author',11),
+	Contribution=c('\\*Contributed equally; conceptualized the study; analyzed and interpreted the data; drafted the manuscript for intellectual content','\\*Contributed equally; conceptualized the study; reviewed patient histories; drafted the manuscript for intellectual content; interpreted and analyzed data', 'Diagnosed patients; reviewed patient histories; revised the manuscript for intellectual content','Interpreted data; revised the manuscript for intellectual content','Diagnosed patients; revised the manuscript for intellectual content', 'Advised on statistical methods; interpreted the data; revised the manuscript for intellectual content', 'Performed neuropathology examinations','Performed CSF biomarker quantification','Performed neuropathology examinations; revised the manuscript for intellectual content','Diagnosed patients; interpreted the data; revised the manuscript for intellectual content','Conceptualized the study; interpreted the data; diagnosed patients; reviewed patient histories; revised the manuscript for intellectual content')) 
+
+xroles<-xtable(roles,
+	caption='Author roles',
+	align=rep('l',ncol(roles)+1),digits=rep(0,ncol(roles)+1))
+print(xroles,comment=FALSE,caption.placement='top',floating=T,include.rownames=F,
+	sanitize.text.function=identity)
+
+```
+
+# Acknowledegments {-}
+The authors would like to thank Dr. Valeria Isella and Dr. Carlo Ferrarese for their valuable feedback on this project; and Dr. Ilya Nasrallah for assistance with visual reads of PET images. Additionally, the authors thank Dr. Fang-Cheng Yeh for making structural connectivity results available at [http://brain.labsolver.org/](http://brain.labsolver.org/).
+
+# Funding {-}
+This work was supported by grants from the Alzheimer's Association (AARF-16-443681), National Institutes of Health (AG017586, AG010124, AG043503, and NS088341), BrightFocus Foundation (A2016244S), Dana Foundation, Newhouse Foundation, Wyncote Foundation, Arking Family Foundation, and the Italian Ministry of Education, University, and Research.
+
+# Competing interests {-}
+All authors report that they have no competing interests to disclose.
+
+# References {-}
+

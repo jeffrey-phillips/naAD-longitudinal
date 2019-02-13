@@ -1,0 +1,2125 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Longitudinal progression of grey matter atrophy in non-amnestic Alzheimer's disease},
+            pdfauthor={*Jeffrey S. Phillips, PhD1,2, *Fulvio Da Re, MD1,3,4, David J. Irwin, MD1,2, Corey T. McMillan, PhD1,2, Sanjeev N. Vaishnavi, MD, PhD2,5, Sharon X. Xie, PhD6, Edward B. Lee, MD, PhD7, Philip A. Cook, PhD8, James C. Gee, PhD8, Leslie M. Shaw, PhD7, John Q. Trojanowski, MD, PhD7, David A. Wolk, MD2,5 and Murray Grossman, MD, EdD1,2},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Longitudinal progression of grey matter atrophy in non-amnestic
+Alzheimer's disease}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{*Jeffrey S. Phillips, PhD\textsuperscript{1,2}, *Fulvio Da Re,
+MD\textsuperscript{1,3,4}, David J. Irwin, MD\textsuperscript{1,2},
+Corey T. McMillan, PhD\textsuperscript{1,2}, Sanjeev N. Vaishnavi, MD,
+PhD\textsuperscript{2,5}, Sharon X. Xie, PhD\textsuperscript{6}, Edward
+B. Lee, MD, PhD\textsuperscript{7}, Philip A. Cook,
+PhD\textsuperscript{8}, James C. Gee, PhD\textsuperscript{8}, Leslie M.
+Shaw, PhD\textsuperscript{7}, John Q. Trojanowski, MD,
+PhD\textsuperscript{7}, David A. Wolk, MD\textsuperscript{2,5} and
+Murray Grossman, MD, EdD\textsuperscript{1,2}}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{February 13, 2019}
+
+\usepackage{graphicx} \usepackage{morefloats} \usepackage{caption}
+\usepackage{lscape} \usepackage{siunitx} \usepackage{textcomp}
+\usepackage{xcolor, colortbl}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+\begin{document}
+\maketitle
+
+\pagenumbering{gobble}
+
+* These authors contributed equally to this work.
+
+\textbf{Short title:} Longitudinal Atrophy in Non-Amnestic AD
+
+\textbf{Affiliations:}
+
+\textsuperscript{1}Penn Frontotemporal Degeneration Center, University
+of Pennsylvania, Philadelphia, PA, USA, \textsuperscript{2}Department of
+Neurology, Perelman School of Medicine, University of Pennsylvania,
+Philadelphia, PA, USA, \textsuperscript{3}PhD Program in Neuroscience,
+University of Milano-Bicocca, Milan, Italy, \textsuperscript{4}School of
+Medicine and Surgery, Milan Center for Neuroscience (NeuroMI),
+University of Milano-Bicocca, Milan, Italy, \textsuperscript{5}Penn
+Memory Center, University of Pennsylvania, Philadelphia, PA, USA,
+\textsuperscript{6}Department of Biostatistics, Epidemiology, and
+Informatics, Perelman School of Medicine, University of Pennsylvania,
+Philadelphia, PA, USA, \textsuperscript{7}Center for Neurodegenerative
+Disease Research, University of Pennsylvania, Philadelphia, PA, USA,
+\textsuperscript{8}Penn Image Computing and Science Laboratory,
+Department of Radiology, University of Pennsylvania, Philadelphia, PA,
+USA
+
+\textbf{Corresponding author:}
+
+Jeffrey S. Phillips, PhD\\
+\href{mailto:jefphi@pennmedicine.upenn.edu}{\nolinkurl{jefphi@pennmedicine.upenn.edu}}\\
+Penn Frontotemporal Degeneration Center\\
+Department of Neurology\\
+University of Pennsylvania\\
+3400 Spruce St., 3 Gibson\\
+Philadelphia, PA 19104
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section*{Abstract}\label{abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+Recent models of Alzheimer's disease progression propose that disease
+may be transmitted between brain areas either via local diffusion or
+long-distance transport via white-matter fiber pathways. However, it is
+unclear whether such models are applicable in non-amnestic Alzheimer's
+disease, which is associated with domain-specific cognitive deficits and
+relatively spared episodic memory. To date, the anatomical progression
+of disease in non-amnestic patients remains understudied. We used
+longitudinal imaging to differentiate earlier atrophy and later disease
+spread in three non-amnestic variants, including logopenic-variant
+primary progressive aphasia (n=25), posterior cortical atrophy (n=20),
+and frontal-variant Alzheimer's disease (n=12), as well as 17 amnestic
+Alzheimer's disease patients. Patients were compared to 37 matched
+controls. All patients had autopsy (n=7) or cerebrospinal fluid (n=67)
+evidence of Alzheimer's disease pathology. We first assessed atrophy in
+suspected sites of disease origin, adjusting for age, sex, and severity
+of cognitive impairment; we then performed exploratory whole-brain
+analysis to investigate longitudinal disease spread both within and
+outside these regions. Additionally, we asked whether each phenotype
+exhibited more rapid change in its associated disease foci than other
+phenotypes. Finally, we investigated whether atrophy was related to
+structural brain connectivity. Each non-amnestic phenotype displayed
+unique patterns of initial atrophy and subsequent neocortical change
+that correlated with cognitive decline. Longitudinal atrophy included
+areas both proximal to and distant from sites of initial atrophy,
+suggesting heterogeneous mechanisms of disease spread. Moreover,
+regional rates of neocortical change differed by phenotype.
+Logopenic-variant patients exhibited greater initial atrophy and more
+rapid longitudinal change in left lateral temporal areas than other
+groups. Frontal-variant patients had pronounced atrophy in left insula
+and middle frontal gyrus, combined with more rapid atrophy of left
+insula than other non-amnestic patients. In the medial temporal lobes,
+non-amnestic patients had less atrophy at their initial scan than
+amnestic patients, but longitudinal rate of change did not differ
+between patient groups. Medial temporal sparing in non-amnestic
+Alzheimer's disease may thus be due in part to later onset of medial
+temporal degeneration than in amnestic patients rather than different
+rates of atrophy over time. Finally, the magnitude of longitudinal
+atrophy was predicted by structural connectivity, measured in terms of
+node degree; this result provides indirect support for the role of
+long-distance fiber pathways in the spread of neurodegenerative disease.
+
+\section*{Keywords}\label{keywords}
+\addcontentsline{toc}{section}{Keywords}
+
+Non-amnestic Alzheimer's disease, logopenic-variant primary progressive
+aphasia, posterior cortical atrophy, frontal-variant Alzheimer's
+disease, longitudinal progression, neuroimaging
+
+\section*{Abbreviations}\label{abbreviations}
+\addcontentsline{toc}{section}{Abbreviations}
+
+A\(\beta\) = \(\beta\)-amyloid; aAD= amnestic Alzheimer's disease; naAD
+= non-amnestic Alzheimer's disease; CBS = corticobasal syndrome; fvAD =
+frontal-variant Alzheimer's disease; lvPPA = logopenic-variant primary
+progressive aphasia; PCA = posterior cortical atrophy; GM = grey matter;
+MTL = medial temporal lobes; ROI = region of interest; MMSE = Mini
+Mental Status Exam; CSF = cerebrospinal fluid; LME = linear mixed
+effects; PVLT = Philadelphia Verbal Learning Test; PBAC = Philadelphia
+Brief Assessment of Cognition
+
+\newpage
+
+\section*{Introduction}\label{introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Recent theories of neurodegenerative disease progression have raised the
+possibility that pathogenic protein aggregates do not arise
+spontaneously throughout the brain; rather, they may be transmitted from
+areas of existing pathology through one or more mechanisms, including
+local diffusion of pathogenic proteins through the extracellular medium
+as well as long-distance transmission along white-matter pathways
+between brain areas (Guo and Lee, 2014). This transmission model of
+neurodegenerative disease is supported by a diverse body of research
+ranging from rodent models (Liu \emph{et al.}, 2012; Iba \emph{et al.},
+2013; Ahmed \emph{et al.}, 2014; Mezias \emph{et al.}, 2017) to
+computational modeling of human neuroimaging data (Raj \emph{et al.},
+2012, 2015; Iturria-Medina \emph{et al.}, 2014; Hu \emph{et al.}, 2016).
+This research particularly supports the relevance of the transmission
+model in typical, amnestic Alzheimer's disease (AD), which spreads from
+the transentorhinal cortex and hippocampus to the rest of the medial
+temporal lobes and ultimately to the neocortex (Braak and Braak, 1991).
+This stereotyped progression provides detailed expectations against
+which to test models of interregional transmission.
+
+However, it is unclear whether the transmission hypothesis has equal
+relevance in atypical presentations of AD, which demonstrate a number of
+pathological and clinical differences from amnestic AD (aAD), including
+relatively prominent neocortical disease and relative hippocampal
+sparing (Galton \emph{et al.}, 2000; Murray \emph{et al.}, 2011;
+Whitwell \emph{et al.}, 2012; Mesulam \emph{et al.}, 2014a). Clinically,
+atypical AD includes at least four non-amnestic phenotypes:
+logopenic-variant primary progressive aphasia (lvPPA), characterized by
+primary language deficits (Gorno-Tempini \emph{et al.}, 2011); posterior
+cortical atrophy (PCA), characterized by visuospatial deficits (Crutch
+\emph{et al.}, 2017); a variant defined by deficits in executive
+function and/or social behavior (Dubois \emph{et al.}, 2014), frequently
+referred to as frontal-variant Alzheimer's disease (fvAD); and
+corticobasal syndrome (CBS), which can present with a constellation of
+lateralized motor and cognitive deficits (Medaglia \emph{et al.}, 2017).
+These syndromes are marked by different rates of clinical progression
+than in aAD (Duara \emph{et al.}, 2013; Byun \emph{et al.}, 2015;
+Poulakis \emph{et al.}, 2018). Moreover, each phenotype is associated
+with distinct anatomical distributions of disease, particularly in early
+stages. LvPPA patients have strongly left-lateralized disease with
+pathological accumulations in left superior temporal and inferior
+parietal cortex (Mesulam \emph{et al.}, 2014b; Giannini \emph{et al.},
+2017); additional disease is commonly observed in left dorsolateral
+prefrontal cortex (Rogalski \emph{et al.}, 2016; Giannini \emph{et al.},
+2017). PCA is marked by involvement of the parietal and/or occipital
+lobes (Tang-Wai \emph{et al.}, 2004; Crutch \emph{et al.}, 2017);
+depending on the patient, disease in PCA may or may not have a
+right-hemisphere bias (Crutch \emph{et al.}, 2012; Ossenkoppele \emph{et
+al.}, 2015a). In fvAD, elevated pathology has been most commonly
+reported in the frontal lobes (Johnson \emph{et al.}, 1999;
+Blennerhassett \emph{et al.}, 2014), although a recent report based on a
+larger sample of these patients also highlights disease in posterior
+cortical areas (Ossenkoppele \emph{et al.}, 2015b). In CBS due to AD,
+disease is distributed widely and often asymmetrically throughout the
+temporal and parietal lobes, sometimes extending into the posterior
+portion of the frontal lobes (Lee \emph{et al.}, 2011; McMillan \emph{et
+al.}, 2016). Each of these naAD phenotypes shares clinical similarities
+to presentations of frontotemporal lobar degeneration (FTLD) spectrum
+pathology, making it imperative to corroborate clinical diagnosis
+through AD biomarkers.
+
+Non-amnestic syndromes with underlying Alzheimer's disease pathology may
+be more prevalent than previously thought (Peter \emph{et al.}, 2014;
+Dickerson \emph{et al.}, 2017). However, relatively little research has
+examined the anatomical spread of non-amnestic Alzheimer's disease
+(naAD). In a previous MRI analysis (Phillips \emph{et al.}, 2018), we
+inferred patterns of atrophy spread in naAD phenotypes from
+cross-sectional MRI data: following the logic of postmortem pathology
+studies, we explicitly assumed that the relative frequency of atrophy in
+different brain areas could be used to infer the anatomical progression
+of disease over time. These results corroborated the hypothesis that
+each naAD phenotype has a distinct neocortical origin with relative
+sparing of the medial temporal lobes (MTL). Moreover, this study
+suggested that each naAD phenotype has a distinct pattern of disease
+spread that differs from aAD.
+
+In the present study, we sought to validate and extend this previous
+work, using longitudinal MRI to differentiate patterns of earlier
+atrophy from subsequent disease spread in each phenotype. Additionally,
+we investigated whether aAD and naAD differ in the anatomic distribution
+and longitudinal rate of grey matter (GM) atrophy over time. We reasoned
+that such differences could explain phenotype-specific patterns of
+clinical progression across amnestic and non-amnestic Alzheimer's
+disease variants. In a hypothesis-driven analysis based on our previous
+cross-sectional study (Phillips \emph{et al.}, 2018), we investigated
+differences in GM volume at the time of initial MRI as well as volume
+change over time in regions-of-interest (ROIs) associated with lvPPA,
+PCA, fvAD, and aAD. Exploratory, whole-brain, voxelwise analysis of
+cortical thickness was performed to map patterns of disease spread
+beyond these initial ROIs. We sought to identify group differences in
+atrophy distribution and progression independent of age, which has been
+previously reported to differ between typical and atypical forms of
+Alzheimer's disease (Murray \emph{et al.}, 2011). Based on the high
+neocortical disease burden and domain-specific cognitive deficits that
+we previously observed in naAD, we predicted that naAD patients would
+exhibit faster rates of atrophy in phenotype-specific neocortical ROIs
+relative to aAD. Additionally, we tested the hypothesis that naAD
+patients would exhibit slower atrophy than aAD patients in the
+hippocampus and surrounding MTL areas, as a possible explanation for the
+relative memory sparing associated with these structures in naAD.
+Finally, we compared longitudinal atrophy patterns to measures of
+inter-regional structural connectivity estimated from a large population
+of healthy controls; we predicted that connectivity would predict
+longitudinal atrophy, consistent with the transmission hypothesis.
+
+\section*{Materials and methods}\label{materials-and-methods}
+\addcontentsline{toc}{section}{Materials and methods}
+
+\subsection*{Patients}\label{patients}
+\addcontentsline{toc}{subsection}{Patients}
+
+\begin{table}[ht]
+\centering
+\caption{Participant characteristics at time of first scan. Median values and interquartile ranges (square brackets) are given for all continuous variables. Education, age at MRI, inter-scan interval, and disease duration are expressed in years. For each cognitive score, numbers in parentheses indicate the number of observations per group. P-values reflect the results of a chi-squared test for sex and Kruskal-Wallis tests for all other variables.} 
+\scalebox{0.67}{
+\begin{tabular}{lrrrrrr}
+  \hline
+ & Control & aAD & lvPPA & PCA & fvAD & P \\ 
+  \hline
+N &   37 &   17 &   25 &   20 &   12 &  \\ 
+  Male &   16 (43.2\%)  &    6 (35.3\%)  &    9 (36.0\%)  &    7 (35.0\%)  &    7 (58.3\%)  &  0.672 \\ 
+  Education & 16.0 [16.0, 18.0] & 16.0 [14.0, 18.0] & 16.0 [14.0, 19.0] & 16.0 [12.0, 16.0] & 16.0 [13.5, 18.0] &  0.421 \\ 
+  Age at MRI (years) & 61.9 [57.9, 65.6] & 59.4 [53.5, 70.3] & 58.5 [56.9, 64.5] & 58.0 [55.1, 61.4] & 63.9 [59.7, 69.5] &  0.137 \\ 
+  Inter-scan interval (years) & 1.2 [0.9, 1.7] & 1.2 [0.9, 1.5] & 1.1 [0.9, 1.3] & 1.0 [0.9, 1.2] & 1.0 [0.7, 1.1] & 0.162 \\ 
+  Disease duration (years) & --- &  3.0 [1.9, 4.0] &  2.7 [1.7, 3.9] &  2.2 [1.3, 4.0] &  2.2 [1.8, 5.2] &  0.747 \\ 
+  MMSE (0--30) & 29.0 [28.0, 30.0] (20) & 23.0 [20.0, 25.0] (17) & 25.0 [23.0, 28.0] (25) & 24.5 [18.8, 25.2] (20) & 23.0 [17.0, 26.0] (12) & <0.001 \\ 
+  Recognition memory (discrimination, 0--1) &  1.0 [0.9, 1.0] (7) &  0.6 [0.5, 0.7] (10) &  0.8 [0.8, 1.0] (25) &  0.7 [0.6, 0.9] (19) &  0.6 [0.6, 0.8] (12) & <0.001 \\ 
+  Speech (0--4) &  4.0 [4.0, 4.0] (3) &  2.5 [2.5, 3.0] (9) &  2.5 [2.0, 3.0] (19) &  3.0 [3.0, 4.0] (15) &  3.5 [2.2, 4.0] (11) &  0.004 \\ 
+  Letter fluency (\# words/60 s) & 19.0 [17.5, 20.5] (7) &  9.0 [5.0, 13.0] (13) &  8.5 [5.2, 10.8] (22) & 10.0 [6.5, 15.5] (19) &  6.5 [3.0, 11.0] (12) &  0.001 \\ 
+  Forward digit span (length correct) &  7.0 [7.0, 8.0] (11) &  5.0 [3.0, 6.0] (9) &  5.0 [4.0, 5.0] (25) &  6.0 [5.0, 7.0] (20) &  5.0 [4.0, 6.0] (12) &  0.005 \\ 
+  Rey figure copy (0--12) & 12.0 [12.0, 12.0] (3) & 11.0 [4.0, 12.0] (9) & 12.0 [11.0, 12.0] (19) &  2.5 [0.0, 8.8] (12) &  9.5 [4.5, 11.0] (10) &  0.001 \\ 
+  Judgment of line orientation (0--6) &  6.0 [6.0, 6.0] (3) &  3.0 [0.8, 5.0] (8) &  5.0 [4.0, 6.0] (19) &  2.0 [0.0, 4.0] (13) &  4.0 [3.0, 5.0] (9) &  0.004 \\ 
+  Social behavior (0--18) & 17.0 [17.0, 17.0] (3) & 17.5 [16.8, 18.0] (8) & 18.0 [17.0, 18.0] (19) & 17.0 [16.0, 18.0] (15) & 13.0 [11.1, 16.5] (11) &  0.004 \\ 
+  Oral trail-making test (0--6) &  6.0 [5.5, 6.0] (3) &  0.0 [0.0, 3.0] (5) &  2.0 [0.2, 3.0] (10) &  0.5 [0.0, 2.8] (10) &  2.0 [0.2, 3.8] (6) &  0.051 \\ 
+  Reverse digit span (length correct) &  6.0 [4.5, 6.0] (11) &  3.0 [3.0, 3.0] (9) &  3.0 [3.0, 4.0] (25) &  3.0 [2.0, 3.0] (19) &  3.0 [2.0, 3.2] (12) & <0.001 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+The current study used a longitudinal case-control design based on data
+retrospectively selected from the Integrated Neurodegenerative Disease
+Database at the University of Pennsylvania. Participants were recruited
+through the Penn Frontotemporal Degeneration Center (FTDC) and the Penn
+Memory Center (PMC). All procedures were approved by the University of
+Pennsylvania's Institutional Review Board, and all patients and/or their
+caregivers gave written informed consent according to the principles
+established by the Declaration of Helsinki. An initial database query
+yielded 1897 patients scanned on the same 3-Tesla Siemens MRI scanner at
+the Hospital of the University of Pennsylvania. Of these, 360 patients
+had either autopsy or cerebrospinal fluid biomarker evidence of
+underlying Alzheimer's disease pathology. An additional 58 patients were
+excluded due to major cerebrovascular disease, stroke, head trauma, or
+comorbid psychiatric, neurodegenerative, medical, or developmental
+disorders apart from their primary diagnoses. Of the remainder, a total
+of 90 patients had longitudinal data available and exhibited clinical
+phenotypes of interest, as described below. At time of recruitment, MRI
+scans for all patients were screened for signs of cerebrovascular
+disease, hydrocephalus, or white matter lesions; those with a Fazekas
+scale score\textgreater{}1 were excluded. Additionally, MRI scans were
+visually inspected by two raters (JSP and FDR), and 16 patients were
+excluded for poor quality data. The final sample included 181
+T1-weighted MRI scans from 74 patients (25 with lvPPA, 20 PCA, 12 with
+fvAD, and 17 with aAD) and 85 scans from 37 demographically-matched
+controls. A majority of participants (48/74 patients and 29/37 controls)
+had only 2 available scans; the remaining participants contributed 3--4
+scans each. We included scans acquired with a minimum inter-scan
+interval of 6 months up to 3.5 years from the initial MRI; beyond this
+window, there were insufficient observations for a valid analysis. Seven
+patients had primary neuropathologic diagnoses and 67 had CSF biomarkers
+(total tau/beta-amyloid ratio greater than 0.34) indicative of
+Alzheimer's disease pathology according to methods previously described
+(Shaw \emph{et al.}, 2009; Irwin \emph{et al.}, 2012; Toledo \emph{et
+al.}, 2012). APOE genotyping was performed on 66 of 74 patients. One
+patient (white male, aAD, age 51 at onset) with an APOE
+\(\epsilon3\)/\(\epsilon4\) genotype was found to have a mutation in the
+PSEN1 gene; supplementary analyses indicated that excluding this patient
+did not have substantive effects on the outcome of key analyses. All
+patients were clinically diagnosed by experienced neurologists (MG, DJI,
+DW, and SV), and diagnoses were confirmed by consensus after patients'
+initial visit by clinicians with expertise in dementia. Clinical
+criteria for each patient phenotype were as follows: for lvPPA, primary
+language impairment including deficits in repetition and/or naming
+(Gorno-Tempini \emph{et al.}, 2011; Giannini \emph{et al.}, 2017); for
+PCA, visuospatial deficits (e.g., in object/spatial perception, neglect,
+or oculomotor apraxia) (Crutch \emph{et al.}, 2017); for fvAD, clinical
+evidence of a behavioral/dysexecutive syndrome per Rascovsky et al.`s
+(2011) criteria for behavioral-variant frontotemporal dementia; and for
+aAD, primary memory impairment plus deficits in one or more additional
+cognitive domains (McKhann \emph{et al.}, 2011). NaAD patients had
+relatively preserved episodic memory, as assessed through clinical
+interviews and detailed mental status examinations; however, we note
+that the label ``non-amnestic'' is used throughout this manuscript to
+denote patients' initial presentation and does not preclude the
+development of memory deficits in more advanced disease. NaAD patients
+also had relatively spared abilities in other cognitive domains except
+their domain of primary impairment at initial presentation. Due to the
+challenges of clinically differentiating behavioral/dysexecutive
+syndromes due to AD vs.~FTLD, we performed additional screening on the
+fvAD group, as detailed in the Supplementary Material (``Patient
+selection details''). The current study included 54 patients from our
+previous, cross-sectional study (Phillips \emph{et al.}, 2018) (aAD,
+n=8; lvPPA, n=24; PCA, n=16; and fvAD, n=6).
+
+Shapiro-Wilks tests indicated non-normal distributions for education and
+disease duration, age, and MMSE score at initial MRI (all
+p\textless{}0.001). Kruskal-Wallis tests of group differences were
+non-significant, with the exception of MMSE {[}\(\chi^2\)(4)=38.5,
+p\textless{}0.001{]}, reflecting patients' cognitive deficits relative
+to controls. Mann-Whitney tests confirmed that all patient groups
+exhibited significantly lower MMSE scores than controls (all
+U\textgreater{}=428, p\textless{}0.001); all other pairwise comparisons
+were non-significant. To corroborate naAD patients' domain-specific
+cognitive impairment, we analyzed neuropsychological performance on
+assessments independent of those used in clinical diagnosis, including
+performance on specific items of the Philadelphia Brief Assessment of
+Cognition (PBAC) (Libon \emph{et al.}, 2011b). Only neuropsychological
+observations acquired within 1 year of an MRI scan were included.
+Language was assessed in terms of speech features (with lower scores
+indicating speech and language impairment), forward digit span as a
+measure of repetition (Giannini \emph{et al.}, 2017), and letter
+fluency, which is sensitive to deficits in executive-mediated lexical
+retrieval (Rascovsky \emph{et al.}, 2007; Ramanan \emph{et al.}, 2017).
+Visuospatial function was assessed by patients' ability to copy a
+modified version of the Rey complex figure as well as the judgment of
+line orientation. Social behavior was assessed on an 18-point scale
+evaluating social comportment, apathy, disinhibition, agitation,
+empathy, and ritualistic behaviors. Executive function was evaluated
+through an oral version of the trail-making test as well as backward
+digit span. Finally, episodic memory was assessed by recognition on the
+Philadelphia Verbal Learning Test (PVLT) (Libon \emph{et al.}, 2011a) or
+the PBAC verbal memory test, as available. All neuropsychological
+assessments were acquired within 1 year of the initial MRI scan (PVLT:
+mean=0.19 years, SD=0.25; letter fluency: mean=0.14 years, SD=0.25;
+PBAC: mean=0.21 years, SD=0.27; digit span: mean=0.11 years, SD=0.21).
+Results were consistent with each phenotype's primary impairment in all
+domains except for executive function (Table 1). Post-hoc comparisons
+between patient groups for neuropsychological performance at initial MRI
+are reported in Supplementary Table 11. The median and maximum follow-up
+intervals for the MMSE were 1.4 and 3.8 years, respectively; for verbal
+recognition memory, 1.7 and 4.2 years; for letter fluency, 1.6 and 4.6
+years; for forward and reverse digit span, 1.5 and 4.0 years; and for
+additional measures, which were derived from the PBAC, 1.6 and 4.6
+years.
+
+\subsection*{Neuroimaging methods}\label{neuroimaging-methods}
+\addcontentsline{toc}{subsection}{Neuroimaging methods}
+
+T1-weighted MR images were acquired axially with 0.98 mm x 0.98 mm x 1
+mm voxels, a 256 x 192 matrix, a repetition time of 1620 ms, an
+inversion time of 950 ms, and a flip angle of 15\(^\circ\). Scans were
+visually inspected for quality by two authors (JP and FDR). Advanced
+Normalization Tools (ANTs) (Avants \emph{et al.}, 2014; Tustison
+\emph{et al.}, 2014) was used to process each image using a prior-based
+approach. Images underwent intensity normalization (Tustison \emph{et
+al.}, 2010) and were spatially normalized to a template based on healthy
+controls from the Open Access Series of Imaging Studies (OASIS) dataset
+(Marcus \emph{et al.}, 2007) using a symmetric diffeomorphic algorithm
+(Klein \emph{et al.}, 2009; Avants \emph{et al.}, 2011). Images were
+segmented into 6 tissue classes (cortical grey matter, subcortical grey
+matter, deep white matter, CSF, brainstem, and cerebellum) using
+template-based priors; this tissue segmentation was then used to
+estimate cortical thickness; ANTs cortical thickness measurements have
+been extensively validated relative to surface-based methods such as
+FreeSurfer (Tustison \emph{et al.}, 2014; Klein \emph{et al.}, 2017). We
+used a joint label fusion approach (Wang \emph{et al.}, 2013) to align
+the Mindboggle-101 labels (based on the Desikan-Killainy-Tourville label
+scheme) (Klein and Tourville, 2012) with each image using
+pseudo-geodesic registration (Tustison and Avants, 2013) and calculated
+the volume of GM voxels within each label, normalized by intracranial
+volume and converted to a z-score relative to controls' initial scans.
+To perform voxelwise group analyses, we warped cortical thickness images
+to the template using the previously-computed spatial transforms; these
+images were then spatially smoothed with a 2-sigma Gaussian kernel and
+downsampled to 2 mm isotropic voxels.
+
+\subsection*{Statistical analysis}\label{statistical-analysis}
+\addcontentsline{toc}{subsection}{Statistical analysis}
+
+In a hypothesis-driven analysis, we analyzed GM volumes in
+phenotype-specific ROIs motivated by our previous study of disease
+progression in naAD (Phillips \emph{et al.}, 2018). This study
+identified the regions most commonly atrophied in each naAD phenotype,
+reflecting the likely anatomical origin of disease. These ROIs included
+left middle and superior temporal gyri in lvPPA; right precuneus,
+superior parietal lobule, and angular, supramarginal, and middle
+temporal gyri in PCA; and left anterior insula and middle frontal gyrus
+as well as right middle temporal gyrus in fvAD (Table 2). Each ROI was
+expected to exhibit lower volume at the time of participants' initial
+MRI scan as well as more rapid volume loss over time in its associated
+patient group(s) relative to other groups. We additionally hypothesized
+that the aAD group would demonstrate selective atrophy in the MTL,
+including bilateral hippocampi, parahippocampal gyri, and entorhinal
+cortex. Atrophy at the time of initial MRI was analyzed using multiple
+linear regression models with a factor of group and covariates for age,
+sex, and MMSE score at the time of initial MRI; controls formed the
+reference group in these models. Longitudinal atrophy was assessed using
+linear mixed effects (LME) models with fixed factors of group, time
+since first scan, and the interaction of group x time. As in the
+baseline model, covariates included age, sex, and MMSE score at initial
+MRI. A subject-specific random intercept was included to account for
+intra-individual correlations in imaging measures. Post-hoc comparisons
+were performed for the effect of group at initial MRI as well as the
+group x time interaction in longitudinal models; values of
+p\textless{}0.05, corrected using the false discovery rate method, were
+considered significant.
+
+We used LME models to relate GM volume change to neuropsychological
+performance within 1 year of each imaging session. Due to the limited
+number of observations, only linear associations between atrophy and
+time were assessed. The mean interval between test and MRI was 0.30
+years (SD=0.30) for recognition memory; 0.22 years (SD=0.29) for letter
+fluency; 0.18 years (SD=0.29) for digit span; and 0.25 years (SD=0.33)
+for all other longitudinal neuropsychological measures. Separate LME
+models were computed for each measure and change in associated ROIs.
+Thus, recognition performance was related to GM volume in each of the 6
+MTL ROIs; language measures were compared to volume change in left
+middle and superior temporal gyrus; visuospatial measures were related
+to change in the right superior parietal lobule, precuneus, and angular,
+supramarginal, and middle temporal gyri; and behavioral and executive
+measures were related to left anterior insula and middle frontal gyrus
+as well as right middle temporal gyrus. Neuropsychological performance
+formed the outcome in each model; predictors treated as fixed effects
+included regional GM volume at initial MRI and subsequent volume change,
+as well as covariates of sex and education. Additionally, a
+subject-specific random intercept was included in the LME model. Due to
+limited neuropsychological data, controls were omitted from these
+models. The association with regional volume change in each model was
+assessed at a significance level of p\textless{}0.05, corrected for
+false discovery rate.
+
+Additionally, we performed exploratory, whole-brain, voxelwise analysis
+to investigate differences in cortical thickness that were not assessed
+by \emph{a priori} ROIs. ROI-based and voxelwise analyses both present
+distinct advantages and weaknesses. Voxelwise analysis is not
+constrained by the borders of anatomically-defined ROIs, and it allows
+more precise anatomical localization of effects. However, ROI volume is
+regarded as a more reliable measure of GM atrophy than cortical
+thickness (Schwarz \emph{et al.}, 2016). Moreover, voxelwise parametric
+tests depend on patients' displaying neurodegeneration at the same
+precise point within a brain area. Thus, ROI-based volumetric analysis
+may be more sensitive to atrophy if the precise focus of atrophy within
+a region differs across individuals. Voxelwise analysis did not include
+hippocampus, where cortical thickness is not well estimated (Han
+\emph{et al.}, 2006; Gronenschild \emph{et al.}, 2012; Schwarz \emph{et
+al.}, 2016), but did include entorhinal cortex and parahippocampal gyri.
+As in ROI-based analysis, we used multiple regression to assess group
+differences at initial MRI and an LME model to investigate longitudinal
+atrophy. These voxelwise models used the same regression formulae as
+ROI-based models, and the LME was implemented in the 3dLME (Chen
+\emph{et al.}, 2013) function from the Analysis of Functional
+NeuroImaging (AFNI) software suite. Multiple comparisons correction was
+performed by first thresholding voxelwise results at p\textless{}0.001
+(uncorrected), then applying a cluster extent threshold corresponding to
+a cluster-wise alpha value of 0.05. To calculate cluster extent
+thresholds, we first estimated spatial auto-correlation from the model
+residuals using AFNI's 3dFWHMx. We then used the 3dClustSim function,
+which is based on a Monte Carlo approach (Forman \emph{et al.}, 1995;
+Cox \emph{et al.}, 2017), to determine the cluster size corresponding to
+a false-positive rate of 0.05 at a voxelwise threshold of
+p\textless{}0.001 (uncorrected). These simulations indicated a cluster
+threshold of 73 voxels (i.e., \SI{584}{\micro\litre}) for the baseline
+MRI model and a threshold of 75 voxels (\SI{600}{\micro\litre}) for the
+longitudinal LME model. For both the baseline effect of group and the
+group x time interaction, we performed post-hoc contrasts between all
+groups, which were corrected to cluster-wise p\textless{}0.05 using the
+same method. In the Supplementary Material, we additionally display
+voxelwise contrasts vs.~controls at a lenient threshold of
+p\textless{}0.01, uncorrected for multiple comparisons (Supplementary
+Figure 3).
+
+\subsection*{Structural connectivity}\label{structural-connectivity}
+\addcontentsline{toc}{subsection}{Structural connectivity}
+
+To investigate associations between atrophy progression and brain
+connectivity, we related longitudinal atrophy to structural
+population-average structural connectivity measures computed by Yeh et
+al. (2018). The decision to use population-average connectivity measures
+rather than estimating connectivity from patients was based on both
+practical and conceptual considerations. First, constraining participant
+selection by the availability of white-matter imaging data would have
+further reduced sample sizes. Second, white-matter degeneration in
+patients' brains might adversely affect fiber tractography, leading to
+false negatives in estimating region-to-region brain connectivity.
+
+Yeh and colleagues reported a whole-brain connectivity matrix (available
+at \url{http://brain.labsolver.org/}) based on diffusion MRI data from
+842 healthy participants in the Human Connectome Project; connectivity
+values represent average anisotropy values for white-matter fiber tracts
+connecting 65 regions in a modified version of the Automated Anatomical
+Labeling (AAL) brain parcellation (Tzourio-Mazoyer \emph{et al.}, 2002).
+Because label boundaries for major cortical structures vary between the
+AAL and Mindboggle parcellations, we warped the modified AAL atlas into
+the native acquisition space for each of the T1-weighted scans in the
+current study and re-computed GM volumes based on this parcellation. An
+example of the anisotropy-based structural connectivity values reported
+by Yeh et al. (2018) is shown in Supplementary Table 6 for the areas of
+greatest overlap with Mindboggle ROIs in the hypothesis-driven analysis
+described above.
+
+Using the igraph package for R (\url{https://igraph.org/r/}), we created
+an unweighted, undirected graph of structural connectivity from Yeh et
+al.`s (2018) connectivity matrix, omitting the cerebellum and brainstem
+to yield a total of 62 nodes (i.e., brain areas). The degree of each
+node was computed as the number of non-zero white-matter connections
+with other regions. Self-connections were excluded; thus, the maximum
+possible degree of a node was 61. As with Mindboggle labels, volumes
+were normalized by each participants' intracranial volume and converted
+to a z-score relative to the region-wise mean and standard deviation of
+the control sample. We calculated annualized change in GM volume over
+time for each region by subtracting these z-score volume measures from
+the first and last available scans for each participant and dividing by
+the time interval. We then computed a linear mixed effects model with
+annualized change as the outcome and fixed effects of group, node
+degree, and the group x degree interaction, covarying for the baseline
+volume of each region, patients' age at initial MRI, and sex. The
+average volume of each region (i.e., raw volume divided by intracranial
+volume) among control participants was also included as a covariate to
+ensure that variation in node degree did not simply reflect differences
+in region size. A random intercept was estimated for each participant,
+and a significance threshold of p\textless{}0.05 was used.
+
+\subsection*{Data and availability}\label{data-and-availability}
+\addcontentsline{toc}{subsection}{Data and availability}
+
+Computer code for the current manuscript (including all text, analysis,
+and visualization of results) is available in the form of Rmarkdown and
+LaTeX scripts in a public GitHub repository
+(\url{https://github.com/jeffrey-phillips/naAD-longitudinal.git}).
+Rmarkdown code requires \href{https://cran.r-project.org/}{R} version
+3.4.4 or higher. Investigators who wish to access imaging and clinical
+data may submit a direct request to the corresponding author.
+
+\section*{Results}\label{results}
+\addcontentsline{toc}{section}{Results}
+
+\begin{table}[ht]
+\centering
+\caption{Differences in grey matter volume at initial MRI and longitudinal atrophy in hypothesis-driven analysis of regional brain volumes, relative to matched controls. Hypotheses included selective atrophy of neocortical areas associated with early disease in naAD\textsuperscript{10} and of the MTL (hippocampus, entorhinal cortex, and parahippocampal gyrus) in aAD patients. The left and right precentral gyri are included to demonstrate the regional specificity of atrophy. F-statistics indicate the main effect of group at initial MRI scan and the group x time interaction across all scans. Additional columns report z-statistics for pairwise contrasts of each patient group vs. controls. Blue cells indicate significant differences in volume only at initial MRI; red cells indicate significant differences in longitudinal atrophy rates; and green cells indicate differences in both initial volume and longitudinal atrophy, based on a threshold of p<0.05, corrected using the false discovery rate method. n.s.=non-significant; *p<0.05; **p<0.01; ***p<0.001.} 
+\scalebox{0.67}{
+\begin{tabular}{rlrrrrrrrrrr}
+  \hline
+A priori association & Region & $F_{First~MRI}$(4,103) & aAD & lvPPA & PCA & fvAD & $F_{Group~x~Time}$(4,150) & aAD & lvPPA & PCA & fvAD \\ 
+  \hline
+aAD & L entorhinal & 7.2*** & \cellcolor{blue}\textcolor{white}{-3.4} & -1.5 & -1.5 & -0.1 & 6.7*** & -2.2 & \cellcolor{red}\textcolor{white}{-3.7} & \cellcolor{red}\textcolor{white}{-3.3} & \cellcolor{red}\textcolor{white}{-3.9} \\ 
+   & R entorhinal & 5.5*** & \cellcolor{green}\textcolor{black}{-2.6} & 0.7 & -1.9 & -0.1 & 7.4*** & \cellcolor{green}\textcolor{black}{-4.1} & \cellcolor{red}\textcolor{white}{-2.9} & \cellcolor{red}\textcolor{white}{-4.1} & \cellcolor{red}\textcolor{white}{-3.0} \\ 
+   & L hippocampus & 8.4*** & \cellcolor{green}\textcolor{black}{-4.6} & \cellcolor{green}\textcolor{black}{-3.2} & -2.1 & -1.6 & 5.4*** & \cellcolor{green}\textcolor{black}{-4.1} & \cellcolor{green}\textcolor{black}{-2.9} & \cellcolor{red}\textcolor{white}{-2.9} & -0.3 \\ 
+   & R hippocampus & 7.4*** & \cellcolor{green}\textcolor{black}{-4.3} & -1.7 & \cellcolor{green}\textcolor{black}{-3.1} & -1.8 & 4.7** & \cellcolor{green}\textcolor{black}{-3.5} & -2.3 & \cellcolor{green}\textcolor{black}{-3.4} & -1.2 \\ 
+   & L parahippocampal & 2.8** & -1.7 & -2.1 & 0.1 & 0.8 & 5.6*** & \cellcolor{red}\textcolor{white}{-3.5} & \cellcolor{red}\textcolor{white}{-4.0} & \cellcolor{red}\textcolor{white}{-2.6} & -2.1 \\ 
+   & R parahippocampal & 1.6* & -2.2 & -0.5 & -1.3 & -0.3 & 5.9*** & \cellcolor{red}\textcolor{white}{-3.7} & \cellcolor{red}\textcolor{white}{-2.5} & \cellcolor{red}\textcolor{white}{-4.0} & -0.5 \\ 
+  lvPPA & L middle temporal & 30.5*** & \cellcolor{green}\textcolor{black}{-3.0} & \cellcolor{green}\textcolor{black}{-7.3} & \cellcolor{green}\textcolor{black}{-3.2} & \cellcolor{green}\textcolor{black}{-3.0} & 34.7*** & \cellcolor{green}\textcolor{black}{-9.6} & \cellcolor{green}\textcolor{black}{-9.2} & \cellcolor{green}\textcolor{black}{-6.4} & \cellcolor{green}\textcolor{black}{-5.3} \\ 
+   & L superior temporal & 21.5*** & \cellcolor{green}\textcolor{black}{-2.6} & \cellcolor{green}\textcolor{black}{-6.8} & -2.3 & -1.8 & 17.3*** & \cellcolor{green}\textcolor{black}{-4.4} & \cellcolor{green}\textcolor{black}{-8.1} & \cellcolor{red}\textcolor{white}{-3.7} & \cellcolor{red}\textcolor{white}{-2.8} \\ 
+  PCA & R angular & 14.7*** & \cellcolor{blue}\textcolor{white}{-2.8} & -1.3 & \cellcolor{green}\textcolor{black}{-3.9} & \cellcolor{blue}\textcolor{white}{-3.0} & 2.4 & -1.4 & \cellcolor{red}\textcolor{white}{-2.6} & \cellcolor{green}\textcolor{black}{-2.5} & -1.0 \\ 
+   & R precuneus & 9.8*** & -0.7 & -0.5 & \cellcolor{green}\textcolor{black}{-4.4} & -1.3 & 13.7*** & \cellcolor{red}\textcolor{white}{-6.5} & \cellcolor{red}\textcolor{white}{-4.8} & \cellcolor{green}\textcolor{black}{-4.5} & -0.9 \\ 
+   & R superior parietal lobule & 16.7*** & 0.6 & 0.0 & \cellcolor{blue}\textcolor{white}{-5.5} & -1.7 & 4.2** & \cellcolor{red}\textcolor{white}{-3.6} & \cellcolor{red}\textcolor{white}{-2.7} & -2.1 & -0.1 \\ 
+   & R supramarginal & 6.4*** & 0.2 & 0.4 & \cellcolor{green}\textcolor{black}{-2.6} & -0.6 & 11.2*** & \cellcolor{red}\textcolor{white}{-6.5} & \cellcolor{red}\textcolor{white}{-3.1} & \cellcolor{green}\textcolor{black}{-2.6} & -0.5 \\ 
+  fvAD & L anterior insula & 10.3*** & -2.1 & \cellcolor{blue}\textcolor{white}{-2.6} & 0.6 & \cellcolor{green}\textcolor{black}{-3.4} & 3.5* & -2.0 & -1.6 & -0.4 & \cellcolor{green}\textcolor{black}{-3.3} \\ 
+   & L middle frontal & 15.3*** & \cellcolor{green}\textcolor{black}{-2.6} & \cellcolor{green}\textcolor{black}{-3.8} & -2.4 & \cellcolor{blue}\textcolor{white}{-4.4} & 8.2*** & \cellcolor{green}\textcolor{black}{-3.9} & \cellcolor{green}\textcolor{black}{-4.9} & \cellcolor{red}\textcolor{white}{-3.8} & -2.1 \\ 
+  PCA, fvAD & R middle temporal & 23.6*** & \cellcolor{green}\textcolor{black}{-2.8} & \cellcolor{green}\textcolor{black}{-2.7} & \cellcolor{green}\textcolor{black}{-5.6} & \cellcolor{green}\textcolor{black}{-4.2} & 44.8*** & \cellcolor{green}\textcolor{black}{-11.3} & \cellcolor{green}\textcolor{black}{-9.3} & \cellcolor{green}\textcolor{black}{-7.5} & \cellcolor{green}\textcolor{black}{-6.4} \\ 
+  Reference ROI & L precentral & 3.4*** & 0.8 & -1.3 & -1.4 & 1.2 & 3.7** & \cellcolor{red}\textcolor{white}{-3.1} & \cellcolor{red}\textcolor{white}{-3.1} & -2.1 & -1.3 \\ 
+   & R precentral & 5.4*** & 0.2 & -0.7 & \cellcolor{green}\textcolor{black}{-2.9} & -0.7 & 5.0** & \cellcolor{red}\textcolor{white}{-3.3} & \cellcolor{red}\textcolor{white}{-3.3} & \cellcolor{green}\textcolor{black}{-3.3} & -0.6 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/base_diff_fig-1} 
+
+}
+
+\caption{Patient group differences at time of initial MRI in normalized volumes for a priori regions of interest. Box-and-whisker plots represent the distribution of regional grey matter volumes, expressed in z-score units relative to the healthy control reference group and adjusted for age, sex, and global cognition. More negative values on the x-axis indicate greater atrophy. The vertical bar in each box indicates the median volume; the edges of the box represent the interquartile range (IQR), i.e., the difference between the first and third quartiles. The whiskers extend to the most extreme point within $1.5\times IQR$ from the left or right edge of the box; observations falling outside this range are plotted individually. The notches in each box extend $1.58\times IQR\div{\sqrt{n}}$, displaying an approximate 95\% confidence interval for the median. Black brackets indicate significant pairwise group differences (p<0.05 after false discovery rate correction). Group is indicated by color as well as by the shape centered over the median line in each box.}\label{fig:base_diff_fig}
+\end{figure}
+
+\subsection*{Hypothesis-driven analysis of ROI
+volumes}\label{hypothesis-driven-analysis-of-roi-volumes}
+\addcontentsline{toc}{subsection}{Hypothesis-driven analysis of ROI
+volumes}
+
+\subsubsection*{Areas of earlier atrophy in each
+phenotype}\label{areas-of-earlier-atrophy-in-each-phenotype}
+\addcontentsline{toc}{subsubsection}{Areas of earlier atrophy in each
+phenotype}
+
+We first assessed both regional volume at initial MRI and longitudinal
+volume change in each group relative to matched controls in ROIs
+associated \emph{a priori} with each phenotype. The purpose of this
+hypothesis-driven analysis was two-fold: first, to dissociate effects of
+earlier vs.~later degeneration that are confounded in cross-sectional
+studies; and second, to test hypotheses regarding differential rates of
+atrophy between phenotypes. This analysis identified multiple regions
+displaying initial atrophy in each phenotype (Table 2), which reflect
+atrophy prior to patients' initial scans. While a subset of these
+regions continued to degenerate over the follow-up period (Table 2,
+green cells), others exhibited no further change (blue cells).
+Additionally, we detected a number of regions that were not atrophied
+relative to controls at the initial scan but demonstrated progression
+over the follow-up period (red cells); these areas are interpreted as
+areas of later disease spread in each phenotype. In cross-sectional
+analysis of participants' initial MRI scans, all ROIs exhibited a main
+effect of group, independent of age and MMSE.
+
+Patterns of atrophy at initial MRI corroborated prior cross-sectional
+studies of naAD, supporting the accuracy of clinical diagnoses. LvPPA
+patients exhibited strong lateralization of disease, with early atrophy
+relative to controls and other patient groups in left superior and
+middle temporal gyri (Table 2, Figure 1). Additionally, they had
+significant atrophy relative to controls in left anterior insula,
+hippocampus, and middle frontal gyrus as well right middle temporal
+gyrus. PCA patients, in turn, had significant atrophy at first MRI in
+right angular gyrus, precuneus, superior parietal lobule, and
+hippocampus as well as bilateral middle temporal gyri. FvAD patients had
+significant atrophy in left anterior insula and middle frontal gyrus;
+right angular gyrus; and bilateral middle temporal gyri. The precentral
+gyrus, which comprises primary motor areas, exhibited early atrophy only
+in the PCA group and was restricted to the right hemisphere, consistent
+with the general right-lateralization of these patients' atrophy
+pattern; the relative sparing of these structures is consistent with
+patients' preserved motor function and demonstrates the regional
+specificity of atrophy patterns. The aAD patients exhibited initial
+atrophy relative to controls in bilateral hippocampi and entorhinal
+cortex, left middle frontal gyrus, bilateral temporal cortex, and right
+angular gyrus. These temporoparietal areas have been previously
+characterized as nodes of the posterior default mode network in which
+different AD phenotypes demonstrate convergence of atrophy patterns
+(Ossenkoppele \emph{et al.}, 2015a). Additionally, aAD patients
+demonstrated more severe atrophy than naAD groups in bilateral
+hippocampi and entorhinal cortex (Figure 1). Non-amnestic patients
+exhibited characteristic sparing of MTL structures, with initial atrophy
+limited to left hippocampus in lvPPA and right hippocampus in PCA. In
+longitudinal models, areas of significant early atrophy tended to
+demonstrate further progression over the follow-up period relative to
+controls (Table 2, green cells; see also Supplementary Figure 2).
+However, a subset of brain areas had a non-significant slope of change
+over time (Table 2, blue cells), suggesting a slowing of atrophy. These
+areas included left entorhinal and right angular gyrus in aAD; left
+anterior insula in lvPPA; right superior parietal lobule in PCA; and
+left middle frontal gyrus in fvAD. Importantly, variation in sample
+sizes should be taken into consideration when interpreting results for
+different patient groups. For example, the fvAD group (the smallest
+sample) may be more susceptible to false negatives than larger groups.
+We caution against drawing conclusions about group differences by visual
+comparisons of each group's results vs.~controls (Table 2, Figure 3).
+Rather, group differences in atrophy are directly assessed in Figures
+1--2 and 4--5.
+
+\subsubsection*{Longitudinal analysis identifies areas of later change
+in each
+phenotype}\label{longitudinal-analysis-identifies-areas-of-later-change-in-each-phenotype}
+\addcontentsline{toc}{subsubsection}{Longitudinal analysis identifies
+areas of later change in each phenotype}
+
+Additionally, multiple brain areas in each phenotype demonstrated
+significant change over time despite an absence of atrophy at initial
+MRI; these areas appear to represent disease spread in later stages. In
+the neocortex, lvPPA patients exhibited longitudinal atrophy in right
+temporoparietal areas, while PCA patients exhibited new left-hemisphere
+atrophy in superior temporal and middle frontal gyrus. FvAD patients
+exhibited new atrophy in left superior temporal gyrus, marking lateral
+temporal cortex as one of the most consistent areas of longitudinal
+change across patient groups. In the MTL, aAD, lvPPA, and PCA patients
+all exhibited later atrophy in bilateral parahippocampal gyri; and all
+three naAD groups demonstrated later atrophy in bilateral entorhinal
+cortex. Additionally, PCA patients exhibited later-stage atrophy in
+right hippocampus. Because a subset of PCA patients have a disease focus
+in the ventral visual processing stream (Crutch \emph{et al.}, 2017), we
+additionally evaluated longitudinal atrophy in bilateral inferior
+occipital gyri (Supplementary Tables 7--10); while we observed
+significant atrophy across patient groups, there were no between-group
+differences in either mean atrophy or its rate of change. Finally, in
+precentral gyrus reference regions, all patient groups except fvAD
+exhibited longitudinal change relative to controls, consistent with
+their more advanced disease status; however, in the PCA group this
+change remained restricted to the right hemisphere.
+
+\subsubsection*{Group differences in regional rates of
+change}\label{group-differences-in-regional-rates-of-change}
+\addcontentsline{toc}{subsubsection}{Group differences in regional rates
+of change}
+
+The longitudinal design allowed us to test the hypothesis that each naAD
+phenotype would exhibit faster atrophy in its associated neocortical
+ROIs than other patient groups, consistent with phenotype-specific
+disease patterns. Additionally, we predicted that naAD patients would
+exhibit more gradual rates of change in MTL structures than aAD
+patients, providing a dynamic correlate of MTL sparing in naAD. These
+hypotheses were tested through pairwise contrasts of group x time
+interaction terms from linear mixed effects models of GM volume change.
+Consistent with hypotheses, lvPPA patients had more rapid atrophy than
+PCA patients in left superior temporal gyrus (z=2.8, p\textless{}0.02)
+as well as marginally more rapid change than aAD patients (z=2.1,
+p\textless{}0.09). Similarly, the fvAD group exhibited significantly
+greater atrophy rates in left anterior insula than lvPPA (z=2.5,
+p\textless{}0.04) and PCA patients (z=2.9, p\textless{}0.02). Contrary
+to hypotheses, PCA patients did not exhibit faster neurodegeneration
+during the follow-up period than other phenotypes. Because PCA is
+associated with heterogeneous disease distributions including both
+dorsal and ventral occipito-temporal variants (Crutch \emph{et al.},
+2017), we performed supplementary analyses of longitudinal atrophy in
+ventrolateral occipital cortex (i.e., bilateral inferior occipital
+gyri). While PCA patients exhibited significantly lower GM volumes than
+controls in both left and right inferior occipital gyri, there were no
+significant differences in either mean volumes or rates of longitudinal
+change with other patient groups (Supplementary Tables 7--10).
+
+In addition, aAD patients had more rapid atrophy in right middle
+temporal gyrus than lvPPA (z=3.5, p\textless{}0.01) and PCA patients
+(z=3.2, p\textless{}0.01); in left middle temporal gyrus relative to
+lvPPA (z=2.7, p\textless{}0.03); in right precuneus relative to lvPPA
+(z=2.5, p\textless{}0.04) and fvAD (z=3.0, p\textless{}0.02); and in
+right supramarginal gyrus relative to all three naAD groups (all
+z\textgreater{}3.3, p\textless{}0.01). We had predicted that naAD
+patients would exhibit more gradual atrophy than aAD patients in MTL
+structures. However, all patient groups demonstrated significant atrophy
+relative to controls in one or more MTL structures (Table 2), and we
+found no significant differences between patient groups in atrophy rates
+for bilateral hippocampi, entorhinal cortex, or parahippocampal gyri. To
+address limitations in statistical power, we performed a supplementary
+analysis on MTL ROIs in which all naAD phenotypes were combined into a
+single group; while both the naAD and aAD groups had significantly
+faster atrophy than controls in all 6 MTL regions, we again observed no
+difference in atrophy rates between naAD and aAD (Supplementary Table
+3).
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/roi_time_diffs-1} 
+
+}
+
+\caption{Patient group differences in the effect of time for a priori regions of interest. The plot displays annualized change in regional grey matter volume in each group, expressed in z-score units relative to the healthy control reference group and adjusted for sex as well as age and global cognition at initial MRI. More negative values on the x-axis indicate more rapid atrophy over time. The vertical bar in each box indicates the median volume; the edges of the box represent the interquartile range (IQR), i.e., the difference between the first and third quartiles. The whiskers extend to the most extreme point within $1.5\times IQR$ from the left or right edge of the box; observations falling outside this range are plotted individually. The notches in each box extend $1.58\times IQR\div{\sqrt{n}}$, displaying an approximate 95\% confidence interval for the median. Black brackets indicate significant pairwise group differences (p<0.05 after false discovery rate correction). Group is indicated by color as well as by the shape centered over the median line in each box.}\label{fig:roi_time_diffs}
+\end{figure}
+
+\subsection*{Exploratory whole-brain
+analysis}\label{exploratory-whole-brain-analysis}
+\addcontentsline{toc}{subsection}{Exploratory whole-brain analysis}
+
+\begin{figure}[]
+% Voxelwise cortical thickness versus controls.
+
+{\centering \includegraphics[width=7in]{./fig/me_time.pdf} 
+
+}
+
+\caption[GM time effects]{Voxelwise differences in cortical thickness relative to matched controls. Image overlays are binarized t-statistic maps for simple contrasts of controls minus each patient group. Blue: simple effect of group (patients<controls) from cross-sectional analysis of participants' initial MRI scans; red: group x time interaction from longitudinal mixed effects models, indicating where patients have more rapid cortical thinning than controls; green: overlap between group and group x time effects. All results were thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{584}{\micro\litre} for baseline results and \SI{600}{\micro\litre} longitudinal results, corresponding to a corrected cluster-wise threshold of p<0.05. \label{gm_me_time}}
+
+\end{figure}
+
+Exploratory, whole-brain analysis of cortical thickness was performed to
+identify areas of early atrophy and later spread that were not captured
+by \emph{a priori} ROIs. As in ROI analysis (Table 2), areas were
+categorized by whether they exhibited significant atrophy at patients'
+first MRI and whether they exhibited significant longitudinal change
+during the follow-up period relative to controls. As mentioned above,
+the hippocampi were excluded from voxelwise analysis due to the
+difficulty of reliably segmenting and estimating cortical thickness for
+this structure (Han \emph{et al.}, 2006; Gronenschild \emph{et al.},
+2012; Schwarz \emph{et al.}, 2016).
+
+\subsubsection*{Voxelwise cortical thickness differences at initial
+MRI}\label{voxelwise-cortical-thickness-differences-at-initial-mri}
+\addcontentsline{toc}{subsubsection}{Voxelwise cortical thickness
+differences at initial MRI}
+
+Whole-brain atrophy patterns at initial MRI corroborated ROI-based
+analyses and indicated areas of earlier neurodegeneration that fell
+outside of \emph{a priori} ROIs. At initial MRI, the lvPPA group
+exhibited lower cortical thickness vs.~controls in left middle and
+superior temporal gyri, our hypothesized disease focus for lvPPA,
+corroborating ROI volume analysis (Figure 3A). In addition to these
+regions, lvPPA patients exhibited early atrophy in multiple
+left-hemisphere temporal, parietal, and frontal areas including central
+and parietal opercula; planum temporale; planum polare; and inferior
+temporal, fusiform, supramarginal, angular, inferior occipital, and
+middle occipital gyri (Figure 3). In prefrontal cortex, lvPPA patients
+had cortical thinning in left anterior insula and frontal operculum as
+well as bilateral middle and superior frontal gyri. Moreover, nearly all
+of these areas continued to exhibit longitudinal change during the
+follow-up period (Figure 3, green areas). Peak t-statistics and cluster
+volumes for these regions are reported in Supplementary Table 4.
+Voxelwise analysis of the PCA group not only demonstrated expected
+atrophy in right parietal, occipital, and posterior temporal areas, but
+also in their left-hemisphere homologues (Figure 3B). Additionally, PCA
+patients' baseline atrophy extended into right precentral, middle
+frontal, and superior frontal gyri. Among these areas, the bilateral
+precuneus/posterior cingulate gyrus and middle temporal gyrus continued
+to demonstrate change during the follow-up period. Overall, baseline
+results thus indicated that despite some right lateralization of
+disease, PCA patients in the current sample had bilateral cortical
+involvement consistent with recent consensus criteria for PCA (Crutch
+\emph{et al.}, 2017). As in ROI-based analysis, fvAD patients exhibited
+initial atrophy relative to controls in left anterior insula and middle
+frontal gyrus, right angular gyrus, and bilateral middle temporal gyri.
+However, areas of early atrophy extended far beyond these regions to
+include right insula and middle frontal gyrus as well as bilateral
+medial and ventral prefrontal cortex, inferior and superior frontal
+gyri, temporal poles, and opercular cortex (Figure 3C). The fvAD group
+also had initial atrophy relative to controls in the anterior and dorsal
+portion of right entorhinal cortex, a finding that was not captured by
+ROI-based analysis. In apparent contrast to the findings of Ossenkoppele
+and colleagues (Ossenkoppele \emph{et al.}, 2015b), posterior atrophy
+was limited, most notably including the right precuneus. Among areas of
+initial atrophy in fvAD, only right anterior insula and bilateral
+central opercula displayed significant cortical thinning over the
+follow-up period. The aAD group exhibited expected atrophy in right
+entorhinal cortex as well as bilateral middle and superior temporal
+gyri, partially replicating ROI-based findings (Figure 3D). Outside
+\emph{a priori} ROIs, aAD patients also exhibited early atrophy in
+bilateral parietal areas including the precunei and middle cingulate,
+posterior cingulate, angular, and supramarginal gyri; right insula; and
+right frontal lobe areas including anterior orbital, middle frontal,
+superior frontal, and medial precentral gyri (Supplementary Table 4). Of
+these areas, only the right insula demonstrated continued atrophy
+throughout the follow-up period. Figure 4 presents contrasts between
+patient groups of initial cortical thickness. Consistent with
+expectations from previous cross-sectional studies, these results
+indicate left lateralized atrophy in lvPPA (Figure 4A); parietal and
+occipitotemporal disease in PCA that exhibits some right-hemisphere bias
+(Figures 4A, C, and F), and greater frontal lobe involvement in fvAD
+than in other phenotypes (Figures 4C, E, and F). Collectively, these
+results replicate initial volume differences from ROI-based analysis and
+highlight additional phenotype-specific areas of atrophy reported in
+prior studies of lvPPA (Rogalski \emph{et al.}, 2016), PCA (Lehmann
+\emph{et al.}, 2012), and fvAD (Whitwell \emph{et al.}, 2011).
+
+\begin{figure}[]
+% Voxelwise group differences in cortical thickness.
+
+{\centering \includegraphics[width=7in]{./fig/vox_base_diff.pdf} 
+
+}
+
+\caption[GM mean differences]{Voxelwise differences between patient groups in cortical thickness at time of initial MRI scan. Results are thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{584}{\micro\litre}, corresponding to a corrected cluster-wise threshold of p<0.05. Warm colors indicate thinner cortical grey matter in the second group than the first; cool colors indicate thinner cortical grey matter in the first group than the second. \label{gm_mean_diff}}
+
+\end{figure}
+
+\begin{figure}[]
+% Voxelwise group differences in rates of longitudinal GM change.
+
+{\centering \includegraphics[width=7in]{./fig/vox_group_time.pdf} 
+
+}
+
+\caption[GM group x time differences]{Voxelwise differences between patient groups in rates of cortical thinning over time. Image overlays are t-statistic maps for the interaction of each group with time, calculated from linear mixed effects (LME) models and thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{600}{\micro\litre}, corresponding to a corrected cluster-wise threshold of p<0.05. Warm colors indicate that cortical thinning over time is more rapid in the second group than the first; cool colors indicate that cortical thinning is more rapid in the first group than the second. \label{gm_group_time}}
+
+\end{figure}
+
+\subsubsection*{Voxelwise whole-brain analysis of longitudinal disease
+spread}\label{voxelwise-whole-brain-analysis-of-longitudinal-disease-spread}
+\addcontentsline{toc}{subsubsection}{Voxelwise whole-brain analysis of
+longitudinal disease spread}
+
+Longitudinal whole-brain analysis also allowed us to identify brain
+areas that were not significantly atrophied at baseline but demonstrated
+progressive atrophy over the follow-up period. As in ROI-based analysis,
+we interpret these effects to indicate the spread of disease to brain
+areas that were relatively spared in early disease stages. The lvPPA
+group showed extensive new atrophy in right temporoparietal areas and
+throughout bilateral prefrontal, medial parietal, and anterior temporal
+cortex (Figure 3A, red regions), suggesting spread of disease to these
+areas following patients' initial scans. In PCA, progressive atrophy was
+observed in several areas unaffected at initial MRI, including the
+temporal poles, bilateral superior frontal gyri, and bilateral
+perisylvian cortex (Figure 3B, Supplementary Table 5). In contrast to
+lvPPA and PCA patients, areas of newer atrophy progression were sparse
+among fvAD patients, limited to portions of right anterior insula as
+well as left opercular and perisylvian cortex (Figure 3C). Because the
+small sample size of this group might have limited statistical
+sensitivity, we also present voxelwise contrasts vs.~controls at a
+liberal statistical threshold of p\textless{}0.01, without cluster-wise
+correction for multiple comparisons (Supplementary Figure 3). While
+these results must be interpreted with caution due to the potential for
+false positive results, they suggest more extensive disease spread to
+left posterior insula, left dorsolateral prefrontal cortex, and
+bilateral anterior prefrontal areas. Finally, aAD patients showed new
+longitudinal change during the follow-up period in bilateral parietal
+cortex as well as right posterior temporal, anterior temporal,
+opercular, and prefrontal areas (Figure 3D, Supplementary Table 5).
+
+\subsubsection*{Voxelwise whole-brain differences in regional rates of
+change}\label{voxelwise-whole-brain-differences-in-regional-rates-of-change}
+\addcontentsline{toc}{subsubsection}{Voxelwise whole-brain differences
+in regional rates of change}
+
+As in ROI-based analysis, we assessed group differences in the regional
+pace of cortical thinning over time. Consistent with ROI-based analysis
+(Figure 2), lvPPA patients had significantly more rapid atrophy than aAD
+patients in left anterior and posterior superior/middle temporal gyri
+(Figure 5A). Additionally, aAD patients exhibited faster atrophy
+progression than fvAD patients in right middle occipital gyrus and
+superior parietal lobule (Figure 5B), consistent with parietal
+differences observed between these groups in ROI-based analysis.
+Similarly, lvPPA patients exhibited more rapid atrophy than fvAD
+patients in left precuneus and bilateral middle occipital gyri (Figure
+5C). These results corroborate ROI-based findings that suggest
+neocortical rates of atrophy may vary by region according to patient
+phenotype.
+
+\subsubsection*{Degree of structural connectivity predicts longitudinal
+atrophy}\label{degree-of-structural-connectivity-predicts-longitudinal-atrophy}
+\addcontentsline{toc}{subsubsection}{Degree of structural connectivity
+predicts longitudinal atrophy}
+
+Nodes in the AAL region graph had a median degree of 19.5 (interquartile
+range=17--25.75). Nodes in the top quartile corresponded to several
+\emph{a priori} ROIs, including bilateral superior parietal lobules;
+bilateral inferior, middle, and superior temporal gyri; and right
+angular gyrus. Both left and right hippocampus labels (which encompassed
+proximal MTL structures) had degrees of 17; left insula, 23; left middle
+frontal gyrus, 21; right supramarginal gyrus, 21; right precuneus, 22;
+and left and right precentral gyri, 21 and 18, respectively. Node degree
+was positively associated with regions' average volume among controls
+(Pearson's R=0.46, p\textless{}0.001); to account for this potential
+confound, average control volume for each region was included as a
+covariate. Linear mixed effects modeling showed that higher node degree
+predicted greater annualized GM volume loss in each patient group
+relative to controls (Figure 6), as evidenced by group x degree
+interaction terms: for lvPPA, \(\beta\)=-0.011, t(6703)=-6.4,
+p\textless{}0.001; for PCA, \(\beta\)=-0.0059, t(6703)=-3.1,
+p\textless{}0.001; for fvAD, \(\beta\)=-0.0049, t(6703)=-2.2,
+p\textless{}0.03; and for aAD, \(\beta\)=-0.010, t(6703)=-5.3,
+p\textless{}0.001. The main effect of degree was marginally significant
+{[}\(\beta\)=-0.0020, t(6703)=1.7, p\textless{}0.09{]}, reflecting the
+lack of substantial GM volume loss in the control group (Figure 6).
+Among covariates, volume at participants' first MRI was significantly
+associated with annualized change {[}\(\beta\)=-0.024, t(6703)=-6.2,
+p\textless{}0.001{]}, as was average region size among controls
+{[}\(\beta\)=-13.2, t(6703)=-8.3, p\textless{}0.001{]}. Simple effects
+of group were not significant, although the fvAD group had marginally
+lower volumes relative to controls {[}\(\beta\)=-0.15, t(103)=-1.9,
+p\textless{}0.06{]}. Effects of age and sex were also non-significant
+(both p\textgreater{}0.12). In pairwise post-hoc contrasts, the aAD
+group had significantly greater overall volume loss than the lvPPA group
+(z=2.3, p\textless{}0.02). Additionally, the aAD group had a more
+negative slope of association between degree and longitudinal change
+than the PCA group (z=2.0, p\textless{}0.05) and the fvAD group (z=2.1,
+p\textless{}0.04), suggesting that brain connectivity predicted greater
+atrophy in aAD than these other phenotypes. Other contrasts of group and
+group x degree interaction terms were non-significant (all
+z\textless{}0.6, p\textgreater{}0.5). Importantly, these associations
+were based on GM volumes estimated for AAL labels and are thus
+unaffected by differences in the AAL and Mindboggle parcellation
+schemes. Furthermore, because the present analysis relies on
+population-averaged connectivity values for all groups, it does not
+address potential connectivity differences between naAD and aAD in
+networks associated with language, visuospatial function, social
+behavior, executive control, and memory.
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/aal_transmission-1} 
+
+}
+
+\caption{Node degree predicts annualized grey matter volume decline among study participants in regions defined by the Automated Anatomical Labeling (AAL) atlas. Node degree is based on structural connectivity measures computed by Yeh et al. (2018) and reflects the number of white matter connections that each AAL region has with other regions. Shaded areas show the pointwise 95\% confidence interval for each regression line.}\label{fig:aal_transmission}
+\end{figure}
+
+\subsubsection*{Effects of global cognition and
+age}\label{effects-of-global-cognition-and-age}
+\addcontentsline{toc}{subsubsection}{Effects of global cognition and
+age}
+
+Initial MMSE score (which was included as a measure of global cognitive
+impairment) was positively associated with GM volume in the majority of
+ROIs {[}all t(103)\textgreater{}=2.3, p\textless{}0.03{]}, with the
+exception of bilateral hippocampi and parahippocampal gyri {[}all
+t(103)\textless{}1.0, p\textgreater{}0.3{]}. In contrast, age at initial
+MRI was inversely associated with volume in all 6 MTL regions
+investigated, including left and right hippocampus {[}t(103)=-2.5,
+p\textless{}0.02 and t(103)=-3.2, p\textless{}0.02, respectively, after
+false discovery rate correction{]}, left and right parahippocampal gyri
+{[}t(103)=-3.7, p\textless{}0.001 and t(103)=-4.9, p\textless{}0.001{]},
+and left and right entorhinal cortex {[}t(103)=-3.2, p\textless{}0.002
+and t(103)=-3.8, p\textless{}0.001{]}. In addition, age effects were
+observed in bilateral precentral gyri {[}both t(103)\textless{}-2.9,
+p\textless{}0.01{]}, suggesting age-related atrophy in motor cortex. No
+other ROIs displayed an effect of age. To determine whether this age
+effect differed by group, we performed secondary analyses on MTL volumes
+at the time of first scan using multiple regression models with
+predictors of group, age, and their interaction, covarying for MMSE
+score and the interval between MMSE and MRI. After false discovery rate
+correction, no MTL regions showed a significant group x age interaction
+{[}all F(4,99)\textless{}2.3, p\textgreater{}0.2{]}, suggesting that the
+association of increased age with MTL atrophy was similar across groups.
+Age and MMSE effects for the exploratory voxelwise analysis are shown in
+Supplementary Figure 1. Consistent with ROI-based results, voxelwise
+associations with baseline MMSE score were distributed throughout all
+lobes of the brain (Supplementary Figure 1, bottom). Voxelwise analysis
+further showed robust age effects in the MTL as well as the precentral
+gyri, anterior temporal lobes, and ventral prefrontal cortex.
+Conversely, age was positively associated with cortical thickness in the
+precuneus, which exhibits greater atrophy in earlier-onset than
+later-onset Alzheimer's disease (Möller \emph{et al.}, 2013). No
+significant effects of sex were observed in either ROI-based or
+voxelwise analysis.
+
+\subsubsection*{Effects of APOE
+genotype}\label{effects-of-apoe-genotype}
+\addcontentsline{toc}{subsubsection}{Effects of APOE genotype}
+
+We additionally assessed the distribution of APOE genotypes among aAD
+and naAD patients. Genotyping data were unavailable for one lvPPA, one
+PCA, one fvAD, and two aAD patients. One aAD, three PCA, and three fvAD
+patients each carried one copy of the \(\epsilon2\) allele, which is
+associated with lower risk for Alzheimer's disease (Corder \emph{et
+al.}, 1994). The proportions of lvPPA, PCA, fvAD, and aAD patients
+carrying 1--2 copies of the APOE \(\epsilon4\) allele were 29.2\%,
+36.8\%, 63.6\%, and 73.3\%, respectively. The frequency of individuals
+carrying zero, one, or two copies of the \(\epsilon4\) allele
+significantly differed across patient groups {[}\(\chi^2\)(6)=14.9,
+p\textless{}0.02{]}. In post-hoc comparisons, these frequencies differed
+between the lvPPA and PCA groups {[}\(\chi^2\)(1)=8.3,
+p\textless{}0.02{]} and between the PCA and fvAD groups
+{[}\(\chi^2\)(1)=6.1, p\textless{}0.05{]}. Because APOE genotypes were
+unavailable for control participants, we recomputed LMEs for \emph{a
+priori} ROIs using lvPPA (the largest group) as the reference group and
+number of \(\epsilon4\) alleles as a covariate. No ROIs exhibited an
+association with number of \(\epsilon4\) alleles independent of group
+(all p\textgreater{}0.2).
+
+\subsubsection*{Longitudinal associations between neuropsychological
+performance and grey matter
+volume}\label{longitudinal-associations-between-neuropsychological-performance-and-grey-matter-volume}
+\addcontentsline{toc}{subsubsection}{Longitudinal associations between
+neuropsychological performance and grey matter volume}
+
+Associations between longitudinal neuropsychological performance and
+concurrent GM volume loss were evaluated in patients that had two or
+more assessments, each within one year of a structural MRI scan. This
+longitudinal analysis contrasts with previous studies that have inferred
+associations by correlating brain imaging data from a single timepoint
+with cognitive change. For recognition memory, this yielded 121
+observations from 51 patients, including 21 lvPPA, 13 PCA, eight aAD,
+and nine fvAD patients. For letter fluency, 129 observations were
+available from 20 lvPPA, 14 PCA, 12 aAD, and nine fvAD patients. For
+forward and reverse digit span, 117 observations were available from 21
+lvPPA, 13 PCA, eight aAD, and eight fvAD patients. A total of 90 PBAC
+observations, from which all other test measures were obtained, were
+available for 17 lvPPA, 11 PCA, seven aAD, and seven fvAD patients. In
+all cognitive domains except for social behavior, longitudinal cognition
+was directly associated with GM volume change in one or more associated
+brain areas, independent of volume at the time of initial MRI
+(Supplementary Table 12). In the memory domain, volume loss in bilateral
+hippocampi and left entorhinal predicted declines in recognition
+discrimination. In the language domain, volume loss in left middle and
+superior temporal gyri was associated with decreases in letter fluency
+and forward digit span. In the visuospatial domain, Rey figure copy
+performance over time was associated with volume loss in right angular,
+middle temporal, and supramarginal gyrus as well as right precuneus.
+Judgment of line orientations was likewise associated with right
+precuneus volume change. No significant associations were found for
+social behavior; however, left middle frontal gyrus, left anterior
+insula, and right middle temporal gyrus predicted reverse digit span, a
+measure of working memory and executive function (Kramer \emph{et al.},
+2003).
+
+\section*{Discussion}\label{discussion}
+\addcontentsline{toc}{section}{Discussion}
+
+Our previous work (Phillips \emph{et al.}, 2018) used cross-sectional
+analyses to identify areas of frequent atrophy in several AD phenotypes,
+which we hypothesized to be likely regions of disease onset. This
+approach was inspired by pathological staging studies that have inferred
+disease progression over time in AD (Braak and Braak, 1991), Parkinson's
+disease (Braak \emph{et al.}, 2003), and amyotrophic lateral sclerosis
+(Brettschneider \emph{et al.}, 2013) based on postmortem pathology.
+However, this cross-sectional design did not allow us to directly
+observe within-patient effects of earlier vs.~later disease progression
+in each phenotype. The current study compared longitudinal disease
+progression in multiple clinically-defined naAD phenotypes with autopsy
+or CSF evidence of Alzheimer's disease pathology. We differentiated
+earlier and later disease stages through a two-part approach. ROI-based
+analysis allowed us to focus on GM volume change in the most likely
+sites of disease onset for each phenotype (Phillips \emph{et al.},
+2018). A second, exploratory analysis of whole-brain cortical thickness
+values allowed us to examine disease spread outside this cluster of
+\emph{a priori} ROIs. In each phenotype, we observed a combination of
+local spread surrounding areas of early atrophy and distal spread to
+brain areas that were not significantly atrophied at the beginning of
+the follow-up period. Both patterns of initial atrophy and subsequent
+progression differed between phenotypes. We further found that
+longitudinal rates of neurodegeneration differed across patient groups
+in phenotype-specific neocortical disease foci, a result which could at
+least partially account for each phenotype's characteristic disease
+distribution. In contrast, we observed no evidence of
+phenotype-dependent differences in atrophy rates within the MTL,
+although MTL atrophy appeared to begin later in naAD than in aAD.
+Finally, we found that structural connectivity, assessed by node degree,
+was a significant predictor of GM volume loss over time in both aAD and
+naAD; this result supports brain connectivity as a general factor
+mediating atrophy progression in AD.
+
+\subsection*{Atrophy at initial MRI indicates possible sites of early
+disease}\label{atrophy-at-initial-mri-indicates-possible-sites-of-early-disease}
+\addcontentsline{toc}{subsection}{Atrophy at initial MRI indicates
+possible sites of early disease}
+
+We hypothesized that each naAD phenotype would be characterized by a
+distinct pattern of early atrophy, observed through cross-sectional
+contrasts of patients' first MRI scans. We consider significant baseline
+atrophy an expected and necessary marker for identifying potential sites
+of disease onset, although early atrophy alone is not sufficient to
+determine these onset sites. \emph{A priori} ROIs for each phenotype
+(including left temporal cortex in lvPPA, posterior temporoparietal
+cortex in PCA, prefrontal cortex in fvAD, and the MTL in aAD)
+demonstrated significant initial atrophy, consistent with hypotheses.
+However, the lvPPA and PCA groups also exhibited lateralized hippocampal
+atrophy vs.~controls at initial MRI; although this atrophy was mild
+relative to the aAD group (Figure 1), we cannot rule out early,
+lateralized hippocampal disease in these phenotypes. Longitudinal
+imaging of patients from earlier disease stages, when atrophy will
+presumably be more focal than in the current sample, is thus necessary
+to conclusively determine whether focal neocortical disease precedes,
+follows, or arises concurrently with MTL disease in these phenotypes.
+Nevertheless, the current study narrows the field of brain areas where
+disease is likely to originate in each naAD phenotype, providing a
+valuable prior constraint on future hypothesis testing. Overall, we
+propose that the current results are more consistent with the prevailing
+hypothesis that naAD patients have disease originating in the neocortex,
+as inferred by cross-sectional or single-group longitudinal imaging
+studies (Rogalski \emph{et al.}, 2011; Lehmann \emph{et al.}, 2012;
+Rohrer \emph{et al.}, 2013; Ossenkoppele \emph{et al.}, 2015a; Xia
+\emph{et al.}, 2017; Phillips \emph{et al.}, 2018) as well as autopsy
+studies of hippocampal-sparing AD (Giannakopoulos \emph{et al.}, 1994;
+Murray \emph{et al.}, 2011; Ferreira \emph{et al.}, 2017). Phenotypic
+variability in initial atrophy patterns (Table 2), including sparing of
+primary motor cortex at the time of initial MRI, supports the regional
+specificity of atrophy in naAD patients.
+
+Interestingly, some areas of initial atrophy continued to change over
+time, while others did not. From the data at our disposal, we cannot say
+with certainty what differentiates these regions. One statistical
+explanation is simply that variability prevented reliable detection of
+longitudinal atrophy in some regions and phenotypes. An alternative,
+biological explanation is that areas that failed to exhibit further
+change over the follow-up period (blue areas, Table 2 and Figure 3) had
+already undergone massive atrophy by the time of patients' first MRI,
+reaching a plateau determined by the limited amount of remaining GM
+tissue (Sabuncu \emph{et al.}, 2011; Schuff \emph{et al.}, 2012). The
+right superior parietal lobule in PCA and left middle frontal gyrus in
+fvAD may exemplify such slowing: in ROI-based analysis, both regions
+were severely atrophied at initial MRI and did not significantly
+progress over time in their respective phenotypes. Further research is
+needed to determine why the pace of atrophy changes in some areas of
+early degeneration but not others.
+
+\subsection*{Differences between phenotypic groups in the neocortical
+spread of
+atrophy}\label{differences-between-phenotypic-groups-in-the-neocortical-spread-of-atrophy}
+\addcontentsline{toc}{subsection}{Differences between phenotypic groups
+in the neocortical spread of atrophy}
+
+Areas that exhibited longitudinal atrophy in the absence of initial
+cross-sectional differences provide a window onto disease spread in each
+phenotype. In ROI-based analysis, the lvPPA group showed strong left
+lateralization of atrophy at baseline, consistent with prior studies
+(Rogalski \emph{et al.}, 2016; Phillips \emph{et al.}, 2018). This
+pattern included left lateral temporal cortex, an area specifically
+associated with language deficits in lvPPA (Gorno-Tempini \emph{et al.},
+2011). ROI-based analysis also indicated early atrophy in left
+prefrontal cortex, anterior insula, and hippocampus; and right lateral
+temporal areas. Voxelwise analysis indicated atrophy in left precuneus
+and right prefrontal cortex as well. Over the follow-up period, we
+observed new progressive atrophy in brain areas both adjacent to and
+distal from these areas of initial atrophy. Proximal disease spread was
+observed throughout the left temporal and parietal lobes as well as
+bilateral frontal lobes. This proximal atrophy may indicate diffusive
+spread of pathology through the extracellular medium or along
+short-distance axonal connections between neighboring cells in cortex
+(Guo and Lee, 2014). However, we also observed progression through parts
+of bilateral frontal lobes and right temporoparietal cortex distal from
+foci of initial atrophy (Figure 3); diffusive spread from adjacent
+disease areas appears insufficient to account for this progression. Two
+possible explanations may account for new, distal atrophy progression.
+First, pathology may have arisen independently in these areas; second,
+pathogenic proteins may have been transmitted to these areas via
+long-distance white matter projections, according to the transmission
+hypothesis of neurodegenerative disease (Guo and Lee, 2014). It is
+particularly interesting to consider these two possibilities with
+respect to cross-sectional reports of right temporal atrophy in lvPPA,
+which---if observed---tends to be much milder than left temporal
+atrophy. In such cases, it is tempting to infer that right temporal
+atrophy results from the spread of disease from left to right
+hemispheres via callosal projections. However, this apparent
+``progression'' may result from a subset of patients having bilateral
+disease. The current study cannot rule out this possibility, as
+ROI-based analysis indicated right temporal atrophy that pre-dated lvPPA
+patients' first MRI (Table 2). Earlier recruitment and longitudinal
+imaging of patients with language disturbances is thus necessary to
+conclusively demonstrate interhemispheric disease spread in lvPPA.
+
+The PCA group also exhibited a combination of proximal and distal
+disease spread. Initial atrophy was observed in bilateral precunei and
+temporoparietal regions (Figure 3) as well as right hippocampus (Table
+2). These parietal areas, in particular, are important to visuospatial
+processing (Astafiev \emph{et al.}, 2003; Greenberg \emph{et al.}, 2010;
+Gmeindl \emph{et al.}, 2016) and are consistent with early disease
+patterns observed in prior studies of PCA (Tang-Wai \emph{et al.}, 2004;
+Lehmann \emph{et al.}, 2012). In voxelwise analysis, PCA patients had
+newer atrophy extending from areas of early disease into inferior
+parietal, posterior temporal, and insular/opercular cortex; they also
+exhibited spread proximal to areas of prefrontal atrophy observed at
+baseline. In addition, however, the PCA group exhibited atrophy
+progression in the anterior temporal lobes distal from any cluster of
+existing atrophy (Figure 3). This finding suggests testable hypotheses
+regarding the diffusion of disease-causing agents along fiber pathways
+that terminate in anterior temporal cortex. These pathways include
+projections from MTL areas as well as more distal connections via the
+inferior longitudinal fasciculus to striate and prestriate cortex, which
+may in turn connect with parietal cortex (Nieuwenhuys \emph{et al.},
+2008).
+
+In the fvAD group, ROI-based and voxelwise analysis collectively
+indicated GM volume loss at initial MRI in bilateral prefrontal,
+temporal, and anterior insular cortex as well as right middle cingulate
+and angular gyri. The involvement of the insula is particularly
+interesting given this group's behavioral dysfunction, as anterior
+insula is crucially implicated in primates' emotion (Phan \emph{et al.},
+2002) as well as in empathy and social life (Singer, 2006). The anterior
+insula is also implicated in behavioral-variant frontotemporal dementia
+(bvFTD) (Seeley, 2010), and Ossenkoppele et al. (2015a) found that
+insula was one of the few regions of atrophy specific to
+behavioral-variant AD (bvAD) patients who were initially misdiagnosed as
+bvFTD. While our findings suggest early involvement of frontal,
+temporal, and limbic regions, previous studies of
+behavioral/dysexecutive AD have shown either predominantly frontal
+(Blennerhassett \emph{et al.}, 2014) or predominantly temporal
+(Ossenkoppele \emph{et al.}, 2015a) disease. In ROI-based analysis, the
+fvAD group demonstrated new atrophy progression only in left perisylvian
+cortex; voxelwise analysis indicated additional disease progression in
+bilateral insular/opercular cortex. These findings are located
+proximally to atrophy clusters observed at first MRI and thus may
+reflect local, diffusive spread of disease. Although more distal atrophy
+progression was not observed, we emphasize that null results in this
+group should be interpreted with extreme caution due to the small sample
+size; while the reported foci may represent the areas of most robust
+atrophy in the current sample, true disease progression may be missed
+due to type II statistical error and may be more anatomically widespread
+than reported here.
+
+In the aAD group, ROI-based analysis showed new neocortical atrophy in
+bilateral precentral gyri as well as right temporoparietal cortex (Table
+2). Voxelwise analysis similarly indicated neocortical atrophy
+progression throughout the right temporal lobe as well as in bilateral
+parietal cortex and right prefrontal cortex. The slight lateralization
+of disease progression (right hemisphere \textgreater{} left) may be
+incidental to the current sample, and we do not propose that it is
+characteristic of amnestic AD generally. However, the results are
+broadly consistent with spreading neocortical disease in later Braak
+stages (Braak and Braak, 1991). Clusters of newer atrophy in right
+temporal cortex may indicate local, diffusive spread from right angular
+gyrus, which was atrophied at initial MRI in the aAD group. However,
+other areas of new progression observed in the voxelwise analysis
+(Figure 3) are distal from sites of early atrophy and may result from
+either white-matter-mediated disease spread or \emph{de novo}
+accumulation of pathology. Notably, structural connectivity data from
+healthy adults indicates that the superior parietal lobule is connected
+to the hippocampus and angular gyrus (Supplementary Table 6), both of
+which exhibited baseline atrophy in the aAD group; newer areas of
+superior parietal atrophy in aAD may thus result from disease
+transmission along white-matter pathways connecting these areas.
+
+\subsection*{MTL atrophy in amnestic and non-amnestic
+phenotypes}\label{mtl-atrophy-in-amnestic-and-non-amnestic-phenotypes}
+\addcontentsline{toc}{subsection}{MTL atrophy in amnestic and
+non-amnestic phenotypes}
+
+At initial MRI, aAD patients demonstrated significant atrophy in
+bilateral entorhinal cortex and hippocampi, as expected from Braak
+staging (Braak and Braak, 1991). Bilateral parahippocampal gyri were not
+atrophied, but they demonstrated significant change over the follow-up
+period; this pattern of results is consistent with progression from
+approximate Braak stages IV to V (Whitwell \emph{et al.}, 2008) among
+our aAD sample. Based on well-characterized patterns of disease spread
+in aAD, these MTL foci may be the source of disease spread to the
+neocortex. The hippocampus has well-characterized white-matter
+connections to posterior cortical areas via the posterior cingulate
+(Nieuwenhuys \emph{et al.}, 2008; Teipel \emph{et al.}, 2010); these
+pathways thus represent tracts of interest for investigating the spread
+of pathogenic proteins to the neocortex.
+
+NaAD patients, in turn, demonstrated relative sparing of MTL structures
+at baseline. In ROI-based analysis, atrophy was limited to left
+hippocampus in lvPPA and right hippocampus in PCA; these patterns of
+lateralization were consistent with the general hemispheric bias
+observed in both phenotypes. Over the follow-up period, naAD patients
+demonstrated significant atrophy progression in the MTL (Table 2); in
+the fvAD group, these changes were limited to bilateral entorhinal
+cortex, although null findings in other MTL structures may reflect the
+small size of this group. MTL progression in naAD patients suggests that
+sparing of the hippocampus and surrounding MTL (a set of
+clinically-defined syndromes) is a graded rather than an absolute
+phenomenon, and that naAD patients may become increasingly susceptible
+to hippocampal degeneration at older ages and in more advanced disease.
+Indeed, age was a strong predictor of MTL atrophy, as evidenced by both
+ROI-based results (see above, ``Effects of global cognition and age'')
+and voxelwise results (Supplementary Figure 1). We note that while naAD
+patients tend to be younger than typical aAD patients, the current study
+controlled for this potential confound both by demographic balancing of
+groups and by covarying for age in statistical models. Thus, baseline
+differences between aAD and naAD patients in GM volume within the MTL
+(Figure 1) were not attributable to age differences between these
+patient groups. Seminal studies of hippocampal sparing in AD
+(Giannakopoulos \emph{et al.}, 1994; Murray \emph{et al.}, 2011;
+Whitwell \emph{et al.}, 2012) grouped patients based on postmortem
+pathology findings; these studies may not have included patients who
+initially presented with non-amnestic syndromes but developed
+hippocampal pathology in later disease.
+
+\subsection*{Differences between phenotypic groups in rates of atrophy
+progression}\label{differences-between-phenotypic-groups-in-rates-of-atrophy-progression}
+\addcontentsline{toc}{subsection}{Differences between phenotypic groups
+in rates of atrophy progression}
+
+The design of the current study not only allowed us to investigate
+differences between phenotypic groups in the topographical distribution
+of atrophy but also differences in the rate of atrophy within each
+region. We reasoned that each phenotype might exhibit more rapid
+degeneration within its associated disease foci, reflecting
+phenotype-specific susceptibility to disease (Bergeron \emph{et al.},
+2016; Mattsson \emph{et al.}, 2016) in that area. Among neocortical
+areas associated with naAD phenotypes, we found evidence to support this
+reasoning. LvPPA patients demonstrated more rapid atrophy in the left
+temporal cortex than the PCA group (ROI-based analysis, Figure 2) and
+the aAD group (voxelwise analysis, Figure 5). FvAD patients, in turn,
+had more rapid atrophy in left anterior insula than both PCA and lvPPA
+patients in ROI-based analysis (Figure 2); and voxelwise analysis
+indicated additional prefrontal, temporal, and insular differences
+between fvAD and lvPPA (Figure 5C). Contrary to our initial hypotheses,
+we saw no difference in MTL atrophy rates between aAD and naAD patients,
+even when all three naAD variants were combined to enhance statistical
+power. Considered together with aAD patients' significant MTL atrophy at
+initial MRI, this result suggests that relative MTL sparing in naAD may
+result from a delayed onset of degeneration in these structures; but
+that once neurodegeneration has begun, it proceeds at a similar rate as
+in aAD. However, we caution that these findings warrant replication in
+longitudinal studies involving larger sample sizes.
+
+\subsection*{Associations between longitudinal atrophy and brain
+connectivity}\label{associations-between-longitudinal-atrophy-and-brain-connectivity}
+\addcontentsline{toc}{subsection}{Associations between longitudinal
+atrophy and brain connectivity}
+
+To investigate the possible role of brain connectivity in mediating
+disease spread, we related patients' atrophy patterns to
+population-average structural connectivity, as estimated from Human
+Connectome Project white-matter imaging data (Yeh \emph{et al.}, 2018).
+Several \emph{a priori} ROIs in the current study corresponded to hubs
+in Yeh et al.`s structural connectivity matrix, as evidenced by their
+high node degree. These findings replicate established functional
+connectivity results that have related the neuroanatomy of AD to brain
+network hubs including bilateral middle temporal, inferior parietal, and
+superior parietal cortex (Buckner \emph{et al.}, 2009; Crossley \emph{et
+al.}, 2014). Moreover, we found that node degree was a significant
+predictor of regional GM volume loss over time in each of the patient
+groups. We caution that this result is correlative in nature and does
+not demonstrate long-distance disease spread along white-matter
+pathways. Indeed, network influences on neurodegeneration need not be
+limited to physical transport of pathogenic proteins along white-matter
+tracts; rather, they may reflect effects such as diaschisis (Chételat,
+2018), with disease in one area leading to metabolic and functional
+disruptions in its network neighbors. Computational analysis of atrophy
+patterns using network models such as those of Raj and colleagues (2012,
+2015), Iturria-Medina et al. (2014), and Hu et al. (2016) offers a more
+rigorous approach for testing hypotheses regarding disease spread in
+brain networks. Nevertheless, associations between atrophy and node
+degree provide supporting evidence for the hypothesis that atrophy
+progression is mediated by structural connectivity. Importantly, the
+structural connectivity analysis reported here does not address
+potential hypotheses regarding connectivity differences in naAD and aAD.
+Indeed, initial research on this question suggests that the connectivity
+of specific brain networks may differ between typical and atypical
+presentations of AD (Lehmann \emph{et al.}, 2015; Whitwell \emph{et
+al.}, 2015). Because the current study relied on population-averaged
+structural connectivity values, it was limited to showing a general
+relationship between degree of connectivity and magnitude of
+longitudinal change; future analysis of patients' specific connectivity
+patterns remains a high priority.
+
+\subsection*{Convergence of atrophy in advanced
+disease}\label{convergence-of-atrophy-in-advanced-disease}
+\addcontentsline{toc}{subsection}{Convergence of atrophy in advanced
+disease}
+
+The spread of disease along white-matter pathways may help explain the
+reported convergence of atrophy patterns across AD phenotypes. For
+example, Ossenkoppele et al. (2015a) proposed that the common
+temporoparietal atrophy observed among lvPPA, PCA, early-onset AD, and
+late-onset AD patients could result from convergent disease in nodes of
+the posterior default mode network. In support of the convergence
+hypothesis, we note that aAD and naAD variants alike had common early
+atrophy and subsequent progression in bilateral temporal cortex (Table
+2). These results replicate findings from our previous study (Phillips
+\emph{et al.}, 2018) of substantial overlap in temporoparietal areas
+among typical and atypical AD patients. Indeed, this study reported that
+spatial distributions of atrophy become more similar across phenotypes
+in later disease phases. At the same time, however, we found that simple
+logistic regression models could effectively discriminate naAD and AD
+phenotypes from one another based on atrophy patterns, even in advanced
+disease (Phillips \emph{et al.}, 2018). Moreover, postmortem studies of
+AD variants show that regional differences in pathology burden persist
+among AD variants even until the end of life. One proposal for resolving
+these apparently conflicting results is the proposal of Warren and
+colleagues (Warren \emph{et al.}, 2012) that different clinical
+presentations of AD involve a common temporal, parietal, and frontal
+network, but that genetic variation or other factors cause the nodes of
+these networks to be differentially engaged across syndromes.
+
+\subsection*{Conclusions and
+limitations}\label{conclusions-and-limitations}
+\addcontentsline{toc}{subsection}{Conclusions and limitations}
+
+Strengths of the current study include a novel comparison of
+longitudinal anatomical changes in multiple clinically-defined naAD
+phenotypes using both \emph{a priori} ROI-based and whole-brain
+voxelwise analyses. The longitudinal study design allowed us to
+differentiate areas of earlier and later atrophy and to compare these
+patterns of disease progression across phenotypes. Moreover, we sought
+to ensure the comparability of the heterogeneous patient groups included
+here by controlling for demographic and clinical characteristics both
+during sample selection and in statistical analysis. The relevance of
+\emph{a priori} ROIs is supported by analyses showing that longitudinal
+anatomical change is associated with concurrent domain-specific
+cognitive decline.
+
+However, one major limitation was the inability to evaluate non-linear
+atrophy progression in Alzheimer's disease: prior evidence suggests that
+an initial acceleration due to spreading cumulative damage is followed
+by a deceleration due to the reduction of intact tissue (Sabuncu
+\emph{et al.}, 2011; Schuff \emph{et al.}, 2012). Such nonlinearities
+complicate study design and interpretation in ways that may not be fully
+addressed by equating patient groups for chronological age and estimated
+disease duration: for example, in the current study, it is possible that
+areas of early atrophy in each phenotype (i.e., those exhibiting atrophy
+at initial MRI) have entered the deceleration phase, while for other
+phenotypes the same regions may have been imaged during the acceleration
+phase. Investigating longitudinal change in earlier-stage patients may
+allow us to observe a more complete trajectory of neurodegeneration, and
+including a minimum of 3--4 imaging timepoints may allow us to
+discriminate between linear, quadratic, and sigmoid models of
+neurodegeneration. Another possible limitation in our findings is
+statistical power, which is likely to have affected voxelwise analysis
+more severely than ROI-based analysis due to the much stricter
+multiple-comparisons correction of the former. Power limitations may
+thus have resulted in underestimation of disease spread in the
+relatively small fvAD and aAD groups; we thus emphasize the importance
+of further longitudinal study, particularly of patients for whom
+postmortem pathological diagnoses are available to rule out the
+possibility of co-morbid FTLD or other pathologies. Relatedly, the PBAC
+behavioral scale did not demonstrate expected worsening of behavioral
+symptoms over time in the fvAD group; while it is possible that this
+null result stems from successful treatment of behavioral symptoms
+through psychiatric medications, future research should strive to
+include more sensitive measures of behavioral dysfunction. An additional
+limitation is that patients in the current sample were not selected
+based on availability of white-matter imaging data, preventing us from
+performing a structured white matter analysis to support interpretations
+of disease spread along white matter pathways. The current study was
+also not designed to investigate associations with the APOE genotype or
+other genetic risk modifiers for Alzheimer's disease. We found that APOE
+\(\epsilon4\) allele counts added little predictive power to our imaging
+models after accounting for group effects; however, continued study of
+the APOE genotype and other genetic risk modifiers in naAD remains an
+important research aim. Finally, future studies should include patients
+with corticobasal syndrome due to underlying Alzheimer's disease
+pathology; insufficient longitudinal data prevented us from including
+this uncommon naAD phenotype in the current study.
+
+Understanding the neuropathological and clinical heterogeneity of
+Alzheimer's disease is crucial to understanding the mechanisms of its
+progression. The current study not only corroborated probable areas of
+early disease for lvPPA, PCA, and fvAD but also showed that each
+phenotype has a different pattern of atrophy progression across the
+cortex. Moreover, we report novel evidence that the longitudinal rate of
+neocortical atrophy varies by region and phenotype in naAD, reflecting
+phenotype-specific cognitive decline. In contrast, the rate of MTL
+atrophy in naAD was similar to that found in aAD, suggesting that early
+sparing of these structures results from a later onset of MTL atrophy in
+naAD. Finally, we observed associations between longitudinal atrophy and
+structural brain connectivity, providing indirect support for models of
+interregional disease spread in association with white-matter fiber
+pathways in naAD.
+
+\section*{Acknowledegments}\label{acknowledegments}
+\addcontentsline{toc}{section}{Acknowledegments}
+
+The authors would like to thank Dr.~Valeria Isella and Dr.~Carlo
+Ferrarese for their valuable feedback on this project; and Dr.~Ilya
+Nasrallah for assistance with visual reads of PET images. Additionally,
+the authors thank Dr.~Fang-Cheng Yeh for making structural connectivity
+results available at \url{http://brain.labsolver.org/}.
+
+\section*{Funding}\label{funding}
+\addcontentsline{toc}{section}{Funding}
+
+This work was supported by grants from the Alzheimer's Association
+(AARF-16-443681), National Institutes of Health (AG017586, AG010124,
+AG043503, and NS088341), BrightFocus Foundation (A2016244S), Dana
+Foundation, Newhouse Foundation, Wyncote Foundation, Arking Family
+Foundation, and the Italian Ministry of Education, University, and
+Research.
+
+\section*{Competing interests}\label{competing-interests}
+\addcontentsline{toc}{section}{Competing interests}
+
+All authors report that they have no competing interests to disclose.
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\hypertarget{ref-ahmed_novel_2014}{}
+Ahmed Z, Cooper J, Murray TK, Garn K, McNaughton E, Clarke H, et al. A
+novel in vivo model of tau propagation with rapid and progressive
+neurofibrillary tangle pathology: The pattern of spread is determined by
+connectivity, not proximity. Acta Neuropathologica 2014; 127: 667--683.
+
+\hypertarget{ref-astafiev_functional_2003}{}
+Astafiev SV, Shulman GL, Stanley CM, Snyder AZ, Van Essen DC, Corbetta
+M. Functional Organization of Human Intraparietal and Frontal Cortex for
+Attending, Looking, and Pointing. The Journal of Neuroscience 2003; 23:
+4689--4699.
+
+\hypertarget{ref-avants_reproducible_2011}{}
+Avants BB, Tustison NJ, Song G, Cook PA, Klein A, Gee JC. A reproducible
+evaluation of ANTs similarity metric performance in brain image
+registration. NeuroImage 2011; 54: 2033--2044.
+
+\hypertarget{ref-avants_insight_2014}{}
+Avants BB, Tustison NJ, Stauffer M, Song G, Wu B, Gee JC. The Insight
+ToolKit image registration framework {[}Internet{]}. Frontiers in
+Neuroinformatics 2014; 8{[}cited 2015 Jun 26{]} Available from:
+\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/}
+
+\hypertarget{ref-bergeron_untangling_2016}{}
+Bergeron D, Bensaïdane R, Laforce R. Untangling Alzheimer's Disease
+Clinicoanatomical Heterogeneity Through Selective Network Vulnerability
+- An Effort to Understand a Complex Disease. Current Alzheimer Research
+2016; 13: 589--596.
+
+\hypertarget{ref-blennerhassett_distribution_2014}{}
+Blennerhassett R, Lillo P, Halliday GM, Hodges JR, Kril JJ. Distribution
+of pathology in frontal variant Alzheimer's disease. Journal of
+Alzheimer's disease: JAD 2014; 39: 63--70.
+
+\hypertarget{ref-braak_neuropathological_1991}{}
+Braak H, Braak E. Neuropathological stageing of Alzheimer-related
+changes. Acta neuropathologica 1991; 82: 239--259.
+
+\hypertarget{ref-braak_staging_2003}{}
+Braak H, Del Tredici K, Rüb U, Vos RAI de, Jansen Steur ENH, Braak E.
+Staging of brain pathology related to sporadic Parkinson's disease.
+Neurobiology of Aging 2003; 24: 197--211.
+
+\hypertarget{ref-brettschneider_stages_2013}{}
+Brettschneider J, Del Tredici K, Toledo JB, Robinson JL, Irwin DJ,
+Grossman M, et al. Stages of pTDP-43 pathology in amyotrophic lateral
+sclerosis. Annals of neurology 2013; 74: 20--38.
+
+\hypertarget{ref-buckner_cortical_2009}{}
+Buckner RL, Sepulcre J, Talukdar T, Krienen FM, Liu H, Hedden T, et al.
+Cortical Hubs Revealed by Intrinsic Functional Connectivity: Mapping,
+Assessment of Stability, and Relation to Alzheimer's Disease. Journal of
+Neuroscience 2009; 29: 1860--1873.
+
+\hypertarget{ref-byun_heterogeneity_2015}{}
+Byun MS, Kim SE, Park J, Yi D, Choe YM, Sohn BK, et al. Heterogeneity of
+Regional Brain Atrophy Patterns Associated with Distinct Progression
+Rates in Alzheimer's Disease. PloS One 2015; 10: e0142756.
+
+\hypertarget{ref-chen_linear_2013}{}
+Chen G, Saad ZS, Britton JC, Pine DS, Cox RW. Linear mixed-effects
+modeling approach to FMRI group analysis. NeuroImage 2013; 73: 176--190.
+
+\hypertarget{ref-chetelat_multimodal_2018}{}
+Chételat G. Multimodal Neuroimaging in Alzheimer's Disease: Early
+Diagnosis, Physiopathological Mechanisms, and Impact of Lifestyle.
+Journal of Alzheimer's Disease 2018; 64: S199--S211.
+
+\hypertarget{ref-corder_protective_1994}{}
+Corder EH, Saunders AM, Risch NJ, Strittmatter WJ, Schmechel DE, Gaskell
+PC, et al. Protective effect of apolipoprotein E type 2 allele for late
+onset Alzheimer disease. Nature Genetics 1994; 7: 180--184.
+
+\hypertarget{ref-cox_fmri_2017}{}
+Cox RW, Chen G, Glen DR, Reynolds RC, Taylor PA. FMRI Clustering in
+AFNI: False-Positive Rates Redux. Brain Connectivity 2017; 7: 152--171.
+
+\hypertarget{ref-crossley_hubs_2014}{}
+Crossley NA, Mechelli A, Scott J, Carletti F, Fox PT, McGuire P, et al.
+The hubs of the human connectome are generally implicated in the anatomy
+of brain disorders. Brain 2014; 137: 2382--2395.
+
+\hypertarget{ref-crutch_posterior_2012}{}
+Crutch SJ, Lehmann M, Schott JM, Rabinovici GD, Rossor MN, Fox NC.
+Posterior cortical atrophy. The Lancet Neurology 2012; 11: 170--178.
+
+\hypertarget{ref-crutch_consensus_2017}{}
+Crutch SJ, Schott JM, Rabinovici GD, Murray M, Snowden JS, Flier WM van
+der, et al. Consensus classification of posterior cortical atrophy
+{[}Internet{]}. Alzheimer's \& Dementia 2017{[}cited 2017 Mar 7{]}
+Available from:
+\url{http://www.sciencedirect.com/science/article/pii/S1552526017300407}
+
+\hypertarget{ref-dickerson_approach_2017}{}
+Dickerson BC, McGinnis SM, Xia C, Price BH, Atri A, Murray ME, et al.
+Approach to atypical Alzheimer's disease and case studies of the major
+subtypes. CNS spectrums 2017; 22: 439--449.
+
+\hypertarget{ref-duara_regional_2013}{}
+Duara R, Loewenstein DA, Shen Q, Barker W, Greig MT, Varon D, et al.
+Regional patterns of atrophy on MRI in Alzheimer's disease:
+Neuropsychological features and progression rates in the ADNI cohort.
+Advances in Alzheimer's Disease 2013; 02: 135--147.
+
+\hypertarget{ref-dubois_advancing_2014}{}
+Dubois B, Feldman HH, Jacova C, Hampel H, Molinuevo JL, Blennow K, et
+al. Advancing research diagnostic criteria for Alzheimer's disease: The
+IWG-2 criteria. The Lancet Neurology 2014; 13: 614--629.
+
+\hypertarget{ref-ferreira_distinct_2017}{}
+Ferreira D, Verhagen C, Hernández-Cabrera JA, Cavallin L, Guo C-J, Ekman
+U, et al. Distinct subtypes of Alzheimer's disease based on patterns of
+brain atrophy: Longitudinal trajectories and clinical applications.
+Scientific Reports 2017; 7: 46263.
+
+\hypertarget{ref-forman_improved_1995}{}
+Forman SD, Cohen JD, Fitzgerald M, Eddy WF, Mintun MA, Noll DC. Improved
+assessment of significant activation in functional magnetic resonance
+imaging (fMRI): Use of a cluster-size threshold. Magnetic Resonance in
+Medicine 1995; 33: 636--647.
+
+\hypertarget{ref-galton_atypical_2000}{}
+Galton CJ, Patterson K, Xuereb JH, Hodges JR. Atypical and typical
+presentations of Alzheimer's disease: A clinical neuropsychological,
+neuroimaging and pathological study of 13 cases. Brain: A Journal of
+Neurology 2000; 123: 484--498.
+
+\hypertarget{ref-giannakopoulos_alzheimers_1994}{}
+Giannakopoulos P, Hof PR, Bouras C. Alzheimer's disease with asymmetric
+atrophy of the cerebral hemispheres: Morphometric analysis of four
+cases. Acta Neuropathologica 1994; 88: 440--447.
+
+\hypertarget{ref-giannini_clinical_2017}{}
+Giannini LAA, Irwin DJ, McMillan CT, Ash S, Rascovsky K, Wolk DA, et al.
+Clinical marker for Alzheimer disease pathology in logopenic primary
+progressive aphasia. Neurology 2017; 88: 2276--2284.
+
+\hypertarget{ref-gmeindl_tracking_2016}{}
+Gmeindl L, Chiu Y-C, Esterman MS, Greenberg AS, Courtney SM, Yantis S.
+Tracking the Will to Attend: Cortical Activity Indexes Self-Generated,
+Voluntary Shifts of Attention. Attention, perception \& psychophysics
+2016; 78: 2176--2184.
+
+\hypertarget{ref-gorno-tempini_classification_2011}{}
+Gorno-Tempini ML, Hillis AE, Weintraub S, Kertesz A, Mendez M, Cappa SF,
+et al. Classification of primary progressive aphasia and its variants.
+Neurology 2011; 76: 1006--1014.
+
+\hypertarget{ref-greenberg_control_2010}{}
+Greenberg AS, Esterman M, Wilson D, Serences JT, Yantis S. Control of
+Spatial and Feature-Based Attention in Frontoparietal Cortex. The
+Journal of Neuroscience 2010; 30: 14330--14339.
+
+\hypertarget{ref-gronenschild_effects_2012}{}
+Gronenschild EHBM, Habets P, Jacobs HIL, Mengelers R, Rozendaal N, Os J
+van, et al. The Effects of FreeSurfer Version, Workstation Type, and
+Macintosh Operating System Version on Anatomical Volume and Cortical
+Thickness Measurements. PLOS ONE 2012; 7: e38234.
+
+\hypertarget{ref-guo_cell-to-cell_2014}{}
+Guo JL, Lee VMY. Cell-to-cell transmission of pathogenic proteins in
+neurodegenerative diseases. Nature Medicine 2014; 20: 130--138.
+
+\hypertarget{ref-han_reliability_2006}{}
+Han X, Jovicich J, Salat D, Kouwe A van der, Quinn B, Czanner S, et al.
+Reliability of MRI-derived measurements of human cerebral cortical
+thickness: The effects of field strength, scanner upgrade and
+manufacturer. NeuroImage 2006; 32: 180--194.
+
+\hypertarget{ref-hu_localizing_2016}{}
+Hu C, Hua X, Ying J, Thompson PM, Fakhri GE, Li Q. Localizing Sources of
+Brain Disease Progression with Network Diffusion Model. IEEE journal of
+selected topics in signal processing 2016; 10: 1214--1225.
+
+\hypertarget{ref-iba_synthetic_2013}{}
+Iba M, Guo JL, McBride JD, Zhang B, Trojanowski JQ, Lee VM-Y. Synthetic
+Tau Fibrils Mediate Transmission of Neurofibrillary Tangles in a
+Transgenic Mouse Model of Alzheimer's-like Tauopathy. The Journal of
+neuroscience : the official journal of the Society for Neuroscience
+2013; 33: 1024--1037.
+
+\hypertarget{ref-irwin_comparison_2012}{}
+Irwin DJ, McMillan CT, Toledo JB, Arnold SE, Shaw LM, Wang L-S, et al.
+Comparison of cerebrospinal fluid levels of tau and A\(\beta\) 1-42 in
+Alzheimer disease and frontotemporal degeneration using 2 analytical
+platforms. Archives of Neurology 2012; 69: 1018--1025.
+
+\hypertarget{ref-iturria-medina_epidemic_2014}{}
+Iturria-Medina Y, Sotero RC, Toussaint PJ, Evans AC, Alzheimer's Disease
+Neuroimaging Initiative. Epidemic spreading model to characterize
+misfolded proteins propagation in aging and associated neurodegenerative
+disorders. PLoS computational biology 2014; 10: e1003956.
+
+\hypertarget{ref-johnson_clinical_1999}{}
+Johnson JK, Head E, Kim R, Starr A, Cotman CW. Clinical and pathological
+evidence for a frontal variant of Alzheimer disease. Archives of
+Neurology 1999; 56: 1233--1239.
+
+\hypertarget{ref-klein_evaluation_2009}{}
+Klein A, Andersson J, Ardekani BA, Ashburner J, Avants B, Chiang M-C, et
+al. Evaluation of 14 nonlinear deformation algorithms applied to human
+brain MRI registration. Neuroimage 2009; 46: 786--802.
+
+\hypertarget{ref-klein_mindboggling_2017}{}
+Klein A, Ghosh SS, Bao FS, Giard J, Häme Y, Stavsky E, et al.
+Mindboggling morphometry of human brains. PLOS Computational Biology
+2017; 13: e1005350.
+
+\hypertarget{ref-klein_101_2012}{}
+Klein A, Tourville J. 101 labeled brain images and a consistent human
+cortical labeling protocol. Frontiers in Neuroscience 2012; 6: 171.
+
+\hypertarget{ref-kramer_distinctive_2003}{}
+Kramer JH, Jurik J, Sha SJ, Rankin KP, Rosen HJ, Johnson JK, et al.
+Distinctive neuropsychological patterns in frontotemporal dementia,
+semantic dementia, and Alzheimer disease. Cognitive and Behavioral
+Neurology: Official Journal of the Society for Behavioral and Cognitive
+Neurology 2003; 16: 211--218.
+
+\hypertarget{ref-lee_clinicopathological_2011}{}
+Lee SE, Rabinovici GD, Mayo MC, Wilson SM, Seeley WW, DeArmond SJ, et
+al. Clinicopathological correlations in corticobasal degeneration.
+Annals of neurology 2011; 70: 327--340.
+
+\hypertarget{ref-lehmann_global_2012}{}
+Lehmann M, Barnes J, Ridgway GR, Ryan NS, Warrington EK, Crutch SJ, et
+al. Global gray matter changes in posterior cortical atrophy: A serial
+imaging study. Alzheimer's \& Dementia 2012; 8: 502--512.
+
+\hypertarget{ref-lehmann_loss_2015}{}
+Lehmann M, Madison C, Ghosh PM, Miller ZA, Greicius MD, Kramer JH, et
+al. Loss of functional connectivity is greater outside the default mode
+network in nonfamilial early-onset Alzheimer's disease variants.
+Neurobiology of Aging 2015; 36: 2678--2686.
+
+\hypertarget{ref-libon_verbal_2011}{}
+Libon DJ, Bondi MW, Price CC, Lamar M, Eppig J, Wambach DM, et al.
+Verbal Serial List Learning in Mild Cognitive Impairment: A Profile
+Analysis of Interference, Forgetting, and Errors. Journal of the
+International Neuropsychological Society 2011a; 17: 905--914.
+
+\hypertarget{ref-libon_philadelphia_2011}{}
+Libon DJ, Rascovsky K, Gross RG, White MT, Xie SX, Dreyfuss M, et al.
+The Philadelphia Brief Assessment of Cognition (PBAC): A Validated
+Screening Measure for Dementia. The Clinical Neuropsychologist 2011b;
+25: 1314--1330.
+
+\hypertarget{ref-liu_trans-synaptic_2012}{}
+Liu L, Drouet V, Wu JW, Witter MP, Small SA, Clelland C, et al.
+Trans-synaptic spread of tau pathology in vivo. PloS One 2012; 7:
+e31302.
+
+\hypertarget{ref-marcus_open_2007}{}
+Marcus DS, Wang TH, Parker J, Csernansky JG, Morris JC, Buckner RL. Open
+Access Series of Imaging Studies (OASIS): Cross-sectional MRI data in
+young, middle aged, nondemented, and demented older adults. Journal of
+Cognitive Neuroscience 2007; 19: 1498--1507.
+
+\hypertarget{ref-mattsson_selective_2016}{}
+Mattsson N, Schott JM, Hardy J, Turner MR, Zetterberg H. Selective
+vulnerability in neurodegeneration: Insights from clinical variants of
+Alzheimer's disease. Journal of Neurology, Neurosurgery, and Psychiatry
+2016; 87: 1000--1004.
+
+\hypertarget{ref-mckhann_diagnosis_2011}{}
+McKhann GM, Knopman DS, Chertkow H, Hyman BT, Jack Jr. CR, Kawas CH, et
+al. The diagnosis of dementia due to Alzheimer's disease:
+Recommendations from the National Institute on Aging-Alzheimer's
+Association workgroups on diagnostic guidelines for Alzheimer's disease.
+Alzheimer's \& Dementia 2011; 7: 263--269.
+
+\hypertarget{ref-mcmillan_multimodal_2016}{}
+McMillan CT, Irwin DJ, Nasrallah I, Phillips JS, Spindler M, Rascovsky
+K, et al. Multimodal evaluation demonstrates in vivo 18F-AV-1451 uptake
+in autopsy-confirmed corticobasal degeneration. Acta neuropathologica
+2016; 132: 935--937.
+
+\hypertarget{ref-medaglia_brain_2017}{}
+Medaglia JD, Huang W, Segarra S, Olm C, Gee J, Grossman M, et al. Brain
+network efficiency is influenced by the pathologic source of
+corticobasal syndrome. Neurology 2017; 89: 1373--1381.
+
+\hypertarget{ref-mesulam_primary_2014}{}
+Mesulam M-M, Rogalski EJ, Wieneke C, Hurley RS, Geula C, Bigio EH, et
+al. Primary progressive aphasia and the evolving neurology of the
+language network. Nature Reviews. Neurology 2014a; 10: 554--569.
+
+\hypertarget{ref-mesulam_asymmetry_2014}{}
+Mesulam M-M, Weintraub S, Rogalski EJ, Wieneke C, Geula C, Bigio EH.
+Asymmetry and heterogeneity of Alzheimer's and frontotemporal pathology
+in primary progressive aphasia. Brain: A Journal of Neurology 2014b;
+137: 1176--1192.
+
+\hypertarget{ref-mezias_connectivity_2017}{}
+Mezias C, LoCastro E, Xia C, Raj A. Connectivity, not region-intrinsic
+properties, predicts regional vulnerability to progressive tau pathology
+in mouse models of disease {[}Internet{]}. Acta Neuropathologica
+Communications 2017; 5{[}cited 2017 Nov 14{]} Available from:
+\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5556602/}
+
+\hypertarget{ref-moller_different_2013}{}
+Möller C, Vrenken H, Jiskoot L, Versteeg A, Barkhof F, Scheltens P, et
+al. Different patterns of gray matter atrophy in early- and late-onset
+Alzheimer's disease. Neurobiology of Aging 2013; 34: 2014--2022.
+
+\hypertarget{ref-murray_neuropathologically_2011}{}
+Murray ME, Graff-Radford NR, Ross OA, Petersen RC, Duara R, Dickson DW.
+Neuropathologically defined subtypes of Alzheimer's disease with
+distinct clinical characteristics: A retrospective study. The Lancet.
+Neurology 2011; 10: 785--796.
+
+\hypertarget{ref-nieuwenhuys_human_2008}{}
+Nieuwenhuys R, Voogd J, Voogd J, Huijzen C van, Huijzen C van. The Human
+Central Nervous System. 4th ed. Berlin: Springer; 2008.
+
+\hypertarget{ref-ossenkoppele_atrophy_2015}{}
+Ossenkoppele R, Cohn-Sheehy BI, La Joie R, Vogel JW, Möller C, Lehmann
+M, et al. Atrophy Patterns in Early Clinical Stages Across Distinct
+Phenotypes of Alzheimer's Disease. Human brain mapping 2015a; 36:
+4421--4437.
+
+\hypertarget{ref-ossenkoppele_behaviouralux2fdysexecutive_2015}{}
+Ossenkoppele R, Pijnenburg YAL, Perry DC, Cohn-Sheehy BI, Scheltens NME,
+Vogel JW, et al. The behavioural/dysexecutive variant of Alzheimer's
+disease: Clinical, neuroimaging and pathological features. Brain 2015b;
+138: 2732--2749.
+
+\hypertarget{ref-peter_subgroups_2014}{}
+Peter J, Abdulkadir A, Kaller C, Kümmerer D, Hüll M, Vach W, et al.
+Subgroups of Alzheimer's disease: Stability of empirical clusters over
+time. Journal of Alzheimer's disease: JAD 2014; 42: 651--661.
+
+\hypertarget{ref-phan_functional_2002}{}
+Phan KL, Wager T, Taylor SF, Liberzon I. Functional neuroanatomy of
+emotion: A meta-analysis of emotion activation studies in PET and fMRI.
+NeuroImage 2002; 16: 331--348.
+
+\hypertarget{ref-phillips_neocortical_2018}{}
+Phillips JS, Da Re F, Dratch L, Xie SX, Irwin DJ, McMillan CT, et al.
+Neocortical origin and progression of gray matter atrophy in nonamnestic
+Alzheimer's disease. Neurobiology of Aging 2018; 63: 75--87.
+
+\hypertarget{ref-poulakis_heterogeneous_2018}{}
+Poulakis K, Pereira JB, Mecocci P, Vellas B, Tsolaki M, Link to external
+site this link will open in a new window, et al. Heterogeneous patterns
+of brain atrophy in Alzheimer's disease. Neurobiology of Aging 2018; 65:
+98--108.
+
+\hypertarget{ref-raj_network_2012}{}
+Raj A, Kuceyeski A, Weiner M. A Network Diffusion Model of Disease
+Progression in Dementia. Neuron 2012; 73: 1204--1215.
+
+\hypertarget{ref-raj_network_2015}{}
+Raj A, LoCastro E, Kuceyeski A, Tosun D, Relkin N, Weiner M. Network
+Diffusion Model of Progression Predicts Longitudinal Patterns of Atrophy
+and Metabolism in Alzheimer's Disease. Cell Reports 2015; 10: 359--369.
+
+\hypertarget{ref-ramanan_longitudinal_2017}{}
+Ramanan S, Bertoux M, Flanagan E, Irish M, Piguet O, Hodges JR, et al.
+Longitudinal Executive Function and Episodic Memory Profiles in
+Behavioral-Variant Frontotemporal Dementia and Alzheimer's Disease.
+Journal of the International Neuropsychological Society: JINS 2017; 23:
+34--43.
+
+\hypertarget{ref-rascovsky_sensitivity_2011}{}
+Rascovsky K, Hodges JR, Knopman D, Mendez MF, Kramer JH, Neuhaus J, et
+al. Sensitivity of revised diagnostic criteria for the behavioural
+variant of frontotemporal dementia. Brain 2011; 134: 2456--2477.
+
+\hypertarget{ref-rascovsky_disparate_2007}{}
+Rascovsky K, Salmon DP, Hansen LA, Thal LJ, Galasko D. Disparate letter
+and semantic category fluency deficits in autopsy-confirmed
+frontotemporal dementia and Alzheimer's disease. Neuropsychology 2007;
+21: 20--30.
+
+\hypertarget{ref-rogalski_progression_2011}{}
+Rogalski E, Cobia D, Harrison TM, Wieneke C, Weintraub S, Mesulam M-M.
+Progression of language decline and cortical atrophy in subtypes of
+primary progressive aphasia. Neurology 2011; 76: 1804--1810.
+
+\hypertarget{ref-rogalski_aphasic_2016}{}
+Rogalski E, Sridhar J, Rader B, Martersteck A, Chen K, Cobia D, et al.
+Aphasic variant of Alzheimer disease: Clinical, anatomic, and genetic
+features. Neurology 2016; 87: 1337--1343.
+
+\hypertarget{ref-rohrer_patterns_2013}{}
+Rohrer JD, Caso F, Mahoney C, Henry M, Rosen HJ, Rabinovici G, et al.
+Patterns of longitudinal brain atrophy in the logopenic variant of
+primary progressive aphasia. Brain and Language 2013; 127: 121--126.
+
+\hypertarget{ref-sabuncu_dynamics_2011}{}
+Sabuncu MR, Desikan RS, Sepulcre J, Yeo BTT, Liu H, Schmansky NJ, et al.
+The Dynamics of Cortical and Hippocampal Atrophy in Alzheimer Disease.
+Archives of Neurology 2011; 68: 1040--1048.
+
+\hypertarget{ref-schuff_nonlinear_2012}{}
+Schuff N, Tosun D, Insel PS, Chiang GC, Truran D, Aisen PS, et al.
+Nonlinear time course of brain volume loss in cognitively normal and
+impaired elders. Neurobiology of Aging 2012; 33: 845--855.
+
+\hypertarget{ref-schwarz_large-scale_2016}{}
+Schwarz CG, Gunter JL, Wiste HJ, Przybelski SA, Weigand SD, Ward CP, et
+al. A large-scale comparison of cortical thickness and volume methods
+for measuring Alzheimer's disease severity. NeuroImage: Clinical 2016;
+11: 802--812.
+
+\hypertarget{ref-seeley_anterior_2010}{}
+Seeley WW. Anterior insula degeneration in frontotemporal dementia.
+Brain Structure \& Function 2010; 214: 465--475.
+
+\hypertarget{ref-shaw_cerebrospinal_2009}{}
+Shaw LM, Vanderstichele H, Knapik-Czajka M, Clark CM, Aisen PS, Petersen
+RC, et al. Cerebrospinal fluid biomarker signature in Alzheimer's
+disease neuroimaging initiative subjects. Annals of Neurology 2009; 65:
+403--413.
+
+\hypertarget{ref-singer_neuronal_2006}{}
+Singer T. The neuronal basis and ontogeny of empathy and mind reading:
+Review of literature and implications for future research. Neuroscience
+and Biobehavioral Reviews 2006; 30: 855--863.
+
+\hypertarget{ref-tang-wai_clinical_2004}{}
+Tang-Wai DF, Graff-Radford NR, Boeve BF, Dickson DW, Parisi JE, Crook R,
+et al. Clinical, genetic, and neuropathologic characteristics of
+posterior cortical atrophy. Neurology 2004; 63: 1168--1174.
+
+\hypertarget{ref-teipel_white_2010}{}
+Teipel SJ, Bokde ALW, Meindl T, Amaro E, Soldner J, Reiser MF, et al.
+White matter microstructure underlying default mode network connectivity
+in the human brain. NeuroImage 2010; 49: 2021--2032.
+
+\hypertarget{ref-toledo_csf_2012}{}
+Toledo JB, Brettschneider J, Grossman M, Arnold SE, Hu WT, Xie SX, et
+al. CSF biomarkers cutoffs: The importance of coincident
+neuropathological diseases. Acta neuropathologica 2012; 124: 23--35.
+
+\hypertarget{ref-tustison_n4itk:_2010}{}
+Tustison NJ, Avants BB, Cook PA, Zheng Y, Egan A, Yushkevich PA, et al.
+N4ITK: Improved N3 bias correction. IEEE transactions on medical imaging
+2010; 29: 1310--1320.
+
+\hypertarget{ref-tustison_explicit_2013}{}
+Tustison NJ, Avants BB. Explicit B-spline regularization in
+diffeomorphic image registration {[}Internet{]}. Frontiers in
+Neuroinformatics 2013; 7{[}cited 2018 Oct 5{]} Available from:
+\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3870320/}
+
+\hypertarget{ref-tustison_large-scale_2014}{}
+Tustison NJ, Cook PA, Klein A, Song G, Das SR, Duda JT, et al.
+Large-scale evaluation of ANTs and FreeSurfer cortical thickness
+measurements. NeuroImage 2014; 99: 166--179.
+
+\hypertarget{ref-tzourio-mazoyer_automated_2002}{}
+Tzourio-Mazoyer N, Landeau B, Papathanassiou D, Crivello F, Etard O,
+Delcroix N, et al. Automated anatomical labeling of activations in SPM
+using a macroscopic anatomical parcellation of the MNI MRI
+single-subject brain. NeuroImage 2002; 15: 273--289.
+
+\hypertarget{ref-wang_multi-atlas_2013}{}
+Wang H, Suh JW, Das SR, Pluta J, Craige C, Yushkevich PA. Multi-Atlas
+Segmentation with Joint Label Fusion. IEEE transactions on pattern
+analysis and machine intelligence 2013; 35: 611--623.
+
+\hypertarget{ref-warren_paradox_2012}{}
+Warren JD, Fletcher PD, Golden HL. The paradox of syndromic diversity in
+Alzheimer disease. Nature Reviews Neurology 2012; 8: 451--464.
+
+\hypertarget{ref-whitwell_neuroimaging_2012}{}
+Whitwell JL, Dickson DW, Murray ME, Weigand SD, Tosakulwong N, Senjem
+ML, et al. Neuroimaging correlates of pathologically defined subtypes of
+Alzheimer's disease: A case-control study. The Lancet Neurology 2012;
+11: 868--877.
+
+\hypertarget{ref-whitwell_temporoparietal_2011}{}
+Whitwell JL, Jack CR, Przybelski SA, Parisi JE, Senjem ML, Boeve BF, et
+al. Temporoparietal atrophy: A marker of AD pathology independent of
+clinical diagnosis. Neurobiology of Aging 2011; 32: 1531--1541.
+
+\hypertarget{ref-whitwell_working_2015}{}
+Whitwell JL, Jones DT, Duffy JR, Strand EA, Machulda MM, Przybelski SA,
+et al. Working memory and language network dysfunction in logopenic
+aphasia: A task-free fMRI comparison to Alzheimer's dementia.
+Neurobiology of aging 2015; 36: 1245--1252.
+
+\hypertarget{ref-whitwell_mri_2008}{}
+Whitwell JL, Josephs KA, Murray ME, Kantarci K, Przybelski SA, Weigand
+SD, et al. MRI correlates of neurofibrillary tangle pathology at
+autopsy. Neurology 2008; 71: 743--749.
+
+\hypertarget{ref-xia_association_2017}{}
+Xia C, Makaretz SJ, Caso C, McGinnis S, Gomperts SN, Sepulcre J, et al.
+Association of In Vivo {[}18F{]}AV-1451 Tau PET Imaging Results With
+Cortical Atrophy and Symptoms in Typical and Atypical Alzheimer Disease
+{[}Internet{]}. JAMA Neurology 2017{[}cited 2017 Mar 15{]} Available
+from:
+\url{http://jamanetwork.com/journals/jamaneurology/fullarticle/2604134}
+
+\hypertarget{ref-yeh_population-averaged_2018}{}
+Yeh F-C, Panesar S, Fernandes D, Meola A, Yoshino M, Fernandez-Miranda
+JC, et al. Population-averaged atlas of the macroscale human structural
+connectome and its network topology. NeuroImage 2018; 178: 57--68.
+
+
+\end{document}

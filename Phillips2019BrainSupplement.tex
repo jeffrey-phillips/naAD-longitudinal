@@ -1,0 +1,1342 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Supplementary Material: Longitudinal progression of grey matter atrophy in non-amnestic Alzheimer's disease},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Supplementary Material: Longitudinal progression of grey matter atrophy
+in non-amnestic Alzheimer's disease}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{February 13, 2019}
+
+\usepackage{graphicx} \usepackage{morefloats} \usepackage{caption}
+\usepackage{lscape} \usepackage{siunitx}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}} \usepackage{booktabs}
+\usepackage{longtable} \usepackage{array} \usepackage{multirow}
+\usepackage[table]{xcolor} \usepackage{wrapfig} \usepackage{float}
+\usepackage{colortbl} \usepackage{pdflscape} \usepackage{tabu}
+\usepackage{threeparttable} \usepackage{threeparttablex}
+\usepackage[normalem]{ulem} \usepackage{makecell}
+
+\begin{document}
+\maketitle
+
+\captionsetup{labelformat=empty}
+
+\section*{Patient selection details}\label{patient-selection-details}
+\addcontentsline{toc}{section}{Patient selection details}
+
+Frontal-variant AD is clinically similar to behavioral-variant
+frontotemporal dementia (bvFTD) due to underlying frontotemporal lobar
+degeneration (Mendez \emph{et al.}, 2013), making clinical inference
+regarding the underlying pathology difficult. In contrast,
+logopenic-variant primary progressive aphasia and posterior cortical
+atrophy are associated with AD pathology in up to 70\% of cases (Crutch
+\emph{et al.}, 2017; Giannini \emph{et al.}, 2017). While cerebrospinal
+fluid (CSF) biomarkers increase the certainty of inferences about
+pathology (Shaw \emph{et al.}, 2009), they are not infallible, since
+patients may have co-occurring AD and FTLD pathology. To minimize the
+odds of including patients with FTLD pathology, we performed additional
+biomarker screening on the fvAD sample. Clinical diagnosis of fvAD used
+the bvFTD diagnostic criteria of Rascovsky et al. (2011); individual
+patients' symptoms supporting the fvAD diagnosis are shown in
+Supplementary Table 2. Two fvAD patients (P06 and P11) went to autopsy
+and were confirmed as having primary AD pathology with no co-morbid
+pathology. Three additional patients (P03, P09, and P10) had
+\textsuperscript{18}F-florbetaben amyloid PET scans; all were visually
+read as positive by a neuroradiologist expert in molecular PET imaging
+(Dr.~Ilya Nasrallah). Patients P02, P09, and P10 all had
+\textsuperscript{18}F-flortaucipir PET scans acquired and processed
+according to methods described in Phillips et al. (2018). Research
+continues on establishing diagnostic protocols for multi-site
+flortaucipir data; however, Schwarz et al. (2016) determined regional
+SUVR thresholds ranging from 1.22 to 1.36 in lateral and ventral
+temporal cortex to distinguish AD patients from controls; and
+Ossenkoppele et al. determined an SUVR threshold of 1.27 in medial-basal
+and lateral temporal cortex for differentiating AD from other
+neurodegenerative conditions. We calculated an average SUVR for each of
+our fvAD patients across bilateral parahippocampal, fusiform, and
+inferior temporal gyri; those means were 1.6 for P02, 2.2 for P09, and
+2.3 for P10. Mean cortical SUVRs were 1.33 for P02, 1.91 for P09, and
+1.88 for P10. Finally, ten of 12 cases had positive CSF amyloid values
+(\textless{}192 pg/mL) (Shaw \emph{et al.}, 2009), while the remaining
+two had borderline values (P01 and P07, 197 and 209 pg/mL,
+respectively). While these borderline values fall within a normal range
+of variability observed on the Luminex platform (based on
+pathologically-confirmed AD without secondary neuropathologies from
+Penn's Integrative Neurodegenerative Disease Database), we performed
+additional screening to decide the inclusion of the 2 patients.
+Specifically, we applied a logistic regression classification model
+published by (Toledo \emph{et al.}, 2012) for discrimination of
+neuropathological AD vs.~FTLD based on Luminex A\(\beta_{42}\) and
+phosphorylated-tau values. This model, which achieved 95.8\% accuracy in
+differentiating FTLD and AD patients, classified all 12 fvAD cases as
+likely AD; we thus decided to retain all cases in the current analysis.
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 1. Overview of patient selection procedure. Numbers indicate unique individuals at each step from a query of the Integrative Neurodegenerative Disease Database (INDD) at the University of Pennsylvania. FTDC: Penn Frontotemporal Degeneration Center; PMC: Penn Memory Center; CSF: cerebrospinal fluid. Numbers in parentheses indicate the source of evidence for underlying AD pathology.} 
+\begin{tabular}{lr}
+  \hline
+Criterion & N \\ 
+  \hline
+Has MRI data & 6485 \\ 
+  PMC or FTDC participant & 6128 \\ 
+  Scanned on HUP6 & 1897 \\ 
+  Has autopsy or CSF data & 955 \\ 
+  Autopsy or CSF data indicates underlying AD pathology & 360 (79 autopsy, 281 CSF) \\ 
+  No co-morbid pathologies or exclusionary conditions & 302 (22 autopsy, 280 CSF) \\ 
+  PET data (if available) consistent with AD & 301 (22 autopsy, 279 CSF) \\ 
+  Has longitudinal MRI at intervals between 0.5 and 3.5 years & 142 (10 autopsy, 132 CSF) \\ 
+  Clinical phenotype of interest & 90 (8 autopsy, 82 CSF) \\ 
+  Passed MRI QC & 74 (7 autopsy, 67 CSF) \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\blandscape  
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:rascovsky_criteria}Supplementary Table 2. Clinical diagnostic features of the frontal-variant AD group, following the criteria of Rascovsky et al. (2011) for behavioral-variant frontotemporal dementia. Patients were required to meet 3 of 5 criteria to fulfill a behavioral/dysexecutive phenotype. Ones indicate presence of a symptom; zeros indicate its absence.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llllllllllllll}
+\hiderowcolors
+\toprule
+  & P01 & P02 & P03 & P04 & P05 & P06 & P07 & P08 & P09 & P10 & P11 & P12 & Frequency\\
+\midrule
+\showrowcolors
+Age of onset, sex & 73 y, F & 60 y, M & 53 y, F & 54 y, M & 66 y, M & 52 y, M & 56 y, F & 71 y, M & 63 y, F & 73 y, M & 66 y, M & 53 y, F & \\
+A$\beta$ 42 (pg/ml) & 197 & 97 & 149 & 166 & 169.5 & 81 & 209 & 160 & 159 & 107 & 65 & 104 & \\
+Phosphorylated tau (pg/ml) & 53 & 18 & 28 & 25 & 23.5 & 27 & 19 & 59 & 66 & 26 & 24 & 7 & \\
+Total tau/A$\beta$ 42 ratio & 1.24 & 0.34 & 0.91 & 0.68 & 0.528 & 1.37 & 0.455 & 0.41 & 0.96 & 0.56 & 1.431 & 0.39 & \\
+A. Early behavioral disinhibition -- 1 must be present & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 11\\
+\addlinespace
+\hspace{1em}Socially inappropriate behavior & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 0 & 9\\
+\hspace{1em}Loss of manners or decorum & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 6\\
+\hspace{1em}Impulsive, rash, or careless actions & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 8\\
+B. Early apathy or inertia -- 1 must be present & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 11\\
+\hspace{1em}Apathy - loss of interest, drive, or motivation & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 7\\
+\addlinespace
+\hspace{1em}Inertia - decreased initiation of behavior & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 11\\
+C. Early loss of sympathy or empathy -- 1 must be present & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 11\\
+\hspace{1em}Diminished response to others' needs or feelings & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 9\\
+\hspace{1em}Diminished social interest, interrelatedness, or warmth & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 7\\
+D.  Early perseverative, stereotyped, or compulsive/ritualistic behavior -- 1 must be present & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 10\\
+\addlinespace
+\hspace{1em}Simple repetitive movements & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hspace{1em}Complex, compulsive, or ritualistic behavior & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 10\\
+\hspace{1em}Stereotypy of speech - noncommunicative repetition & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+E. Hyperorality and dietary changes -- 1 must be present & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 5\\
+\hspace{1em}Altered food preferences & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 5\\
+\addlinespace
+\hspace{1em}Binge eating, increased alcohol or cigarettes & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+\hspace{1em}Oral exploration or consumption of inedible objects & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+F. Exec/generation deficits with relative sparing of memory and visuospatial fn -- all must be present & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 6\\
+\hspace{1em}Executive task deficits - flexibility, generation, planning, etc. & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 12\\
+\hspace{1em}Relative sparing of episodic memory compared to exec & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 8\\
+\hspace{1em}Relative sparing of visuospatial skills compared to exec & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 7\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\elandscape  
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:more_mtl_tests}Supplementary Table 3. Post-hoc contrasts of longitudinal change in medial temporal lobe regions after combining lvPPA, PCA, and fvAD patients into a single non-amnestic AD (naAD) group.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llll}
+\hiderowcolors
+\toprule
+Region & Comp & Z & P\\
+\midrule
+\showrowcolors
+Right Hippocampus & \textbf{aAD-Control} & \textbf{-3.52} & \textbf{0.001}\\
+ & \textbf{naAD-Control} & \textbf{-3.27} & \textbf{0.002}\\
+ & naAD-aAD & 1.21 & 0.275\\
+Left Hippocampus & \textbf{aAD-Control} & \textbf{-4.10} & \textbf{0.000}\\
+ & \textbf{naAD-Control} & \textbf{-3.28} & \textbf{0.002}\\
+\addlinespace
+ & naAD-aAD & 1.81 & 0.095\\
+Right Ent   entorhinal area & \textbf{aAD-Control} & \textbf{-4.10} & \textbf{0.000}\\
+ & \textbf{naAD-Control} & \textbf{-4.30} & \textbf{0.000}\\
+ & naAD-aAD & 1.04 & 0.336\\
+Left Ent   entorhinal area & \textbf{aAD-Control} & \textbf{-2.16} & \textbf{0.045}\\
+\addlinespace
+ & \textbf{naAD-Control} & \textbf{-4.75} & \textbf{0.000}\\
+ & naAD-aAD & -1.31 & 0.238\\
+Right PHG   parahippocampal gyrus & \textbf{aAD-Control} & \textbf{-3.62} & \textbf{0.001}\\
+ & \textbf{naAD-Control} & \textbf{-3.52} & \textbf{0.001}\\
+ & naAD-aAD & 1.13 & 0.306\\
+\addlinespace
+Left PHG   parahippocampal gyrus & \textbf{aAD-Control} & \textbf{-3.51} & \textbf{0.001}\\
+ & \textbf{naAD-Control} & \textbf{-4.33} & \textbf{0.000}\\
+ & naAD-aAD & 0.40 & 0.701\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\begin{figure}[]
+% Voxelwise associations with age and MMSE.
+
+{\centering \includegraphics[width=7in]{./fig/age_mmse.pdf} 
+
+}
+
+\caption[Age and global cognition associations]{Supplementary Figure 1. Voxelwise associations of cortical thickness with age and MMSE score at initial MRI. Image overlays are t-statistic maps from linear mixed effects models, thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{600}{\micro\litre}, corresponding to a corrected cluster-wise threshold of p<0.05. Warm colors indicate that cortical thickness over time is positively associated with each variable; cool colors indicate inverse associations. \label{age_mmse}}
+
+\end{figure}
+
+\section*{Voxelwise analysis of cortical
+thinning}\label{voxelwise-analysis-of-cortical-thinning}
+\addcontentsline{toc}{section}{Voxelwise analysis of cortical thinning}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 4. Peak effects of initial cortical thinning for each patient group relative to controls. Reported values are t-statistics for the peak voxel (local minimum) within each anatomically-defined region at a cluster-wise significance threshold of p<0.05, as well as the volume of statistically significant voxels in microliters. Brain regions are anatomically defined using joint label fusion of the Mindboggle parcellation.} 
+\scalebox{0.5}{
+\begin{tabular}{lrrrrrrrr}
+  \hline
+Region & aAD: $T_{init}$ & aAD: $Vol_{init}$ & lvPPA: $T_{init}$ & lvPPA: $Vol_{init}$ & PCA: $T_{init}$ & PCA: $Vol_{init}$ & fvAD: $T_{init}$ & fvAD: $Vol_{init}$ \\ 
+  \hline
+Right ACgG  anterior cingulate gyrus & --- & --- & --- & --- & --- & --- & -5.3 & 1974 \\ 
+  Left ACgG  anterior cingulate gyrus & --- & --- & --- & --- & --- & --- & -6.7 & 2120 \\ 
+  Right AIns  anterior insula & -4.6 & 582 & --- & --- & -4.4 & 179 & -5.1 & 2563 \\ 
+  Left AIns  anterior insula & --- & --- & -4.2 & 360 & --- & --- & -5.6 & 1242 \\ 
+  Right AOrG  anterior orbital gyrus & -4.7 & 110 & --- & --- & -3.7 & 12 & -6.2 & 677 \\ 
+  Left AOrG  anterior orbital gyrus & --- & --- & --- & --- & --- & --- & -3.7 & 39 \\ 
+  Right AnG   angular gyrus & -4.4 & 512 & --- & --- & -6.5 & 6275 & -4.7 & 770 \\ 
+  Left AnG   angular gyrus & -4.4 & 281 & -6.9 & 2960 & -7.2 & 4146 & --- & --- \\ 
+  Right Calc  calcarine cortex & --- & --- & --- & --- & -5.0 & 198 & --- & --- \\ 
+  Left Calc  calcarine cortex & --- & --- & --- & --- & -3.9 & 27 & --- & --- \\ 
+  Right CO    central operculum & -4.2 & 36 & --- & --- & -4.3 & 176 & -4.7 & 419 \\ 
+  Left CO    central operculum & --- & --- & -4.0 & 111 & --- & --- & --- & --- \\ 
+  Right Cun   cuneus & --- & --- & --- & --- & -5.3 & 302 & --- & --- \\ 
+  Left Cun   cuneus & --- & --- & --- & --- & -4.0 & 68 & --- & --- \\ 
+  Right Ent   entorhinal area & -4.1 & 54 & --- & --- & --- & --- & -3.8 & 69 \\ 
+  Left Ent   entorhinal area & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right FO    frontal operculum & -4.0 & 8 & --- & --- & --- & --- & -5.0 & 634 \\ 
+  Left FO    frontal operculum & --- & --- & -4.2 & 329 & --- & --- & -5.6 & 428 \\ 
+  Right FRP   frontal pole & --- & --- & --- & --- & --- & --- & -3.8 & 11 \\ 
+  Left FRP   frontal pole & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right FuG   fusiform gyrus & --- & --- & --- & --- & -5.9 & 1398 & --- & --- \\ 
+  Left FuG   fusiform gyrus & --- & --- & -5.6 & 1126 & --- & --- & --- & --- \\ 
+  Right GRe   gyrus rectus & --- & --- & --- & --- & --- & --- & -5.5 & 720 \\ 
+  Left GRe   gyrus rectus & --- & --- & --- & --- & --- & --- & -4.9 & 801 \\ 
+  Right IOG   inferior occipital gyrus & --- & --- & --- & --- & -6.5 & 4652 & --- & --- \\ 
+  Left IOG   inferior occipital gyrus & --- & --- & -6.5 & 876 & -5.0 & 1663 & --- & --- \\ 
+  Right ITG   inferior temporal gyrus & --- & --- & --- & --- & -6.2 & 2873 & -4.4 & 53 \\ 
+  Left ITG   inferior temporal gyrus & -4.4 & 88 & -6.1 & 2262 & -5.4 & 329 & -3.6 & 11 \\ 
+  Right LiG   lingual gyrus & --- & --- & --- & --- & -5.9 & 990 & --- & --- \\ 
+  Right LOrG  lateral orbital gyrus & -3.4 & 2 & --- & --- & --- & --- & -4.5 & 110 \\ 
+  Left LOrG  lateral orbital gyrus & --- & --- & --- & --- & --- & --- & -4.0 & 9 \\ 
+  Right MCgG  middle cingulate gyrus & -5.7 & 590 & --- & --- & -5.9 & 422 & -5.9 & 1345 \\ 
+  Left MCgG  middle cingulate gyrus & -3.6 & 27 & --- & --- & --- & --- & -3.9 & 16 \\ 
+  Right MFC   medial frontal cortex & --- & --- & --- & --- & --- & --- & -5.5 & 1403 \\ 
+  Left MFC   medial frontal cortex & --- & --- & --- & --- & --- & --- & -5.2 & 783 \\ 
+  Right MFG   middle frontal gyrus & -5.4 & 782 & -4.8 & 402 & -5.8 & 2537 & -6.2 & 4185 \\ 
+  Left MFG   middle frontal gyrus & --- & --- & -5.0 & 1450 & --- & --- & -4.7 & 2944 \\ 
+  Right MOG   middle occipital gyrus & --- & --- & --- & --- & -7.7 & 4837 & --- & --- \\ 
+  Left MOG   middle occipital gyrus & --- & --- & -6.5 & 1574 & -7.2 & 4396 & --- & --- \\ 
+  Right MOrG  medial orbital gyrus & --- & --- & --- & --- & --- & --- & -4.5 & 293 \\ 
+  Left MOrG  medial orbital gyrus & --- & --- & --- & --- & --- & --- & -4.1 & 336 \\ 
+  Right MPoG  postcentral gyrus medial segment & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right MPrG  precentral gyrus medial segment & -5.5 & 217 & --- & --- & -5.7 & 378 & -5.4 & 166 \\ 
+  Right MSFG  superior frontal gyrus medial segment & --- & --- & --- & --- & --- & --- & -5.2 & 1814 \\ 
+  Left MSFG  superior frontal gyrus medial segment & --- & --- & --- & --- & --- & --- & -6.2 & 2116 \\ 
+  Right MTG   middle temporal gyrus & -4.6 & 398 & --- & --- & -7.3 & 7282 & -5.4 & 3014 \\ 
+  Left MTG   middle temporal gyrus & -6.3 & 3638 & -9.3 & 7806 & -6.7 & 3739 & -5.6 & 2397 \\ 
+  Right OCP   occipital pole & --- & --- & --- & --- & -5.3 & 448 & --- & --- \\ 
+  Left OCP   occipital pole & --- & --- & --- & --- & -5.4 & 552 & --- & --- \\ 
+  Right OFuG  occipital fusiform gyrus & --- & --- & --- & --- & -5.9 & 545 & --- & --- \\ 
+  Left OFuG  occipital fusiform gyrus & --- & --- & -4.5 & 39 & -3.5 & 3 & --- & --- \\ 
+  Right OpIFG opercular part of the inferior frontal gyrus & --- & --- & --- & --- & -5.2 & 264 & -4.8 & 384 \\ 
+  Left OpIFG opercular part of the inferior frontal gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right OrIFG orbital part of the inferior frontal gyrus & -4.2 & 116 & --- & --- & --- & --- & -4.6 & 292 \\ 
+  Left OrIFG orbital part of the inferior frontal gyrus & --- & --- & -4.0 & 97 & --- & --- & -4.3 & 105 \\ 
+  Right PCgG  posterior cingulate gyrus & -4.3 & 405 & --- & --- & -6.5 & 1628 & -4.7 & 514 \\ 
+  Left PCgG  posterior cingulate gyrus & -3.8 & 58 & -4.6 & 379 & -4.5 & 379 & --- & --- \\ 
+  Right PCu   precuneus & -4.3 & 400 & --- & --- & -6.2 & 4664 & -4.1 & 68 \\ 
+  Left PCu   precuneus & --- & --- & -4.6 & 1044 & -4.8 & 2751 & --- & --- \\ 
+  Right PHG   parahippocampal gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left PHG   parahippocampal gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right PIns  posterior insula & -4.5 & 383 & --- & --- & -4.3 & 245 & -4.7 & 503 \\ 
+  Left PIns  posterior insula & --- & --- & -4.7 & 75 & --- & --- & --- & --- \\ 
+  Right PO    parietal operculum & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left PO    parietal operculum & --- & --- & -5.3 & 404 & -3.9 & 7 & --- & --- \\ 
+  Right PoG   postcentral gyrus & --- & --- & --- & --- & -5.0 & 649 & --- & --- \\ 
+  Left PoG   postcentral gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right POrG  posterior orbital gyrus & -5.0 & 126 & --- & --- & --- & --- & -4.7 & 664 \\ 
+  Left POrG  posterior orbital gyrus & --- & --- & --- & --- & --- & --- & -3.4 & 8 \\ 
+  Right PP    planum polare & -4.2 & 42 & --- & --- & -4.2 & 81 & -4.7 & 211 \\ 
+  Left PP    planum polare & --- & --- & -4.0 & 80 & --- & --- & -4.4 & 55 \\ 
+  Right PrG   precentral gyrus & --- & --- & --- & --- & -5.9 & 1497 & -5.0 & 174 \\ 
+  Left PrG   precentral gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right PT    planum temporale & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left PT    planum temporale & --- & --- & -5.4 & 1062 & --- & --- & --- & --- \\ 
+  Right SCA   subcallosal area & --- & --- & --- & --- & --- & --- & -4.2 & 88 \\ 
+  Left SCA   subcallosal area & --- & --- & --- & --- & --- & --- & -4.2 & 90 \\ 
+  Right SFG   superior frontal gyrus & -5.4 & 591 & -4.9 & 502 & -5.7 & 1609 & -6.2 & 3794 \\ 
+  Left SFG   superior frontal gyrus & --- & --- & -5.0 & 852 & --- & --- & -5.2 & 1891 \\ 
+  Right SMC   supplementary motor cortex & -4.7 & 18 & --- & --- & -4.9 & 21 & -5.0 & 411 \\ 
+  Left SMC   supplementary motor cortex & --- & --- & --- & --- & --- & --- & -4.1 & 107 \\ 
+  Right SMG   supramarginal gyrus & -4.1 & 123 & --- & --- & -5.8 & 2305 & --- & --- \\ 
+  Left SMG   supramarginal gyrus & -4.1 & 59 & -6.7 & 1631 & -5.0 & 741 & --- & --- \\ 
+  Right SOG   superior occipital gyrus & --- & --- & --- & --- & -7.5 & 2371 & --- & --- \\ 
+  Left SOG   superior occipital gyrus & --- & --- & -5.1 & 328 & -6.6 & 1660 & --- & --- \\ 
+  Right SPL   superior parietal lobule & --- & --- & --- & --- & -6.9 & 3857 & --- & --- \\ 
+  Left SPL   superior parietal lobule & --- & --- & -4.8 & 366 & -6.6 & 3222 & --- & --- \\ 
+  Right STG   superior temporal gyrus & -4.7 & 507 & --- & --- & -6.0 & 2672 & -5.5 & 929 \\ 
+  Left STG   superior temporal gyrus & -6.6 & 2355 & -9.3 & 4816 & -6.5 & 1608 & -5.7 & 1611 \\ 
+  Right TMP   temporal pole & -4.3 & 109 & --- & --- & --- & --- & -3.7 & 65 \\ 
+  Left TMP   temporal pole & --- & --- & --- & --- & --- & --- & -5.0 & 601 \\ 
+  Right TrIFG triangular part of the inferior frontal gyrus & --- & --- & --- & --- & --- & --- & -4.5 & 211 \\ 
+  Left TrIFG triangular part of the inferior frontal gyrus & --- & --- & --- & --- & --- & --- & -4.2 & 84 \\ 
+  Right TTG   transverse temporal gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left TTG   transverse temporal gyrus & --- & --- & -5.3 & 126 & --- & --- & --- & --- \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 5. Peak effects for contrasts of longitudinal change over time for each patient group relative to controls. Reported values are t-statistics for the peak voxel (local maximum) within each anatomically-defined region at a cluster-wise significance threshold of p<0.05, as well as the volume of statistically significant voxels in microliters. Brain regions are anatomically defined using joint label fusion of the Mindboggle parcellation.} 
+\scalebox{0.5}{
+\begin{tabular}{lrrrrrrrr}
+  \hline
+Region & aAD: $T_{long}$ & aAD: $Vol_{long}$ & lvPPA: $T_{long}$ & lvPPA: $Vol_{long}$ & PCA: $T_{long}$ & PCA: $Vol_{long}$ & fvAD: $T_{long}$ & fvAD: $Vol_{long}$ \\ 
+  \hline
+Right ACgG  anterior cingulate gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left ACgG  anterior cingulate gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right AIns  anterior insula & 4.4 & 239 & 3.6 & 45 & --- & --- & 4.8 & 317 \\ 
+  Left AIns  anterior insula & --- & --- & 4.8 & 1901 & --- & --- & --- & --- \\ 
+  Right AOrG  anterior orbital gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left AOrG  anterior orbital gyrus & --- & --- & 4.4 & 147 & --- & --- & --- & --- \\ 
+  Right AnG   angular gyrus & 5.1 & 706 & 6.3 & 2552 & --- & --- & --- & --- \\ 
+  Left AnG   angular gyrus & 5.6 & 372 & 5.9 & 6894 & 3.8 & 30 & --- & --- \\ 
+  Right Calc  calcarine cortex & --- & --- & 4.0 & 29 & --- & --- & --- & --- \\ 
+  Left Calc  calcarine cortex & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right CO    central operculum & 5.1 & 419 & 4.9 & 755 & --- & --- & 4.1 & 89 \\ 
+  Left CO    central operculum & --- & --- & 5.0 & 1289 & 4.2 & 102 & 5.0 & 317 \\ 
+  Right Cun   cuneus & 5.2 & 438 & 5.1 & 1024 & --- & --- & --- & --- \\ 
+  Left Cun   cuneus & --- & --- & 4.0 & 134 & --- & --- & --- & --- \\ 
+  Right Ent   entorhinal area & --- & --- & 4.3 & 516 & --- & --- & --- & --- \\ 
+  Left Ent   entorhinal area & --- & --- & 5.4 & 396 & 3.7 & 49 & --- & --- \\ 
+  Right FO    frontal operculum & --- & --- & 3.9 & 93 & --- & --- & 4.4 & 145 \\ 
+  Left FO    frontal operculum & --- & --- & 6.2 & 1186 & --- & --- & --- & --- \\ 
+  Right FRP   frontal pole & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left FRP   frontal pole & --- & --- & 4.3 & 243 & --- & --- & --- & --- \\ 
+  Right FuG   fusiform gyrus & 4.8 & 1151 & 4.5 & 299 & --- & --- & --- & --- \\ 
+  Left FuG   fusiform gyrus & --- & --- & 5.4 & 607 & --- & --- & --- & --- \\ 
+  Right GRe   gyrus rectus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left GRe   gyrus rectus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right IOG   inferior occipital gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left IOG   inferior occipital gyrus & --- & --- & 4.0 & 126 & --- & --- & --- & --- \\ 
+  Right ITG   inferior temporal gyrus & 5.2 & 369 & 6.6 & 1851 & 6.2 & 776 & --- & --- \\ 
+  Left ITG   inferior temporal gyrus & --- & --- & 5.5 & 1398 & --- & --- & --- & --- \\ 
+  Right LiG   lingual gyrus & --- & --- & 5.2 & 164 & --- & --- & --- & --- \\ 
+  Right LOrG  lateral orbital gyrus & --- & --- & 5.0 & 640 & --- & --- & --- & --- \\ 
+  Left LOrG  lateral orbital gyrus & --- & --- & 4.7 & 531 & --- & --- & --- & --- \\ 
+  Right MCgG  middle cingulate gyrus & --- & --- & 3.4 & 16 & 4.8 & 296 & --- & --- \\ 
+  Left MCgG  middle cingulate gyrus & --- & --- & --- & --- & 3.6 & 12 & --- & --- \\ 
+  Right MFC   medial frontal cortex & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left MFC   medial frontal cortex & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right MFG   middle frontal gyrus & 5.2 & 521 & 5.3 & 2550 & 5.0 & 1159 & --- & --- \\ 
+  Left MFG   middle frontal gyrus & --- & --- & 5.8 & 4787 & --- & --- & --- & --- \\ 
+  Right MOG   middle occipital gyrus & 4.6 & 557 & --- & --- & --- & --- & --- & --- \\ 
+  Left MOG   middle occipital gyrus & --- & --- & 5.5 & 3586 & --- & --- & --- & --- \\ 
+  Right MOrG  medial orbital gyrus & --- & --- & 3.3 & 3 & --- & --- & --- & --- \\ 
+  Left MOrG  medial orbital gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right MPoG  postcentral gyrus medial segment & --- & --- & 3.7 & 26 & --- & --- & --- & --- \\ 
+  Right MPrG  precentral gyrus medial segment & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right MSFG  superior frontal gyrus medial segment & --- & --- & 4.1 & 258 & --- & --- & --- & --- \\ 
+  Left MSFG  superior frontal gyrus medial segment & --- & --- & 4.2 & 142 & --- & --- & --- & --- \\ 
+  Right MTG   middle temporal gyrus & 6.3 & 3163 & 7.0 & 10918 & 6.2 & 3346 & --- & --- \\ 
+  Left MTG   middle temporal gyrus & --- & --- & 6.0 & 8247 & 5.8 & 312 & --- & --- \\ 
+  Right OCP   occipital pole & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left OCP   occipital pole & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right OFuG  occipital fusiform gyrus & --- & --- & 4.5 & 53 & --- & --- & --- & --- \\ 
+  Left OFuG  occipital fusiform gyrus & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right OpIFG opercular part of the inferior frontal gyrus & --- & --- & 4.9 & 1693 & --- & --- & --- & --- \\ 
+  Left OpIFG opercular part of the inferior frontal gyrus & --- & --- & 6.0 & 1728 & 4.0 & 135 & --- & --- \\ 
+  Right OrIFG orbital part of the inferior frontal gyrus & --- & --- & 4.3 & 50 & --- & --- & --- & --- \\ 
+  Left OrIFG orbital part of the inferior frontal gyrus & --- & --- & 4.4 & 222 & --- & --- & --- & --- \\ 
+  Right PCgG  posterior cingulate gyrus & --- & --- & 5.3 & 1202 & 5.0 & 767 & --- & --- \\ 
+  Left PCgG  posterior cingulate gyrus & --- & --- & 4.8 & 518 & 5.2 & 229 & --- & --- \\ 
+  Right PCu   precuneus & 5.0 & 991 & 6.2 & 4540 & 3.3 & 9 & --- & --- \\ 
+  Left PCu   precuneus & 3.9 & 36 & 6.2 & 2951 & 5.2 & 177 & --- & --- \\ 
+  Right PHG   parahippocampal gyrus & --- & --- & 3.8 & 120 & --- & --- & --- & --- \\ 
+  Left PHG   parahippocampal gyrus & --- & --- & 6.0 & 827 & --- & --- & --- & --- \\ 
+  Right PIns  posterior insula & 5.3 & 1047 & 5.3 & 843 & --- & --- & --- & --- \\ 
+  Left PIns  posterior insula & --- & --- & 4.7 & 1204 & --- & --- & --- & --- \\ 
+  Right PO    parietal operculum & 4.0 & 187 & 5.5 & 321 & 4.4 & 103 & --- & --- \\ 
+  Left PO    parietal operculum & --- & --- & 6.0 & 941 & 4.7 & 734 & 4.4 & 175 \\ 
+  Right PoG   postcentral gyrus & 4.6 & 232 & 3.3 & 9 & --- & --- & --- & --- \\ 
+  Left PoG   postcentral gyrus & --- & --- & 4.8 & 442 & 4.0 & 25 & --- & --- \\ 
+  Right POrG  posterior orbital gyrus & --- & --- & 3.8 & 32 & --- & --- & --- & --- \\ 
+  Left POrG  posterior orbital gyrus & --- & --- & 4.4 & 1 & --- & --- & --- & --- \\ 
+  Right PP    planum polare & 4.8 & 230 & 5.3 & 744 & 3.4 & 1 & --- & --- \\ 
+  Left PP    planum polare & --- & --- & 4.8 & 744 & --- & --- & --- & --- \\ 
+  Right PrG   precentral gyrus & --- & --- & 4.8 & 1258 & --- & --- & --- & --- \\ 
+  Left PrG   precentral gyrus & --- & --- & 5.5 & 1737 & 4.1 & 355 & --- & --- \\ 
+  Right PT    planum temporale & 4.5 & 414 & 5.5 & 1474 & 4.2 & 64 & --- & --- \\ 
+  Left PT    planum temporale & --- & --- & 5.7 & 1004 & 4.5 & 375 & 4.0 & 38 \\ 
+  Right SCA   subcallosal area & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left SCA   subcallosal area & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Right SFG   superior frontal gyrus & 4.7 & 37 & 4.6 & 531 & --- & --- & --- & --- \\ 
+  Left SFG   superior frontal gyrus & --- & --- & 5.0 & 2475 & 4.9 & 804 & --- & --- \\ 
+  Right SMC   supplementary motor cortex & --- & --- & --- & --- & --- & --- & --- & --- \\ 
+  Left SMC   supplementary motor cortex & --- & --- & 4.0 & 386 & --- & --- & --- & --- \\ 
+  Right SMG   supramarginal gyrus & 5.0 & 684 & 5.9 & 4242 & 4.6 & 346 & --- & --- \\ 
+  Left SMG   supramarginal gyrus & 5.9 & 409 & 6.2 & 7248 & 5.3 & 880 & --- & --- \\ 
+  Right SOG   superior occipital gyrus & 4.6 & 479 & 5.3 & 42 & --- & --- & --- & --- \\ 
+  Left SOG   superior occipital gyrus & --- & --- & 4.1 & 231 & --- & --- & --- & --- \\ 
+  Right SPL   superior parietal lobule & 5.4 & 1707 & 6.0 & 840 & --- & --- & --- & --- \\ 
+  Left SPL   superior parietal lobule & 4.5 & 590 & 5.1 & 3549 & --- & --- & --- & --- \\ 
+  Right STG   superior temporal gyrus & 5.4 & 1004 & 6.8 & 7056 & 4.3 & 506 & --- & --- \\ 
+  Left STG   superior temporal gyrus & --- & --- & 5.8 & 4765 & 5.9 & 497 & --- & --- \\ 
+  Right TMP   temporal pole & 6.2 & 655 & 5.8 & 3869 & 4.2 & 22 & --- & --- \\ 
+  Left TMP   temporal pole & --- & --- & 5.6 & 4764 & 4.5 & 979 & --- & --- \\ 
+  Right TrIFG triangular part of the inferior frontal gyrus & --- & --- & 4.8 & 415 & --- & --- & --- & --- \\ 
+  Left TrIFG triangular part of the inferior frontal gyrus & --- & --- & 5.7 & 1210 & --- & --- & --- & --- \\ 
+  Right TTG   transverse temporal gyrus & 4.6 & 159 & 4.6 & 204 & --- & --- & --- & --- \\ 
+  Left TTG   transverse temporal gyrus & --- & --- & 4.1 & 111 & 3.4 & 7 & 4.4 & 295 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/base_vs_change-1} 
+
+}
+
+\caption{Supplementary Figure 2. Average baseline atrophy vs. annualized change over time for each phenotype in a priori regions of interest. X- and y-axes are plotted in z-score units relative to cognitively normal controls; points represent observed atrophy values, unadjusted for age, sex, and global cognition.}\label{fig:base_vs_change}
+\end{figure}
+
+\begin{figure}[]
+% Voxelwise cortical thickness versus controls, uncorrected.
+
+{\centering \includegraphics[width=7in]{./fig/me_time_p01.pdf} 
+
+}
+
+\caption[GM time effects]{Supplementary Figure 3. Voxelwise differences in cortical thickness relative to matched controls at a threshold of p<0.01, uncorrected for multiple comparisons. Image overlays are binarized t-statistic maps for simple contrasts of controls minus each patient group. Blue: simple effect of group (patients<controls) from cross-sectional analysis of participants' initial MRI scans; red: group x time interaction from longitudinal LME models, indicating where patients have more rapid cortical thinning than controls; green: overlap between group and group x time effects. All results are displayed with a minimum cluster volume of \SI{600}{\micro\litre}. \label{gm_me_time}}
+
+\end{figure}
+
+\begin{figure}[]
+% Voxelwise cortical thickness versus controls, sagittal views.
+
+{\centering \includegraphics[width=6in]{./fig/me_time_sag.pdf} 
+
+}
+
+\caption[GM time effects]{Supplementary Figure 4. Sagittal and coronal views of voxelwise differences in cortical thickness relative to matched controls at a cluster-wise corrected significance threshold of p<0.05. Results are the same as those depicted axially in Figure 3. Blue: simple effect of group (patients<controls) from cross-sectional analysis of participants' initial MRI scans; red: group x time interaction from longitudinal LME models, indicating where patients have more rapid cortical thinning than controls; green: overlap between group and group x time effects. All results are displayed with a minimum cluster volume of \SI{600}{\micro\litre}. \label{gm_me_time_altviews}}
+
+\end{figure}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:sc_graph}Supplementary Table 6. Population-average structural connectivity between a priori regions of interest, as assessed by Yeh et al. (2018, NeuroImage). L: left; R: right; Fmid: middle frontal gyrus; TMd: middle temporal gyrus; TSp: superior temporal gyrus; Hipp: hippocampus; SpMar: supramarginal gyrus; Ag: angular gyrus; PreCun: precuneus: PSp: superior parietal lobule.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llrrrrrrrrrrr}
+\hiderowcolors
+\toprule
+Association & Region & L\_Fmid & L\_Insula & L\_TMd & L\_TSp & L\_Hipp & R\_Hipp & R\_TMd & R\_SpMar & R\_Ag & R\_PreCun & R\_PSp\\
+\midrule
+\showrowcolors
+fvAD & L\_Fmid & 0.00 & 0.00 & 0.82 & 0.45 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+fvAD & L\_Insula & 0.00 & 0.00 & 0.66 & 0.46 & 0.00 & 0.00 & 0.00 & 0.63 & 0.00 & 0.00 & 0.00\\
+lvPPA & L\_TMd & 0.82 & 0.66 & 0.00 & 0.55 & 0.44 & 0.81 & 0.77 & 0.84 & 0.89 & 1.06 & 0.88\\
+lvPPA & L\_TSp & 0.45 & 0.46 & 0.55 & 0.00 & 0.38 & 0.84 & 0.89 & 0.75 & 0.95 & 1.05 & 0.90\\
+aAD & L\_Hipp & 0.00 & 0.00 & 0.44 & 0.38 & 0.00 & 0.45 & 0.00 & 0.69 & 0.80 & 0.00 & 0.71\\
+\addlinespace
+aAD & R\_Hipp & 0.00 & 0.00 & 0.81 & 0.84 & 0.45 & 0.00 & 0.51 & 0.00 & 0.00 & 0.00 & 0.00\\
+PCA & R\_TMd & 0.00 & 0.00 & 0.77 & 0.89 & 0.00 & 0.51 & 0.00 & 0.95 & 0.78 & 0.00 & 0.00\\
+PCA & R\_SpMar & 0.00 & 0.63 & 0.84 & 0.75 & 0.69 & 0.00 & 0.95 & 0.00 & 0.00 & 0.00 & 0.00\\
+PCA & R\_Ag & 0.00 & 0.00 & 0.89 & 0.95 & 0.80 & 0.00 & 0.78 & 0.00 & 0.00 & 0.00 & 0.83\\
+PCA & R\_PreCun & 0.00 & 0.00 & 1.06 & 1.05 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+PCA & R\_PSp & 0.00 & 0.00 & 0.88 & 0.90 & 0.71 & 0.00 & 0.00 & 0.00 & 0.83 & 0.00 & 0.00\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:loc}Supplementary Table 7. Mixed effect model of longitudinal atrophy in right inferior occipital gyrus.}
+\centering
+\begin{tabular}[t]{lrrrrr}
+\hiderowcolors
+\toprule
+Effect & Coefficient & Std. error & DF & T & P\\
+\midrule
+\showrowcolors
+(Intercept) & -0.15 & 1.10 & 150 & -0.13 & 0.89\\
+Groupg1lvPPA & -0.45 & 0.30 & 103 & -1.47 & 0.14\\
+Groupg2PCA & -1.83 & 0.34 & 103 & -5.36 & 0.00\\
+Groupg3aAD & -0.51 & 0.36 & 103 & -1.41 & 0.16\\
+Groupg4fvAD & -0.56 & 0.42 & 103 & -1.33 & 0.18\\
+\addlinespace
+timediff & -0.09 & 0.04 & 150 & -2.09 & 0.04\\
+baseMMSETotal & 0.06 & 0.02 & 103 & 2.74 & 0.01\\
+SexMale & 0.08 & 0.21 & 103 & 0.39 & 0.70\\
+baseageatMRI & -0.02 & 0.02 & 103 & -1.66 & 0.10\\
+Groupg1lvPPA:timediff & -0.05 & 0.06 & 150 & -0.78 & 0.44\\
+\addlinespace
+Groupg2PCA:timediff & -0.10 & 0.08 & 150 & -1.38 & 0.17\\
+Groupg3aAD:timediff & -0.12 & 0.08 & 150 & -1.61 & 0.11\\
+Groupg4fvAD:timediff & -0.02 & 0.12 & 150 & -0.20 & 0.84\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:loc}Supplementary Table 8. Post-hoc between-group contrasts of mean and longitudinal atrophy in right inferior occipital gyrus.}
+\centering
+\begin{tabular}[t]{lrrrr}
+\hiderowcolors
+\toprule
+Contrast & Estimate & Std. error & Z & P\\
+\midrule
+\showrowcolors
+mean\_PCA-lvPPA & -0.42 & 0.32 & -1.32 & 0.19\\
+mean\_aAD-lvPPA & -0.62 & 0.41 & -1.50 & 0.13\\
+mean\_fvAD-lvPPA & -0.53 & 0.38 & -1.40 & 0.16\\
+mean\_Controls-lvPPA & 2.21 & 0.37 & 5.90 & 0.00\\
+mean\_aAD-PCA & -0.20 & 0.42 & -0.47 & 0.64\\
+\addlinespace
+mean\_fvAD-PCA & -0.11 & 0.40 & -0.27 & 0.79\\
+mean\_Controls-PCA & 2.63 & 0.40 & 6.63 & 0.00\\
+mean\_fvAD-aAD & 0.09 & 0.50 & 0.19 & 0.85\\
+mean\_Controls-aAD & 2.83 & 0.48 & 5.91 & 0.00\\
+mean\_Controls-fvAD & 2.74 & 0.45 & 6.14 & 0.00\\
+\addlinespace
+time\_PCA-lvPPA & -0.03 & 0.15 & -0.22 & 0.83\\
+time\_aAD-lvPPA & 0.06 & 0.18 & 0.36 & 0.72\\
+time\_fvAD-lvPPA & -0.26 & 0.23 & -1.14 & 0.25\\
+time\_Controls-lvPPA & 0.31 & 0.17 & 1.79 & 0.07\\
+time\_aAD-PCA & 0.10 & 0.19 & 0.50 & 0.62\\
+\addlinespace
+time\_fvAD-PCA & -0.23 & 0.24 & -0.95 & 0.34\\
+time\_Controls-PCA & 0.34 & 0.19 & 1.79 & 0.07\\
+time\_fvAD-aAD & -0.33 & 0.26 & -1.26 & 0.21\\
+time\_Controls-aAD & 0.25 & 0.21 & 1.16 & 0.25\\
+time\_Controls-fvAD & 0.57 & 0.26 & 2.21 & 0.03\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:loc}Supplementary Table 9. Mixed effect model of longitudinal atrophy in left inferior occipital gyrus.}
+\centering
+\begin{tabular}[t]{lrrrrr}
+\hiderowcolors
+\toprule
+Effect & Coefficient & Std. error & DF & T & P\\
+\midrule
+\showrowcolors
+(Intercept) & -2.33 & 0.94 & 150 & -2.47 & 0.01\\
+Groupg1lvPPA & -0.72 & 0.26 & 103 & -2.79 & 0.01\\
+Groupg2PCA & -1.05 & 0.29 & 103 & -3.62 & 0.00\\
+Groupg3aAD & -0.75 & 0.31 & 103 & -2.44 & 0.02\\
+Groupg4fvAD & -0.22 & 0.36 & 103 & -0.61 & 0.54\\
+\addlinespace
+timediff & -0.10 & 0.03 & 150 & -3.03 & 0.00\\
+baseMMSETotal & 0.08 & 0.02 & 103 & 4.11 & 0.00\\
+SexMale & 0.06 & 0.18 & 103 & 0.33 & 0.74\\
+baseageatMRI & 0.00 & 0.01 & 103 & 0.11 & 0.91\\
+Groupg1lvPPA:timediff & -0.12 & 0.05 & 150 & -2.47 & 0.01\\
+\addlinespace
+Groupg2PCA:timediff & -0.06 & 0.06 & 150 & -0.94 & 0.35\\
+Groupg3aAD:timediff & 0.01 & 0.06 & 150 & 0.16 & 0.88\\
+Groupg4fvAD:timediff & 0.08 & 0.10 & 150 & 0.87 & 0.39\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{table}
+
+\caption{\label{tab:loc}Supplementary Table 10. Post-hoc between-group contrasts of mean and longitudinal atrophy in left inferior occipital gyrus.}
+\centering
+\begin{tabular}[t]{lrrrr}
+\hiderowcolors
+\toprule
+Contrast & Estimate & Std. error & Z & P\\
+\midrule
+\showrowcolors
+mean\_PCA-lvPPA & -0.42 & 0.32 & -1.32 & 0.19\\
+mean\_aAD-lvPPA & -0.62 & 0.41 & -1.50 & 0.13\\
+mean\_fvAD-lvPPA & -0.53 & 0.38 & -1.40 & 0.16\\
+mean\_Controls-lvPPA & 2.21 & 0.37 & 5.90 & 0.00\\
+mean\_aAD-PCA & -0.20 & 0.42 & -0.47 & 0.64\\
+\addlinespace
+mean\_fvAD-PCA & -0.11 & 0.40 & -0.27 & 0.79\\
+mean\_Controls-PCA & 2.63 & 0.40 & 6.63 & 0.00\\
+mean\_fvAD-aAD & 0.09 & 0.50 & 0.19 & 0.85\\
+mean\_Controls-aAD & 2.83 & 0.48 & 5.91 & 0.00\\
+mean\_Controls-fvAD & 2.74 & 0.45 & 6.14 & 0.00\\
+\addlinespace
+time\_PCA-lvPPA & -0.03 & 0.15 & -0.22 & 0.83\\
+time\_aAD-lvPPA & 0.06 & 0.18 & 0.36 & 0.72\\
+time\_fvAD-lvPPA & -0.26 & 0.23 & -1.14 & 0.25\\
+time\_Controls-lvPPA & 0.31 & 0.17 & 1.79 & 0.07\\
+time\_aAD-PCA & 0.10 & 0.19 & 0.50 & 0.62\\
+\addlinespace
+time\_fvAD-PCA & -0.23 & 0.24 & -0.95 & 0.34\\
+time\_Controls-PCA & 0.34 & 0.19 & 1.79 & 0.07\\
+time\_fvAD-aAD & -0.33 & 0.26 & -1.26 & 0.21\\
+time\_Controls-aAD & 0.25 & 0.21 & 1.16 & 0.25\\
+time\_Controls-fvAD & 0.57 & 0.26 & 2.21 & 0.03\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\rowcolors{2}{white}{white}
+
+\section*{Neuropsychological performance at time of initial
+MRI}\label{neuropsychological-performance-at-time-of-initial-mri}
+\addcontentsline{toc}{section}{Neuropsychological performance at time of
+initial MRI}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 11. Post-hoc comparisons of between group differences for neuropsychological assessments at time of initial MRI. P-values are given both before and after multiple-comparisons correction using the false discovery rate method.} 
+\scalebox{0.67}{
+\begin{tabular}{llrrrrll}
+  \hline
+Measure & Effect & Mann-Whitney U & Estimated difference & Lower bound & Upper bound & P & $P_{adj}$ \\ 
+  \hline
+Age at initial MRI & Control>lvPPA & 534 & 1.8 & -2 & 4.9 & 0.31 & 0.52 \\ 
+   & Control>PCA & 501 & 3.6 & 0.32 & 7.3 & 0.028 & 0.15 \\ 
+   & Control>aAD & 351 & 1.5 & -4.4 & 6.2 & 0.5 & 0.56 \\ 
+   & Control<fvAD & 183 & -2.7 & -7.7 & 2.6 & 0.37 & 0.53 \\ 
+   & lvPPA>PCA & 301 & 2 & -1.2 & 5.6 & 0.25 & 0.52 \\ 
+   & lvPPA<aAD & 208 & -0.31 & -5.1 & 5 & 0.92 & 0.92 \\ 
+   & lvPPA<fvAD & 98.5 & -3.6 & -10 & 0.63 & 0.098 & 0.33 \\ 
+   & PCA<aAD & 146 & -1.8 & -9.3 & 3.3 & 0.47 & 0.56 \\ 
+   & PCA<fvAD & 64 & -6 & -13 & -0.95 & 0.031 & 0.15 \\ 
+   & aAD<fvAD & 78 & -3.7 & -11 & 3 & 0.3 & 0.52 \\ 
+  Initial MMSE & \textbf{Control>lvPPA} & \textbf{809.5} & \textbf{4} & \textbf{2} & \textbf{6} & \textbf{4.5e-07} & \textbf{1.5e-06} \\ 
+   & \textbf{Control>PCA} & \textbf{716.5} & \textbf{6} & \textbf{4} & \textbf{9.2} & \textbf{4.6e-09} & \textbf{4.6e-08} \\ 
+   & \textbf{Control>aAD} & \textbf{611} & \textbf{6} & \textbf{4.2} & \textbf{9} & \textbf{2.2e-08} & \textbf{1.1e-07} \\ 
+   & \textbf{Control>fvAD} & \textbf{428} & \textbf{6} & \textbf{3.2} & \textbf{10} & \textbf{1.1e-06} & \textbf{2.7e-06} \\ 
+   & lvPPA>PCA & 316.5 & 2 & -1 & 5 & 0.13 & 0.21 \\ 
+   & lvPPA>aAD & 276.5 & 2 & -8.1e-06 & 5 & 0.1 & 0.2 \\ 
+   & lvPPA>fvAD & 195 & 2 & -1 & 7 & 0.15 & 0.21 \\ 
+   & PCA<aAD & 167 & -3e-05 & -3 & 4 & 0.94 & 1 \\ 
+   & PCA>fvAD & 120 & 2.9e-05 & -4 & 6 & 1 & 1 \\ 
+   & aAD>fvAD & 103 & 1.9e-05 & -4 & 5 & 0.98 & 1 \\ 
+  Recognition & lvPPA>PCA & 324 & 0.1 & 5.2e-05 & 0.2 & 0.039 & 0.099 \\ 
+   & \textbf{lvPPA>aAD} & \textbf{200} & \textbf{0.3} & \textbf{0.1} & \textbf{0.43} & \textbf{0.0056} & \textbf{0.034} \\ 
+   & lvPPA>fvAD & 210 & 0.17 & -2e-05 & 0.3 & 0.049 & 0.099 \\ 
+   & PCA>aAD & 133.5 & 0.17 & -7.9e-06 & 0.4 & 0.078 & 0.12 \\ 
+   & PCA>fvAD & 123 & 5.7e-05 & -0.1 & 0.2 & 0.73 & 0.73 \\ 
+   & aAD<fvAD & 40 & -0.1 & -0.33 & 0.1 & 0.19 & 0.23 \\ 
+  PBAC speech & \textbf{lvPPA<PCA} & \textbf{54.5} & \textbf{-1} & \textbf{-1} & \textbf{-0.5} & \textbf{0.0019} & \textbf{0.011} \\ 
+   & lvPPA<aAD & 81 & -2.4e-05 & -0.5 & 0.5 & 0.84 & 0.87 \\ 
+   & lvPPA<fvAD & 64 & -0.7 & -1.5 & 1.5e-05 & 0.081 & 0.16 \\ 
+   & PCA>aAD & 104.5 & 0.5 & 1.4e-05 & 1.5 & 0.025 & 0.075 \\ 
+   & PCA>fvAD & 86 & 4e-05 & -0.5 & 1 & 0.87 & 0.87 \\ 
+   & aAD<fvAD & 35.5 & -0.5 & -1.5 & 0.5 & 0.3 & 0.44 \\ 
+  Letter fluency (F words) & lvPPA<PCA & 159 & -2 & -6 & 1 & 0.19 & 0.54 \\ 
+   & lvPPA<aAD & 135 & -1.3e-05 & -4 & 4 & 0.8 & 0.8 \\ 
+   & lvPPA>fvAD & 153.5 & 2 & -2 & 5 & 0.45 & 0.54 \\ 
+   & PCA>aAD & 146.5 & 2 & -3 & 6 & 0.39 & 0.54 \\ 
+   & PCA>fvAD & 159.5 & 4 & -6e-05 & 8 & 0.067 & 0.4 \\ 
+   & aAD>fvAD & 92.5 & 2 & -3 & 6 & 0.44 & 0.54 \\ 
+  Forward digit span & lvPPA<PCA & 168 & -1 & -2 & 4.8e-05 & 0.056 & 0.33 \\ 
+   & lvPPA>aAD & 118 & 5.8e-05 & -1 & 2 & 0.84 & 0.84 \\ 
+   & lvPPA<fvAD & 123.5 & -5e-06 & -1 & 1 & 0.38 & 0.61 \\ 
+   & PCA>aAD & 113.5 & 1 & -1 & 3 & 0.27 & 0.61 \\ 
+   & PCA>fvAD & 137 & 3.9e-05 & -1 & 1 & 0.51 & 0.61 \\ 
+   & aAD<fvAD & 43.5 & -1 & -3 & 1 & 0.47 & 0.61 \\ 
+  Rey figure copy & \textbf{lvPPA>PCA} & \textbf{192.5} & \textbf{9} & \textbf{3} & \textbf{11} & \textbf{0.00073} & \textbf{0.0044} \\ 
+   & lvPPA>aAD & 122.5 & 1 & -3.2e-05 & 8 & 0.045 & 0.09 \\ 
+   & \textbf{lvPPA>fvAD} & \textbf{150.5} & \textbf{2} & \textbf{4.3e-05} & \textbf{6} & \textbf{0.0063} & \textbf{0.019} \\ 
+   & PCA<aAD & 37 & -3 & -10 & 1 & 0.23 & 0.27 \\ 
+   & PCA<fvAD & 34.5 & -4 & -9 & 1 & 0.096 & 0.14 \\ 
+   & aAD>fvAD & 46 & 5.8e-05 & -6 & 3 & 0.97 & 0.97 \\ 
+  Judgment of line orientation & \textbf{lvPPA>PCA} & \textbf{199} & \textbf{3} & \textbf{1} & \textbf{4} & \textbf{0.0034} & \textbf{0.021} \\ 
+   & lvPPA>aAD & 116 & 1 & 2.8e-05 & 4 & 0.032 & 0.095 \\ 
+   & lvPPA>fvAD & 116.5 & 1 & -1.7e-05 & 3 & 0.12 & 0.25 \\ 
+   & PCA<aAD & 46 & -4.9e-05 & -3 & 2 & 0.68 & 0.68 \\ 
+   & PCA<fvAD & 42 & -1 & -3 & 1 & 0.28 & 0.42 \\ 
+   & aAD<fvAD & 30.5 & -1 & -3 & 2 & 0.62 & 0.68 \\ 
+  PBAC social behavior & lvPPA>PCA & 184 & 1 & -2e-05 & 2 & 0.13 & 0.2 \\ 
+   & lvPPA>aAD & 88 & 7.8e-05 & -0.5 & 1 & 0.51 & 0.52 \\ 
+   & \textbf{lvPPA>fvAD} & \textbf{181} & \textbf{4} & \textbf{1} & \textbf{6} & \textbf{0.00079} & \textbf{0.0047} \\ 
+   & PCA<aAD & 50 & -3.8e-05 & -2 & 1 & 0.52 & 0.52 \\ 
+   & \textbf{PCA>fvAD} & \textbf{128} & \textbf{3} & \textbf{1} & \textbf{6} & \textbf{0.018} & \textbf{0.035} \\ 
+   & \textbf{aAD>fvAD} & \textbf{78} & \textbf{4} & \textbf{1} & \textbf{7.7} & \textbf{0.005} & \textbf{0.015} \\ 
+  Oral Trails & lvPPA>PCA & 60 & 2e-05 & -1 & 2 & 0.46 & 0.69 \\ 
+   & lvPPA>aAD & 31.5 & 0.88 & -1 & 3 & 0.44 & 0.69 \\ 
+   & lvPPA<fvAD & 28.5 & -2e-05 & -3 & 2 & 0.91 & 0.91 \\ 
+   & PCA>aAD & 27.5 & 7.5e-05 & -3 & 3 & 0.79 & 0.91 \\ 
+   & PCA<fvAD & 23 & -0.53 & -3 & 1 & 0.46 & 0.69 \\ 
+   & aAD<fvAD & 10 & -1 & -4 & 3 & 0.38 & 0.69 \\ 
+  Reverse digit span & lvPPA>PCA & 317 & 1 & -5.3e-05 & 1 & 0.043 & 0.26 \\ 
+   & lvPPA>aAD & 136.5 & 5e-05 & -2.5e-05 & 1 & 0.3 & 0.6 \\ 
+   & lvPPA>fvAD & 188.5 & 6.5e-05 & -9.7e-05 & 1 & 0.17 & 0.52 \\ 
+   & PCA<aAD & 76.5 & -8.4e-06 & -1 & 1 & 0.66 & 0.86 \\ 
+   & PCA<fvAD & 105 & -3.6e-05 & -1 & 1 & 0.71 & 0.86 \\ 
+   & aAD>fvAD & 55.5 & 2.7e-05 & -1 & 1 & 0.94 & 0.94 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\section*{Longitudinal neuropsychological
+performance}\label{longitudinal-neuropsychological-performance}
+\addcontentsline{toc}{section}{Longitudinal neuropsychological
+performance}
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/plots_npsych-1} 
+
+}
+
+\caption{Supplementary Figure 5a. Longitudinal change in neuropsychological performance. The x-axis indicates time (in years) from the first available assessment.}\label{fig:plots_npsych}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/plots_npsych2-1} 
+
+}
+
+\caption{Supplementary Figure 5b. Longitudinal change in neuropsychological performance (continued). The x-axis indicates time (in years) from the first available assessment.}\label{fig:plots_npsych2}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 12. Associations between neuropsychological performance and grey matter volume change in task-specific ROIs. P-values are corrected for multiple comparisons using the false discovery rate method; values<0.05 are considered statistically significant and shown in bold.} 
+\begin{tabular}{llll}
+  \hline
+Task & Region & T & P \\ 
+  \hline
+Recognition memory & \textbf{L entorhinal} & \textbf{t(69)=2.7} & \textbf{0.02} \\ 
+   & \textbf{L hippocampus} & \textbf{t(69)=4.8} & \textbf{0.0003} \\ 
+   & L parahippocampal & t(69)=2.0 & 0.08 \\ 
+   & R entorhinal & t(69)=1.9 & 0.2 \\ 
+   & \textbf{R hippocampus} & \textbf{t(69)=3.3} & \textbf{0.006} \\ 
+   & R parahippocampal & t(69)=1.3 & 0.3 \\ 
+  Speech & L middle temporal & t(46)=1.0 & 0.5 \\ 
+   & L superior temporal & t(46)=1.2 & 0.4 \\ 
+  Letter fluency & \textbf{L middle temporal} & \textbf{t(73)=3.7} & \textbf{0.003} \\ 
+   & \textbf{L superior temporal} & \textbf{t(73)=3.2} & \textbf{0.007} \\ 
+  Forward digit span & \textbf{L middle temporal} & \textbf{t(66)=4.3} & \textbf{0.0007} \\ 
+   & \textbf{L superior temporal} & \textbf{t(66)=5.1} & \textbf{0.0002} \\ 
+  Rey copy & \textbf{R angular} & \textbf{t(40)=3.5} & \textbf{0.005} \\ 
+   & \textbf{R middle temporal} & \textbf{t(40)=3.5} & \textbf{0.005} \\ 
+   & \textbf{R precuneus} & \textbf{t(40)=3.6} & \textbf{0.005} \\ 
+   & R superior parietal lobule & t(40)=2.3 & 0.06 \\ 
+   & \textbf{R supramarginal} & \textbf{t(40)=3.4} & \textbf{0.006} \\ 
+  Judgment of line orientation & R angular & t(37)=1.6 & 0.2 \\ 
+   & R middle temporal & t(37)=2.1 & 0.07 \\ 
+   & \textbf{R precuneus} & \textbf{t(37)=2.6} & \textbf{0.03} \\ 
+   & R superior parietal lobule & t(37)=2.1 & 0.07 \\ 
+   & R supramarginal & t(37)=2.1 & 0.08 \\ 
+  Social behavior & L anterior insula & t(44)=1.2 & 0.4 \\ 
+   & L middle frontal & t(44)=-0.4 & 0.8 \\ 
+   & R middle temporal & t(44)=0.4 & 0.8 \\ 
+  Oral Trails & L anterior insula & t(18)=-0.3 & 0.8 \\ 
+   & L middle frontal & t(18)=1.0 & 0.5 \\ 
+   & R middle temporal & t(18)=1.0 & 0.4 \\ 
+  Reverse digit span & \textbf{L anterior insula} & \textbf{t(65)=2.5} & \textbf{0.04} \\ 
+   & \textbf{L middle frontal} & \textbf{t(65)=2.9} & \textbf{0.02} \\ 
+   & \textbf{R middle temporal} & \textbf{t(65)=3.0} & \textbf{0.02} \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 13. Fixed effects for neuropsychological change models reported in Supplementary Figure 5a.} 
+\scalebox{0.75}{
+\begin{tabular}{llrrrrr}
+  \hline
+Task & Effect & Value & Std.Error & DF & t-value & p-value \\ 
+  \hline
+MMSETotal & (Intercept) & 8.53 & 5.34 & 122 & 1.60 & 0.11 \\ 
+   & Group2PCA & -1.31 & 1.60 & 86 & -0.81 & 0.42 \\ 
+   & Group2aAD & -2.52 & 1.67 & 86 & -1.51 & 0.13 \\ 
+   & Group2fvAD & -4.38 & 1.92 & 86 & -2.28 & 0.03 \\ 
+   & Group2Control & 4.64 & 1.60 & 86 & 2.91 & 0.00 \\ 
+   & Time & -2.51 & 0.35 & 122 & -7.12 & 0.00 \\ 
+   & AgeatFirstMRI & 0.08 & 0.08 & 86 & 1.03 & 0.31 \\ 
+   & SexMale & 1.25 & 1.10 & 86 & 1.14 & 0.26 \\ 
+   & Education & 0.63 & 0.20 & 86 & 3.11 & 0.00 \\ 
+   & Group2PCA:Time & 0.94 & 0.57 & 122 & 1.65 & 0.10 \\ 
+   & Group2aAD:Time & 0.66 & 0.56 & 122 & 1.19 & 0.24 \\ 
+   & Group2fvAD:Time & 0.47 & 0.89 & 122 & 0.53 & 0.60 \\ 
+   & Group2Control:Time & 2.51 & 0.53 & 122 & 4.73 & 0.00 \\ 
+  Recognition & (Intercept) & 1.16 & 0.26 & 93 & 4.52 & 0.00 \\ 
+   & Group2PCA & -0.12 & 0.06 & 65 & -1.87 & 0.07 \\ 
+   & Group2aAD & -0.32 & 0.08 & 65 & -3.89 & 0.00 \\ 
+   & Group2fvAD & -0.15 & 0.08 & 65 & -2.00 & 0.05 \\ 
+   & Group2Control & 0.14 & 0.09 & 65 & 1.58 & 0.12 \\ 
+   & Time & -0.03 & 0.02 & 93 & -1.94 & 0.06 \\ 
+   & AgeatFirstMRI & -0.01 & 0.00 & 65 & -2.27 & 0.03 \\ 
+   & SexMale & 0.03 & 0.05 & 65 & 0.64 & 0.52 \\ 
+   & Education & 0.01 & 0.01 & 65 & 1.22 & 0.23 \\ 
+   & Group2PCA:Time & 0.02 & 0.02 & 93 & 0.95 & 0.35 \\ 
+   & Group2aAD:Time & 0.05 & 0.03 & 93 & 1.74 & 0.09 \\ 
+   & Group2fvAD:Time & -0.07 & 0.04 & 93 & -1.59 & 0.11 \\ 
+   & Group2Control:Time & 0.04 & 0.04 & 93 & 1.00 & 0.32 \\ 
+  Speech & (Intercept) & 3.78 & 1.11 & 57 & 3.40 & 0.00 \\ 
+   & Group2PCA & 0.76 & 0.25 & 49 & 3.01 & 0.00 \\ 
+   & Group2aAD & 0.05 & 0.32 & 49 & 0.15 & 0.88 \\ 
+   & Group2fvAD & 0.58 & 0.28 & 49 & 2.09 & 0.04 \\ 
+   & Group2Control & 1.48 & 0.45 & 49 & 3.24 & 0.00 \\ 
+   & Time & 0.00 & 0.06 & 57 & 0.04 & 0.97 \\ 
+   & AgeatFirstMRI & -0.01 & 0.02 & 49 & -0.64 & 0.52 \\ 
+   & SexMale & -0.02 & 0.19 & 49 & -0.09 & 0.93 \\ 
+   & Education & -0.04 & 0.03 & 49 & -1.13 & 0.26 \\ 
+   & Group2PCA:Time & -0.13 & 0.09 & 57 & -1.33 & 0.19 \\ 
+   & Group2aAD:Time & 0.13 & 0.11 & 57 & 1.22 & 0.23 \\ 
+   & Group2fvAD:Time & -0.05 & 0.14 & 57 & -0.37 & 0.71 \\ 
+   & Group2Control:Time & -0.34 & 0.20 & 57 & -1.74 & 0.09 \\ 
+  FLetterFluency & (Intercept) & -10.28 & 6.87 & 57 & -1.50 & 0.14 \\ 
+   & Group2PCA & 3.60 & 1.56 & 49 & 2.30 & 0.03 \\ 
+   & Group2aAD & 1.13 & 1.96 & 49 & 0.58 & 0.57 \\ 
+   & Group2fvAD & -1.24 & 1.72 & 49 & -0.72 & 0.48 \\ 
+   & Group2Control & 13.42 & 2.81 & 49 & 4.78 & 0.00 \\ 
+   & Time & -0.91 & 0.36 & 57 & -2.56 & 0.01 \\ 
+   & AgeatFirstMRI & 0.14 & 0.09 & 49 & 1.53 & 0.13 \\ 
+   & SexMale & 2.42 & 1.16 & 49 & 2.08 & 0.04 \\ 
+   & Education & 0.54 & 0.22 & 49 & 2.51 & 0.02 \\ 
+   & Group2PCA:Time & -0.04 & 0.56 & 57 & -0.08 & 0.94 \\ 
+   & Group2aAD:Time & -0.04 & 0.70 & 57 & -0.05 & 0.96 \\ 
+   & Group2fvAD:Time & -1.13 & 0.87 & 57 & -1.31 & 0.20 \\ 
+   & Group2Control:Time & 1.37 & 1.24 & 57 & 1.10 & 0.27 \\ 
+  ForwardSpan & (Intercept) & 2.48 & 1.73 & 101 & 1.43 & 0.16 \\ 
+   & Group2PCA & 1.07 & 0.44 & 69 & 2.45 & 0.02 \\ 
+   & Group2aAD & -0.06 & 0.59 & 69 & -0.10 & 0.92 \\ 
+   & Group2fvAD & 0.48 & 0.53 & 69 & 0.92 & 0.36 \\ 
+   & Group2Control & 2.23 & 0.52 & 69 & 4.27 & 0.00 \\ 
+   & Time & -0.26 & 0.11 & 101 & -2.30 & 0.02 \\ 
+   & AgeatFirstMRI & 0.01 & 0.03 & 69 & 0.51 & 0.61 \\ 
+   & SexMale & 0.31 & 0.32 & 69 & 0.98 & 0.33 \\ 
+   & Education & 0.08 & 0.06 & 69 & 1.39 & 0.17 \\ 
+   & Group2PCA:Time & -0.08 & 0.19 & 101 & -0.45 & 0.65 \\ 
+   & Group2aAD:Time & -0.00 & 0.22 & 101 & -0.00 & 1.00 \\ 
+   & Group2fvAD:Time & -0.06 & 0.29 & 101 & -0.22 & 0.83 \\ 
+   & Group2Control:Time & 0.58 & 0.22 & 101 & 2.62 & 0.01 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 14. Fixed effects for neuropsychological change models reported in Supplementary Figure 5b.} 
+\scalebox{0.75}{
+\begin{tabular}{llrrrrr}
+  \hline
+Task & Effect & Value & Std.Error & DF & t-value & p-value \\ 
+  \hline
+ReyCopy & (Intercept) & 11.83 & 6.12 & 53 & 1.93 & 0.06 \\ 
+   & Group2PCA & -6.45 & 1.43 & 47 & -4.50 & 0.00 \\ 
+   & Group2aAD & -3.62 & 1.71 & 47 & -2.12 & 0.04 \\ 
+   & Group2fvAD & -3.98 & 1.51 & 47 & -2.63 & 0.01 \\ 
+   & Group2Control & 1.32 & 2.44 & 47 & 0.54 & 0.59 \\ 
+   & Time & 0.02 & 0.23 & 53 & 0.08 & 0.94 \\ 
+   & AgeatFirstMRI & -0.05 & 0.08 & 47 & -0.57 & 0.57 \\ 
+   & SexMale & 2.91 & 1.07 & 47 & 2.72 & 0.01 \\ 
+   & Education & 0.05 & 0.20 & 47 & 0.27 & 0.79 \\ 
+   & Group2PCA:Time & -0.98 & 0.41 & 53 & -2.42 & 0.02 \\ 
+   & Group2aAD:Time & -1.01 & 0.47 & 53 & -2.18 & 0.03 \\ 
+   & Group2fvAD:Time & -0.81 & 0.57 & 53 & -1.43 & 0.16 \\ 
+   & Group2Control:Time & -0.11 & 0.81 & 53 & -0.14 & 0.89 \\ 
+  JOLO & (Intercept) & 7.32 & 3.39 & 48 & 2.16 & 0.04 \\ 
+   & Group2PCA & -2.44 & 0.73 & 46 & -3.35 & 0.00 \\ 
+   & Group2aAD & -2.05 & 0.90 & 46 & -2.29 & 0.03 \\ 
+   & Group2fvAD & -1.62 & 0.79 & 46 & -2.05 & 0.05 \\ 
+   & Group2Control & 1.41 & 1.23 & 46 & 1.14 & 0.26 \\ 
+   & Time & -0.26 & 0.14 & 48 & -1.85 & 0.07 \\ 
+   & AgeatFirstMRI & -0.04 & 0.05 & 46 & -0.78 & 0.44 \\ 
+   & SexMale & 1.29 & 0.53 & 46 & 2.42 & 0.02 \\ 
+   & Education & -0.05 & 0.10 & 46 & -0.55 & 0.59 \\ 
+   & Group2PCA:Time & 0.22 & 0.28 & 48 & 0.78 & 0.44 \\ 
+   & Group2aAD:Time & 0.17 & 0.33 & 48 & 0.51 & 0.61 \\ 
+   & Group2fvAD:Time & 0.26 & 0.36 & 48 & 0.70 & 0.48 \\ 
+   & Group2Control:Time & 0.21 & 0.50 & 48 & 0.41 & 0.68 \\ 
+  BehavioralScale & (Intercept) & 12.01 & 4.72 & 55 & 2.54 & 0.01 \\ 
+   & Group2PCA & -0.53 & 1.13 & 49 & -0.47 & 0.64 \\ 
+   & Group2aAD & 0.71 & 1.46 & 49 & 0.48 & 0.63 \\ 
+   & Group2fvAD & -3.78 & 1.26 & 49 & -2.99 & 0.00 \\ 
+   & Group2Control & 0.17 & 2.10 & 49 & 0.08 & 0.93 \\ 
+   & Time & 0.13 & 0.36 & 55 & 0.35 & 0.73 \\ 
+   & AgeatFirstMRI & 0.02 & 0.06 & 49 & 0.34 & 0.73 \\ 
+   & SexMale & 0.42 & 0.78 & 49 & 0.54 & 0.59 \\ 
+   & Education & 0.20 & 0.15 & 49 & 1.38 & 0.17 \\ 
+   & Group2PCA:Time & 0.19 & 0.61 & 55 & 0.30 & 0.76 \\ 
+   & Group2aAD:Time & -0.39 & 0.76 & 55 & -0.52 & 0.61 \\ 
+   & Group2fvAD:Time & -1.54 & 0.91 & 55 & -1.69 & 0.10 \\ 
+   & Group2Control:Time & -0.13 & 1.25 & 55 & -0.10 & 0.92 \\ 
+  OralTrails & (Intercept) & -1.13 & 2.53 & 33 & -0.44 & 0.66 \\ 
+   & Group2PCA & -0.37 & 0.71 & 33 & -0.52 & 0.60 \\ 
+   & Group2aAD & -0.47 & 0.90 & 33 & -0.52 & 0.60 \\ 
+   & Group2fvAD & -0.25 & 0.81 & 33 & -0.31 & 0.76 \\ 
+   & Group2Control & 3.76 & 1.03 & 33 & 3.63 & 0.00 \\ 
+   & Time & -0.07 & 0.29 & 18 & -0.25 & 0.80 \\ 
+   & AgeatFirstMRI & -0.00 & 0.04 & 33 & -0.03 & 0.97 \\ 
+   & SexMale & 0.87 & 0.47 & 33 & 1.83 & 0.08 \\ 
+   & Education & 0.17 & 0.09 & 33 & 2.02 & 0.05 \\ 
+   & Group2PCA:Time & -0.42 & 0.52 & 18 & -0.80 & 0.43 \\ 
+   & Group2aAD:Time & -0.21 & 0.69 & 18 & -0.31 & 0.76 \\ 
+   & Group2fvAD:Time & -0.48 & 0.62 & 18 & -0.77 & 0.45 \\ 
+   & Group2Control:Time & -0.32 & 0.66 & 18 & -0.49 & 0.63 \\ 
+  ReverseSpan & (Intercept) & 1.33 & 1.23 & 102 & 1.08 & 0.28 \\ 
+   & Group2PCA & -0.42 & 0.32 & 70 & -1.32 & 0.19 \\ 
+   & Group2aAD & -0.62 & 0.41 & 70 & -1.50 & 0.14 \\ 
+   & Group2fvAD & -0.53 & 0.38 & 70 & -1.40 & 0.17 \\ 
+   & Group2Control & 2.21 & 0.37 & 70 & 5.90 & 0.00 \\ 
+   & Time & -0.26 & 0.09 & 102 & -2.98 & 0.00 \\ 
+   & AgeatFirstMRI & 0.01 & 0.02 & 70 & 0.74 & 0.46 \\ 
+   & SexMale & 0.40 & 0.22 & 70 & 1.81 & 0.08 \\ 
+   & Education & 0.06 & 0.04 & 70 & 1.50 & 0.14 \\ 
+   & Group2PCA:Time & -0.03 & 0.15 & 102 & -0.22 & 0.83 \\ 
+   & Group2aAD:Time & 0.06 & 0.18 & 102 & 0.36 & 0.72 \\ 
+   & Group2fvAD:Time & -0.26 & 0.23 & 102 & -1.14 & 0.26 \\ 
+   & Group2Control:Time & 0.31 & 0.17 & 102 & 1.79 & 0.08 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 15. Post-hoc comparisons of longitudinal global cognition, as assessed by the MMSE. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.} 
+\scalebox{0.75}{
+\begin{tabular}{llrr}
+  \hline
+Effect & Comparison & Z & P \\ 
+  \hline
+Group mean & PCA<lvPPA & 0.8 & 0.55 \\ 
+   & aAD<lvPPA & 1.5 & 0.22 \\ 
+   & fvAD<lvPPA & 2.3 & 0.056 \\ 
+   & \textbf{Controls>lvPPA} & \textbf{2.9} & \textbf{0.012} \\ 
+   & aAD<PCA & 0.7 & 0.62 \\ 
+   & fvAD<PCA & 1.5 & 0.22 \\ 
+   & \textbf{Controls>PCA} & \textbf{3.4} & \textbf{0.0028} \\ 
+   & fvAD<aAD & 0.9 & 0.52 \\ 
+   & \textbf{Controls>aAD} & \textbf{4.1} & \textbf{0.00031} \\ 
+   & \textbf{Controls>fvAD} & \textbf{4.5} & \textbf{5.7e-05} \\ 
+  Group x time & PCA>lvPPA & 1.7 & 0.2 \\ 
+   & aAD>lvPPA & 1.2 & 0.36 \\ 
+   & fvAD>lvPPA & 0.5 & 0.68 \\ 
+   & \textbf{Controls>lvPPA} & \textbf{4.7} & \textbf{4.5e-05} \\ 
+   & aAD<PCA & 0.5 & 0.69 \\ 
+   & fvAD<PCA & 0.5 & 0.68 \\ 
+   & \textbf{Controls>PCA} & \textbf{2.6} & \textbf{0.025} \\ 
+   & fvAD<aAD & 0.2 & 0.84 \\ 
+   & \textbf{Controls>aAD} & \textbf{3.2} & \textbf{0.0063} \\ 
+   & Controls>fvAD & 2.2 & 0.056 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 16. Post-hoc comparisons of longitudinal recognition discrimination. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.} 
+\scalebox{0.75}{
+\begin{tabular}{llrr}
+  \hline
+Effect & Comparison & Z & P \\ 
+  \hline
+Group mean & PCA<lvPPA & 1.9 & 0.12 \\ 
+   & \textbf{aAD<lvPPA} & \textbf{3.9} & \textbf{0.001} \\ 
+   & fvAD<lvPPA & 2.0 & 0.1 \\ 
+   & Controls>lvPPA & 1.6 & 0.16 \\ 
+   & aAD<PCA & 2.4 & 0.06 \\ 
+   & fvAD<PCA & 0.4 & 0.72 \\ 
+   & \textbf{Controls>PCA} & \textbf{2.8} & \textbf{0.028} \\ 
+   & fvAD>aAD & 1.7 & 0.15 \\ 
+   & \textbf{Controls>aAD} & \textbf{4.3} & \textbf{0.00042} \\ 
+   & \textbf{Controls>fvAD} & \textbf{2.9} & \textbf{0.023} \\ 
+  Group x time & PCA>lvPPA & 0.9 & 0.43 \\ 
+   & aAD>lvPPA & 1.7 & 0.15 \\ 
+   & fvAD<lvPPA & 1.6 & 0.16 \\ 
+   & Controls>lvPPA & 1.0 & 0.42 \\ 
+   & aAD>PCA & 0.9 & 0.43 \\ 
+   & fvAD<PCA & 2.1 & 0.1 \\ 
+   & Controls>PCA & 0.4 & 0.72 \\ 
+   & \textbf{fvAD<aAD} & \textbf{2.5} & \textbf{0.043} \\ 
+   & Controls<aAD & 0.4 & 0.72 \\ 
+   & Controls>fvAD & 2.0 & 0.1 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 17. Post-hoc comparisons of longitudinal language performance. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.} 
+\scalebox{0.75}{
+\begin{tabular}{lllrr}
+  \hline
+Task & Effect & Comparison & Z & P \\ 
+  \hline
+Speech & Group mean & \textbf{PCA>lvPPA} & \textbf{3.0} & \textbf{0.026} \\ 
+   &  & aAD>lvPPA & 0.2 & 0.88 \\ 
+   &  & fvAD>lvPPA & 2.1 & 0.1 \\ 
+   &  & \textbf{Controls>lvPPA} & \textbf{3.2} & \textbf{0.024} \\ 
+   &  & PCA>aAD & 2.3 & 0.098 \\ 
+   &  & PCA>fvAD & 0.6 & 0.64 \\ 
+   &  & Controls>PCA & 1.5 & 0.25 \\ 
+   &  & fvAD>aAD & 1.5 & 0.25 \\ 
+   &  & \textbf{Controls>aAD} & \textbf{2.8} & \textbf{0.032} \\ 
+   &  & Controls>fvAD & 1.9 & 0.16 \\ 
+   & Group x time & lvPPA>PCA & 1.3 & 0.31 \\ 
+   &  & aAD>lvPPA & 1.2 & 0.32 \\ 
+   &  & lvPPA>fvAD & 0.4 & 0.75 \\ 
+   &  & lvPPA>Controls & 1.7 & 0.18 \\ 
+   &  & aAD>PCA & 2.1 & 0.1 \\ 
+   &  & fvAD>PCA & 0.5 & 0.68 \\ 
+   &  & PCA>Controls & 1.1 & 0.36 \\ 
+   &  & aAD>fvAD & 1.2 & 0.32 \\ 
+   &  & aAD>Controls & 2.3 & 0.098 \\ 
+   &  & fvAD>Controls & 1.3 & 0.31 \\ 
+  FLetterFluency & Group mean & PCA>lvPPA & 2.3 & 0.071 \\ 
+   &  & aAD>lvPPA & 0.6 & 0.66 \\ 
+   &  & lvPPA>fvAD & 0.7 & 0.59 \\ 
+   &  & \textbf{Controls>lvPPA} & \textbf{4.8} & \textbf{1.7e-05} \\ 
+   &  & PCA>aAD & 1.3 & 0.39 \\ 
+   &  & \textbf{PCA>fvAD} & \textbf{2.7} & \textbf{0.032} \\ 
+   &  & \textbf{Controls>PCA} & \textbf{3.4} & \textbf{0.0032} \\ 
+   &  & aAD>fvAD & 1.1 & 0.39 \\ 
+   &  & \textbf{Controls>aAD} & \textbf{3.9} & \textbf{0.00054} \\ 
+   &  & \textbf{Controls>fvAD} & \textbf{5.0} & \textbf{1.4e-05} \\ 
+   & Group x time & lvPPA>PCA & 0.1 & 0.99 \\ 
+   &  & lvPPA>aAD & 0.1 & 0.99 \\ 
+   &  & lvPPA>fvAD & 1.3 & 0.39 \\ 
+   &  & Controls>lvPPA & 1.1 & 0.39 \\ 
+   &  & aAD>PCA & 0.0 & 0.99 \\ 
+   &  & PCA>fvAD & 1.2 & 0.39 \\ 
+   &  & Controls>PCA & 1.1 & 0.39 \\ 
+   &  & aAD>fvAD & 1.1 & 0.39 \\ 
+   &  & Controls>aAD & 1.1 & 0.39 \\ 
+   &  & Controls>fvAD & 1.8 & 0.23 \\ 
+  ForwardSpan & Group mean & \textbf{PCA>lvPPA} & \textbf{2.4} & \textbf{0.048} \\ 
+   &  & lvPPA>aAD & 0.1 & 1 \\ 
+   &  & fvAD>lvPPA & 0.9 & 0.59 \\ 
+   &  & \textbf{Controls>lvPPA} & \textbf{4.3} & \textbf{0.00039} \\ 
+   &  & PCA>aAD & 1.9 & 0.12 \\ 
+   &  & PCA>fvAD & 1.1 & 0.53 \\ 
+   &  & Controls>PCA & 2.1 & 0.089 \\ 
+   &  & fvAD>aAD & 0.8 & 0.68 \\ 
+   &  & \textbf{Controls>aAD} & \textbf{3.4} & \textbf{0.0069} \\ 
+   &  & \textbf{Controls>fvAD} & \textbf{2.8} & \textbf{0.03} \\ 
+   & Group x time & lvPPA>PCA & 0.4 & 0.93 \\ 
+   &  & lvPPA>aAD & 0.0 & 1 \\ 
+   &  & lvPPA>fvAD & 0.2 & 1 \\ 
+   &  & \textbf{Controls>lvPPA} & \textbf{2.6} & \textbf{0.035} \\ 
+   &  & aAD>PCA & 0.3 & 0.98 \\ 
+   &  & fvAD>PCA & 0.1 & 1 \\ 
+   &  & \textbf{Controls>PCA} & \textbf{2.7} & \textbf{0.03} \\ 
+   &  & aAD>fvAD & 0.2 & 1 \\ 
+   &  & Controls>aAD & 2.1 & 0.089 \\ 
+   &  & Controls>fvAD & 1.9 & 0.11 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 18. Post-hoc comparisons of longitudinal visuospatial performance. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.} 
+\scalebox{0.75}{
+\begin{tabular}{lllrr}
+  \hline
+Task & Effect & Comparison & Z & P \\ 
+  \hline
+ReyCopy & Group mean & \textbf{lvPPA>PCA} & \textbf{4.5} & \textbf{0.00014} \\ 
+   &  & lvPPA>aAD & 2.1 & 0.11 \\ 
+   &  & lvPPA>fvAD & 2.6 & 0.056 \\ 
+   &  & Controls>lvPPA & 0.5 & 0.79 \\ 
+   &  & aAD>PCA & 1.6 & 0.23 \\ 
+   &  & fvAD>PCA & 1.5 & 0.28 \\ 
+   &  & \textbf{Controls>PCA} & \textbf{3.1} & \textbf{0.022} \\ 
+   &  & aAD>fvAD & 0.2 & 0.94 \\ 
+   &  & Controls>aAD & 1.8 & 0.17 \\ 
+   &  & Controls>fvAD & 2.1 & 0.11 \\ 
+   & Group x time & lvPPA>PCA & 2.4 & 0.078 \\ 
+   &  & lvPPA>aAD & 2.2 & 0.11 \\ 
+   &  & lvPPA>fvAD & 1.4 & 0.28 \\ 
+   &  & lvPPA>Controls & 0.1 & 0.94 \\ 
+   &  & PCA>aAD & 0.1 & 0.95 \\ 
+   &  & fvAD>PCA & 0.3 & 0.93 \\ 
+   &  & Controls>PCA & 1.0 & 0.47 \\ 
+   &  & fvAD>aAD & 0.3 & 0.93 \\ 
+   &  & Controls>aAD & 1.0 & 0.47 \\ 
+   &  & Controls>fvAD & 0.7 & 0.65 \\ 
+  JOLO & Group mean & \textbf{lvPPA>PCA} & \textbf{3.4} & \textbf{0.016} \\ 
+   &  & lvPPA>aAD & 2.3 & 0.088 \\ 
+   &  & lvPPA>fvAD & 2.0 & 0.14 \\ 
+   &  & Controls>lvPPA & 1.1 & 0.72 \\ 
+   &  & aAD>PCA & 0.4 & 0.97 \\ 
+   &  & fvAD>PCA & 0.9 & 0.89 \\ 
+   &  & \textbf{Controls>PCA} & \textbf{3.0} & \textbf{0.029} \\ 
+   &  & fvAD>aAD & 0.4 & 0.97 \\ 
+   &  & Controls>aAD & 2.5 & 0.088 \\ 
+   &  & Controls>fvAD & 2.3 & 0.088 \\ 
+   & Group x time & PCA>lvPPA & 0.8 & 0.96 \\ 
+   &  & aAD>lvPPA & 0.5 & 0.97 \\ 
+   &  & fvAD>lvPPA & 0.7 & 0.96 \\ 
+   &  & Controls>lvPPA & 0.4 & 0.97 \\ 
+   &  & PCA>aAD & 0.1 & 0.99 \\ 
+   &  & fvAD>PCA & 0.1 & 0.99 \\ 
+   &  & PCA>Controls & 0.0 & 0.99 \\ 
+   &  & fvAD>aAD & 0.2 & 0.99 \\ 
+   &  & Controls>aAD & 0.1 & 0.99 \\ 
+   &  & fvAD>Controls & 0.1 & 0.99 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Supplementary Table 19. Post-hoc comparisons of longitudinal behavioral and executive function. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.} 
+\scalebox{0.75}{
+\begin{tabular}{lllrr}
+  \hline
+Task & Effect & Comparison & Z & P \\ 
+  \hline
+BehavioralScale & Group mean & lvPPA>PCA & 0.5 & 0.93 \\ 
+   &  & aAD>lvPPA & 0.5 & 0.93 \\ 
+   &  & lvPPA>fvAD & 3.0 & 0.055 \\ 
+   &  & Controls>lvPPA & 0.1 & 0.93 \\ 
+   &  & aAD>PCA & 0.9 & 0.88 \\ 
+   &  & PCA>fvAD & 2.4 & 0.1 \\ 
+   &  & Controls>PCA & 0.3 & 0.93 \\ 
+   &  & aAD>fvAD & 2.7 & 0.065 \\ 
+   &  & aAD>Controls & 0.2 & 0.93 \\ 
+   &  & Controls>fvAD & 1.8 & 0.3 \\ 
+   & Group x time & PCA>lvPPA & 0.3 & 0.93 \\ 
+   &  & lvPPA>aAD & 0.5 & 0.93 \\ 
+   &  & lvPPA>fvAD & 1.7 & 0.3 \\ 
+   &  & lvPPA>Controls & 0.1 & 0.93 \\ 
+   &  & PCA>aAD & 0.7 & 0.93 \\ 
+   &  & PCA>fvAD & 1.8 & 0.3 \\ 
+   &  & PCA>Controls & 0.2 & 0.93 \\ 
+   &  & aAD>fvAD & 1.1 & 0.8 \\ 
+   &  & Controls>aAD & 0.2 & 0.93 \\ 
+   &  & Controls>fvAD & 1.0 & 0.84 \\ 
+  OralTrails & Group mean & lvPPA>PCA & 0.5 & 0.93 \\ 
+   &  & lvPPA>aAD & 0.5 & 0.93 \\ 
+   &  & lvPPA>fvAD & 0.3 & 0.93 \\ 
+   &  & \textbf{Controls>lvPPA} & \textbf{3.6} & \textbf{0.002} \\ 
+   &  & PCA>aAD & 0.1 & 0.93 \\ 
+   &  & fvAD>PCA & 0.1 & 0.93 \\ 
+   &  & \textbf{Controls>PCA} & \textbf{3.9} & \textbf{0.0016} \\ 
+   &  & fvAD>aAD & 0.2 & 0.93 \\ 
+   &  & \textbf{Controls>aAD} & \textbf{3.5} & \textbf{0.002} \\ 
+   &  & \textbf{Controls>fvAD} & \textbf{3.6} & \textbf{0.002} \\ 
+   & Group x time & lvPPA>PCA & 0.8 & 0.93 \\ 
+   &  & lvPPA>aAD & 0.3 & 0.93 \\ 
+   &  & lvPPA>fvAD & 0.8 & 0.93 \\ 
+   &  & lvPPA>Controls & 0.5 & 0.93 \\ 
+   &  & aAD>PCA & 0.3 & 0.93 \\ 
+   &  & PCA>fvAD & 0.1 & 0.93 \\ 
+   &  & Controls>PCA & 0.1 & 0.93 \\ 
+   &  & aAD>fvAD & 0.3 & 0.93 \\ 
+   &  & aAD>Controls & 0.1 & 0.93 \\ 
+   &  & Controls>fvAD & 0.2 & 0.93 \\ 
+  ReverseSpan & Group mean & lvPPA>PCA & 1.3 & 0.37 \\ 
+   &  & lvPPA>aAD & 1.5 & 0.33 \\ 
+   &  & lvPPA>fvAD & 1.4 & 0.36 \\ 
+   &  & \textbf{Controls>lvPPA} & \textbf{5.9} & \textbf{1.8e-08} \\ 
+   &  & PCA>aAD & 0.5 & 0.79 \\ 
+   &  & PCA>fvAD & 0.3 & 0.85 \\ 
+   &  & \textbf{Controls>PCA} & \textbf{6.6} & \textbf{6.9e-10} \\ 
+   &  & fvAD>aAD & 0.2 & 0.85 \\ 
+   &  & \textbf{Controls>aAD} & \textbf{5.9} & \textbf{1.8e-08} \\ 
+   &  & \textbf{Controls>fvAD} & \textbf{6.1} & \textbf{8.3e-09} \\ 
+   & Group x time & lvPPA>PCA & 0.2 & 0.85 \\ 
+   &  & aAD>lvPPA & 0.4 & 0.84 \\ 
+   &  & lvPPA>fvAD & 1.1 & 0.39 \\ 
+   &  & Controls>lvPPA & 1.8 & 0.21 \\ 
+   &  & aAD>PCA & 0.5 & 0.79 \\ 
+   &  & PCA>fvAD & 0.9 & 0.49 \\ 
+   &  & Controls>PCA & 1.8 & 0.21 \\ 
+   &  & aAD>fvAD & 1.3 & 0.38 \\ 
+   &  & Controls>aAD & 1.2 & 0.39 \\ 
+   &  & Controls>fvAD & 2.2 & 0.11 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}
+
+{\centering \includegraphics{./fig/control_neuropsych-1} 
+
+}
+
+\caption{Supplementary Figure 6. Neuropsychological performance for cognitively normal seniors in the Integrative Neurodegenerative Disease Database (INDD). Green triangles represent observations for control participants in the current study that were available within 1 year of their first MRI scan. The mean of each distribution is represented by a large black dot, and the vertical lines represent 1 SD above and below the mean.}\label{fig:control_neuropsych}
+\end{figure}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\hypertarget{ref-crutch_consensus_2017}{}
+Crutch SJ, Schott JM, Rabinovici GD, Murray M, Snowden JS, Flier WM van
+der, et al. Consensus classification of posterior cortical atrophy
+{[}Internet{]}. Alzheimer's \& Dementia 2017{[}cited 2017 Mar 7{]}
+Available from:
+\url{http://www.sciencedirect.com/science/article/pii/S1552526017300407}
+
+\hypertarget{ref-giannini_clinical_2017}{}
+Giannini LAA, Irwin DJ, McMillan CT, Ash S, Rascovsky K, Wolk DA, et al.
+Clinical marker for Alzheimer disease pathology in logopenic primary
+progressive aphasia. Neurology 2017; 88: 2276--2284.
+
+\hypertarget{ref-mendez_clinicopathologic_2013}{}
+Mendez MF, Joshi A, Tassniyom K, Teng E, Shapira JS. Clinicopathologic
+differences among patients with behavioral variant frontotemporal
+dementia. Neurology 2013; 80: 561--568.
+
+\hypertarget{ref-phillips_neocortical_2018}{}
+Phillips JS, Da Re F, Dratch L, Xie SX, Irwin DJ, McMillan CT, et al.
+Neocortical origin and progression of gray matter atrophy in nonamnestic
+Alzheimer's disease. Neurobiology of Aging 2018; 63: 75--87.
+
+\hypertarget{ref-rascovsky_sensitivity_2011}{}
+Rascovsky K, Hodges JR, Knopman D, Mendez MF, Kramer JH, Neuhaus J, et
+al. Sensitivity of revised diagnostic criteria for the behavioural
+variant of frontotemporal dementia. Brain 2011; 134: 2456--2477.
+
+\hypertarget{ref-schwarz_large-scale_2016}{}
+Schwarz CG, Gunter JL, Wiste HJ, Przybelski SA, Weigand SD, Ward CP, et
+al. A large-scale comparison of cortical thickness and volume methods
+for measuring Alzheimer's disease severity. NeuroImage: Clinical 2016;
+11: 802--812.
+
+\hypertarget{ref-shaw_cerebrospinal_2009}{}
+Shaw LM, Vanderstichele H, Knapik-Czajka M, Clark CM, Aisen PS, Petersen
+RC, et al. Cerebrospinal fluid biomarker signature in Alzheimer's
+disease neuroimaging initiative subjects. Annals of Neurology 2009; 65:
+403--413.
+
+\hypertarget{ref-toledo_csf_2012}{}
+Toledo JB, Brettschneider J, Grossman M, Arnold SE, Hu WT, Xie SX, et
+al. CSF biomarkers cutoffs: The importance of coincident
+neuropathological diseases. Acta neuropathologica 2012; 124: 23--35.
+
+
+\end{document}

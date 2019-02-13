@@ -1,0 +1,1541 @@
+---
+title: "Supplementary Material: Longitudinal progression of grey matter atrophy in non-amnestic Alzheimer's disease"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+header-includes:
+  \usepackage{graphicx}
+  \usepackage{morefloats}
+  \usepackage{caption}
+  \usepackage{lscape}
+  \usepackage{siunitx}
+  \newcommand{\blandscape}{\begin{landscape}}
+  \newcommand{\elandscape}{\end{landscape}}
+  \usepackage{booktabs}
+  \usepackage{longtable}
+  \usepackage{array}
+  \usepackage{multirow}
+  \usepackage[table]{xcolor}
+  \usepackage{wrapfig}
+  \usepackage{float}
+  \usepackage{colortbl}
+  \usepackage{pdflscape}
+  \usepackage{tabu}
+  \usepackage{threeparttable}
+  \usepackage{threeparttablex}
+  \usepackage[normalem]{ulem}
+  \usepackage{makecell}
+output:
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+    number_sections: yes
+  html_document:
+    fig_caption: yes
+    force_captions: yes
+    highlight: pygments
+    number_sections: yes
+    theme: cerulean
+bibliography: naAD_long.bib
+csl: brain.csl
+---
+
+```{r supp_setup, include=FALSE,echo=FALSE}
+knitr::opts_chunk$set(fig.path='fig/', warning=FALSE, message=FALSE)
+library(knitcitations); cleanbib()
+cite_options(citation_format = "pandoc", check.entries=FALSE)
+library(bibtex);library(xtable);library(pander);library(psych);library(knitr);
+library(sciplot);library(nlme);library(lme4);library(gridExtra);library(doBy);
+library(plyr);library(ANTsR);library(bestglm);library(leaps);library(ggplot2);
+library(gplots); library(gee); library(ROCR); library(multcomp); library(igraph);
+library(magrittr)
+
+# Set colorscheme
+plotcols<-c('lvPPA'=rgb(0.9,0.6,0),'PCA'=rgb(0,0.45,0.7),
+	'aAD'=rgb(0.4,0.8,0.4),'fvAD'=rgb(0.9,0,0.6),'Control'='black')
+shapescale<-c('aAD'=0,'lvPPA'=1,'PCA'=2,'fvAD'=5)
+ltscale<-c('aAD'='dotted','lvPPA'='twodash','PCA'='dashed',
+	'fvAD'='longdash','Control'='solid')
+
+# Plot theme for ggplot.
+ggtheme<-theme(axis.text.x=element_text(size=16,face='bold'),
+	axis.text.y=element_text(size=16,face='bold'),
+	axis.title.y=element_text(size=16,face='bold'),
+	axis.title.x=element_text(size=16,face='bold'),
+	legend.position='right',
+	legend.title=element_blank(),
+	legend.text=element_text(size=12,face='bold'),
+	legend.key=element_rect(fill='white',colour=NA),
+	legend.key.size=unit(0.67,'inches'),
+	panel.background=element_rect(fill='white',colour=NA),
+	panel.border=element_rect(fill=NA,colour='grey20'),
+	panel.grid=element_line(colour='grey92'),
+	panel.grid.minor=element_line(size=rel(0.5)),
+	plot.title=element_text(size=16,face='bold',hjust=0.5))
+
+```
+
+\captionsetup{labelformat=empty}
+
+# Patient selection details {-}
+Frontal-variant AD is clinically similar to behavioral-variant frontotemporal dementia (bvFTD) due to underlying frontotemporal lobar degeneration [@mendez_clinicopathologic_2013], making clinical inference regarding the underlying pathology difficult. In contrast, logopenic-variant primary progressive aphasia and posterior cortical atrophy are associated with AD pathology in up to 70% of cases [@crutch_consensus_2017;@giannini_clinical_2017]. While cerebrospinal fluid (CSF) biomarkers increase the certainty of inferences about pathology [@shaw_cerebrospinal_2009], they are not infallible, since patients may have co-occurring AD and FTLD pathology. To minimize the odds of including patients with FTLD pathology, we performed additional biomarker screening on the fvAD sample. Clinical diagnosis of fvAD used the bvFTD diagnostic criteria of Rascovsky et al. [-@rascovsky_sensitivity_2011]; individual patients' symptoms supporting the fvAD diagnosis are shown in Supplementary Table 2. Two fvAD patients (P06 and P11) went to autopsy and were confirmed as having primary AD pathology with no co-morbid pathology. Three additional patients (P03, P09, and P10) had ^18^F-florbetaben amyloid PET scans; all were visually read as positive by a neuroradiologist expert in molecular PET imaging (Dr. Ilya Nasrallah). Patients P02, P09, and P10 all had ^18^F-flortaucipir PET scans acquired and processed according to methods described in Phillips et al. [-@phillips_neocortical_2018]. Research continues on establishing diagnostic protocols for multi-site flortaucipir data; however, Schwarz et al. [-@schwarz_large-scale_2016] determined regional SUVR thresholds ranging from 1.22 to 1.36 in lateral and ventral temporal cortex to distinguish AD patients from controls; and Ossenkoppele et al. determined an SUVR threshold of 1.27 in medial-basal and lateral temporal cortex for differentiating AD from other neurodegenerative conditions. We calculated an average SUVR for each of our fvAD patients across bilateral parahippocampal, fusiform, and inferior temporal gyri; those means were 1.6 for P02, 2.2 for P09, and 2.3 for P10. Mean cortical SUVRs were 1.33 for P02, 1.91 for P09, and 1.88 for P10. Finally, ten of 12 cases had positive CSF amyloid values (<192 pg/mL) [@shaw_cerebrospinal_2009], while the remaining two had borderline values (P01 and P07, 197 and 209 pg/mL, respectively). While these borderline values fall within a normal range of variability observed on the Luminex platform (based on pathologically-confirmed AD without secondary neuropathologies from Penn’s Integrative Neurodegenerative Disease Database), we performed additional screening to decide the inclusion of the 2 patients. Specifically, we applied a logistic regression classification model published by [@toledo_csf_2012] for discrimination of neuropathological AD vs. FTLD based on Luminex A$\beta_{42}$ and phosphorylated-tau values. This model, which achieved 95.8% accuracy in differentiating FTLD and AD patients, classified all 12 fvAD cases as likely AD; we thus decided to retain all cases in the current analysis.
+
+```{r selection_flow, eval=TRUE, echo=FALSE, include=FALSE, results='asis',autodep=TRUE}
+qc<-read.csv('FinalRatingOk_mean3.csv',stringsAsFactors=F)
+qc2<-read.csv('QC_May18_rated.csv',stringsAsFactors=F)
+qc3<-read.csv('MRI_NEW_LONG_finalRates.csv',stringsAsFactors=F)
+qc4<-read.table('qc_20190108_jeff.txt',header=T,stringsAsFactors=F)
+names(qc)<-gsub('mean','Mean',names(qc))
+names(qc2)[4:5]<-names(qc)[4:5]
+names(qc3)[4:5]<-names(qc)[4:5]
+qc$ID<-paste(qc$INDDID,qc$MRISession,sep='_')
+qc2$ID<-paste(qc2$INDDID,qc2$MRISession,sep='_')
+qc<-rbind.fill(qc,qc2,qc3,qc4)
+qc$MRISession[qc$Subj==119288 & qc$MRISession==20160823]<-20160824
+qc$ID[qc$Subj==119288 & qc$MRISession==20160824]<-'119288_20160824'
+
+pts<-read.csv('INQuery_Selection_Flow_20190107.csv',stringsAsFactors=F)
+#pts$MRIDate<-as.Date(pts$MRIDate,format='%m/%d/%Y')
+#pts$MRISession<-gsub('-','',as.character(pts$MRIDate))
+#pts$ID<-paste(pts$INDDID,pts$MRISession,sep='_')
+selflow<-data.frame(Criterion='Has MRI data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,CSF=NA,stringsAsFactors=F)
+pts<-subset(pts,!(pts$Dx1=='' & pts$ADCCDx1=='' & pts$Diagnosis=='' &
+	pts$ClinicalPhenotype1==''))
+selflow<-rbind(selflow,data.frame(Criterion='PMC or FTDC participant',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,
+	CSF=NA,
+	stringsAsFactors=F))
+pts<-subset(pts,pts$Scanner=='SIEMENS HUP6 (3T)' | pts$INDDID %in% 116692)
+#pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+selflow<-rbind(selflow,data.frame(Criterion='Scanned on HUP6',
+	N=length(unique(pts$INDDID)),
+	Autopsy=NA,
+	CSF=NA,
+	stringsAsFactors=F))
+w<-which(is.na(pts$AgeatMRI) | pts$AgeatMRI>2000)
+pts$AgeatMRI[w]<-df$base_ageatMRI[match(pts$INDDID[w],df$INDDID)]
+#pts<-subset(pts,pts$AgeatMRI>50)
+#selflow<-rbind(selflow,data.frame(Criterion='Age >= 50 at first MRI',
+#	N=length(unique(pts$INDDID)),
+#	Autopsy=NA,
+#	CSF=NA,
+#	stringsAsFactors=F))
+pts$Evidence<-NA
+pts$Evidence[!(pts$CSFDate=='' & pts$CSFDate.1.=='')]<-'CSF'
+pts$Evidence[!pts$NPDx1=='']<-'Autopsy'
+pts<-subset(pts,!is.na(pts$Evidence))
+selflow<-rbind(selflow,data.frame(Criterion='Has autopsy or CSF data',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[pts$NPDx1=="Alzheimer's disease" |
+	pts$NPDx2=="Alzheimer's disease" |
+	pts$LuminexTTauAbetaRatio>=0.34 |
+	pts$ElisaTTau_Transformed/pts$ElisaAbeta42>=0.34])
+pts<-subset(pts,!pts$INDDID %in% c(110006,110295,111073,112013,111006))
+pts<-subset(pts,!pts$INDDID %in% 116569)
+pts<-subset(pts,!pts$INDDID %in% 107603)
+pts<-subset(pts,!pts$INDDID %in% 121277)
+pts<-subset(pts,!pts$INDDID %in% 123420)
+pts<-subset(pts,!pts$INDDID %in% 122485)
+selflow<-rbind(selflow,data.frame(Criterion='Autopsy or CSF data indicates underlying AD pathology',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$NPDx1 %in% c(NA,'',"Alzheimer's disease"))
+pts<-subset(pts,!pts$NPDx2 %in% c("Frontotemporal lobar degeneration with TDP inclusions (Also known as FTLD-TDP)",
+	"Lewy body disease, dementia with Lewy bodies", "Other",
+	"Cerebral amyloid angiopathy", 
+	"Lewy body disease, Parkinson's disease dementia",
+	"Cerebrovascular disease"))
+# Exclude one AD patient for ADHD.
+pts<-subset(pts,!pts$INDDID %in% 116702)
+selflow<-rbind(selflow,data.frame(Criterion='No co-morbid pathologies or exclusionary conditions',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+# This fvAD patient has a mean AV1451 SUVR of 1.0 and borderline CSF (p-tau negative, 
+# A-beta positive, t-tau/A-beta ratio of 0.34 exactly.
+pts<-subset(pts,!pts$INDDID %in% 119417)
+selflow<-rbind(selflow,data.frame(Criterion='PET data (if available) consistent with AD',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+# Exclude one Biogen participant due to clinical trial rules.
+pts<-subset(pts,!pts$INDDID %in% c(122283))
+# Exclude patients whose scans are too closely spaced.
+pts<-subset(pts,!pts$INDDID %in% c(109885,117758))
+# Some scans we don't have on the cluster.
+pts<-subset(pts,!pts$ID %in% c('104005_20140204','109707_20121116',
+	'109707_20130409', '122821_20180529'))
+pts<-subset(pts,!pts$INDDID %in% c(123514))
+# Follow-up scan is 4 years later.
+pts<-subset(pts,!pts$INDDID %in% c(106221))
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+selflow<-rbind(selflow,data.frame(Criterion='Has longitudinal MRI at intervals between 0.5 and 3.5 years',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,!pts$ClinicalPhenotype1 %in% c('CBS','DLB','MCI','naPPA','Other','PD','PDD','PSP','svPPA'))
+pts<-subset(pts,!pts$Dx1 %in% c('MCI Amnestic Plus Other (Petersen Criteria)',
+'MCI Amnestic Single Domain (Petersen Criteria)','MCI NOS','Normal Cognition'))
+# Exclude fvAD patient (116692) that doesn't meet Rascovsky et al. criteria.
+# Similarly exclude several others for ambiguous clinical history (e.g.,
+# alternating amnestic and non-amnestic presentations at different visits).
+pts<-subset(pts,!pts$INDDID %in% c(116692,116797,117894,118819,119688,122534))
+selflow<-rbind(selflow,data.frame(Criterion='Clinical phenotype of interest',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+pts<-subset(pts,!pts$MRIProtocol %in% c('Pfizer ASL','PLAZA'))
+pts<-subset(pts,!pts$ID %in% qc$ID[qc$Mean<3])
+pts<-subset(pts,pts$INDDID %in% pts$INDDID[duplicated(pts$INDDID)])
+# Exclude more recent lvPPA patients due to mixed/non-standard MRI protocols.
+# 122579, lvPPA, FTDC-ARTFL MRI
+# 122733, lvPPA, FTDC-ARTFL MRI & EISAI MRI
+# 122905, lvPPA, FTDC-ARTFL MRI & EISAI MRI
+# 123056, lvPPA, FTDC-ARTFL MRI & FTDC-Core MRI
+# 122331, lvPPA, FTDC-Core MRI
+pts<-subset(pts,!pts$INDDID %in% c(122485,122579,122733,122905,123056,123420,
+	122331))
+pts<-subset(pts, !pts$ID %in% qc$ID[qc$Mean<3])
+selflow<-rbind(selflow,data.frame(Criterion='Passed MRI QC',
+	N=length(unique(pts$INDDID)),
+	Autopsy=length(unique(pts$INDDID[pts$Evidence=='Autopsy'])),
+	CSF=length(unique(pts$INDDID[pts$Evidence=='CSF'])),
+	stringsAsFactors=F))
+ex<-subset(pts,!pts$INDDID %in% df$INDDID)
+df<-subset(df,df$Group %in% 'g0_Control' | df$INDDID %in% intersect(pts$INDDID,
+	df$INDDID))
+
+#pts<-subset(pts,pts$INDDID %in% df$INDDID)
+# New inclusions, 01/08/2019
+# 119666, lvPPA, FTDC-ARTFL MRI
+# 120486, lvPPA, FTDC-ARTFL MRI
+# 111642, fvAD converted to AD, will need review per Rascovsky criteria.
+# 122821, fvAD, will need review per Rascovsky criteria, long MRI previously unavailable
+# 122324, AD, FTDC-ARTFL and FTDC-Core MRIs
+# New exclusions, 01/08/2019
+# 100888, lvPPA, secondary CVD at autopsy
+# 105644, lvPPA, secondary cerebral amyloid angiopathy at autopsy
+# 107457, PCA, secondary CVD at autopsy
+
+```
+
+```{r print_selflow, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+selflow$N<-as.character(selflow$N)
+selflow$N[5:nrow(selflow)]<-paste(selflow$N[5:nrow(selflow)],' (',
+	selflow$Autopsy[5:nrow(selflow)],' autopsy, ',selflow$CSF[5:nrow(selflow)],
+	' CSF)',sep='')
+xselflow<-xtable(selflow[,1:2],
+	caption='Supplementary Table 1. Overview of patient selection procedure. Numbers indicate unique individuals at each step from a query of the Integrative Neurodegenerative Disease Database (INDD) at the University of Pennsylvania. FTDC: Penn Frontotemporal Degeneration Center; PMC: Penn Memory Center; CSF: cerebrospinal fluid. Numbers in parentheses indicate the source of evidence for underlying AD pathology.',
+	align='llr',digits=rep(0,3))
+print(xselflow,comment=FALSE,caption.placement='top',floating=T,include.rownames=F,
+	sanitize.text.function=identity)
+
+```
+
+
+```{r npi, eval=T, include=F, echo=F, autodep=TRUE,results='asis',fig.align='center',fig.width=7.5,fig.height=5,fig.path='./fig/',fig.cap='Earliest NPI summary scores available for each group. Higher numbers indicate greater occurrence of neuropsychiatric symptoms.'}
+
+nps$Group2<-df$Group2[match(nps$INDDID,df$INDDID)]
+tmp<-summaryBy(NPISummaryScore~Group2,subset(nps,!duplicated(nps$INDDID)),
+	FUN=summary)
+navail<-table(nps$Group2[!duplicated(nps$INDDID)],
+	is.na(nps$NPISummaryScore[!duplicated(nps$INDDID)]))
+#cbind(tmp,navail[,1]) %>%
+#dplyr::select(c(1,8,2:3,5)) %>%
+#kable(booktabs=T,escape=T,longtable=F,digits=2,col.names=c('Group','N','Q1','Median',
+#	'Q3'), caption='Earliest NPI summary scores available for each group.') %>%
+#kableExtra::kable_styling(latex_options=c('striped'), full_width=F)
+
+stripchart(NPISummaryScore~Group2,subset(nps,!duplicated(nps$INDDID)),vertical=T,
+	col=plotcols,cex=2,method='jitter',pch=1,jitter=0.3,ylab='NPI total score',
+	lwd=2,las=1)
+
+nps$time_diff<-df$time_diff[match(nps$INDDID,df$INDDID)]
+nps$base_ageatMRI<-df$base_ageatMRI[match(nps$INDDID,df$INDDID)]
+nps$Sex<-df$Sex[match(nps$INDDID,df$INDDID)]
+nps$Education<-df$Education[match(nps$INDDID,df$INDDID)]
+nps$Time<-nps$time_diff+nps$NPIDiff-nps$NPIDiff[match(nps$INDDID,nps$INDDID)]
+mnpi<-lme(NPISummaryScore~Group2*Time+base_ageatMRI+Sex+Education,random=~1|INDDID,
+	data=nps,na.action=na.exclude)
+
+```
+
+```{r pet_evidence, include=F, echo=F,fig.align='center',fig.width=7.5,fig.height=6,fig.path='./fig/',fig.cap='Mean cortical standardized uptake value ratios (SUVRs) for study participants with available [18F]-flortaucipir PET data.'}
+pet<-read.csv('INQuery_Global_PET_20190104.csv',stringsAsFactors=F)
+pet$PETSession<-gsub('-','',as.character(as.Date(pet$PETDate,format='%m/%d/%Y')))
+tau<-subset(pet,pet$INDDID %in% df$INDDID & pet$PETTracer=='AV1451 (tau)')
+tau<-unique(tau[,c('INDDID','PETSession')])
+tau$Group<-df$Group[match(tau$INDDID,df$INDDID)]
+tau$ID<-paste(tau$INDDID,tau$PETSession,sep='_')
+flist<-Sys.glob('pet/*AV1451_suvr-T1_LabelStats.csv')
+tmp<-data.frame()
+for (f in flist) {
+	fp<-unlist(strsplit(basename(f),'_'))
+	stmp<-read.csv(f,stringsAsFactors=F)
+	stmp<-subset(stmp,stmp$Label.AbbrevName=='Cortical GM' & stmp$Type=='Mean')
+	stmp$INDDID<-fp[1]
+	stmp$PETSession<-fp[2]
+	tmp<-rbind(tmp,stmp)
+}
+tmp$ID<-paste(tmp$INDDID,tmp$PETSession,sep='_')
+tau$SUVR<-tmp$Value[match(tau$ID,tmp$ID)]
+tau<-subset(tau,!(is.na(tau$SUVR) | duplicated(tau$INDDID)))
+tau<-tau[order(tau$ID),]
+tauplot<-ggplot(aes(x=Group,y=SUVR),data=tau)+
+	geom_jitter(aes(colour=Group,shape=Group,size=2,width=0.3))+
+	geom_hline(yintercept=1.2,lty=2,lwd=2,colour=rgb(0.5,0,0))+
+	labs(x=NULL,y='Mean cortical SUVR',title='Available AV1451 data')+
+	guides(colour='none',size='none',shape='none')+
+	ggtheme
+#	geom_violin(fill=NA,trim=F)+
+#	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+
+tauplot
+
+# Tau scans for the fvAD group: 
+fvAD.tau<-c("121194_20170913", "121774_20180515", "121903_20170815")
+tmp<-data.frame()
+for (id in fvAD.tau) {
+	f<-flist[grep(id,flist)]
+	tmp2<-read.csv(f,stringsAsFactors=F)
+	tmp2$Source<-f
+	tmp<-rbind(tmp,tmp2)
+}
+fvAD.tau<-tmp
+fvAD.tau<-subset(fvAD.tau,fvAD.tau$Type=='Mean')
+taulabs<-c(122:123, 132:133, 170:171)
+tausumm<-summaryBy(Value~Source,data=subset(fvAD.tau,fvAD.tau$Label.Number %in%
+	taulabs),FUN='mean',na.rm=T)
+```
+
+  
+\blandscape  
+  
+  
+```{r rascovsky_criteria, eval=T, include=T, echo=F, autodep=TRUE,results='asis'}
+# Amyloid-positive PET scans: 121994, 121903, 122007
+# AV-1451 SUVRs: 121994 (1.875), 121774 (1.326), 121903 (1.911)
+fvADreview<-read.csv('Longitudinal_fvAD_review.csv',stringsAsFactors=F)
+fvADreview<-fvADreview[-nrow(fvADreview),]
+fvADreview$Frequency<-rowSums(fvADreview[,-1])
+ons<-round(df$AgeatOnset[match(gsub('X','',names(fvADreview)),df$INDDID)],0)
+sex<-df$Sex[match(gsub('X','',names(fvADreview)),df$INDDID)]
+ab<-nps$LuminexAbeta42[match(gsub('X','',names(fvADreview)),nps$INDDID)]
+ptau<-nps$LuminexPTau[match(gsub('X','',names(fvADreview)),nps$INDDID)]
+ttabr<-nps$LuminexTTauAbetaRatio[match(gsub('X','',names(fvADreview)),nps$INDDID)]
+names(fvADreview)<-c('Criteria',paste('P',sprintf('%02d',1:(ncol(fvADreview)-2)),sep=''),
+	'Frequency')
+tmp<-as.data.frame(matrix(paste(ons,' y, ',substr(sex,1,1),sep=''),nrow=1),
+	stringsAsFactors=F)
+tmp2<-as.data.frame(matrix(ab,nrow=1))
+tmp3<-as.data.frame(matrix(ptau,nrow=1))
+tmp4<-as.data.frame(matrix(ttabr,nrow=1))
+colnames(tmp4)<-colnames(tmp3)<-colnames(tmp2)<-colnames(tmp)<-names(fvADreview)
+fvADreview<-rbind(tmp,tmp2,tmp3,tmp4,fvADreview)
+fvADreview$Criteria[1]<-'Age of onset, sex'
+fvADreview$Criteria[2]<-'A$\\beta$ 42 (pg/ml)'
+fvADreview$Criteria[3]<-'Phosphorylated tau (pg/ml)'
+fvADreview$Criteria[4]<-'Total tau/A$\\beta$ 42 ratio'
+fvADreview$Frequency[1:4]<-''
+fvAD.csf<-unique(nps[nps$INDDID %in% df$INDDID[df$Group %in% 'g4_fvAD'],
+	c('INDDID','LuminexAbeta42','LuminexTTau','LuminexPTau',
+	'LuminexTTauAbetaRatio')])
+fvAD.csf$LogOut<- -6.20+fvAD.csf$LuminexAbeta42*0.046+fvAD.csf$LuminexPTau*-0.19
+fvAD.csf$Group<-'fvAD'
+	
+fvADreview %>%
+dplyr::rename(' '=Criteria) %>%
+kable(booktabs=T,escape=F,longtable=F,digits=2,caption='Supplementary Table 2. Clinical diagnostic features of the frontal-variant AD group, following the criteria of Rascovsky et al. (2011) for behavioral-variant frontotemporal dementia. Patients were required to meet 3 of 5 criteria to fulfill a behavioral/dysexecutive phenotype. Ones indicate presence of a symptom; zeros indicate its absence.') %>%
+kableExtra::add_indent(3+c(3:5,7:8,10:11,13:15,17:19,21:23)) %>%
+kableExtra::kable_styling(latex_options=c('striped','scale_down'), full_width=F)
+
+csfval<-read.csv('~/ATN/INQuery_CNDR_Patients_20180926.csv',stringsAsFactors=F)
+pathlist<-c("Alzheimer's disease",
+	"Progressive supranuclear palsy",
+	"Frontotemporal lobar degeneration with TDP inclusions (Also known as FTLD-TDP)",
+	"Pick's disease",
+	"Corticobasal degeneration",
+	"Cerebrovascular disease",
+	"Tauopathy unclassifiable",
+	"Frontotemporal lobar degeneration with FUS inclusions (Also known as FTLD-FUS)",
+	"Frontotemporal dementia with parkinsonism linked to chromosome 17",
+	"Argyrophilic grain disease",
+	"Frontotemporal lobar degeneration (Dementia lacking distinctive histopathology)",
+	"Frontotemporal lobar degeneration with ubiquitin inclusions (Also known as FTLD-UPS)")
+csfval<-subset(csfval,csfval$NPDx1 %in% pathlist & csfval$NPDx2 %in% c('',NA,
+	pathlist))
+csfval$Group<-'Mixed'
+csfval$Group[csfval$NPDx1 %in% "Alzheimer's disease" & 
+	csfval$NPDx2 %in% c('',NA)]<-'AD'
+csfval$Group[csfval$NPDx1 %in% setdiff(pathlist,"Alzheimer's disease") & 
+	csfval$NPDx2 %in% c('',NA)]<-'FTLD'
+csfval<-subset(csfval,!(is.na(csfval$Group) | is.na(csfval$LuminexAbeta42) | 
+	is.na(csfval$LuminexPTau)))
+csfval$LogOut<- -6.20+csfval$LuminexAbeta42*0.046+csfval$LuminexPTau*-0.19
+
+abetaplot<-ggplot(data=subset(csfval,csfval$Group %in% 'AD'),
+	aes(LuminexAbeta42,..scaled..,fill=Group))+
+	geom_density()+
+	scale_fill_manual(values=rgb(0,0.5,0,0.5))+
+	labs(y='',title='CSF A-beta 42 among autopsy-confirmed AD patients')+
+	geom_vline(aes(xintercept=197),linetype=2)+
+	geom_vline(aes(xintercept=209),linetype=2)+
+	guides(colour='none',linetype='none',fill='none',alpha='none')+
+	ggtheme
+ggsave(abetaplot,filename='fig/abeta_autopsy_AD.png')
+
+csfval<-rbind.fill(csfval,fvAD.csf)
+
+
+#stripchart(LogOut~Group,data=csfval,vertical=T,cex=2,pch=1,col=rainbow(4),las=1,method='jitter',jitter=0.3)
+#abline(h=0,col='tomato3',lty=2,lwd=2)
+```
+  
+  
+\elandscape  
+  
+
+```{r more_mtl_tests, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmp<-phoc4[phoc4$LabelID %in% c(47:48,116:117,170:171) & 
+	grepl('time_',phoc4$Comp),]
+tmp$Comp<-paste(tmp$G1,tmp$G2,sep='-')
+tmp$Label.Name[duplicated(tmp$Label.Name)]<-''
+tmp$Z<-sprintf('%.2f',tmp$Z)
+tmp$P<-sprintf('%.3f',tmp$P)
+wsig<-which(tmp$P<0.05)
+tmp<-tmp[,c('Label.Name','Comp','Z','P')]
+for (i in 2:ncol(tmp)) {
+	tmp[wsig,i]<-paste('\\textbf{',tmp[wsig,i],'}',sep='')
+}
+
+tmp %>%
+dplyr::rename('Region'=Label.Name) %>%
+kable(booktabs=T,escape=F,longtable=F,digits=c(0,0,2,0),row.names=FALSE,
+caption='Supplementary Table 3. Post-hoc contrasts of longitudinal change in medial temporal lobe regions after combining lvPPA, PCA, and fvAD patients into a single non-amnestic AD (naAD) group.') %>%
+kableExtra::kable_styling(latex_options=c('striped','scale_down'), full_width=F)
+
+```
+\begin{figure}[]
+% Voxelwise associations with age and MMSE.
+
+{\centering \includegraphics[width=7in]{./fig/age_mmse.pdf} 
+
+}
+
+\caption[Age and global cognition associations]{Supplementary Figure 1. Voxelwise associations of cortical thickness with age and MMSE score at initial MRI. Image overlays are t-statistic maps from linear mixed effects models, thresholded at voxelwise p<0.001 with a minimum cluster volume of \SI{600}{\micro\litre}, corresponding to a corrected cluster-wise threshold of p<0.05. Warm colors indicate that cortical thickness over time is positively associated with each variable; cool colors indicate inverse associations. \label{age_mmse}}
+
+\end{figure}
+
+# Voxelwise analysis of cortical thinning {-}
+
+```{r vox_vs_controls, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+flist<-c('time_Control_aAD_clust.nii.gz','time_Control_fvAD_clust.nii.gz',
+	'time_Control_lvPPA_clust.nii.gz','time_Control_PCA_clust.nii.gz',
+	'time_Control_aAD_p01_clust.nii.gz',
+	'time_Control_fvAD_p01_clust.nii.gz',
+	'time_Control_lvPPA_p01_clust.nii.gz',
+	'time_Control_PCA_p01_clust.nii.gz')
+baseflist<-c('base_aAD_Control_clust.nii.gz','base_fvAD_Control_clust.nii.gz',
+	'base_lvPPA_Control_clust.nii.gz','base_PCA_Control_clust.nii.gz',
+	'base_aAD_Control_tstat_p01_clust.nii.gz',
+	'base_fvAD_Control_tstat_p01_clust.nii.gz',
+	'base_lvPPA_Control_tstat_p01_clust.nii.gz',
+	'base_PCA_Control_tstat_p01_clust.nii.gz')
+olapflist<-gsub('time','olap',flist)
+
+#for (i in 1:length(flist)) {
+#	f<-flist[i]
+#	basef<-baseflist[i]
+#	fout<-gsub('time','olap',f)
+#	cmd<-paste("3dcalc -a",basef,"-b",f,"-expr 'step(-1*a)*step(b)' -overwrite -prefix",
+#		fout)
+#	system(cmd)
+#	cmd<-paste("fslswapdim",fout,"x z -y",gsub('.nii','_RPI.nii',fout))
+#	system(cmd)
+#}
+
+#system('3dZeropad -I -35 -S -20 -R -18 -L -18 -P -16 -A -16 -prefix T_template0_JLF_crop.nii.gz T_template0_JLF.nii.gz')
+#system('3dresample -master mean_Control_aAD_20180507_clust.nii.gz -prefix T_template0_JLF_crop_2mm.nii.gz -inset T_template0_JLF_crop.nii.gz')
+#jlf<-antsImageRead('T_template0_JLF_crop_2mm.nii.gz',3)
+jlf<-antsImageRead('T_template0_JLF_crop.nii.gz',3)
+jlfhyp<-maskImage(img.in=jlf,img.mask=jlf,level=hyplabs)
+#antsImageWrite(image=jlfhyp,filename='T_template0_JLF_crop_2mm_hyplabs.nii.gz')
+regpeaks<-data.frame()
+for (fn in c(baseflist[1:4],flist[1:4],olapflist[1:4])) {
+	s<-unlist(strsplit(fn,'_'))
+	eff<-s[1]
+	g1<-s[2]
+	g2<-s[3]
+	fnout<-gsub('.nii','_jlf.nii',fn)
+	fnout<-gsub('_clust','',fnout)
+	img<-antsImageRead(fn,3)
+	if (grepl('base',fnout)) {
+		bin<-thresholdImage(img,lothresh=-1000,hithresh=-1)
+	} else if (grepl('time',fnout)) {
+		bin<-thresholdImage(img,lothresh=1,hithresh=1000)
+	} else if (grepl('olap',fnout)) {
+		bin<-thresholdImage(img,lothresh=1,hithresh=1)
+	}
+	x<-maskImage(img.in=jlf,img.mask=bin)
+	imask<-maskImage(img.in=img,img.mask=bin)
+	antsImageWrite(image=x,filename=fnout)
+	xnum<-as.numeric(x)
+	inum<-as.numeric(imask)
+	vals<-sort(unique(xnum[xnum>0]))
+	for (v in vals) {
+		w<-which(xnum==v)
+		tmp<-data.frame(Effect=eff,G1=g1,G2=g2,LabelID=v,NVox=length(w),
+			Min=min(inum[w]),Median=median(inum[w]),Mean=mean(inum[w]),
+			Max=max(inum[w]),InputFile=fn,stringsAsFactors=F)
+		regpeaks<-rbind(regpeaks,tmp)
+	}
+	gc()
+}
+
+for (f in Sys.glob('*jlf.nii.gz')) {
+	system(paste('fslswapdim',f,'x z -y',gsub('.nii','_RPI.nii',f)))
+}
+
+peaktab<-data.frame(LabelID=sort(unique(regpeaks$LabelID)))
+peaktab$Label.Name<-roi$Label.Name[match(peaktab$LabelID,roi$LabelID)]
+peaktab<-subset(peaktab,!peaktab$LabelID<100)
+
+for (g in c('aAD','lvPPA','PCA','fvAD')) {
+	basesub<-subset(regpeaks,regpeaks$Effect=='base' & regpeaks$G1==g)
+	if (nrow(basesub)>0) {
+		peaktab[,paste(g,'base',sep='.')]<-basesub$Min[match(peaktab$LabelID,
+			basesub$LabelID)]
+		peaktab[,paste(g,'basevox',sep='.')]<-basesub$NVox[match(peaktab$LabelID,
+			basesub$LabelID)]
+	}
+	timesub<-subset(regpeaks,regpeaks$Effect=='time' & regpeaks$G2==g)
+	if (nrow(timesub)>0) {
+		peaktab[,paste(g,'time',sep='.')]<-timesub$Max[match(peaktab$LabelID,
+			timesub$LabelID)]
+		peaktab[,paste(g,'timevox',sep='.')]<-timesub$NVox[match(peaktab$LabelID,
+			timesub$LabelID)]
+	}
+	olapsub<-subset(regpeaks,regpeaks$Effect=='olap' & regpeaks$G2==g)
+	if (nrow(olapsub)>0) {
+		peaktab[,paste(g,'olap',sep='.')]<-olapsub$Max[match(peaktab$LabelID,
+			olapsub$LabelID)]
+		peaktab[,paste(g,'olapvox',sep='.')]<-olapsub$NVox[match(peaktab$LabelID,
+			olapsub$LabelID)]
+	}
+}
+
+for (cn in grep('vox',names(peaktab))) {
+	w<-which(is.na(peaktab[,cn]))
+	peaktab[w,cn]<-'---'
+}
+
+cnround<-setdiff(c(grep('base',names(peaktab)),grep('time',names(peaktab))),
+	grep('vox',names(peaktab)))
+for (cn in cnround) {
+	peaktab[,cn]<-sprintf('%.1f',peaktab[,cn])
+	w<-which(peaktab[,cn]=='NA')
+	peaktab[w,cn]<-'---'
+}
+
+xbasepeaktab<-xtable(peaktab[,c(2,grep('base',names(peaktab)))],
+	caption='Supplementary Table 4. Peak effects of initial cortical thinning for each patient group relative to controls. Reported values are t-statistics for the peak voxel (local minimum) within each anatomically-defined region at a cluster-wise significance threshold of p<0.05, as well as the volume of statistically significant voxels in microliters. Brain regions are anatomically defined using joint label fusion of the Mindboggle parcellation.',
+	align=c('l','l',rep('r',8)),digits=0)
+
+names(xbasepeaktab)<-c('Region','aAD: $T_{init}$','aAD: $Vol_{init}$',
+	'lvPPA: $T_{init}$','lvPPA: $Vol_{init}$',
+	'PCA: $T_{init}$','PCA: $Vol_{init}$',
+	'fvAD: $T_{init}$','fvAD: $Vol_{init}$')
+
+print(xbasepeaktab,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.5)
+
+```
+
+```{r long_peaktab, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+xlongpeaktab<-xtable(peaktab[,c(2,grep('time',names(peaktab)))],
+	caption='Supplementary Table 5. Peak effects for contrasts of longitudinal change over time for each patient group relative to controls. Reported values are t-statistics for the peak voxel (local maximum) within each anatomically-defined region at a cluster-wise significance threshold of p<0.05, as well as the volume of statistically significant voxels in microliters. Brain regions are anatomically defined using joint label fusion of the Mindboggle parcellation.',
+	align=c('l','l',rep('r',8)),digits=0)
+
+names(xlongpeaktab)<-c('Region','aAD: $T_{long}$','aAD: $Vol_{long}$',
+	'lvPPA: $T_{long}$','lvPPA: $Vol_{long}$',
+	'PCA: $T_{long}$','PCA: $Vol_{long}$',
+	'fvAD: $T_{long}$','fvAD: $Vol_{long}$')
+
+print(xlongpeaktab,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.5)
+```
+
+```{r base_vs_change, include=TRUE, eval=TRUE, echo=F, fig.align='center',fig.width=7.5,fig.height=7.5,fig.path='./fig/',fig.cap='Supplementary Figure 2. Average baseline atrophy vs. annualized change over time for each phenotype in a priori regions of interest. X- and y-axes are plotted in z-score units relative to cognitively normal controls; points represent observed atrophy values, unadjusted for age, sex, and global cognition.'}
+
+vols<-subset(vols,vols$ID %in% df$ID)
+first<-subset(vols,!duplicated(vols[,c('Subj','Label.Number')]))
+first<-first[order(first$ID,first$Label.Number),]
+last<-vols[order(vols$ID,vols$Label.Number,decreasing=T),]
+last<-subset(last,!duplicated(last[,c('Subj','Label.Number')]))
+last<-last[order(last$ID,last$Label.Number),]
+last$Time<-df$time_diff[match(last$ID,df$ID)]
+
+lvPPA<-subset(first,first$Subj %in% df$INDDID[df$Group %in% 'g1_lvPPA'])
+lvPPA$First<-lvPPA$ZVol
+lvPPA$Last<-last$ZVol[last$Subj %in% df$INDDID[df$Group %in% 'g1_lvPPA']]
+lvPPA$Time<-last$Time[last$Subj %in% df$INDDID[df$Group %in% 'g1_lvPPA']]
+lvPPA$Diff<-(lvPPA$Last-lvPPA$First)/lvPPA$Time
+lvPPA_mean<-summaryBy(First+Last+Diff~Label.Number+Label.AbbrevName+
+	Label.Cortex,data=lvPPA,FUN=mean)
+lvPPA_mean<-subset(lvPPA_mean,lvPPA_mean$Label.Cortex | lvPPA$Label.Number %in% 47:48)
+lvPPA_mean<-subset(lvPPA_mean,!lvPPA_mean$Label.AbbrevName=='Cortical GM')
+r_lvPPA<-cor.test(lvPPA_mean$First.mean,lvPPA_mean$Diff.mean)
+
+PCA<-subset(first,first$Subj %in% df$INDDID[df$Group %in% 'g2_PCA'])
+PCA$First<-PCA$ZVol
+PCA$Last<-last$ZVol[last$Subj %in% df$INDDID[df$Group %in% 'g2_PCA']]
+PCA$Time<-last$Time[last$Subj %in% df$INDDID[df$Group %in% 'g2_PCA']]
+PCA$Diff<-(PCA$Last-PCA$First)/PCA$Time
+PCA_mean<-summaryBy(First+Last+Diff~Label.Number+Label.AbbrevName+
+	Label.Cortex,data=PCA,FUN=mean)
+PCA_mean<-subset(PCA_mean,PCA_mean$Label.Cortex | PCA$Label.Number %in% 47:48)
+PCA_mean<-subset(PCA_mean,!PCA_mean$Label.AbbrevName=='Cortical GM')
+r_PCA<-cor.test(PCA_mean$First.mean,PCA_mean$Diff.mean)
+
+aAD<-subset(first,first$Subj %in% df$INDDID[df$Group %in% 'g3_aAD'])
+aAD$First<-aAD$ZVol
+aAD$Last<-last$ZVol[last$Subj %in% df$INDDID[df$Group %in% 'g3_aAD']]
+aAD$Time<-last$Time[last$Subj %in% df$INDDID[df$Group %in% 'g3_aAD']]
+aAD$Diff<-(aAD$Last-aAD$First)/aAD$Time
+aAD_mean<-summaryBy(First+Last+Diff~Label.Number+Label.AbbrevName+
+	Label.Cortex,data=aAD,FUN=mean)
+aAD_mean<-subset(aAD_mean,aAD_mean$Label.Cortex | aAD$Label.Number %in% 47:48)
+aAD_mean<-subset(aAD_mean,!aAD_mean$Label.AbbrevName=='Cortical GM')
+r_aAD<-cor.test(aAD_mean$First.mean,aAD_mean$Diff.mean)
+
+fvAD<-subset(first,first$Subj %in% df$INDDID[df$Group %in% 'g4_fvAD'])
+fvAD$First<-fvAD$ZVol
+fvAD$Last<-last$ZVol[last$Subj %in% df$INDDID[df$Group %in% 'g4_fvAD']]
+fvAD$Time<-last$Time[last$Subj %in% df$INDDID[df$Group %in% 'g4_fvAD']]
+fvAD$Diff<-(fvAD$Last-fvAD$First)/fvAD$Time
+fvAD_mean<-summaryBy(First+Last+Diff~Label.Number+Label.AbbrevName+
+	Label.Cortex,data=fvAD,FUN=mean)
+fvAD_mean<-subset(fvAD_mean,fvAD_mean$Label.Cortex | fvAD$Label.Number %in% 47:48)
+fvAD_mean<-subset(fvAD_mean,!fvAD_mean$Label.AbbrevName=='Cortical GM')
+r_fvAD<-cor.test(fvAD_mean$First.mean,fvAD_mean$Diff.mean)
+
+roi$Association<-NA
+roi$Association[roi$LabelID %in% c(47:48, 116:117, 170:171)]<-'aAD'
+roi$Association[roi$LabelID %in% p1$LabelID[p1$Group=='lvPPA']]<-'lvPPA'
+roi$Association[roi$LabelID %in% p1$LabelID[p1$Group=='PCA']]<-'PCA'
+roi$Association[roi$LabelID %in% p1$LabelID[p1$Group=='fvAD']]<-'fvAD'
+roi$Association[roi$LabelID %in% 154]<-'PCA, fvAD'
+
+par(mfrow=c(2,2))
+par(mar=c(3.8,4.1,3.1,0.1))
+plot(Diff.mean~First.mean,data=lvPPA_mean,pch=16,col=rgb(0,0.5,0,0.25),
+	main='lvPPA',xlab='Normalized GM volume at baseline',
+	ylab='Longitudinal change in GM volume',las=1,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+abline(lm(Diff.mean~First.mean,data=lvPPA_mean),col='forestgreen',lty=2,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+tmp<-lvPPA_mean[lvPPA_mean$Label.Number %in% 
+	roi$LabelID[!is.na(roi$Association)],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='blue',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+tmp<-lvPPA_mean[lvPPA_mean$Label.Number %in% 
+	roi$LabelID[roi$Association=='lvPPA'],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='red',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+text(x=0,y=-0.6,labels=parse(text=paste('R^2 == ',sprintf('%.2f',
+	r_lvPPA$estimate),sep='')),cex=1,adj=0)
+#	r_lvPPA$estimate),pstars(r_lvPPA$p.value),sep='')),cex=1,adj=0)
+
+plot(Diff.mean~First.mean,data=PCA_mean,pch=16,col=rgb(0,0.5,0,0.25),
+	main='PCA',xlab='Normalized GM volume at baseline',
+	ylab='Longitudinal change in GM volume',las=1,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+abline(lm(Diff.mean~First.mean,data=PCA_mean),col='forestgreen',lty=2,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+tmp<-PCA_mean[PCA_mean$Label.Number %in% 
+	roi$LabelID[!is.na(roi$Association)],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='blue',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+tmp<-PCA_mean[PCA_mean$Label.Number %in% 
+	roi$LabelID[roi$Association=='PCA'],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='red',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+text(x=0,y=-0.6,labels=parse(text=paste('R^2 == ',sprintf('%.2f',
+	r_PCA$estimate),sep='')),cex=1,adj=0)
+#	r_PCA$estimate),pstars(r_PCA$p.value),sep='')),cex=1,adj=0)
+
+plot(Diff.mean~First.mean,data=aAD_mean,pch=16,col=rgb(0,0.5,0,0.25),
+	main='aAD',xlab='Normalized GM volume at baseline',
+	ylab='Longitudinal change in GM volume',las=1,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+abline(lm(Diff.mean~First.mean,data=aAD_mean),col='forestgreen',lty=2,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+tmp<-aAD_mean[aAD_mean$Label.Number %in% 
+	roi$LabelID[!is.na(roi$Association)],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='blue',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+tmp<-aAD_mean[aAD_mean$Label.Number %in% 
+	roi$LabelID[roi$Association=='aAD'],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='red',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+text(x=0,y=-0.6,labels=parse(text=paste('R^2 == ',sprintf('%.2f',
+	r_aAD$estimate),sep='')),cex=1,adj=0)
+#	r_aAD$estimate),pstars(r_aAD$p.value),sep='')),cex=1,adj=0)
+
+plot(Diff.mean~First.mean,data=fvAD_mean,pch=16,col=rgb(0,0.5,0,0.25),
+	main='fvAD',xlab='Normalized GM volume at baseline',
+	ylab='Longitudinal change in GM volume',las=1,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+abline(lm(Diff.mean~First.mean,data=fvAD_mean),col='forestgreen',lty=2,
+	xlim=c(-3,1),ylim=c(-0.8,0.5))
+tmp<-fvAD_mean[fvAD_mean$Label.Number %in% 
+	roi$LabelID[!is.na(roi$Association)],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='blue',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+tmp<-fvAD_mean[fvAD_mean$Label.Number %in% 
+	roi$LabelID[roi$Association=='fvAD'],]
+text(Diff.mean~First.mean,data=tmp,pch=16,col='red',labels=Label.AbbrevName,
+	xlim=c(-3,1),ylim=c(-0.8,0.5),cex=0.67)
+text(x=0,y=-0.6,labels=parse(text=paste('R^2 == ',sprintf('%.2f',
+	r_fvAD$estimate),sep='')),cex=1,adj=0)
+#	r_fvAD$estimate),pstars(r_fvAD$p.value),sep='')),cex=1,adj=0)
+
+```
+
+\begin{figure}[]
+% Voxelwise cortical thickness versus controls, uncorrected.
+
+{\centering \includegraphics[width=7in]{./fig/me_time_p01.pdf} 
+
+}
+
+\caption[GM time effects]{Supplementary Figure 3. Voxelwise differences in cortical thickness relative to matched controls at a threshold of p<0.01, uncorrected for multiple comparisons. Image overlays are binarized t-statistic maps for simple contrasts of controls minus each patient group. Blue: simple effect of group (patients<controls) from cross-sectional analysis of participants' initial MRI scans; red: group x time interaction from longitudinal LME models, indicating where patients have more rapid cortical thinning than controls; green: overlap between group and group x time effects. All results are displayed with a minimum cluster volume of \SI{600}{\micro\litre}. \label{gm_me_time}}
+
+\end{figure}
+
+\begin{figure}[]
+% Voxelwise cortical thickness versus controls, sagittal views.
+
+{\centering \includegraphics[width=6in]{./fig/me_time_sag.pdf} 
+
+}
+
+\caption[GM time effects]{Supplementary Figure 4. Sagittal and coronal views of voxelwise differences in cortical thickness relative to matched controls at a cluster-wise corrected significance threshold of p<0.05. Results are the same as those depicted axially in Figure 3. Blue: simple effect of group (patients<controls) from cross-sectional analysis of participants' initial MRI scans; red: group x time interaction from longitudinal LME models, indicating where patients have more rapid cortical thinning than controls; green: overlap between group and group x time effects. All results are displayed with a minimum cluster volume of \SI{600}{\micro\litre}. \label{gm_me_time_altviews}}
+
+\end{figure}
+
+```{r sc_graph, eval=T, include=T, echo=F, autodep=TRUE}
+
+tmp<-aalmat[hypnodes$id,hypnodes$id]
+namevec<-rownames(tmp)
+namevec[grep('_L',namevec)]<-paste('L',gsub('_L','',namevec[grep('_L',namevec)]),sep='_')
+namevec[grep('_R',namevec)]<-paste('R',gsub('_R','',namevec[grep('_R',namevec)]),sep='_')
+rownames(tmp)<-namevec
+colnames(tmp)<-namevec
+broom::tidy(tmp) %>%
+mutate(Region=rownames(tmp),Association=c(rep(c('fvAD','lvPPA','aAD'),each=2),
+	rep('PCA',5))) %>%
+dplyr::select(c('Association','Region',setdiff(colnames(tmp),c('Association',
+	'Region')))) %>%
+kable(booktabs=T,escape=T,longtable=F,digits=2,
+caption='Supplementary Table 6. Population-average structural connectivity between a priori regions of interest, as assessed by Yeh et al. (2018, NeuroImage). L: left; R: right; Fmid: middle frontal gyrus; TMd: middle temporal gyrus; TSp: superior temporal gyrus; Hipp: hippocampus; SpMar: supramarginal gyrus; Ag: angular gyrus; PreCun: precuneus: PSp: superior parietal lobule.') %>%
+kableExtra::kable_styling(latex_options=c('striped','scale_down'), full_width=F)
+
+```
+
+```{r loc, include=T, echo=F, fig.align='center',fig.width=7.5,fig.height=7.5,fig.path='./fig/',fig.cap='Atrophy in lateral occipital cortex (inferior occipital gyrus).'}
+# Label 128: right IOG
+# Label 129: left IOG
+
+subvols<-subset(vols,vols$Label.Number==128)
+df$lab128<-subvols$ZVol[match(df$ID,subvols$ID)]
+subvols<-subset(vols,vols$Label.Number==129)
+df$lab129<-subvols$ZVol[match(df$ID,subvols$ID)]
+
+fm<-as.formula('lab128~Group*time_diff+base_MMSETotal+Sex+base_ageatMRI')
+m.lab128<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+am.lab128<-anova(m.lab128)
+comp.lab128 <- glht(m.lab128, linfct=kmat)
+scomp.lab128 <-summary(comp,test=adjusted('none'))
+
+tmp<-summary(m.lab128)$tTable
+rownames(tmp)<-gsub('_','',rownames(tmp))
+broom::tidy(tmp) %>%
+mutate(Effect=rownames(tmp)) %>%
+dplyr::select('Effect','Value','Std.Error','DF','t.value','p.value') %>%
+kable(booktabs=T,escape=F,longtable=F,digits=2,col.names=c('Effect','Coefficient',
+	'Std. error','DF','T','P'),caption='Supplementary Table 7. Mixed effect model of longitudinal atrophy in right inferior occipital gyrus.') %>%
+kableExtra::kable_styling(latex_options='striped', full_width=F)
+
+broom::tidy(scomp.lab128) %>%
+dplyr::select('lhs','estimate','std.error','statistic','p.value') %>%
+kable(booktabs=T,escape=T,longtable=F,digits=2,col.names=c('Contrast','Estimate',
+	'Std. error','Z','P'),caption='Supplementary Table 8. Post-hoc between-group contrasts of mean and longitudinal atrophy in right inferior occipital gyrus.') %>%
+kableExtra::kable_styling(latex_options='striped', full_width=F)
+
+fm<-as.formula('lab129~Group*time_diff+base_MMSETotal+Sex+base_ageatMRI')
+m.lab129<-lme(fixed=fm, random=~1|Subj,data=df,na.action=na.exclude)
+am.lab129<-anova(m.lab129)
+comp.lab129 <- glht(m.lab129, linfct=kmat)
+scomp.lab129 <-summary(comp,test=adjusted('none'))
+
+tmp<-summary(m.lab129)$tTable
+rownames(tmp)<-gsub('_','',rownames(tmp))
+broom::tidy(tmp) %>%
+mutate(Effect=rownames(tmp)) %>%
+dplyr::select('Effect','Value','Std.Error','DF','t.value','p.value') %>%
+kable(booktabs=T,escape=F,longtable=F,digits=2,col.names=c('Effect','Coefficient',
+	'Std. error','DF','T','P'),caption='Supplementary Table 9. Mixed effect model of longitudinal atrophy in left inferior occipital gyrus.') %>%
+kableExtra::kable_styling(latex_options='striped', full_width=F)
+
+broom::tidy(scomp.lab129) %>%
+dplyr::select('lhs','estimate','std.error','statistic','p.value') %>%
+kable(booktabs=T,escape=T,longtable=F,digits=2,col.names=c('Contrast','Estimate',
+	'Std. error','Z','P'),caption='Supplementary Table 10. Post-hoc between-group contrasts of mean and longitudinal atrophy in left inferior occipital gyrus.') %>%
+kableExtra::kable_styling(latex_options='striped', full_width=F)
+
+```
+
+# Neuropsychological performance at time of initial MRI {-}
+
+```{r print_npsy_base_phoc, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmptab<-npsy_base_phoc
+tmptab$G1<-as.character(tab1df$Group2[match(tmptab$G1,tab1df$Group)])
+tmptab$G2<-as.character(tab1df$Group2[match(tmptab$G2,tab1df$Group)])
+tmptab$Effect<-ifelse(tmptab$Estimate>0,
+	paste(tmptab$G1,tmptab$G2,sep='>'),
+	paste(tmptab$G1,tmptab$G2,sep='<'))
+w<-which(npsy_base_phoc$Estimate==0)
+tmptab$Effect[w]<-paste(tmptab$G1[w],tmptab$G2[w],
+	sep='==')
+
+tmptab<-tmptab[,c('V','Effect','U','Estimate','LB','UB','P','Padj')]
+tmptab$Estimate<-sprintf('%.2g',tmptab$Estimate)
+tmptab$LB<-sprintf('%.2g',tmptab$LB)
+tmptab$UB<-sprintf('%.2g',tmptab$UB)
+tmptab$P<-sprintf('%.2g',tmptab$P)
+tmptab$Padj<-sprintf('%.2g',tmptab$Padj)
+tmptab$V<-gsub('base_ageatMRI','Age at initial MRI',tmptab$V)
+tmptab$V<-gsub('base_MMSETotal','Initial MMSE',tmptab$V)
+tmptab$V<-gsub('BehavioralScale','PBAC social behavior',tmptab$V)
+tmptab$V<-gsub('FLetterFluency','Letter fluency (F words)',tmptab$V)
+tmptab$V<-gsub('ForwardSpan','Forward digit span',tmptab$V)
+tmptab$V<-gsub('ReverseSpan','Reverse digit span',tmptab$V)
+tmptab$V<-gsub('JOLO','Judgment of line orientation',tmptab$V)
+tmptab$V<-gsub('OralTrails','Oral Trails',tmptab$V)
+tmptab$V<-gsub('ReyCopy','Rey figure copy',tmptab$V)
+tmptab$V<-gsub('Speech', 'PBAC speech',tmptab$V)
+tmptab$V[duplicated(tmptab$V)]<-''
+
+xnpsy_base_phoc<-xtable(tmptab,
+	caption='Supplementary Table 11. Post-hoc comparisons of between group differences for neuropsychological assessments at time of initial MRI. P-values are given both before and after multiple-comparisons correction using the false discovery rate method.',
+	align='lllrrrrll',digits=0)
+wsig<-which(as.numeric(xnpsy_base_phoc$Padj)<0.05)
+xnpsy_base_phoc$Effect[wsig]<-paste('\\textbf{',xnpsy_base_phoc$Effect[wsig],'}',sep='')
+xnpsy_base_phoc$U[wsig]<-paste('\\textbf{',xnpsy_base_phoc$U[wsig],'}',sep='')
+xnpsy_base_phoc$Estimate[wsig]<-paste('\\textbf{',xnpsy_base_phoc$Estimate[wsig],'}',sep='')
+xnpsy_base_phoc$LB[wsig]<-paste('\\textbf{',xnpsy_base_phoc$LB[wsig],'}',sep='')
+xnpsy_base_phoc$UB[wsig]<-paste('\\textbf{',xnpsy_base_phoc$UB[wsig],'}',sep='')
+xnpsy_base_phoc$P[wsig]<-paste('\\textbf{',xnpsy_base_phoc$P[wsig],'}',sep='')
+xnpsy_base_phoc$Padj[wsig]<-paste('\\textbf{',xnpsy_base_phoc$Padj[wsig],'}',sep='')
+names(xnpsy_base_phoc)<-c('Measure','Effect','Mann-Whitney U','Estimated difference',
+	'Lower bound','Upper bound','P','$P_{adj}$')
+print(xnpsy_base_phoc,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.67)
+
+```
+
+# Longitudinal neuropsychological performance {-}
+```{r plots_npsych, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE, fig.align='center',fig.width=7.5,fig.height=9,fig.path='./fig/',fig.cap='Supplementary Figure 5a. Longitudinal change in neuropsychological performance. The x-axis indicates time (in years) from the first available assessment.'}
+
+# Limit neuropsych analyses to 3.5 year time window, as with imaging.
+recog35<-subset(recog,!recog$Time>3.5)
+recog35<-subset(recog35,recog35$INDDID %in% 
+	recog35$INDDID[duplicated(recog35$INDDID)])
+pbac35<-subset(pbac,!pbac$Time>3.5)
+pbac35<-subset(pbac35,pbac35$INDDID %in% 
+	pbac35$INDDID[duplicated(pbac35$INDDID)])
+flet35<-subset(flet,!flet$Time>3.5)
+flet35<-subset(flet35,flet35$INDDID %in% 
+	flet35$INDDID[duplicated(flet35$INDDID)])
+digsp35<-subset(digsp,!digsp$Time>3.5)
+digsp35<-subset(digsp35,digsp35$INDDID %in% 
+	digsp35$INDDID[duplicated(digsp35$INDDID)])
+
+# Refactor the group variable to have lvPPA as the reference group.
+df$Group2<-as.character(df$Group2)
+df$Group2<-factor(df$Group2,levels=c('lvPPA','PCA','aAD','fvAD','Control'))
+
+# Run linear mixed effects models to investigate neuropsych change over time.
+timesumm<-npsymodels<-vector(mode='list',length=length(cogvar))
+names(timesumm)<-names(npsymodels)<-cogvar
+i<-1
+
+df$Time<-df$time_diff+df$MMSEDiff-df$MMSEDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$MMSETotal))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mmmse<-lme(MMSETotal~Group2*Time+base_ageatMRI+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mmmse
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+
+df$Time<-df$time_diff+df$MemoryDiff-df$MemoryDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$Recognition))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mrecog<-lme(Recognition~Group2*Time+base_ageatMRI+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mrecog
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$Speech))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mspeech<-lme(Speech~Group2*Time+base_ageatMRI+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mspeech
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$FLetterFluency))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mflet<-lme(FLetterFluency~Group2*Time+base_ageatMRI+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mflet
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$DigitSpanDiff-df$DigitSpanDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$ForwardSpan))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mfspan<-lme(ForwardSpan~Group2*Time+base_ageatMRI+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mfspan
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$ReyCopy))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mrey<-lme(ReyCopy~Group2*Time+base_ageatMRI+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mrey
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$JOLO))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mjolo<-lme(JOLO~Group2*Time+base_ageatMRI+Sex+Education,random=~1|INDDID,
+	data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mjolo
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1	
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$BehavioralScale))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mbhav<-lme(BehavioralScale~Group2*Time+base_ageatMRI+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mbhav
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$OralTrails))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mtrails<-lme(OralTrails~Group2*Time+base_ageatMRI+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mtrails
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+df$Time<-df$time_diff+df$DigitSpanDiff-df$DigitSpanDiff[match(df$INDDID,df$INDDID)]
+#tmp<-subset(df,!is.na(df$ReverseSpan))
+#tmp<-subset(tmp,tmp$INDDID %in% tmp$INDDID[duplicated(tmp$INDDID)])
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mrspan<-lme(ReverseSpan~Group2*Time+base_ageatMRI+Sex+Education,
+	random=~1|INDDID,data=tmp,na.action=na.exclude)
+npsymodels[[i]]<-mrspan
+timesumm[[i]]<-summary(tmp$Time[duplicated(tmp$INDDID)])
+i<-i+1
+
+knpsy<-kmat
+rownames(knpsy)<-gsub('g0_Control','lvPPA',rownames(knpsy))
+rownames(knpsy)<-gsub('g1_lvPPA','PCA',rownames(knpsy))
+rownames(knpsy)<-gsub('g2_PCA','aAD',rownames(knpsy))
+rownames(knpsy)<-gsub('g3_aAD','fvAD',rownames(knpsy))
+rownames(knpsy)<-gsub('g4_fvAD','Controls',rownames(knpsy))
+
+npsyttab<-data.frame()
+npsyanova<-data.frame()
+phocnpsy<-data.frame()
+pmatnpsy<-matrix(nrow=7,ncol=length(cogvar))
+
+for (i in 1:length(npsymodels)) {
+
+	# Store fixed effects results.
+	m<-npsymodels[[i]]
+	tmp<-as.data.frame(summary(m)$tTable,stringsAsFactors=F)
+	tmp$Effect<-rownames(tmp);tmp$Task<-cogvar[i]
+	npsyttab<-rbind(npsyttab,tmp)
+
+	# Store anova results.
+	am<-anova(m)
+	pmatnpsy[,i]<-anova(m)$"p-value"
+	fg<-round(am[2,3],1);fgt<-round(am[5,3],1)
+	tmp<-data.frame(Task=cogvar[i],Group=fg,Group_x_time=fgt,stringsAsFactors=F)
+	npsyanova<-rbind(npsyanova,tmp)
+
+	# Post-hoc contrasts
+	comp <- glht(m, linfct=knpsy)
+	scomp<-summary(comp,test=adjusted('fdr'))
+	tmp<-data.frame(Task=cogvar[i],Comp=names(scomp$test$pvalues),
+		Z=scomp$test$tstat,P=scomp$test$pvalues,stringsAsFactors=F)
+	phocnpsy<-rbind(phocnpsy,tmp)
+	
+}
+
+pmatnpsy<-t(pmatnpsy);
+padjnpsy<-apply(pmatnpsy,2,function(x) { p.adjust(x,method='fdr') })
+phocnpsy$Comp<-as.character(phocnpsy$Comp)
+phocnpsy$G1<-NA;phocnpsy$G2<-NA
+for (i in 1:nrow(phocnpsy)) {
+	s<-unlist(strsplit(phocnpsy$Comp[i],'-'))
+	phocnpsy$G1[i]<-unlist(strsplit(s[1],'_'))[2]
+	phocnpsy$G2[i]<-s[2]
+}
+rownames(phocnpsy)<-1:nrow(phocnpsy)
+
+# Make line plots of longitudinal change per group.
+df$Time<-df$time_diff+df$MMSEDiff-df$MMSEDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+mmseplot<-ggplot(data=tmp,
+	aes(x=Time,y=MMSETotal,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Score (0-30)',
+		title='MMSE')+
+	ggtheme
+
+df$Time<-df$time_diff+df$MemoryDiff-df$MemoryDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+recogplot<-ggplot(data=tmp,
+	aes(x=Time,y=Recognition,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Discrimination (0--1)',
+		title='Recognition')+
+	ggtheme
+#ggsave(filename='fig/recog.png',plot=recogplot)
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+speechplot<-ggplot(data=tmp,
+	aes(x=Time,y=Speech,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Score (0-4)',
+		title='PBAC speech')+
+	ggtheme
+#ggsave(filename='fig/speech.png',plot=speechplot)
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+reyplot<-ggplot(data=tmp,
+	aes(x=Time,y=ReyCopy,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Features copied',
+		title='PBAC Rey figure copy')+
+	ggtheme
+#ggsave(filename='fig/rey.png',plot=reyplot)
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+joloplot<-ggplot(data=tmp,
+	aes(x=Time,y=JOLO,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='JOLO score',
+		title='Judgment of line orientation')+
+	ggtheme
+#ggsave(filename='fig/jolo.png',plot=joloplot)
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+bhavplot<-ggplot(data=tmp,
+	aes(x=Time,y=BehavioralScale,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Behavioral score (0-18)',
+		title='PBAC social behavior')+
+	ggtheme
+#ggsave(filename='fig/bhav.png',plot=bhavplot)
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+trailsplot<-ggplot(data=tmp,
+	aes(x=Time,y=OralTrails,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Oral trails score',
+		title='PBAC oral Trails')+
+	ggtheme
+#ggsave(filename='fig/trails.png',plot=trailsplot)
+
+df$Time<-df$time_diff+df$PBACDiff-df$PBACDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+fletplot<-ggplot(data=tmp,
+	aes(x=Time,y=FLetterFluency,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Words produced (0+)',
+		title='Letter fluency (F words)')+
+	ggtheme
+#ggsave(filename='fig/flet.png',plot=fletplot)
+
+df$Time<-df$time_diff+df$DigitSpanDiff-df$DigitSpanDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+fspanplot<-ggplot(data=tmp,
+	aes(x=Time,y=ForwardSpan,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Maximum span (0+)',
+		title='Forward digit span')+
+	ggtheme
+#ggsave(filename='fig/fspan.png',plot=fspanplot)
+
+df$Time<-df$time_diff+df$DigitSpanDiff-df$DigitSpanDiff[match(df$INDDID,df$INDDID)]
+tmp<-subset(df,!(duplicated(df[,c('INDDID','Time')]) & !is.na(df$Time)))
+rspanplot<-ggplot(data=tmp,
+	aes(x=Time,y=ReverseSpan,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	guides(shape='none',color='none',linetype='none')+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Maximum span (0+)',
+		title='Reverse digit span')+
+	ggtheme
+#ggsave(filename='fig/rspan.png',plot=rspanplot)
+
+tmpdf<-df
+
+legplot<-ggplot(data=tmpdf,
+	aes(x=Time,y=Recognition,color=Group2,shape=Group2))+
+	geom_smooth(aes(linetype=Group2,color=Group2),fill='grey90',method='lm',
+		size=2,na.rm=T)+
+	scale_colour_manual(values=plotcols)+
+	scale_linetype_manual(values=ltscale)+
+	labs(x='Time (years)',y='Discrimination (0-1)',
+		title='Recognition')+
+	theme(plot.title=element_text(hjust=0.5),
+		legend.position='bottom',legend.title=element_blank(),
+		legend.key.size=unit(0.5,'inches'),
+		plot.background=element_rect(fill=rgb(1,1,1)),
+		panel.grid=element_line(colour='grey50'))
+g_legend<-function(a.gplot){
+  tmp <- ggplot_gtable(ggplot_build(a.gplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)}
+
+mylegend<-g_legend(legplot)
+
+grid.arrange(arrangeGrob(mmseplot,recogplot,speechplot,fletplot,fspanplot,
+	nrow=3),mylegend,nrow=2,heights=c(7.5,0.5))
+
+```
+
+```{r plots_npsych2, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE, fig.align='center',fig.width=7.5,fig.height=9,fig.path='./fig/',fig.cap='Supplementary Figure 5b. Longitudinal change in neuropsychological performance (continued). The x-axis indicates time (in years) from the first available assessment.'}
+
+grid.arrange(arrangeGrob(reyplot,joloplot,bhavplot,
+	trailsplot,rspanplot,nrow=3),mylegend,nrow=2,heights=c(7.5,0.5))
+	
+```
+
+```{r npsy_mri_table, eval=TRUE, echo=FALSE, include=TRUE, results='asis', autodep=TRUE}
+
+xnpsytab<-xtable(npsytab[,-1],
+	caption='Supplementary Table 12. Associations between neuropsychological performance and grey matter volume change in task-specific ROIs. P-values are corrected for multiple comparisons using the false discovery rate method; values<0.05 are considered statistically significant and shown in bold.',
+	align='lllll',digits=0)
+wsig<-which(as.numeric(xnpsytab$P)<=0.05)
+xnpsytab$Region[wsig]<-paste('\\textbf{',xnpsytab$Region[wsig],'}',sep='')
+xnpsytab$T[wsig]<-paste('\\textbf{',xnpsytab$T[wsig],'}',sep='')
+xnpsytab$P[wsig]<-paste('\\textbf{',xnpsytab$P[wsig],'}',sep='')
+print(xnpsytab,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity)
+
+```
+
+```{r npsy_ttab1, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+npsyttab$Effect<-gsub(pattern='base_ageatMRI',replacement='AgeatFirstMRI',
+	npsyttab$Effect)
+tmp<-subset(npsyttab,npsyttab$Task %in% c('MMSETotal','Recognition','Speech',
+	'FLetterFluency','ForwardSpan'))
+tmp$Task[duplicated(tmp$Task)]<-''
+tmp %>%
+dplyr::select(c('Task','Effect',setdiff(colnames(npsyttab),c('Task',
+	'Effect')))) %>%
+xtable(caption='Supplementary Table 13. Fixed effects for neuropsychological change models reported in Supplementary Figure 5a.',align='lllrrrrr',digits=c(0,0,0,2,2,0,2,2)) %>%
+print(comment=F,caption.placement='top',floating=T,include.rownames=F,
+	sanitize.text.function=identity,sanitize.colnames.function=identity,
+	scalebox=0.75)
+
+```
+
+```{r npsy_ttab2, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmp<-subset(npsyttab,npsyttab$Task %in% c('ReyCopy','JOLO','BehavioralScale',
+	'OralTrails','ReverseSpan'))
+tmp$Task[duplicated(tmp$Task)]<-''
+tmp %>%
+dplyr::select(c('Task','Effect',setdiff(colnames(npsyttab),c('Task',
+	'Effect')))) %>%
+xtable(caption='Supplementary Table 14. Fixed effects for neuropsychological change models reported in Supplementary Figure 5b.',align='lllrrrrr',digits=c(0,0,0,2,2,0,2,2)) %>%
+print(comment=F,caption.placement='top',floating=T,include.rownames=F,
+	sanitize.text.function=identity,sanitize.colnames.function=identity,
+	scalebox=0.75)
+
+```
+
+```{r long_mmse_phoc, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmptab<-subset(phocnpsy,phocnpsy$Task=='MMSETotal')
+tmptab$Effect<-ifelse(grepl('mean',tmptab$Comp),'Group mean','Group x time')
+tmptab$Comparison<-ifelse(tmptab$Z>0,paste(tmptab$G1,'>',tmptab$G2,sep=''),
+	paste(tmptab$G1,'<',tmptab$G2,sep=''))
+tmptab$Z<-sprintf('%.1f',abs(tmptab$Z))
+tmptab$P<-sprintf('%.2g',tmptab$P)
+tmptab<-tmptab[,c('Effect','Comparison','Z','P')]
+tmptab$Effect[duplicated(tmptab$Effect)]<-''
+
+xlong_mmse<-xtable(tmptab,
+	caption='Supplementary Table 15. Post-hoc comparisons of longitudinal global cognition, as assessed by the MMSE. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.',
+	align='lllrr',digits=0)
+wsig<-which(as.numeric(xlong_mmse$P)<0.05)
+xlong_mmse$Comparison[wsig]<-paste('\\textbf{',xlong_mmse$Comparison[wsig],
+	'}',sep='')
+xlong_mmse$Z[wsig]<-paste('\\textbf{',xlong_mmse$Z[wsig],'}',sep='')
+xlong_mmse$P[wsig]<-paste('\\textbf{',xlong_mmse$P[wsig],'}',sep='')
+print(xlong_mmse,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.75)
+
+```
+
+```{r long_recog_phoc, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmptab<-subset(phocnpsy,phocnpsy$Task=='Recognition')
+tmptab$Effect<-ifelse(grepl('mean',tmptab$Comp),'Group mean','Group x time')
+tmptab$Comparison<-ifelse(tmptab$Z>0,paste(tmptab$G1,'>',tmptab$G2,sep=''),
+	paste(tmptab$G1,'<',tmptab$G2,sep=''))
+tmptab$Z<-sprintf('%.1f',abs(tmptab$Z))
+tmptab$P<-sprintf('%.2g',tmptab$P)
+tmptab<-tmptab[,c('Effect','Comparison','Z','P')]
+tmptab$Effect[duplicated(tmptab$Effect)]<-''
+
+xlong_recog<-xtable(tmptab,
+	caption='Supplementary Table 16. Post-hoc comparisons of longitudinal recognition discrimination. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.',
+	align='lllrr',digits=0)
+wsig<-which(as.numeric(xlong_recog$P)<0.05)
+xlong_recog$Comparison[wsig]<-paste('\\textbf{',xlong_recog$Comparison[wsig],
+	'}',sep='')
+xlong_recog$Z[wsig]<-paste('\\textbf{',xlong_recog$Z[wsig],'}',sep='')
+xlong_recog$P[wsig]<-paste('\\textbf{',xlong_recog$P[wsig],'}',sep='')
+print(xlong_recog,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.75)
+
+```
+
+```{r long_lang_phoc, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmptab<-subset(phocnpsy,phocnpsy$Task %in% c('Speech','ForwardSpan',
+	'FLetterFluency'))
+tmptab$Effect<-ifelse(grepl('mean',tmptab$Comp),'Group mean','Group x time')
+tmptab$Comparison<-ifelse(tmptab$Z>0,paste(tmptab$G1,'>',tmptab$G2,sep=''),
+	paste(tmptab$G2,'>',tmptab$G1,sep=''))
+tmptab$Z<-sprintf('%.1f',abs(tmptab$Z))
+tmptab$P<-sprintf('%.2g',tmptab$P)
+tmptab<-tmptab[,c('Task','Effect','Comparison','Z','P')]
+tmpeff<-tmptab$Effect
+tmpeff[duplicated(tmptab[,c('Task','Effect')])]<-''
+tmptab$Task[duplicated(tmptab$Task)]<-''
+tmptab$Effect<-tmpeff
+
+xlong_lang<-xtable(tmptab,
+	caption='Supplementary Table 17. Post-hoc comparisons of longitudinal language performance. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.',align='llllrr',digits=0)
+wsig<-which(as.numeric(xlong_lang$P)<0.05)
+xlong_lang$Comparison[wsig]<-paste('\\textbf{',xlong_lang$Comparison[wsig],
+	'}',sep='')
+xlong_lang$Z[wsig]<-paste('\\textbf{',xlong_lang$Z[wsig],'}',sep='')
+xlong_lang$P[wsig]<-paste('\\textbf{',xlong_lang$P[wsig],'}',sep='')
+print(xlong_lang,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.75)
+
+```
+
+```{r long_vis_phoc, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmptab<-subset(phocnpsy,phocnpsy$Task %in% c('ReyCopy','JOLO'))
+tmptab$Effect<-ifelse(grepl('mean',tmptab$Comp),'Group mean','Group x time')
+tmptab$Comparison<-ifelse(tmptab$Z>0,paste(tmptab$G1,'>',tmptab$G2,sep=''),
+	paste(tmptab$G2,'>',tmptab$G1,sep=''))
+tmptab$Z<-sprintf('%.1f',abs(tmptab$Z))
+tmptab$P<-sprintf('%.2g',tmptab$P)
+tmptab<-tmptab[,c('Task','Effect','Comparison','Z','P')]
+tmpeff<-tmptab$Effect
+tmpeff[duplicated(tmptab[,c('Task','Effect')])]<-''
+tmptab$Task[duplicated(tmptab$Task)]<-''
+tmptab$Effect<-tmpeff
+
+xlong_vis<-xtable(tmptab,
+	caption='Supplementary Table 18. Post-hoc comparisons of longitudinal visuospatial performance. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.',align='llllrr',digits=0)
+wsig<-which(as.numeric(xlong_vis$P)<0.05)
+xlong_vis$Comparison[wsig]<-paste('\\textbf{',xlong_vis$Comparison[wsig],
+	'}',sep='')
+xlong_vis$Z[wsig]<-paste('\\textbf{',xlong_vis$Z[wsig],'}',sep='')
+xlong_vis$P[wsig]<-paste('\\textbf{',xlong_vis$P[wsig],'}',sep='')
+print(xlong_vis,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.75)
+
+```
+
+```{r long_soc_exec_phoc, eval=TRUE, echo=FALSE, include=TRUE, results='asis',autodep=TRUE}
+
+tmptab<-subset(phocnpsy,phocnpsy$Task %in% c('BehavioralScale','OralTrails','ReverseSpan'))
+tmptab$Effect<-ifelse(grepl('mean',tmptab$Comp),'Group mean','Group x time')
+tmptab$Comparison<-ifelse(tmptab$Z>0,paste(tmptab$G1,'>',tmptab$G2,sep=''),
+	paste(tmptab$G2,'>',tmptab$G1,sep=''))
+tmptab$Z<-sprintf('%.1f',abs(tmptab$Z))
+tmptab$P<-sprintf('%.2g',tmptab$P)
+tmptab<-tmptab[,c('Task','Effect','Comparison','Z','P')]
+tmpeff<-tmptab$Effect
+tmpeff[duplicated(tmptab[,c('Task','Effect')])]<-''
+tmptab$Task[duplicated(tmptab$Task)]<-''
+tmptab$Effect<-tmpeff
+
+xlong_soc_exec<-xtable(tmptab,caption='Supplementary Table 19. Post-hoc comparisons of longitudinal behavioral and executive function. Group mean: cross-sectional differences in average group performance, independent of time. Group x time: differences in rate of longitudinal cognitive change. P-values are FDR-corrected, with a significance threshold of p<0.05.',align='llllrr',digits=0)
+wsig<-which(as.numeric(xlong_soc_exec$P)<0.05)
+xlong_soc_exec$Comparison[wsig]<-paste('\\textbf{',xlong_soc_exec$Comparison[wsig],
+	'}',sep='')
+xlong_soc_exec$Z[wsig]<-paste('\\textbf{',xlong_soc_exec$Z[wsig],'}',sep='')
+xlong_soc_exec$P[wsig]<-paste('\\textbf{',xlong_soc_exec$P[wsig],'}',sep='')
+print(xlong_soc_exec,comment=FALSE,caption.placement='top',floating=T,
+	include.rownames=F,sanitize.text.function=identity,
+	sanitize.colnames.function=identity,scalebox=0.75)
+
+```
+
+```{r control_neuropsych, include=T, echo=F, fig.align='center',fig.width=7.5,fig.height=9,fig.path='./fig/',fig.cap='Supplementary Figure 6. Neuropsychological performance for cognitively normal seniors in the Integrative Neurodegenerative Disease Database (INDD). Green triangles represent observations for control participants in the current study that were available within 1 year of their first MRI scan. The mean of each distribution is represented by a large black dot, and the vertical lines represent 1 SD above and below the mean.'}
+
+ftdpat<-read.csv("INQuery_FTDALS_Patients_20181016.csv",stringsAsFactors=F)
+ftdpat<-subset(ftdpat,ftdpat$ClinicalPhenotype1 %in% 'ELD CTRL')
+
+ggtheme<-theme(axis.text.x=element_text(size=16,face='bold'),
+		axis.text.y=element_text(size=16,face='bold'),
+		axis.title.y=element_text(size=16,face='bold'),
+		axis.title.x=element_text(size=16,face='bold'),
+		legend.position='right',
+		legend.title=element_blank(),
+		plot.title=element_text(size=16,face='bold',hjust=0.5))
+
+conphl<-read.csv("INQuery_FTD_CERAD_PVLT_20190104.csv",stringsAsFactors=F)
+conphl<-subset(conphl,conphl$INDDID %in% ftdpat$INDDID)
+conphl$Group<-'Control'
+conphl$Recognition<-cleaner(conphl$PHLRecognitionDiscrimin,outFix=T,outThresh=3)
+conphl$MyBase<-FALSE
+tmp<-subset(nps,nps$Group %in% 'g0_Control' & abs(nps$MemoryDiff)<=1 & !duplicated(nps$INDDID))
+tmp$Group<-'Control';tmp$MyBase<-TRUE
+conphl<-rbind.fill(conphl,tmp[,intersect(names(conphl),names(tmp))])
+conphlplot<-ggplot(aes(x=Group,y=Recognition),data=conphl)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Discrimination',title='Recognition')+
+	scale_color_manual(values=c('grey50','green'))+
+	ylim(0,1)+
+	guides(colour='none',shape='none')+
+	ggtheme
+
+condig<-read.csv("INQuery_FTD_Combined_DigitSpans_20190104.csv",stringsAsFactors=F)
+condig<-subset(condig,condig$INDDID %in% ftdpat$INDDID)
+condig$Group<-'Control'
+condig$ForwardSpan<-cleaner(condig$ForwardSpan,outFix=T,outThresh=3)
+condig$ReverseSpan<-cleaner(condig$ReverseSpan,outFix=T,outThresh=3)
+condig$MyBase<-FALSE
+tmp<-subset(nps,nps$Group %in% 'g0_Control' & abs(nps$DigitSpanDiff)<=1 & !duplicated(nps$INDDID))
+tmp$Group<-'Control';tmp$MyBase<-TRUE
+condig<-rbind.fill(condig,tmp[,intersect(names(condig),names(tmp))])
+condigplot<-ggplot(aes(x=Group,y=ForwardSpan),data=condig)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Max. span',title='Forward span')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ggtheme
+conrspanplot<-ggplot(aes(x=Group,y=ReverseSpan),data=condig)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Max. span',title='Reverse span')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ggtheme
+
+conflet<-read.csv("INQuery_Global_FWords_20190104.csv",stringsAsFactors=F)
+conflet<-subset(conflet,conflet$INDDID %in% ftdpat$INDDID)
+conflet$FLetterFluency<-conflet$FWordsCorrect
+conflet$Group<-'Control'
+conflet$ForwardSpan<-cleaner(conflet$FLetterFluency,outFix=T,outThresh=3)
+conflet$MyBase<-FALSE
+tmp<-subset(nps,nps$Group %in% 'g0_Control' & abs(nps$FletDiff)<=1 & !duplicated(nps$INDDID))
+tmp$Group<-'Control';tmp$MyBase<-TRUE
+conflet<-rbind.fill(conflet,tmp[,intersect(names(conflet),names(tmp))])
+confletplot<-ggplot(aes(x=Group,y=FLetterFluency),data=conflet)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='F words (correct)',title='Letter fluency')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ggtheme
+
+conpbac<-read.csv("INQuery_Global_PBAC_20190104.csv",stringsAsFactors=F)
+conpbac<-subset(conpbac,conpbac$INDDID %in% ftdpat$INDDID)
+conpbac$Group<-'Control'
+conpbac$MyBase<-FALSE
+conpbac$TestDate<-as.Date(conpbac$TestDate,format='%m/%d/%Y')
+conpbac$pre2010<-conpbac$TestDate<as.Date('2010-01-01',format='%Y-%m-%d')
+w<-which(conpbac$pre2010)
+conpbac$BehavioralScale[w]<-conpbac$BehavioralScale[w]-1
+conpbac$Speech[w]<-round(1.333*conpbac$Speech[w],1)
+
+tmp<-subset(nps,nps$Group %in% 'g0_Control' & abs(nps$PBACDiff)<=1 & !duplicated(nps$INDDID))
+tmp$Group<-'Control';tmp$MyBase<-TRUE
+for (v in intersect(cogvar,names(conpbac))) {
+	conpbac[,v]<-cleaner(conpbac[,v],outFix=T,outThresh=3)
+}
+conpbac<-rbind.fill(conpbac,tmp[,intersect(names(conpbac),names(tmp))])
+
+conreyplot<-ggplot(aes(x=Group,y=ReyCopy),data=conpbac)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Features (0-12)',title='Rey Figure copy')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ylim(0,12)+
+	ggtheme
+
+conspeechplot<-ggplot(aes(x=Group,y=Speech),data=conpbac)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Score (0-4)',title='Speech')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ylim(0,4)+
+	ggtheme
+
+conjoloplot<-ggplot(aes(x=Group,y=JOLO),data=conpbac)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Score (0-6)',title='JOLO')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ylim(0,6)+
+	ggtheme
+
+conbhavplot<-ggplot(aes(x=Group,y=BehavioralScale),data=conpbac)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Score (0-18)',title='Social behavior')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ylim(0,18)+
+	ggtheme
+
+conotrailsplot<-ggplot(aes(x=Group,y=OralTrails),data=conpbac)+
+	geom_jitter(aes(colour=MyBase,shape=MyBase))+
+	geom_violin(fill=NA,trim=F)+
+	stat_summary(fun.data=mean_sdl, geom="pointrange")+
+	labs(x=NULL,y='Score (0-6)',title='Oral Trails')+
+	scale_color_manual(values=c('grey50','green'))+
+	guides(colour='none',shape='none')+
+	ylim(0,6)+
+	ggtheme
+
+grid.arrange(conphlplot,condigplot,conbhavplot,conspeechplot,conreyplot,
+	conotrailsplot,confletplot,conjoloplot,conrspanplot,nrow=3)
+	
+```
+
+# References {-}
